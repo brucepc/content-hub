@@ -1,0 +1,66 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1"/>
+    <link href="{% static 'stylesheets/style.css' %}" rel="stylesheet" type="text/css" />
+    <title>Content Access Point</title>
+<!--[if lt IE 9]>
+<script src="{% static 'js/html5shiv.js' %}"></script>
+<![endif]-->
+<script src="{% static 'js/modernizr.js' %}"></script><!-- MODERNIZR-->
+</head>
+<body id="loginPage">
+<div class="loginStripe"></div>
+<!--- HEADER SECTION -->
+    <header>
+        <section class="row headerContent">
+        </section><!-- end row headerContent -->
+        <div class="headingSpacing">
+        </div>
+    </header>
+
+<section class="row">
+    <div class="col-l12 mainLogin">
+        {% if user.is_authenticated %}
+            <p class="center-message">You are logged in as {{user.username}}. <a href="{% url 'logout' %}?next={% firstof request.path '/' %}">Logout?</a></p>
+        {% else %}
+            <form id="login" action="{% url 'login' %}" method="post" class="clearfix">
+                {% csrf_token %}
+                <h1>Teacher Log In</h1>
+                <div>
+                    <label for="name">Username</label>
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                    {{ form.non_field_errors }}
+                </div>                
+
+                <a href="{% url 'index' %}">I am a student</a>
+
+                <button class="login" type="submit">Log In</button>
+                <input type="hidden" name="next" value="{% firstof request.GET.next '/' %}" />
+            </form>
+        {% endif %}
+    </div><!-- end mainLogin 12 columns -->
+</section><!-- end mainLogin row -->
+
+
+
+<!--- jQuery SCRIPTS -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/siteScripts.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿{% load staticfiles %}
+{% load browse_extras %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1"/>
+    <link href="{% static 'stylesheets/jquery-ui-1.10.4.custom.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'stylesheets/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'stylesheets/tagit.ui-zendesk.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'stylesheets/style.css' %}" rel="stylesheet" type="text/css" />
+    <title>Content Access Point</title>
+<!--[if lt IE 9]>
+<script src="{% static 'js/html5shiv.js' %}"></script>
+<![endif]-->
+<script src="{% static 'js/modernizr.js' %}"></script><!-- MODERNIZR-->
+<script src="{% static 'js/respond.min.js' %}"></script><!-- media queries for IE8-->
+</head>
+<body>
+
+
+<!--- HEADER SECTION -->
+<header id="simple_header">
+    <section class="row headerContent">
+        <div class="col-l12" id="mainLogo">
+                <a href="javascript:history.go(-1)" class="headerLogoLink">Content Access Point</a>
+                               
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+
+
+</header>
+
+{% block body %}
+
+    <!-- BODY GOES HERE -->
+
+{% endblock body %}
+
+
+
+
+<!--- jQuery SCRIPTS -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+<script src="{% static 'js/tag-it.min.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'js/siteScripts.js' %}"></script>
+<script src="{% static 'js/jspatch.js' %}"></script>
+<!-- dropdown touch script -->
+<script src="{% static 'js/runOnLoad-readystatechange.js' %}"></script>
+<script src="{% static 'js/Dropdown.js' %}"></script>
+
+
+</body>
+</html>

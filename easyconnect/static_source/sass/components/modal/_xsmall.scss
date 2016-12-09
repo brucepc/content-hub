@@ -1,0 +1,97 @@
+.ui-widget-overlay{
+  background:#000;
+}
+
+.ui-widget{
+  padding:25px 30px 30px;
+  overflow: visible;
+  background:white;
+  border-radius:5px;
+  font-size:0.875rem; //14px
+  position:relative;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+  .ui-dialog-titlebar-close{
+    border:none;
+    position:absolute;
+    top:-30px;
+    right:-40px;
+    background-color:$brandLightGray;
+    background-image:none;
+    width:35px;
+    height:35px;
+    color:#fff;
+    border-radius:50%;
+    &:hover, &:active{
+      background-color:$brandGray;
+    }
+  }
+}
+  .ui-dialog{
+    .ui-dialog-titlebar{
+      font-size:18px;
+      padding:0 0 10px 0!important;
+      background:none;
+      border:none;
+      line-height:1.4;
+      color:$brandGray;
+    }
+    .ui-dialog-titlebar{
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+    .ui-dialog-title{
+      margin:0;
+      width:100%;
+      white-space:normal;
+      overflow:auto;
+      text-overflow:normal;
+    }
+    .ui-dialog-content{
+      padding:0;
+    }
+    .mainButton{
+      margin:20px 0;
+      padding-right:45px!important;
+      position:relative;
+      span{
+        width:17px;
+        height:16px;
+        /*background-image:url('../images/icon-sprite.png');
+        background-repeat:no-repeat;
+        background-position:-735px -502px;*/
+        position:absolute;
+        right:20px;
+        top:7px;
+    }
+    }
+    .ui-dialog-buttonpane {
+      background:none;
+      border:none;
+      padding:0;
+      margin:0;
+    }
+    .ui-button-text-only .ui-button-text{
+      padding:0;
+    }
+  }
+
+  /*.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background:none;
+  }*/
+
+  .ui-dialog .ui-dialog-buttonpane button{
+    margin:0;
+  }
+
+.ui-widget-overlay{
+  opacity:0.7;
+}
+
+.itemInfo{
+  li{
+    padding:0 0 5px 0;
+    color:$brandLightGray;
+  }
+}

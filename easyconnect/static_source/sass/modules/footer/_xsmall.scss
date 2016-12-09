@@ -1,0 +1,23 @@
+.footerBG{
+   background-color: $brandLightestGray;
+   width:100%;
+   position: absolute;
+   height: 40px;
+   margin-top:-40px; 
+   bottom:0;
+   left:0;
+     footer {
+     margin: 0 auto;
+     padding: 10px 20px;
+     max-width: 960px;
+     clear: both; 
+     z-index: 10;
+     color:$brandLightGray;
+     font-size:0.75rem; //12px
+    p.copyright {
+      color:$brandLightGray;
+      margin:0;
+    }
+  }
+}
+

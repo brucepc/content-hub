@@ -1,0 +1,177 @@
+﻿
+/*#usb_container, #url_container {
+    padding: 15px 10px 15px 0px !important;
+    margin-bottom: 10px !important;
+    border-radius: 2px !important;
+}
+*/
+
+.text-as-link {
+    color: #86878a !important;
+    font-weight: bold !important;
+    margin-right: 7px !important;
+    margin: 8px 0 -2px 0 !important;
+    border-radius: 2px !important;
+}
+
+#usb_container_tile > label{
+    cursor: pointer;
+
+}
+
+
+.tileHolder {
+    padding: 15px 0px 35px !important;
+    border-top: 5px solid #86878a !important;
+}
+
+.admin-tile-height{
+    min-height: 174px !important;
+    max-height: 174px !important;
+}
+
+.tileHolder a {
+    text-decoration: none !important;
+}
+
+.tileHolder a:hover {
+    color: red !important;
+}
+
+.tileHolder .tileTitle{
+    font-size: 0.75rem !important;
+    position: relative !important;
+    height: 44px !important;
+}
+
+.tileTitle{
+    margin-top: 12px !important;
+    padding: 0px !important;
+    font-size: 0.75rem !important;
+}
+
+form label {
+    font-weight: bold !important;
+    color: #53565a;
+    margin-bottom: 7px !important;
+}
+
+form > ul li {
+    margin-bottom:16px;
+    
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto 75px auto;
+  padding: 30px;
+}
+
+.errorlist {
+  color: #ed1c24;
+  display: block;
+  line-height: 1;
+  margin: 0 0 15px;
+}
+/* line 177, ../sass/modules/lessons/_xsmall.scss */
+form input[type="text"] {
+  margin-bottom: 5px;
+}
+
+.tileHolder .trashIcon, .tileHolder .hideIcon, .tileHolder .hideItem, .tileHolder .editIcon{
+}
+
+.tileHolder .editList {
+    position: relative !important;
+    width: 266px !important;
+    top: auto !important;
+    right: auto !important;
+    clear:both;
+   /* margin-left: 24% !important;
+    margin-right: 24% !important;*/
+}
+
+.editList > div {
+   /* margin-right: 30px;
+    margin-left: 29px;*/
+   width:24%;
+	display:inline-block;
+	text-align:center;
+        cursor: pointer!important;
+
+}
+
+.tileHolder .lockedList {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+}
+
+.title_edit_active {
+    padding: 10px !important;
+    font-weight: bold !important;
+    margin-right: 7px !important;
+    margin: 8px 0 -2px 0 !important;
+    border-radius: 2px !important;
+}
+
+.tilePreview {
+    max-height: 150px;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    background: #FAFAFA;
+    border: 1px solid #EBECED;
+    color: #53565a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    position: relative;
+    margin: 0 0 10px;
+    width: 70px;
+    height: 70px;
+}
+
+
+
+.tilePreview span {
+    display: block;
+    font-size: 25px;
+    color: #b1babf;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tilePreview .tileImg img {
+    max-height: 100%
+}
+
+.addTable {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+.importSite {
+    background-color: #FAFAFA;
+    padding:7px 7px 7px 7px;
+    border-radius:5px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.1);
+}
+
+.importSiteTitle {
+    margin-bottom: 7px !important;
+}
+
+.importSiteLabel {
+    margin-bottom: -1px !important;
+}
+
+.ui-state-highlight{
+    margin-bottom: 10px;
+    background-color: #d1d2d4;
+    border: #d1d2d4;
+}
+.switch-light {
+    width: 170px !important;
+}

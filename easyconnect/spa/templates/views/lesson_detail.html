@@ -1,0 +1,43 @@
+{% load i18n %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent lessonsPage">
+    <!-- LESSON LISTINGS -->
+    <div class="col-l12 detailView">
+
+        <div class="clearfix titleBar">
+            <ul class="breadCrumbs">
+                <li>
+                    <a href="#">{% trans "Home" %}</a>
+                </li>
+                <li>
+                    <a href="#lessons">{% trans "Lessons" %}</a>
+                </li>
+                <li ng-bind="lesson.title"></li>
+            </ul>
+
+            <h1 class="left detailTitle" editable-text="lesson.title" e-form="editForm" e-required e-maxlength="100" onbeforesave="validate(lesson, $data)" onaftersave="update(lesson, editForm)" ng-bind="lesson.title"></h1>
+            <a name='lessonEdit' ng-if="user.is_authenticated && user.isTeacher()" class="icon-title-edit" ng-click="editForm.$show()" ng-hide="editForm.$visible"><span class="fa fa-pencil"></span></a>
+            <ul ng-if="user.is_authenticated && user.isTeacher()" class="right singleLine">
+
+                <li><a name='lessonDelete' class="delete batchBtn" ng-click="remove(lesson)"><span class="fa fa-trash-o"></span>{% trans "Delete this Lesson" %}</a></li>
+                <li>
+                    <a name='itemRemoveFromLessonBatch' ng-disabled="!checkedItems || checkedItems.length === 0" ng-class="{ 'disabled' : !checkedItems || checkedItems.length === 0 }" ng-click="removeItems()" class="batchDelete batchBtn">
+                        <span class="fa fa-minus-circle"></span>{% trans "Remove from Lesson" %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- end lessonBar -->
+        <div ng-if="lesson.members && lesson.members.length > 0" sort="sortItems"></div>
+        <section contentitems="lesson.members" checked-items="checkedItems" class="lessonDetail"></section>
+        <div class="nocontentMessage" ng-if="lesson.members && lesson.members.length == 0">
+            <span>
+                <p>{% trans 'No content featured' %}</p>
+                <p ng-if="user.isTeacher()"><a ng-href="#/library/?&amp;lesson={$ lesson.id $}">{% trans "Add Content" %}</a></p>
+            </span>
+        </div>
+
+    </div>
+    <!-- end detailView -->
+</section>
+<!-- end mainContent row -->

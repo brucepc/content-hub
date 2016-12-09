@@ -1,0 +1,13 @@
+{% load i18n %}
+<div ng-if="tags && tags.length > 0">
+<hr />
+{# Translators: Tagcloud showing tags that occur more frequently as larger #}
+<h1>{% trans "Filter by Tag" %}</h1>
+<!-- TAG CLOUD -->
+<div class="tagCloud">  
+    <span ng-repeat="tag in tags | limitTo:20 | orderBy : 'text'" ng-class="{'on' : $location.search().t == tag.id }" class="tag{$ calculateScore(tag) $}">
+        <a ng-href="" ng-click="onclick(tag, $event)" ng-bind="tag.text"></a>
+    </span>
+</div>
+<!-- end tagCloud -->
+<div>

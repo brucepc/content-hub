@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Concentrador de contenido (Content Hub)</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guía de ayuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Administración de contenido</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Descripción general</a></li>
+			<li><a href="#home2">Cómo agregar contenido precargado</a></li>
+			<li><a href="#home3">Cómo eliminar contenido precargado</a></li>
+			<li><a href="#home4">Cómo eliminar contenido de educadores</a></li>
+			<li><a href="#home5">Cómo eliminar categorías</a></li>
+			<li><a href="#home6">Modo de educador </a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>Cómo utilizar el Planificador de clases del concentrador de contenido</h1>
+
+		<h2>Administración de contenido</h2>
+		<div class="howto" id="home1">
+			<h3>Descripción general</h3>
+
+			<p>La pantalla Administrar contenido (Manage Content) se muestra de forma predeterminada cuando el administrador inicia sesión en el Planificador de clases (Lesson Planner).</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>Un administrador puede hacer lo siguiente:</p>
+			<ul>
+				<li>Agregar y eliminar paquetes de contenido precargado.</li>
+				<li>Eliminar contenido de educadores.</li>
+				<li>Eliminar categorías.</li>
+			</ul>
+			<h4>¿Qué es el contenido precargado (preloaded content)?</h4>
+			<p>El contenido precargado es contenido educativo que se carga en el Planificador de clases antes de que lo usen los educadores y los estudiantes. Este contenido puede haber sido cargado, por ejemplo, por el fabricante del equipo o por un Ministerio de Educación, antes de que el dispositivo se envíe a la escuela o al establecimiento educativo en el que se usará. Únicamente un administrador puede cargar, importar y eliminar contenido precargado.</p>
+			<h4>¿Qué es el contenido de educadores (teacher content)?</h4>
+			<ol>
+				<li>Contenido que los educadores agregan a la biblioteca del Planificador de clases: Puede ser cualquier tipo de archivo; por ejemplo, documentos de Excel o Word, archivos HTML, PDF o E-Pub, videos, imágenes, etc.</li>
+				<li>Clases creadas por educadores.</li>
+			</ol>
+			<h4>¿Qué son las categorías (categories)?</h4>
+			<p>Las categorías proporcionan un mecanismo para que los educadores y administradores agrupen y clasifiquen el contenido dentro de la biblioteca. Las categorías tienen las siguientes características:</p>
+			<ol>
+				<li>Pueden asignarse dentro de un paquete de contenido precargado y crearse cuando un administrador carga o importa el contenido precargado al Planificador de clases.</li>
+				<li>Pueden asignarse cuando un educador carga o importa contenido de educadores al Planificador de clases.</li>
+				<li>Pueden ser configuradas a través de la pantalla Administrar categoría por un educador o por un administrador cuando visualiza el Planificador de clases en modo de educador.</li>
+			</ol>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Cómo agregar contenido precargado</h3>
+			<p>Existen dos maneras de agregar contenido precargado al Planificador de clases.</p>
+			<ol>
+				<li>Puede cargar contenido a través del navegador al seleccionar el vínculo “Cargar paquete” (Upload Package) en la sección “Contenido precargado” (Preloaded Content).</li>
+				<li>Puede importar contenido a través del puerto USB al seleccionar el vínculo “Importar paquete desde USB” (USB/SD Import Package) en la sección “Contenido precargado” (Preloaded Content).</li>
+			</ol>
+			<p>Para los archivos que superen los 2 GB, se debe usar la opción de importación USB. Esto se debe a las restricciones de servidor/navegador que pueden aplicarse para archivos de gran tamaño. </p>
+			<h4>Cargar paquete (Upload Package)</h4>
+			<p>Para cargar un paquete de contenido precargado a través del navegador:</p>
+			<ol>
+				<li>Vaya a la sección “Contenido precargado” (Preloaded Content) de la pantalla Administrar contenido (Manage Content). </li>
+				<li>Seleccione el vínculo “Cargar paquete” (Upload Package).<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>En la pantalla Cargar paquete, seleccione el botón “Elegir archivos” (Choose Files) para seleccionar los paquetes de contenido precargado que desee cargar. Si ya existe un paquete de contenido precargado con el mismo nombre en el dispositivo, se mostrará una opción para sobrescribir el paquete existente. Si el administrador elige no sobrescribir un paquete, el paquete de contenido nuevo no se cargará en el dispositivo ni se importará al Planificador de clases.</li>
+				<li>Se mostrará un mensaje para confirmar que el paquete de contenido precargado se agregó correctamente.</li>
+			</ol>
+			<h4>Importar paquete desde USB (USB/SD Import Package)</h4>
+			<p>Para importar un paquete de contenido precargado a través del puerto USB:</p>
+			<ol>
+				<li>Conecte un dispositivo USB a Punto de acceso de contenidos.</li>
+				<li>Vaya a la sección “Contenido precargado” (Preloaded Content) de la pantalla Administrar contenido (Manage Content). </li>
+				<li>Seleccione el vínculo “Importar paquete desde USB” (USB/SD Import Package).<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>En la pantalla Importar paquete desde USB (USB/SD Import Package), seleccione los paquetes de contenido precargado que desee cargar. Si ya existe un paquete de contenido precargado con el mismo nombre en el dispositivo, se mostrará una opción para sobrescribir el paquete existente. Si el administrador elige no sobrescribir un paquete, el paquete de contenido nuevo no se cargará en el dispositivo ni se importará al Planificador de clases.</li>
+				<li>Se mostrará un mensaje para confirmar que el paquete de contenido precargado se agregó correctamente.</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Cómo eliminar contenido precargado</h3>
+			<p>Un administrador puede eliminar todos los paquetes de contenido precargado o paquetes específicos.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>Para eliminar todos los paquetes de contenido precargado:</p>
+			<ol>
+				<li>Vaya a la sección “Contenido precargado” (Preloaded Content) de la pantalla Administrar contenido (Manage Content). </li>
+				<li>Active la casilla de verificación “Contenido precargado” (Preloaded Content). Si no hay contenido precargado, esta casilla de verificación estará deshabilitada.</li>
+				<li>Seleccione el vínculo Eliminar (Delete).</li>
+				<li><strong><u>Todo</u></strong> el contenido precargado del dispositivo se eliminará del Planificador de clases y del dispositivo.</li>
+			</ol>
+			<p>Para eliminar paquetes de contenido precargado específicos:</p>
+			<ol>
+				<li>Vaya a la sección “Contenido precargado” (Preloaded Content) de la pantalla Administrar contenido. Se mostrará una lista de los paquetes de contenido precargado existentes en el dispositivo.</li>
+				<li>Active la casilla de verificación que aparece junto al paquete de contenido precargado que desee eliminar.</li>
+				<li>Seleccione el vínculo Eliminar (Delete).</li>
+				<li>El paquete de contenido precargado seleccionado se eliminará del Planificador de clases y del dispositivo.</li>
+			</ol>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Cómo eliminar contenido de educadores</h3>
+			<p>Para eliminar contenido de educadores:</p>
+			<ol>
+				<li>Vaya a la sección “Contenido de educadores” (Teacher Content) de la pantalla Administrar contenido (Manage Content).</li>
+				<li>Active la casilla de verificación “Contenido de educadores” (Teacher Content). Si no hay contenido de educadores, esta casilla de verificación estará deshabilitada.</li>
+				<li>Seleccione el vínculo Eliminar (Delete).</li>
+				<li><strong><u>Todo</u></strong> el contenido de educadores (todo el contenido de la biblioteca cargado por educadores y todas las clases) se eliminará del Planificador de clases y del dispositivo.</li>
+			</ol>
+			<p>No es posible eliminar elementos individuales de contenido de educadores en el modo de administrador. Sin embargo, un administrador puede eliminar elementos individuales de contenido cuando se encuentra en modo de educador.</p>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Cómo eliminar categorías</h3>
+			<p>Para eliminar categorías:</p>
+			<ol>
+				<li>Vaya a la sección “Categorías” (Categories) de la pantalla Administrar contenido (Manage Content).</li>
+				<li>Active la casilla de verificación “Categorías” (Categories). Si no hay categorías vacías, es decir, categorías sin contenido asociado, esta casilla de verificación estará deshabilitada.</li>
+				<li>Seleccione el vínculo Eliminar (Delete).</li>
+			</ol>
+			<p>Las categorías se eliminarán únicamente si no tienen contenido, es decir, no es posible eliminar una categoría a través de la pantalla Administrar contenido si el contenido está clasificado como perteneciente a esa categoría.</p>
+			<p>No es posible eliminar categorías individuales en el modo de administrador. Sin embargo, un administrador puede eliminar categorías individuales cuando se encuentra en modo de educador.</p>
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Modo de educador</h3>
+			<p>Un administrador puede llevar a cabo todas las funciones de un educador cuando se encuentra en el modo de educador.</p>
+			<p>Para usar el Planificador de clases en modo de educador, seleccione la opción de menú “Modo de educador” (Teacher Mode) en la pantalla Administrar contenido (Manage Content).</p>
+			<p>Cuando está en modo de educador, un administrador puede volver a la pantalla Administrar contenido (Manage Content) al seleccionar la opción de menú “Modo de administrador” (Administrator Mode).</p>
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

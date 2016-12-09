@@ -1,0 +1,21 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+<div id="management-container">
+    <div id="management-form-container">
+        <h3>{{groupName}} Items</h3>
+        <form method="POST" action="{% url 'remove-multi-items' groupId %}">
+            {% csrf_token %}
+            {% for i in items %}
+            	<input type="checkbox" name="item" value="{{i.id}}" />{{i.title}}
+                    <a href="{% url 'remove-item-from-group' groupId i.id %}">Remove</a> <br/>
+            {% endfor %}
+            <input type="submit" value="Remove" />
+        </form>
+    </div>
+    <a href="{% url 'manage-index' %}"> back </a>
+</div>
+{% endblock body %}

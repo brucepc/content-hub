@@ -1,0 +1,37 @@
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+
+<div class="clearfix titleBar">
+    <ul class="breadCrumbs">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li ng-if="!breadcrumbs.search">
+            Lessons
+        </li>
+        <li ng-if="breadcrumbs.search">
+            <a href="#lessons">Lessons</a>
+        </li>
+        <li ng-if="breadcrumbs.search" ng-bind-template="Search: {$ breadcrumbs.search $}">
+        </li>
+    </ul>
+    <h1 class="left">Lessons</h1><!-- column title -->
+        <ul ng-if="isTeacher()" class="right singleLine">
+            <li><a name="lessonDeleteBatch"  ng-disabled="!checkedLessons || checkedLessons.length === 0" ng-click="batchDelete()" class="batchDelete batchBtn"><span class="intelicon-trash-outlined"></span>Delete</a></li>
+            <li><a ng-click="toggleForm(true)" class="mainButton">Create A New Lesson</a></li>
+        </ul>
+</div>
+<form method="post" ng-if="showForm" class="clearfix" name="addLessonForm" novalidate>
+                <ul>
+                    <li>
+                        <label for="id_name">Lesson Name:</label> <input id="id_name" maxlength="100" name="title" type="text" required ng-model="newLesson" focus-me="showForm"/>
+                        <ul ng-if="addLessonForm.title.$error.required && addLessonForm.title.$dirty" class="errorlist"><li>This field is required.</li></ul>
+                   </li>
+                    <li>
+                        <input type="submit" value="Create" ng-disabled="addLessonForm.$invalid || addLessonForm.$pristine" ng-click="addLesson(newLesson)"/>
+                        <input type="button" value="Cancel" ng-click="toggleForm(false)"/>
+                    </li>
+                </ul>               
+            </form>
+<section lessons ng-init="init()"></section>
+</section>

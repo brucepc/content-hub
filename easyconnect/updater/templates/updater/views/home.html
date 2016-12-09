@@ -1,0 +1,51 @@
+{% load i18n %}
+<section class="row mainContent" ng-controller="UpdaterCtrl">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea settingsContent clearfix" ng-if="user.is_authenticated">           
+
+            <div class="row" ng-if="user.isAdmin()">
+                <div class="clearfix">
+                    <h1 class="left">{% trans "Software Update" %}</h1>
+                </div><!-- /.clearfix -->
+                <p>{% trans 'Current version' %}: {$ currentVersion $}</p>
+                <p>{% trans 'The update file will be uploaded, the device will reboot, and the update will be applied. All connections to the device will be terminated. Do not disrupt the update process and make sure the device is plugged into an electrical outlet or has at least 80% battery remaining.' %}</p>
+                <p>{% trans 'Select an update file.' %}</p>
+
+
+                <form id="chooseFile" name="uploadForm" enctype="multipart/form-data" novalidate="true" ng-init="setFormScope(this)">
+                    <div ng-if="!editing" class="uploadFileInfo">
+                        <input type="file" ng-file-select="onFileSelect($files)" accept="application/zip" ng-click="clearFileSelection($event)">
+                    </div>
+                    <p ng-if="fileErrors.length > 0" ng-repeat="file_error in fileErrors" class="errorlist">
+                        {$ file_error $}
+                    </p>
+                    <!-- Multiple file upload rename -->
+                    <div ng-repeat="file in file_title_mapping" class="multiFileUpload clearfix">
+                        <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">                    
+                            <div class="fileDetails">
+                                <div class="multi-filename">{$ file.filename $}</div>
+                            </div><!-- /.file details -->
+                        </ng-form>
+                    </div>
+                    <input type="submit" value="{% trans "Update" %}" class="margin-top-20 brandBtnColor" ng-click="save(content, uploadForm)" ng-disabled="uploadForm.$invalid || uploadForm.$pristine || actual_files.length === 0 || working">
+                </form>
+
+            </div>
+
+            <div class="row" ng-if="!user.isAdmin()">
+                <section class="hubWarning clearfix ng-scope">
+                    <div class="clearfix" style="text-align:center;">
+                        <p>{% trans "You are not authorized to view this page." %}</p>
+                        <a href="/#">{% trans "Home" %}</a>
+                    </div><!-- /.clearfix -->
+                <section>
+            </div>
+        </section>
+
+        <div class="centerText" ng-if="user.is_authenticated === false">
+            <ng-include src="'/angularpartials/teacheradmin/noauth.html'"></ng-include>
+        </div>
+
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

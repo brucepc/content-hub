@@ -1,0 +1,68 @@
+{% load i18n %}
+<!--- USB IMPORT MARK OUT -->
+<section class="row mainContent">
+
+    <style>
+        .no_checkbox > .jstree-checkbox {
+            display: none;
+        }
+        
+        .hide_my_checkbox > .jstree-checkbox{
+            display: none;
+        }
+
+    </style>
+    <div class="single col-l12">
+        <section class="manageArea usbUpload clearfix">
+            <h1 class="margin-tb-20">{% trans "USB/SD Import" %}</h1>
+            <div class="margin-bottom-20">{% trans "Import multiple files into My Uploaded Content library" %}</div>
+
+            <div usbtree id="usb_browser" ng-show="!working" class="margin-bottom-20">{% trans "Please Wait..." %}</div>
+            <input type="button" value="{% trans "Reload" %}" ng-click="reload_page()" class="margin-bottom-20 brandBtnColor brandBtnHoverColor" ng-disabled="reload_disabled">
+            <!--<input type="button" value="{% trans "Add Metadata" %}" ng-click="toggleMetadata()">-->
+            <!-- Multiple file upload rename -->
+            <div class="usb-meta-container" ng-show="show_meta">
+
+                <div ng-repeat="file in file_title_mapping" class="multiFileUpload clearfix">
+                    <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">
+                        <div class="fileDetails">
+                            <form>
+                                <div class="multi-filename">{$ file.filename $}</div>
+                                <input name="title" ng-model="file.title" placeholder="{% trans " title" %}" maxlength="{$ FIELD_VAL.contentItemMax $}" ng-maxlength="{$ FIELD_VAL.contentItemMax $}" type="text" required>                
+                                <p ng-if="addFiles.title.$error.required && addFiles.title.$dirty" class="errorlist">{% trans "This field is required." %}</p>
+                            {% trans "{$ FIELD_VAL.contentItemMax $}" as maxchars %}
+                                <p ng-if="addFiles.title.$error.maxlength && addFiles.title.$dirty" class="errorlist">{% blocktrans %}The maximum length of title is {{ maxchars }}.{% endblocktrans %}</p>
+                            </form>
+                        </div><!-- /file details -->
+                        <div class="uploadcomplete-{$ file.uploaded $}"><img src="../static/images/ajax_loader_blue_32.gif"><span class="fa fa-times"></span></div>
+                    </ng-form>
+                </div>
+                <h3 class="margin-bottom-7">{% trans "Description" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></h3>
+                <form>
+                <textarea cols="40" id="id_description" name="description" ng-model="content.description" placeholder="{% trans "Description" %}" rows="7" class="margin-bottom-20"></textarea>
+                </form>
+                <div ng-controller="TagCtrl" ng-init="init()" class="margin-bottom-20">
+                    <h3>{% trans "Tags" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></h3>
+                    <tags-input name="tags" ng-model="content.tags" on-tag-added="addTag($tag)" min-length="1" max-length="25" placeholder="{% trans "Tags" %}">
+                        <auto-complete source="lookupTag($query)"></auto-complete>
+                    </tags-input>
+                </div>
+
+                <h3 class="margin-bottom-7">{% trans "Category" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></h3>
+
+                <div categoryhierarchy onselect="selectCategory" ondeselect="clearCategory" id="cat_hierarchy_sidebar" class="margin-bottom-20">{% trans "Please Wait..." %}</div>
+            </div>
+            <input type="button" value='{% trans "Import" %}' class="brandBtnColor brandBtnHoverColor" ng-click="submitUSB()" ng-disabled="!tree_ready || working">
+            <div ng-show="upload_error">{$ error_message $}</div>
+            <div class="common_metadata_warning margin-top-20" ng-if="actual_files.length > 1">
+                <span class="meta_asterix">*</span>
+                {% trans "Common metadata applied to all items (excludes IMS packages)." %}
+            </div>
+
+
+        </section>
+    </div>
+</section><!-- end mainContent row -->
+
+
+

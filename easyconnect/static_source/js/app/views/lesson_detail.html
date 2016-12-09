@@ -1,0 +1,32 @@
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+    <!-- LESSON LISTINGS -->
+    <div class="col-l12 detailView">
+
+        <div class="clearfix titleBar">
+            <ul class="breadCrumbs">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#lessons">Lessons</a>
+
+                </li>
+                <li ng-bind="lesson.title"></li>
+            </ul>
+
+            <h1 class="left detailTitle" editable-text="lesson.title" e-form="editForm" e-required e-maxlength="100" onaftersave="update(lesson, editForm)" ng-bind="lesson.title"></h1>
+            <a name='lessonEdit' ng-if="user.is_authenticated && isTeacher()" class="icon-title-edit" ng-click="editForm.$show()" ng-hide="editForm.$visible"><span class="intelicon-edit"></span></a>
+            <ul ng-if="user.is_authenticated && isTeacher()" class="right singleLine">
+
+                <li><a name='lessonDelete' class="delete batchBtn" ng-click="remove(lesson)"><span class="intelicon-trash-outlined"></span>Delete This Lesson</a></li>
+                <li><a name='itemRemoveFromLessonBatch' ng-disabled="!checkedItems || checkedItems.length === 0" ng-click="removeItems()" class="batchDelete batchBtn"><span class=”.intelicon-minus-solid”></span>Remove from this lesson</a></li>
+            </ul>
+        </div>
+        <!-- end lessonBar -->
+
+        <section contentitems="lesson.members" user="user" is-teacher="isTeacher" checked-items="checkedItems"></section>
+    </div>
+    <!-- end detailView -->
+</section>
+<!-- end mainContent row -->

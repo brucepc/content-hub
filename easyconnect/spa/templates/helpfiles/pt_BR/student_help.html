@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guia Ajuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>Início</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">O que é conteúdo destacado?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Aulas</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">O que é uma aula?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Biblioteca</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">O que é a biblioteca?</a></li>
+				<li><a href="#library2">Não consigo ver minha biblioteca</a></li>
+				<li><a href="#library3">Como acessar os conteúdos</a></li>
+				<li><a href="#library4">Como utilizar categorias como filtros</a></li>
+				<li><a href="#library5">O que é uma nuvem de tags e como utilizá-la?</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>Como utilizar o planejamento de aulas do Content Hub</h1>
+
+			<h2>Início</h2>
+			<div class="howto" id="home1">
+				<h3>O que é conteúdo destacado?</h3>
+				<p>Os itens destacados ressaltam a aula e o conteúdo da biblioteca que são importantes para mostrar a si mesmo assim que chegam na página inicial do planejamento de aulas. Isto lhe proporciona uma maneira rápida de encontrar o que é importante naquele dia.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Aulas</h2>
+			<div class="howto" id="lessons1">
+				<h3>O que é uma aula?</h3>
+				<p>Aulas são conjuntos de conteúdos educacionais agrupados para ensinar sobre um assunto ou aula específica.</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Biblioteca</h2>
+
+			<div class="howto" id="library1">
+				<h3>O que é a biblioteca?</h3>
+				<p>A página Biblioteca exibe os conteúdos que seu professor carregou ou que estavam pré-carregados no dispositivo.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>Não consigo ver minha biblioteca</h3>
+				<p>Os professores podem ocultar a biblioteca aos alunos. Se você precisar acessar a biblioteca e não puder vê-la, peça para seu professor habilitá-lo.</p>
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>Como acessar os conteúdos</h3>
+				<p>Você pode acessar os itens de conteúdo clicando no título. Dependendo do tipo de arquivo e da configuração de seu navegador, o arquivo será aberto em uma nova guia ou seu navegador fará o download do arquivo.</p>
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>Como aplicar filtros</h3>
+				<p>Os filtros da biblioteca são um conjunto de critérios que podem ser aplicados juntos ou individualmente para filtrar o conjunto de resultados.</p>
+				<p>Você pode utilizar a caixa de pesquisa para um filtro baseado em texto.</p>
+				<p>É possível filtrar por Categoria. </p>
+				<p>É possível filtrar por Tag.</p>
+				<p>Uma vez adicionado, o critério aplicado pode ser removido.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao início</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>O que é uma nuvem de tags e como utilizá-la?</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />A nuvem de tags exibe as tags usadas com mais frequência no conteúdo da biblioteca. Quanto mais vezes uma tag for aplicada aos conteúdos, maior será o tamanho da tag exibida na nuvem de tags. A nuvem de tags é um modo fácil de pesquisar conteúdos por tags aplicadas a esses conteúdos e também um modo fácil para ver quais tipos de tags são mais comuns em seus conteúdos.</p>
+				<a href="#" class="scrollup">Voltar ao início</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

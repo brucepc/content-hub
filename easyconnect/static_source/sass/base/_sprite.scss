@@ -1,0 +1,173 @@
+/* icon sprite image background posisitions */
+.ui-dialog .mediaIcon{
+  float:left;
+}
+.mediaIcon {
+  height: 36px;
+  width: 29px;
+  background-image: url('../images/icon-sprite.png');
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+// .3gp - can't make classes that start with numbers
+// .3gp background position: -50px -800px;
+  &.ai  {
+    background-position: -250px -800px;
+  }
+  &.apk {
+    background-position: -400px -200px;
+  }
+  &.avi  {
+    background-position: -450px -400px;
+  }
+  &.bmp {
+    background-position: -500px -200px;
+  }
+  &.css {
+    background-position: -600px -200px;
+  }
+  &.dir  {
+    background-position: -550px -700px;
+  }
+  &.dll  {
+    background-position: -350px -400px;
+  }
+  &.dmg  {
+    background-position: -550px -400px;
+  }
+  &.doc {
+    background-position: -550px -600px;
+  }
+  &.docx {
+    background-position: -645px -600px;
+  }
+  &.eps {
+    background-position: -690px -200px;
+  }
+  &.exe {
+    background-position: -250px -400px;
+  }
+  &.generic  {
+    background-position: -150px -400px;
+  }
+  &.fla {
+    background-position: -690px -100px;
+  }
+  &.gif  {
+    background-position: -735px -700px;
+  }
+  &.gz  {
+    background-position: -150px -900px;
+  }
+  &.gzip  {
+    background-position:-50px -900px;
+  }
+  &.html  {
+    background-position:-450px -800px;
+  }
+  &.indd {
+    background-position: -735px -800px;
+  }
+  &.iso {
+    background-position: -500px -300px;
+  }
+  &.jpeg {
+    background-position: -690px -300px;
+  }
+  &.jpg {
+    background-position: -600px -300px;
+  }
+  &.js  {
+    background-position: -350px -700px;
+  }
+  &.midi  {
+    background-position: -645px -800px;
+  }
+  &.mov  {
+    background-position: -250px -600px;
+  }
+  &.mpeg  {
+    background-position: -350px -800px;
+  }
+  &.mp3{
+    background-position: -150px -600px;
+  }
+  &.mp4{
+    background-position: -250px -500px;
+  }
+  &.otf  {
+    background-position: -645px -400px;
+  }
+  &.pdf {
+    background-position: -150px -500px;
+  }
+  &.php {
+    background-position: -400px -100px;
+  }
+  &.png {
+    background-position: -400px -300px;
+  }
+  &.ppt {
+    background-position: -50px -500px;
+  }
+  &.pptx {
+    background-position: -450px -600px;
+  }
+  &.psd {
+    background-position: -600px -100px;
+  }
+  &.pub  {
+    background-position:-645px -700px;
+  }
+  &.rar  {
+    background-position:-50px -400px;
+  }
+  &.rtf  {
+    background-position: -735px -400px;
+  }
+  &.svg {
+    background-position:-500px -100px;
+  }
+  &.swf  {
+    background-position: -150px -800px;
+  }
+  &.tar  {
+    background-position: -735px -600px;
+  }
+  &.tiff  {
+    background-position:-550px -800px;
+  }
+  &.txt {
+    background-position: -50px -700px;
+  }
+  &.url  {
+    background-position: -150px -700px;
+  }
+  &.wav  {
+    background-position: -350px -600px;
+  }
+  &.wma  {
+    background-position: -250px -700px;
+  }
+  &.xls {
+    background-position: -350px -500px;
+  }
+  &.xlsx {
+    background-position: -450px -500px;
+  }
+  &.xml {
+    background-position: -450px -700px;
+  }
+  &.zip {
+    background-position: -50px -600px;
+  }
+}
+// .lesson {
+//   height: 47px;
+//   width: 53px;
+//   background-image: url('../images/icon-sprite.png');
+//   background-repeat: no-repeat;
+//   padding: 0;
+//   margin: 0;
+//   background-position: -600px -500px;
+//   }

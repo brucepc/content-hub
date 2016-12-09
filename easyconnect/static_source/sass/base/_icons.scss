@@ -1,0 +1,47 @@
+$icon-linkedin-x : 0px;
+$icon-linkedin-y : 0px;
+$icon-linkedin-width : 40px;
+$icon-linkedin-height : 40px;
+$icon-linkedin-image : '../img/icons.png';
+$icon-news-x : -41px;
+$icon-news-y : 0px;
+$icon-news-width : 40px;
+$icon-news-height : 40px;
+$icon-news-image : '../img/icons.png';
+$icon-twitter-x : 0px;
+$icon-twitter-y : -41px;
+$icon-twitter-width : 40px;
+$icon-twitter-height : 40px;
+$icon-twitter-image : '../img/icons.png';
+
+.icon-linkedin {
+  background-image: url(../img/icons.png);
+  background-position: 0px 0px;
+  width: 40px;;
+  height: 40px;
+}
+.icon-news {
+  background-image: url(../img/icons.png);
+  background-position: -41px 0px;
+  width: 40px;;
+  height: 40px;
+}
+.icon-twitter {
+  background-image: url(../img/icons.png);
+  background-position: 0px -41px;
+  width: 40px;;
+  height: 40px;
+}
+
+[class^="icon-"],
+.icon{
+  display: inline-block;
+  border: none;
+  overflow: hidden;
+  vertical-align: middle;
+  &:before{
+    vertical-align: bottom;
+    display: inline-block;
+    content: '';
+  }
+}

@@ -1,0 +1,37 @@
+
+/*  Browse Drawer */
+.browseArea {
+  display: block !important;
+  position: relative;
+  padding: 0 !important;// when large
+  margin: 0 !important; // when large
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-bottom: 0;
+  cursor: default !important;
+   .browseDrawer {
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+    margin: 10px 0 0 0;
+  }
+  #browseToggle {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+        > span {
+      display: none;
+      background: none;
+    }
+      h1 {
+      padding: 0 0 10px 0;
+      cursor: default;
+      }
+      &:hover {
+      background-color: transparent;
+      }
+}
+  }

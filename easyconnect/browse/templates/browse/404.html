@@ -1,0 +1,19 @@
+{% extends 'browse/base.html' %}
+{% load staticfiles %}
+{% load browse_extras %}
+{% block title %}{{block.super}}: Lessons{% endblock %}
+
+{% block body %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+
+{% url 'lessons' as the_url %}
+
+<div class="noresults">
+    <span>
+    <p>The page you were looking for could not be found</p>
+        <p>Try using the search field or navigation above or return to the <a class="navHome" href="{% url 'index' %}">home page</a>.</p>
+    </span>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!-- COURSE LISTINGS -->
+        <div class="listingsArea col-l9">
+            <section class="listing">
+                <div class="topListing">
+                    <div class="dropMenu showDrop"> <!-- Show all Content -->
+                        <form name="showContent" action="" method="">
+                            <select name="Show Content">
+                                <option>Show All Content</option>
+                                <option value="Content1">Content 1</option>
+                                <option value="Content2">Grade 2</option>
+                            </select>
+                        </form>
+                    </div><!-- end show all content dropdown -->
+                    {% if page.object_list %}        
+                        <h1>Showing {{ page.start_index }} - {{ page.end_index }} of {{ paginator.count }} results</h1>
+                    </div><!-- end topListing div for title and dropdowns -->
+                    {% for teacheritem in page.object_list %}
+                        {% with lesson=teacheritem.object|default:teacheritem %}
+                        {% if lesson.id %} {# An extra, empty, result gets added when you're logged in. This check is to stop it showing up. #}
+                        <img class="mediaIcon" src="{% static 'images/media-icon-ppt.png' %}" alt="type of media" />
+                        <div class="listingInfo">
+                            <h1 class="listingTitle"><a href="{% url 'group-detail' lesson.id %}">{{ lesson.title }}</a></h1>
+                            <p>{{ lesson.description | default:"No description" }}</p>
+                            <p class="added">Added <time>{{ lesson.date_added | date:"d/m/Y H:i" }}</time>&nbsp;&nbsp; &#124; &nbsp;&nbsp;&nbsp;&nbsp;<span class="size">{{ lesson.file_size | filesizeformat }}</span></p>
+                            <ul class="listingIcons">
+                                {% if user.is_authenticated  and request.session.viewType == "teacher" %}
+                                <li><a class="feature" href="{% url 'feature' lesson.id %}"></a></li>
+                                <li><a class="edit" href="{% url 'edit' lesson.id %}"></a></li>
+                                <li><a class="delete" href="{% url 'delete' lesson.id %}"></a></li>
+                                {% endif %}
+                            </ul>
+                        </div><!-- end listingInfo -->
+                        {% endif %}
+                        {% endwith %}
+                    {% endfor %}
+                </section><!-- end listing -->
+            </div><!-- end listings Area -->
+            {% load ec_paginator %}
+            {% ec_paginator %}
+                        
+                    {% else %}
+                    <p> No results</p>
+                    </section><!-- end listing -->
+            </div><!-- end listings Area -->
+                    {% endif %}

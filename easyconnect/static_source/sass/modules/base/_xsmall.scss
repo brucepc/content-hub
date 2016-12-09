@@ -1,0 +1,197 @@
+html, body, #container, .container { 
+  height: 100%; 
+}
+#container, .container { 
+  height: auto; 
+  min-height: 100%; 
+  position: relative;
+}
+body{
+  min-width: 320px;
+  font-family: $primaryFont;
+  color: $brandGray;
+  /*
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+  */
+// }
+a, .ui-widget-content a{
+   color: $brandDividerBlue;
+}
+}
+.invisible{
+  opacity: 0;
+}
+.center{
+  margin: 0 $padding/2;
+}
+body .left{
+  float: left;
+}
+body .right{
+  float: right;
+}
+html[dir=rtl] .left{
+  float: right;
+}
+html[dir=rtl] .right{
+  float: left;
+}
+img{
+  max-width: 100%;
+}
+.row{
+display: block;
+width: 100%;
+*min-width: 100%;
+@extend .clearfix;
+ }
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+  clear:both;
+  *zoom: 1; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+  .row.collapse > .column,
+  .row.collapse > .columns {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    float: left; }
+  .row.collapse .row {
+    margin-left: 0;
+    margin-right: 0; }
+  .row .row {
+    width: auto;
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+    *zoom: 1; }
+    .row .row:before, .row .row:after {
+      content: " ";
+      display: table; }
+    .row .row:after {
+      clear: both; }
+    .row .row.collapse {
+      width: auto;
+      margin: 0;
+      max-width: none;
+      *zoom: 1; }
+      .row .row.collapse:before, .row .row.collapse:after {
+        content: " ";
+        display: table; }
+      .row .row.collapse:after {
+        clear: both; }
+.unstyled{
+  margin: 0;
+  padding: 0;
+}
+.padding{
+  display: block;
+  margin: $padding;
+  @extend .clearfix;
+}
+.full{
+  width: 100%;
+}
+.full-width{
+  position: relative;
+  margin-left: (-$padding * 2) - $padding;
+  right: -$padding - $padding/2;
+  zoom: 1;
+  width: auto;
+  display: block;
+  padding: 0 $padding;
+}
+.full-width-nopadding{
+  @extend .full-width;
+  margin-left: -$padding;
+  right: -$padding/2;
+}
+.only-s,
+.only-m,
+.only-l{
+  display: none !important;
+}
+.only-xs{
+  display: block !important;
+}
+
+.space-top{
+  margin-top: $padding;
+}
+.space-bottom{
+  margin-bottom: $padding;
+}
+.space-left{
+  margin-left: $padding;
+}
+.space-right{
+  margin-right: $padding;
+}
+
+.no-margin-top{
+  margin-top: 0;
+}
+.no-margin-bottom{
+  margin-bottom: 0;
+}
+.no-margin-left{
+  margin-left: 0;
+}
+.no-margin-right{
+  margin-right: 0;
+}
+
+.neg-top{
+  margin-top: -$padding;
+}
+.neg-bottom{
+  margin-bottom: -$padding;
+}
+.neg-left{
+  margin-left: -$padding;
+}
+.neg-right{
+  margin-right: -$padding;
+}
+.uploadArea {
+  max-width:400px;
+  margin:40px auto 85px ;
+}
+body .mainContent {
+  padding-bottom:40px!important;
+}
+.margin-top-10{
+  margin-top:10px!important;
+}
+.margin-top-20{
+  margin-top:20px!important;
+}
+.margin-bottom-10{
+  margin-bottom:10px;
+}
+.margin-bottom-15{
+  margin-bottom:15px;
+}
+.margin-bottom-7{
+  margin-bottom:7px;
+}
+.margin-left-0{
+  margin-left:0!important;
+}
+
+.disabled{
+  cursor:default!important;
+}

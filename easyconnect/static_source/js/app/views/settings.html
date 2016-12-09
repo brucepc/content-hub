@@ -1,0 +1,17 @@
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <div class="row">
+                <a href="/usb" target="_blank">USB Import</a>
+            </div>
+            <div class="row">
+                <input type="checkbox" ng-checked="internet" ng-click="toggleInternet()"/> Internet Access
+            </div>
+            <div ng-if="user.is_authenticated && isTeacher()" class="row">
+                <input type="checkbox" ng-checked="libhidden" ng-click="toggleLibrary()"/> Library Hidden
+            </div>
+                                    
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

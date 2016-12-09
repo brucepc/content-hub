@@ -1,0 +1,176 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+
+<div name='category-edit-dialog' id="editCategory" style="display:none" title="Edit category title">
+    <form>
+        <input type="text" name="name" autocomplete="off" id="name">
+    </form>
+</div>
+
+<div name='category-delete-confirm' id="delete-confirm" style="display:none" title="Delete confirmation">
+    <p>Are you sure you wish to delete this category? Any sub-categories will also be deleted!</p>
+</div>
+
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <h1 class="headingMargin">Add Category</h1>
+            <form method="post" class="addCategoryForm clearfix" action="{% url 'add-category' %}">
+                {% csrf_token %}
+                <ul>
+                    {{ add_category_form.as_ul }}
+                </ul>
+                <input type="submit" value="Create" />
+            </form>
+            {% if request.GET.deptherror %}
+                <p style="color:red;">Error creating category. Maximum 3 levels allowed.</p>
+            {% endif %}
+            {% if request.GET.nameerror %}
+                <p style="color:red;">Error creating category. Invalid name.</p>
+            {% endif %}
+            <h1 class="headingMargin">Existing Categories</h1>
+            <p>
+            {% for category in categories|dictsort:"name" %}
+                <div itemid='{{ category.pk }}' class="categoryTable">
+                    <span class="categoryRow category1" itemid='{{ category.pk }}' style='display:block'><span name='text'>{{ category.name }}</span><span name='uses'> ({{ category.uses }})</span> <a name='categoryDelete' class="categoryDelete">delete</a><a name='categoryEdit' class="categoryEdit">edit</a> </span>
+                    {% for subcategory in category.children|dictsort:"name" %}
+                        <div itemid='{{ subcategory.pk }}' >
+                            <span  class="categoryRow category2" itemid='{{ subcategory.pk }}' style='display:block'><span name='text'>{{ subcategory.name }}</span><span name='uses'> ({{ subcategory.uses }})</span> <a name='categoryDelete' class="categoryDelete">delete</a><a name='categoryEdit' class="categoryEdit">edit</a> </span>
+                            {% for subsubcategory in subcategory.children|dictsort:"name" %}
+                                <div itemid='{{ subsubcategory.pk }}'>
+                                    <span class="categoryRow category3" itemid='{{ subsubcategory.pk }}' style='display:block'><span name='text'>{{ subsubcategory.name }}</span><span name='uses'> ({{ subsubcategory.uses }})</span> <a name='categoryDelete' class="categoryDelete">delete</a><a name='categoryEdit' class="categoryEdit">edit</a> </span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% empty %}
+                No categories yet
+            {% endfor %}
+            </p>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->
+    <!--<a href="{% url 'manage-index' %}"> back </a>-->
+
+{% endblock body %}
+
+{% block more_js %}
+
+<script>
+$(document).ready(function() {
+// Deleting single category
+
+    $( "div[name=category-delete-confirm]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+    });
+
+    $("a[name=categoryDelete]").click(function(event) {
+
+        $("div[name=category-delete-confirm]").dialog('option', 'buttons', {
+
+            "Delete": function() {
+
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                // Attempt delete
+                var selector = $(event.target);
+                var additional_data = {};
+                var item_id = selector.parents('span').attr('itemid');
+
+                itemAJAXRequest(item_id, '{% url "categories-delete" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        $('div[itemid='+item_id+']').fadeOut('slow');
+						$('#id_parent > option[value=' + item_id + ']').remove();
+                        messageToUser('Category deleted');
+                    } else {
+                        messageToUser('Category delete failed');
+                    }
+                });
+
+                return false;
+            }
+        });
+
+        $( "div[name=category-delete-confirm]" ).dialog( "open" );
+
+        return false;
+    });
+
+// Category edit modal
+    $( "div[name=category-edit-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        open: function(event, ui){
+            var n = $( "div[name=category-edit-dialog]" ).data('catName');
+            $( "div[name=category-edit-dialog]" ).find('input').val(n.html());
+        },
+        close: function(event, ui){
+            var n = $( "div[name=category-edit-dialog]" ).data('catName');
+            var val = $( "div[name=category-edit-dialog]" ).find('input').val();
+            //n.html(val);
+        }
+    });
+
+    $( "a[name=categoryEdit]" ).click(function(event) {
+
+        $( "div[name=category-edit-dialog]" ).dialog('option', 'buttons', {
+            "Rename category": function(){
+                // Close modal window
+                $(this).dialog( "close" );
+
+                // Create the category
+                var selector = $(event.target);
+                var item_id = selector.parents('span').attr('itemid');
+                var formdiv = $(this);
+                var name = formdiv.find( "form > input#name" ).val();
+                var additional_data = { new_name: name };
+
+                itemAJAXRequest(item_id, '{% url "categories-edit" %}', additional_data, function(response) {
+
+                    if (response['result'] === false){
+                        messageToUser('Category rename failed');
+                    } else {
+                        messageToUser('Category renamed');
+                        $('span[itemid='+ item_id +'] > span[name=text]').text(name);
+                        formdiv.find( "form > input#name" ).val('');
+                    }
+                });
+
+                return false;
+            },
+        });
+
+        var catName = $(this).siblings('[name="text"]');
+        $( "div[name=category-edit-dialog]" ).data('catName', catName);
+        $( "div[name=category-edit-dialog]" ).dialog( "open" );
+
+        return false;
+    });
+
+});
+</script>
+
+{% endblock more_js %}

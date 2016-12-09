@@ -1,0 +1,463 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guía de ayuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Página de inicio</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Explicación de las lecciones destacadas y del contenido de la biblioteca</a></li>
+			<li><a href="#home2">¿Cuántos contenidos puedo destacar en la página de inicio?</a></li>
+			<li><a href="#home3">Eliminar las lecciones destacadas y el contenido de la biblioteca de la página de inicio</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Lecciones</h2>
+		<ul class="tocNested">
+			<li><a href="#lessons1">¿Qué son las lecciones?</a></li>
+			<li><a href="#lessons2">Creación de una lección</a></li>
+			<li><a href="#lessons3">Incorporación de contenido a una lección</a></li>
+			<li><a href="#lessons4">Edición del nombre de una lección</a></li>
+			<li><a href="#lessons5">Eliminación de contenido en una lección</a></li>
+			<li><a href="#lessons6">Procedimiento para destacar una lección</a></li>
+			<li><a href="#lessons7">Eliminación de una lección</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Biblioteca</h2>
+		<ul class="tocNested">
+			<li><a href="#library1">¿Qué es la biblioteca?</a></li>
+			<li><a href="#library2">¿Cuál es la diferencia entre el contenido que viene precargado y el contenido que se carga?</a></li>
+			<li><a href="#library3">Administración de los contenidos</a>
+				<ul class="tocNested2">
+					<li><a href="#library3">Procedimiento para destacar contenido</a></li>
+					<li><a href="#library4">Editar información del contenido cargado</a></li>
+					<li><a href="#library5">Eliminar el contenido cargado</a></li>
+					<li><a href="#library6">Añadir contenido a una lección</a></li>
+					<li><a href="#library7">Mostrar y ocultar contenido a los alumnos</a></li>
+					<li><a href="#library8">Acceder al contenido</a></li>
+				</ul><!-- end tocNested2 -->
+			</li>
+			<li><a href="#library9">Cargar mi propio contenido</a></li>
+			<li><a href="#library10">Uso de las categorías como filtros</a></li>
+			<li><a href="#library11">¿Qué es una nube de etiquetas y cómo se utiliza?</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Configuraciones del profesor</h2>
+		<ul class="tocNested">
+			<li><a href="#settings1">Administración de las categorías</a></li>			
+			<li><a href="#settings2">Administración de las etiquetas</a></li>
+			<li><a href="#settings3">Importar desde USB</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">		
+
+
+		<h1>Uso del Planificador de lecciones de Content Hub</h1>
+
+		<h2>Página de inicio</h2>
+		<div class="howto" id="home1">
+			<h3>Explicación de las lecciones destacadas y del contenido de la biblioteca</h3>
+
+
+			<p>Los elementos destacados permiten brindar mayor relevancia a los contenidos de la lección y de la biblioteca, para así mostrarse cuando usted o sus alumnos acceden a la página de inicio del Planificador de lecciones. Esto permite que el usuario encuentre rápidamente lo importante de ese día. Al destacar lo relevante para los alumnos esa semana o ese día, se disminuye la necesidad de buscar a través de las lecciones o de las páginas de la biblioteca y pueden comenzar directamente el aprendizaje.</p>
+			<img src="/static/images/help-guide/home-view.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>¿Cuántos contenidos puedo destacar en la página de inicio?</h3>
+			<p>Puede destacar un número ilimitado de elementos en la página de inicio pero solamente se mostrarán 10 por vez. El usuario puede navegar a través de las distintas páginas si se destacan más de 10 elementos.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Eliminar las lecciones destacadas y el contenido de la biblioteca de la página de inicio</h3>
+			<p>Puede utilizar los iconos de estrellas amarillas dentro de la lección o del cuadro de contenidos para eliminarlos de la sección de destacados de su página de inicio. Una vez que haga clic en el icono, los elementos se eliminarán automáticamente de la página.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons1 -->
+
+		<h2>Lecciones</h2>
+		<div class="howto" id="lessons1">
+			<h3>¿Qué son las lecciones?</h3>
+			<p>Las lecciones son recopilaciones de contenidos educativos que crea para sus alumnos a partir de los contenidos de su biblioteca. La página de lecciones es el sitio en el que puede visualizar y administrar las lecciones que ha creado. En esta página, también puede crear una lección nueva, destacar una lección, o bien eliminar una o varias lecciones y editar sus nombres.</p>
+			<p>También puede destacar lecciones para que aparezcan en la página de inicio tanto del profesor como de los alumnos. Esto le permite dar mayor relevancia a las lecciones que está enseñando en ese momento.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="lessons2">
+			<h3>Creación de una lección</h3>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Haga clic en el botón <strong>Crear una nueva lección</strong> en el extremo superior derecho de la sección de contenidos.</li>
+				<li>Introduzca un nombre en el campo de texto <strong>Nombre de la lección</strong> y luego haga clic en <strong>Crear</strong>. Si no desea proceder con la creación de la lección, haga clic en el botón <strong>Cancelar</strong>.</li>
+			</ol>
+			<p>A continuación, aparece una ventana emergente que le indica que la lección se ha creado correctamente.</p>
+			<img src="/static/images/help-guide/what-are-lessons1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+<p>Las lecciones pueden ordenarse por <strong>fecha </strong>o por <strong>nombre</strong>.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons2 -->
+
+		<div class="howto" id="lessons3">
+			<h3>Incorporación de contenido a una lección</h3>
+			<p>Una vez que se ha creado la lección, puede añadirle contenido desde su biblioteca. </p>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Busque la lección en el listado para añadirle contenido.</li>
+<p></p>
+<img src="/static/images/help-guide/how-to-create-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+
+<p></p>
+
+
+				<li>Haga clic en el icono con el símbolo más que se encuentra debajo del nombre de cada lección. Esto lo llevará a la página de la biblioteca.</li>
+<li> Aquí podrá arrastrar y soltar contenidos a la lección desde el listado en la columna izquierda.</li>
+			</ol>
+<p></p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+			<p>Para añadir varios elementos desde la biblioteca a una lección de una sola vez, seleccione la casilla de cada elemento de la biblioteca de lecciones y haga clic en el botón <strong>Añadir a la lección</strong>.</p>
+<p>Una vez que haga clic allí, el botón se convertirá en un menú desplegable en donde podrá seleccionar la lección. Cuando haya seleccionado la lección, haga clic en el botón con el símbolo visto. Si desea cancelar el proceso en cualquier momento, haga clic en el botón <strong>X</strong>.</p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson2.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons3 -->
+
+		<div class="howto" id="lessons4">
+			<h3>Edición del nombre de una lección</h3>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Busque la lección en el listado para editarla.</li>
+				<li>Haga clic en el icono en forma de lápiz y aparecerá un campo de texto. Allí puede editar el nombre de la lección. Para guardar los cambios, haga clic en el icono con el símbolo visto. Para cancelar la edición en cualquier momento, simplemente haga clic en el botón <strong>X</strong>.</li>
+			</ol>
+			<p>También puede editar el nombre de una lección desde la página de información de la lección a través del icono del lápiz que se encuentra junto al título de la lección.</p> 
+			<img src="/static/images/help-guide/edit-lesson-name.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons4 -->
+
+		<div class="howto" id="lessons5">
+			<h3>Eliminación de contenidos de una lección</h3>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Busque la lección de la que quiere eliminar contenido en el listado.</li>
+				<li>Haga clic en el icono de la lección o el nombre para ir a la página de información de la lección.</li>
+				<li>Utilice la casilla que se encuentra a la derecha de los contenidos para seleccionar cuáles quiere eliminar.</li>
+				<li>Haga clic en el botón <strong>Eliminar de la lección</strong> en el extremo superior derecho de la sección de contenidos.</li>
+			</ol>
+			<img src="/static/images/help-guide/delete-cotent-in-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons5 -->
+
+		<div class="howto" id="lessons6">
+			<h3>Procedimiento para destacar una lección</h3>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Busque la lección que desde destacar en el listado.</li>
+				<li>Haga clic en el icono de la estrella debajo del nombre de la lección. Las estrellas amarillas indican que la lección se ha destacado, las grises indican que la lección no se ha destacado en ese momento.</li>
+			</ol>
+			<p>Una vez que se ha destacado una lección, esta aparecerá en la página de inicio tanto del profesor como de los alumnos.<p>
+			<img src="/static/images/help-guide/feature-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons6 -->
+
+		<div class="howto" id="lessons7">
+			<h3>Eliminación de una lección</h3>
+			<ol>
+				<li>Navegue hasta la página <strong>Lecciones</strong>.</li>
+				<li>Utilice la casilla que se encuentra debajo del nombre de la lección para seleccionar la que desea eliminar.</li>
+				<li>Haga clic en el botón <strong>Eliminar </strong> que se encuentra cerca del extremo superior derecho de la sección de contenidos.</li>
+			</ol>
+			<p>También puede eliminar una lección desde la página de información de la lección con el botón <strong>Eliminar la lección</strong> que se encuentra cerca del extremo superior derecho de la sección de contenidos.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto lessons7 -->
+
+		<h2>Biblioteca</h2>
+
+		<div class="howto" id="library1">
+			<h3>¿Qué es la biblioteca?</h3>
+			<p>La página Biblioteca muestra el contenido que ha cargado usted o que ya viene precargado. En esta página usted puede:</p>
+			<ul>
+				<li>buscar elementos por categorías o etiquetas;</li>
+				<li>editar la información relacionada con el contenido cargado;</li>
+				<li>añadir contenido a las lecciones;</li>
+				<li>eliminar contenido cargado;</li>
+				<li>cargar contenido;</li>
+				<li>destacar contenido;</li>
+				<li>mostrar y ocultar contenido a los alumnos.</li>
+			</ul>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library1 -->
+
+		<div class="howto" id="library2">
+			<h3>¿Cuál es la diferencia entre el contenido que viene precargado y el contenido que se carga?</h3>
+			<p>La aplicación puede incluir contenido educativo precargado, es decir, contenido educativo que se ha cargado antes de que la utilice el profesor o los alumnos. El fabricante del equipo o el Ministerio de Educación pueden cargar este contenido antes del envío a la escuela o establecimiento educativo para su utilización. El contenido precargado no se puede eliminar ni editar.</p>
+			<p>El contenido cargado es contenido que usted, como profesor, carga desde los archivos de su ordenador. Estos archivos pueden ser de cualquier tipo: documentos de Excel, documentos de Word, HTML, PDF, E-Pub, vídeo, imagen, etc. El contenido cargado se puede eliminar y editar.</p>
+			<img src="/static/images/help-guide/preloaded-uploaded-tabs.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library2 -->
+
+		<div class="howto" id="library3">
+			<h3>Administración de los contenidos</h3>
+			<h4>Destacar contenido</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Utilice el icono de la estrella que se encuentra a la derecha del elemento de la biblioteca que desea destacar. El color amarillo significa que el contenido se ha destacado, el gris indica que no.</li>
+			</ol>
+			<p>Este contenido aparecerá en la página de <strong>inicio</strong> con el título <strong>Contenido destacado</strong>.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library3 -->
+
+		<div class="howto" id="library4">
+			<h4>Editar información del contenido cargado</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Haga clic en la pestaña <strong>Contenido cargado</strong>.</li>
+				<li>Haga clic en el icono del lápiz que se encuentra junto al elemento de contenido que desea editar.</li>
+			</ol>
+			<p>Se lo redirigirá a un formulario con campos para editar el título, la descripción, las etiquetas y las categorías relacionados con ese contenido. Cuando haya terminado de editar, haga clic en <strong>Guardar</strong>.</p>
+			<img src="/static/images/help-guide/edit-content.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>			
+		</div><!-- end howto library4 -->
+
+		<div class="howto" id="library5">
+			<h4>Eliminar el contenido cargado</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Haga clic en la pestaña <strong>Contenido cargado</strong>.</li>
+				<li>Utilice la casilla que se encuentra a la derecha de los elementos de la biblioteca para seleccionar los elementos que desea eliminar.</li>
+				<li>Haga clic en el botón <strong>Eliminar</strong> que se encuentra a la derecha de la pestaña <strong>Mi contenido cargado</strong>.</li>
+			</ol>
+			<p>El contenido precargado no puede eliminarse, solamente se puede eliminar el que usted carga.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library5 -->
+
+		<div class="howto" id="library6">
+			<h4>Añadir contenido a una lección</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Utilice la casilla que se encuentra a la derecha de los elementos de la biblioteca para seleccionar los que desea añadir a una lección.</li>
+				<li>Utilice el menú desplegable <strong>Añadir a la lección</strong> que se encuentra a la derecha de la pestaña <strong>Mi contenido cargado</strong> para seleccionar la lección a la que desea añadir los contenidos. Cuando lo haya hecho, haga clic en el botón con el símbolo visto que se encuentra al lado.</li>
+<p></p>
+<img src="/static/images/help-guide/add-content-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+
+<li>Una vez que la lección esté visible en el cuadro de lecciones de la izquierda, podrá arrastrar y soltar contenidos de la biblioteca directamente en la lección.</li>
+</ol><p>
+Para añadir <strong>varios elementos de la biblioteca</strong> a una lección de una sola vez, seleccione la casilla para cada lección y haga clic en el botón <strong>Añadir a la lección</strong>.</p>
+<p>
+Una vez que haga clic allí, el botón se convertirá en un menú desplegable en donde podrá seleccionar la lección. Cuando haya seleccionado la lección, haga clic en el botón con el símbolo visto. Si desea cancelar el proceso en cualquier momento, haga clic en el botón <strong>X</strong>.</p>
+<p>Los elementos de la biblioteca se pueden filtrar con el menú de vista del árbol de categorías.</p>
+<p>Hay un límite de tres niveles de categorías. Todo el contenido que no esté categorizado se puede encontrar en la categoría “Sin categorizar”.</p> 
+
+<img src="/static/images/help-guide/adding-library-items-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			
+			<p>Puede añadir a las lecciones contenido precargado y contenido cargado por usted.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Mostrar y ocultar contenidos individuales</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Utilice el icono del ojo para ocultar el contenido a los estudiantes. Cuando el ojo esté tachado, el contenido estará oculto para los estudiantes.</li>
+			</ol>
+			<p>Si oculta contenido de los estudiantes, no podrán verlo en sus bibliotecas ni en las lecciones de las que forme parte.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Mostrar y ocultar la biblioteca a los alumnos</h4>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>. En el extremo inferior izquierdo verá la opción “¿Permitir que los alumnos accedan a la biblioteca?”.</li>
+				<li>Seleccione <strong>Sí</strong> o <strong>No</strong>.</li>
+			</ol>
+			<img src="/static/images/help-guide/hide-and-show-library.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library7 -->
+
+		<div class="howto" id="library8">
+
+			<h4>Acceder al contenido</h4>
+			<p>Para acceder a los contenidos, haga clic en el título. Según el tipo de archivo y la configuración de su navegador, el archivo se abrirá en una nueva pestaña o el navegador gestionará la descarga.</p>
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library8 -->
+
+		<div class="howto" id="library9">
+			<h3>Cargar mi propio contenido</h3>
+			<p>Puede cargar prácticamente cualquier tipo de archivo: &ndash; .jpg, .pdf, e-pub, documento de Word, documento de Excel, vídeo, audio, html y más.</p>
+			<ol>
+				<li>Navegue hasta la página <strong>Biblioteca</strong>.</li>
+				<li>Haga clic en el botón <strong>Cargar contenido</strong>.</li>
+<li> Seleccione Archivo y busque los archivos en su ordenador.
+				<li>Puede cargar varios archivos de una sola vez desde su ordenador. </li>
+<p>
+<img src="/static/images/help-guide\uploading-my-own-content-after-point-4.PNG" alt="Content Hub" class="imgBorder" /></p>
+				<li>El título de cada archivo se introducirá automáticamente en el campo de título. Este es el único campo obligatorio.</li>
+<li>Aquí también se añade Descripción, Categoría y Etiquetas.</li>
+<li>Introduzca una descripción en el campo correspondiente.</li>
+<li>Introduzca las etiquetas relevantes en el campo Etiquetas. Para introducir más de una, simplemente haga clic en la tecla Intro luego de cada palabra.</li>
+<li>Solo se puede seleccionar una categoría.</li>
+<li>Estos metadatos se aplicarán a todos los archivos cargados en ese momento (salvo los paquetes IMS).</li>
+<p></p>
+<p><img src="/static/images/help-guide/uploading-my-own-content-after-point-10.PNG" alt="Content Hub" class="imgBorder" /></p>
+<p></p>
+
+				<li>Cuando haya terminado de introducir la información, haga clic en <strong>Cargar</strong>.</li>
+<li>Los archivos que no estén categorizados aparecerán en la categoría “Sin categorizar”.</li>
+			</ol>
+			<img src="/static/images/help-guide/uploading-my-own-content-after-point-12.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto contentMan1 -->
+
+
+		<div class="howto" id="library10">
+			<h3>Aplicación de filtros</h3>
+<p>Los filtros de la biblioteca consisten en un conjunto de criterios que pueden aplicarse en su totalidad o individualmente para filtrar los resultados.</p>
+<p>Puede utilizar el cuadro de búsqueda para filtrar con palabras.</p>
+<p>Puede filtrar utilizando una Categoría. </p>
+<p>Puede filtrar utilizando una Etiqueta.</p>
+<p>Los criterios añadidos y aplicados se pueden eliminar.</p>
+<img src="/static/images/help-guide/library-search.png" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto library12 -->
+
+		<div class="howto" id="library11">
+			<h4>¿Qué es una nube de etiquetas y cómo se utiliza?</h4>
+			<p>La nube de etiquetas muestra una lista reducida de etiquetas que se han asignado a los contenidos. Las etiquetas son palabras descriptivas utilizadas para facilitar la búsqueda de contenido. La aplicación de etiquetas como “ciencia”, “ejercicio de laboratorio”, “alumnos de secundaria” y “pdf” le permitirá encontrar aquellos contenidos mediante la búsqueda de cualquiera de esos términos.</p>
+			<p>Cuanto más a menudo se aplique una etiqueta al contenido, mayor tamaño tendrá esta en la nube. La nube de etiquetas es un medio sencillo de búsqueda de contenido mediante etiquetas y de visualización del tipo de etiquetas más común en sus contenidos.</p>
+			<img src="/static/images/help-guide/what-are-tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>			
+		</div><!-- end howto library13 -->
+
+<h2>Configuraciones del profesor</h2>
+		<div class="howto" id="settings1">
+			<h3>Administración de las categorías</h3>
+			<p>Haga clic en el botón <strong>Administrar </strong> que se encuentra en el extremo superior derecho de la página. Seleccione <strong>Categorías</strong> en el menú desplegable.</p>
+			<h4>Añadir nueva categoría primaria</h4>
+			<ol>
+				<li>Haga clic en el botón <strong>Añadir nueva categoría primaria</strong>.</li>
+				<li>Especifique un nombre para la categoría.</li>
+				<li>Haga clic el botón con el símbolo visto para guardar su nueva categoría.</li>
+			</ol>
+			<h4>Añadir una categoría de segundo o tercer nivel</h4>
+			<ol>
+				<li>Haga clic en el icono <strong>+</strong> que se encuentra al lado de la categoría que desea que contenga su nueva subcategoría.</li>
+				<li>Especifique un nombre para la categoría.</li>
+				<li>Haga clic el botón con el símbolo visto para guardar su nueva categoría.</li>
+			</ol>
+			<h4>Editar el nombre de una categoría</h4>
+			<ol>
+				<li>Haga en el icono del lápiz que se encuentra al lado del nombre de la categoría que desea editar.</li>
+				<li>Especifique un nuevo nombre para la categoría.</li>
+				<li>Haga clic el botón con el símbolo visto para guardar su nueva categoría.</li>
+			</ol>
+			<h4>Eliminar una categoría</h4>
+			<ol>
+				<li>Haga clic en el icono del cubo de basura que se encuentra al lado del nombre de la categoría que desea eliminar.</li>
+				<li>Confirme que desea eliminar la categoría en la ventana emergente.</li>
+			</ol>
+			<p><strong>Tenga en cuenta que</strong> no puede eliminar una categoría si esta tiene contenido asignado o una subcategoría.</p>
+			<img src="/static/images/help-guide/categories-page.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto settings1 -->
+
+	<div class="howto" id="settings2">
+			<h3>Administración de las etiquetas</h3>
+			<p>Haga clic en el botón <strong>Administrar </strong> que se encuentra en el extremo superior derecho de la página. Seleccione <strong>Etiquetas</strong> en el menú desplegable.</p>
+			<h4>Editar una etiqueta</h4>
+			<ol>
+				<li>Haga clic en el icono del lápiz que se encuentra al lado del nombre de la etiqueta que desea editar (no se pueden eliminar las etiquetas del contenido precargado).</li>
+				<li>Especifique un nuevo nombre para la etiqueta.</li>
+				<li>Haga clic el botón con el símbolo visto para guardar su nueva etiqueta.</li>
+			</ol>
+			<h4>Eliminar una etiqueta</h4>
+			<ol>
+				<li>Haga clic en el icono del cubo de basura que se encuentra al lado del nombre de la etiqueta que desea eliminar.</li>
+				<li>Confirme que desea eliminar la etiqueta en la ventana emergente.</li>
+			</ol>
+			<p><strong>Tenga en cuenta que</strong> no puede modificar etiquetas asociadas con contenido precargado.</p
+			<img src="/static/images/help-guide/tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto settings2-->
+
+	<div class="howto" id="settings3">
+			<h3>Importar desde USB</h3>
+			<p>Haga clic en el botón <strong>Administrar </strong> que se encuentra en el extremo superior derecho de la página. Seleccione <strong>Configuraciones</strong> en el menú desplegable y luego seleccione <strong>Importar desde USB</strong>.</p>
+			<h4>Importar archivos desde un dispositivo USB</h4>
+			<ol>
+				<li>Utilice las fechas ubicadas del lado izquierdo para abrir las distintas carpetas del dispositivo USB.</li>
+				<li>Haga clic en la casilla ubicada a la izquierda del nombre del archivo para seleccionar lo que desea importar.</li>
+<li>Seleccione la carpeta de nivel superior si desea importar todos los archivos ubicados en ella (solamente se seleccionarán los archivos que se encuentran en la raíz de la carpeta, las subcarpetas y los archivos que ellas contengan no se añadirán).
+				<li>Haga clic en el botón <strong>Importar</strong> para comenzar a importar los archivos a su <strong>Biblioteca</strong>.</li>
+			</ol>
+			<h4>Notas</h4>
+			<ul>
+				<li>Se pueden importar varios archivos a la biblioteca <strong>Mi contenido cargado</strong>.</li>
+				<li>El título de cada archivo se basará en el nombre del archivo, y, si ese nombre ya existe, se cambiará con un nombre de archivo incremental.</li>
+<li><strong>Tenga en cuenta que</strong> aquí también se añade la información para los campos Descripción, Categoría y Etiquetas. Estos metadatos se aplicarán a todos los archivos cargados en ese momento (salvo los paquetes IMS).</li> 
+				
+
+<li>Los metadatos se pueden actualizar en archivos individuales a través de la función Editar información de contenido, dentro de la biblioteca.</li>				
+				<li>No se puede importar carpetas.</li>
+				<li>Cuando haya terminado de introducir la información, haga clic en <strong>Importar</strong>.</li>
+			</ul>
+			<img src="/static/images/help-guide/usb-	import1.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Volver al inicio</a>
+		</div><!-- end howto settings2-->
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

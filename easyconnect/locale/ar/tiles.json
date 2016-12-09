@@ -1,0 +1,14 @@
+
+[ { "image" : "",
+    "noauth" : true,
+    "title" : "مخطط الدروس",
+    "url" : "/lessonplanner/",
+	"type" : "fa fa-book"
+  },
+  { "image" : "",
+    "noauth" : false,
+    "title" : "إعدادات الجهاز",
+    "url" : "/devicesettings/",
+  "type" : "fa fa-cogs"
+  }
+]

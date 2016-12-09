@@ -1,0 +1,7 @@
+<ul ng-if="model.previous || model.next" class="pagination" style="float:left;">
+    <li ng-if="model.previous === null" class="unavailable widePagination"><span class="chevron">&laquo;</span> Prev</li>       
+    <li ng-if="model.previous !== null" class="widePaginationLink"><a ng-click="pagefn(model.current_page - 1)"><span class="chevron">&laquo;</span> Prev</a></li>
+    <li ng-repeat="n in [] | range : model.page_total" ng-class="{'current' : model.current_page === n + 1}"><a ng-click="pagefn(n + 1)" ng-bind="n + 1"></a></li>
+    <li ng-if="model.next === null" class="unavailable widePagination">Next <span class="chevron">&raquo;</span></li>       
+    <li ng-if="model.next !== null" class="widePaginationLink"><a ng-click="pagefn(model.current_page + 1)" >Next <span class="chevron">&raquo;</span></a></li>       
+</ul>

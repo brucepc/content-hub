@@ -1,0 +1,28 @@
+{% load i18n %}
+    <div ng-if="lessons.count > 0" class="grid-l5 grid-m4 grid-s3 grid-xs-2 lessonGrid clearfix">
+            <div class="LessonItems" ng-class="{ 'checkedLesson' : checkedLessons.indexOf(lesson) > -1 }" ng-repeat="lesson in lessons.results">
+                <a ng-href="#lessons/{$ lesson.id $}?next={$ $location.path() $}" class="lessonIcon"><span class="fa fa-book brandBtnColor brandBtnHoverColor"></span></a>
+                <a ng-href="#lessons/{$ lesson.id $}?next={$ $location.path() $}" class="lessonName" editable-text="lesson.title" e-form="editForm" e-class="inline-edit-form" e-required e-maxlength="{$ FIELD_VAL.lessonMax $}" onbeforesave="validate(lesson, $data)" onaftersave="update(lesson, editForm)" ng-bind="lesson.title"></a>
+                <ul class="listingIcons" ng-class="{'homeIcons' : $location.path() == '/'}" ng-show="user.isTeacher() && !editForm.$visible">
+                    <li><a name="lessonFeature" fade='true' ng-click="featuretoggle($event, lesson)" ng-disabled="working" class="feature tooltip tooltipstered" ng-class="{'on' : lesson.featured}" id="{$ lesson.id $}" rel="tooltip" title="{$ lesson.featured ? '{% trans 'Remove from Featured Lessons' %}' : '{% trans 'Add to Featured Lessons' %}' $}"><span class="fa fa-star"></span></a></li>
+                    <li><a name='lessonEdit' ng-click="editForm.$show()" title="{% trans 'Edit Lesson Title' %}" ><span class="fa fa-pencil"></span></a></li>
+                    <li><a name='lessonAdd' ng-href="#/library/?&amp;lesson={$ lesson.id $}" title="{% trans 'Add Content' %}"><span class="fa fa-plus"></span></a></li>
+                    <li ng-click="checkedtoggle(lesson)"><input type="checkbox" ng-hide="$location.path() == '/'" name="selectedlessons[]" ng-checked="checkedLessons.indexOf(lesson) > -1" value="{$ lesson.id $}"/></li>
+                </ul>
+            </div>
+    </div><!-- /end featuredLessons -->
+    <div pager model="lessons" pagefn="page"></div>
+    <div class="nocontentMessage" ng-show="lessons.count == 0">
+        <span ng-if="$location.search()['search'].length == null">
+            <p>{$ $location.path().indexOf('/lessons') === 0 ? '{% trans "No lessons created" %}' : '{% trans "No lessons featured" %}' $}</p>
+            <p ng-if="user.isTeacher() && $location.path() == '/'">{% trans "Featured lessons will appear here" %}</p>
+            <p ng-if="user.isTeacher()"><a href="#lessons?createlesson">{% trans "Create a new lesson" %}</a></p>
+            <p ng-show="!user.isTeacher() && $location.path() == '/'">{% blocktrans %}Please check your <a href="#lessons">lesson listings</a>{% endblocktrans %}</p>
+        </span>
+        <span ng-if="$location.search()['search'].length != null">
+            <p></p>
+            <p>{% trans "Your search returned no results, please try another search." %}</p>
+            <br/>
+        </span>
+    </div>
+ 

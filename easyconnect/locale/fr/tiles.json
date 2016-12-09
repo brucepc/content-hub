@@ -1,0 +1,14 @@
+
+[ { "image" : "",
+    "noauth" : true,
+    "title" : "Planificateur de leçons",
+    "url" : "/lessonplanner/",
+	"type" : "fa fa-book"
+  },
+  { "image" : "",
+    "noauth" : false,
+    "title" : "Paramètres du périphérique",
+    "url" : "/devicesettings/",
+  "type" : "fa fa-cogs"
+  }
+]

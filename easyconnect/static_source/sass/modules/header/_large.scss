@@ -1,0 +1,30 @@
+// LOGO large size version logo 
+#mainLogo {
+  margin: 0; // logo to touch edge of row
+}
+
+// actions links
+.navLinks {
+  li.actions {
+    right: 0px !important;
+  }
+}
+header {
+  width: 100%;
+  padding: 0;
+ //background: url('../images/header-bg.png') no-repeat -500px -5px #0071c5;
+  }
+.row.headerContent {
+  //background: url('../images/header-bg-die.png') no-repeat right -5px;
+}
+
+
+
+// grey box area to touch edge of row
+.breadcrumb {
+  margin: 0 !important;
+}
+// Search box to touch edge of row
+.searchTop {
+  margin-right: 0 !important;
+}

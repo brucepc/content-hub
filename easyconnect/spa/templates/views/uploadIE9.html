@@ -1,0 +1,48 @@
+{% load i18n %}
+<section class="row mainContent" ng-cloak>
+
+    <!--UPLOAD AREA -->
+    <div class="single col-l12">
+        <section class="uploadArea clearfix">
+            <div class="clearfix">
+                <h1 class="left">{% trans "Upload Content" %}</h1>
+                <a href='#usb' class="right" style="font-size:0.75rem; line-height:2.9;">{% trans "USB/SD Import" %}</a>
+            </div>
+            <form method="POST" name="uploadForm" enctype="multipart/form-data" novalidate="true">
+                <div class="uploadFileInfo">
+                    <input id="fileupload" type="file" name="content_file" ng-model="content_file">
+                    <div class="mediaIcon {$ filename | get_extension $}"></div>
+                </div>
+                <p ng-if="fileErrors.length > 0" ng-repeat="file_error in fileErrors" class="errorlist">
+                    {$ file_error $}
+                </p>
+                <label for="id_title">{% trans "Title" %}</label>
+                <input id="id_title" maxlength="{$ FIELD_VAL.contentItemMax $}" ng-maxlength="{$ FIELD_VAL.contentItemMax $}" name="title" ng-model="content.title" placeholder="{% trans "Title" %}" type="text" required>
+                <ul ng-if="uploadForm.title.$error && uploadForm.title.$dirty" class="errorlist">
+                    <li ng-if="uploadForm.title.$error.required">{% trans "This field is required." %}</li>
+                    {% trans "{$ FIELD_VAL.contentItemMax $}" as maxchars %}
+                    <li ng-if="uploadForm.title.$error.maxlength">{% blocktrans %}The maximum length of title is {{ maxchars }}.{% endblocktrans %}</li>
+                </ul>
+                
+                <label for="id_description">{% trans "Description" %}</label>
+                <textarea cols="40" id="id_description" name="description" ng-model="content.description" placeholder="{% trans "Description" %}" rows="7"></textarea>
+                <div ng-controller="TagCtrl" ng-init="init()">
+                <h3>{% trans "Tags" %}</h3>
+                <tags-input name="tags" ng-model="content.tags" on-tag-added="addTag($tag)" min-length="1" max-length="25" placeholder="{% trans "Tags" %}">
+                    <auto-complete source="lookupTag($query)"></auto-complete>
+                </tags-input>
+                </div>
+
+                <label>{% trans "Category" %}</label>
+
+                <div categoryhierarchy data-initselected="selected_category_id" onselect="selectCategory" ondeselect="clearCategory" class="margin-bottom-20" id="cat_hierarchy_sidebar">{% trans "Please Wait..." %}</div>
+                
+                <input id="submitBtn" type="submit" ng-click="save_ie9()" value="{% trans "Upload" %}" ng-disabled="uploadForm.$invalid || uploadForm.$pristine || working || !content_file" class="margin-top-20 brandBtnColor brandBtnHoverColor">
+
+            </form>
+
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>

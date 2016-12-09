@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+				<li class="helpHeadertext">دليل المساعدة</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>إدارة المحتويات</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">نظرة عامة</a></li>
+			<li><a href="#home2">إضافة محتويات مسبقة</a></li>
+			<li><a href="#home3">حذف محتويات مسبقة</a></li>
+			<li><a href="#home4">حذف محتويات المعلم</a></li>
+			<li><a href="#home5">حذف الفئات</a></li>
+			<li><a href="#home6">وضعية المعلم</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>كيفية إستخدام مخطط الدروس</h1>
+
+		<h2>إدارة المحتويات</h2>
+		<div class="howto" id="home1">
+			<h3>نظرة عامة</h3>
+
+			<p>يتم عرض شاشة إدارة المحتوى تلقائياً عندما يسجل المسؤول دخوله إلى مخطط الدروس</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>:يمكن للمسئول</p>
+			<ul>
+				<li>حذف محتويات مسبقة</li>
+				<li>حذف محتويات المعلم</li>
+				<li>حذف الفئات </li>
+			</ul>
+			<h4>ما هي المحتويات المسبقة؟</h4>
+			<p>المحتويات المسبقة هي مواد تعليمية تمت اضافتها لمخطط الدروس قبل أن تستخدم من المعلم أو الطلبة. هذه المواد قد تتم اضافتها بواسطة المصنع أو وزارة التربية و التعليم، قبل أن تشحن علي المدرسة أو المؤسسة التعليمية. بإستطاعة المسئول فقط إضافة أو حذف المحتويات المضافة مسبقاً</p>
+			<h4>ما هي محتويات المعلم؟</h4>
+			<ol>
+				<li>المحتويات التي يضيفها المعلم إلى مكتبة مخطط الدروس، هذه المحتويات قد تكن ملفات ورد، اكسل صور أو أي نوع أخر من الملفات</li>
+				<li>الدروس التي انشأها المدرس</li>
+			</ol>
+			<h4>ما هي الفئات؟</h4>
+			<p>الفئات توفر طريقة للمعلم لجمع وتصنيف المحتويات بالمكتبة، قد تكون فئات المحتوى:</p>
+			<ol>
+				<li>مخصصة عند تحميل المحتويات المسبقة بواسطه المسئول بمخطط الدروس</li>
+				<li>خصصت عند تحميل المواد التعلمية في مخطط الدروس بواسطة المعلم</li>
+				<li>تكونت من قبل المعلم من نافذة إدارة الفئات، أو بواسطة المسئول عند عرض نافذة ادارة الفئات في وضع المعلم</li>
+			</ol>
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>إضافة محتويات مسبقة</h3>
+			<p>يوجد طريقتان لإضافة المحتويات المسبقة لمخطط الدروس</p>
+			<ol>
+				<li>تحميل المحتويات عبر المتصفح عن طريق إختيار رابط "upload package" من قسم "Preloaded content" </li>
+				<li>حميل المحتويات عبر USB عن طريق إختيار رابط "USB/SD Import Package" من قسم "Preloaded Content"</li>
+			</ol>
+			<p>للملفات أكبر من 2 جيجا بايت يرجى إستخدام خيار USB، بسبب قيود الخادم و المتصفح</p>
+			<h4>تحميل محتويات</h4>
+			<p>لتحميل حزمة محتويات مسبقة عن طريق المتصفح:</p>
+			<ol>
+				<li>إذهب إلي قسم "Preloaded content" في صفحة إدارة المحتويات</li>
+				<li>إختر رابط " Package Upload"<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>	في شاشة تحميل الحزم اختر "choose Files" لإختيار المحتويات المسبقة. إذا كان هناك محتوى بنفس الاسم سيتم عرض شاشة لتأكيد الكتابة فوق الحزمة الموجودة. إذا اختر المسئول عدم الكتابة فوق الحزمة الموجودة لن يتم إضافة المحتوى.</li>
+				<li>سيتم إظهار رسالة تؤكد إتمام العملية بنجاح</li>
+			</ol>
+			<h4>USB إضافة محتوى</h4>
+			<p>:USB لإضافة محتوى عن طريق</p>
+			<ol>
+				<li>content access point بال USB وصل جهاز ال</li>
+				<li>بشاشة إدارة المحتويات "Preloaded Content" إذهب إلي</li>
+				<li>"USB/SD Import Package" إختار رابط<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>في شاشة تحميل الحزم USB  اختر المحتويات المسبقة. إذا كان هناك محتوى بنفس الاسم سيتم عرض شاشة لتأكيد الكتابة فوق الحزمة الموجودة. إذا اختر المسئول عدم الكتابة فوق الحزمة الموجودة لن يتم إضافة المحتوى.</li>
+				<li>سيتم إظهار رسالة تؤكد إتمام العملية بنجاح</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>حذف المحتويات المسبقة</h3>
+			<p>.بإمكان المسئول حذف كل المحتويات المسبقة أو على حدا</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>:لحذف كل المحتويات المسبقة</p>
+			<ol>
+				<li>في شاشة إدارة المحتويات "Preloaded Content" إذهب إلي قسم</li>
+				<li>في حالة عدم وجود مواد سيكون هذا  ألإختيار غير مفعل "Preloaded Content". حدد مربع</li>
+				<li>إختر رابط حذف</li>
+				<li>سيتم حذف كل المحتويات في الجهاز و مخطط الدروس</li>
+			</ol>
+			<p>:لحذف إحدى المحتويات المسبقة</p>
+			<ol>
+				<li>في شاشة إدارة المحتويات، سيتم عرض كل المحتويات التي سبق تحميلها "Preloaded Content" إذهب إلي قسم</li>
+				<li>حد المربع بجانب المحتوى المراد حذفه</li>
+				<li>إختر رابط حذف</li>
+				<li>سيتم حذف المحتوى المحدد من الجهاز و مخطط الدروس</li>
+			</ol>
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>حذف محتوى المعلم</h3>
+			<p>:لحذف محتوى المعلم</p>
+			<ol>
+				<li>في شاشة إدارة المحتويات "Teacher Content" إذهب إلي قسم</li>
+				<li>في حالة عدم وجود مواد سيكون هذا  ألإختيار غير مفعل "Teacher Content". حدد مربع</li>
+				<li>إختر رابط حذف</li>
+				<li>سيتم حذف كل محتويات المعلم من الجهاز و مخطط الدروس</li>
+			</ol>
+			<p>.لا يمكن حذف محتويات المعلم كل على حدا في وضع المسئول ، ولكن بإستطاعة المسئول حذف المحتويات كل على حدا في وضع المعلم</p>
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>حذف الفئات</h3>
+			<p>:لحذف الفئات</p>
+			<ol>
+				<li>في شاشة إدارة المحتويات "Categories" إذهب إلي قسم</li>
+				<li>في حالة عدم وجود مواد سيكون هذا  ألإختيار غير مفعل "Categories". حدد مربع</li>
+				<li>إختر رابط حذف</li>
+			</ol>
+			<p>يمكن حذف الفئات التي بدون محتوى فقط</p>
+			<p>.لا يمكن حذف محتويات الفئات كل على حدا في وضع المسئول ، ولكن بإستطاعة المسئول حذف المحتويات كل على حدا في وضع المعلم</p>
+
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>وضع المعلم</h3>
+			<p>بإستطاعة المسئول تأدية كل مهام المعلم في وضع المعلم</p>
+			<p>من شاشة إدارة المحتويات "Teacher Mode" لإستخدام مخطط الدروس في وضع المعلم إختر</p>
+			<p>"Administrator Mode"في وضع المعلم بإستطاعة المسئول العودة لوضع المسئول عن طريق إختيار</p>
+
+			<a href="#" class="scrollup">العودة إلي أعلى</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

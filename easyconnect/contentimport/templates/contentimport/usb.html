@@ -1,0 +1,110 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}: USB{% endblock %}
+
+{% block body %}
+
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <h1 class="margin-tb-20">Import from your USB</h1>
+            {% if drive %}
+                <div id="usb_browser"></div>
+                <input type="submit" id="importbutton" value="Import Selected" /> 
+            {% else %}
+                <div>No drives...</div>
+            {% endif %}
+        </div><!-- /grid -->
+    </div><!-- end detailView -->
+</section><!-- end mainContent row -->
+
+{% endblock body %}
+
+{% block more_js %}
+<script >
+    $(document).ready(function() {
+        $('#usb_browser').jstree({
+            'core' : {
+                'data' : {
+                    'dataType': 'json',
+                    'url' : '{% url "usb-response" %}',
+                }
+            },
+            "checkbox" : {
+                "three_state" : false,
+            },
+            "plugins" : [ "checkbox" ], // TODO: hide empty directories, only allow a directory OR it's contents, make one call per file selected, disable import until success comes back
+        });
+
+        function disableChildren(node){
+            var is_parent = $.jstree.reference('#usb_browser').is_parent(node);
+
+            if (is_parent) {
+                var children_dom = $.jstree.reference('#usb_browser').get_children_dom(node);
+                $.each(children_dom, function( index, value ) {
+                    var also_parent = $.jstree.reference('#usb_browser').is_parent(value);
+                    if (also_parent){
+                        disableChildren(value);
+                    }
+                    $.jstree.reference('#usb_browser').disable_node(value, true);
+                    $.jstree.reference('#usb_browser').deselect_node(value, true); // Bugged. de-select triggers re-enable below
+                });
+            }
+        }
+
+        function enableChildren(node){
+            var is_parent = $.jstree.reference('#usb_browser').is_parent(node);
+
+            if (is_parent) {
+                var children_dom = $.jstree.reference('#usb_browser').get_children_dom(node);
+                $.each(children_dom, function( index, value ) {
+                    var also_parent = $.jstree.reference('#usb_browser').is_parent(value);
+                    if (also_parent){
+                        enableChildren(value);
+                    }
+                    $.jstree.reference('#usb_browser').enable_node(value);
+                });
+            }
+        }
+
+        // If parent node selected disable children, enable children if deselected
+        $('#usb_browser').on('select_node.jstree', function (e, data) {
+            disableChildren(data.node);
+        });
+
+        $('#usb_browser').on('deselect_node.jstree', function (e, data) {
+            //console.log(e);
+            //console.log(data.node);
+            enableChildren(data.node);
+        });
+
+        $("#importbutton").click(function() {
+            var json_data = $.jstree.reference('#usb_browser').get_json();
+            var selected = $.jstree.reference('#usb_browser').get_selected();
+
+            $(this).attr('value', 'Please wait...');
+            $(this).unbind('click');
+
+            //console.log(selected);
+
+            $.ajax({
+                type: "POST",
+                dataType: 'json',
+                url: "{% url 'usb-import' %}", 
+                data: {
+                    data: JSON.stringify(selected) 
+                },
+                success: function(data) {
+                    window.location.href = "{% url 'library' %}uploaded/";
+                },
+                complete: function() {
+                    console.log('complete');
+                }
+            });
+        });
+    });
+</script>
+{% endblock more_js %}

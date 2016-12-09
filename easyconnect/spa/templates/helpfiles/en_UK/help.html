@@ -1,0 +1,463 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Help Guide</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Home</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Featured lessons and library content explained</a></li>
+			<li><a href="#home2">How many items can I feature on the home page?</a></li>
+			<li><a href="#home3">Remove featured lessons and library content from the home page</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Lessons</h2>
+		<ul class="tocNested">
+			<li><a href="#lessons1">What are lessons?</a></li>
+			<li><a href="#lessons2">How to create a lesson</a></li>
+			<li><a href="#lessons3">How to add content to a lesson</a></li>
+			<li><a href="#lessons4">How to edit a lesson name</a></li>
+			<li><a href="#lessons5">How to delete content in a lesson</a></li>
+			<li><a href="#lessons6">How to feature a lesson</a></li>
+			<li><a href="#lessons7">How to delete a lesson</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Library</h2>
+		<ul class="tocNested">
+			<li><a href="#library1">What is the Library?</a></li>
+			<li><a href="#library2">What is the difference between Preloaded and Uploaded content?</a></li>
+			<li><a href="#library3">How to manage content items</a>
+				<ul class="tocNested2">
+					<li><a href="#library3">Feature content</a></li>
+					<li><a href="#library4">Edit uploaded content details</a></li>
+					<li><a href="#library5">Delete your uploaded content</a></li>
+					<li><a href="#library6">Add content to a lesson</a></li>
+					<li><a href="#library7">Hide &amp; show content to students</a></li>
+					<li><a href="#library8">Accessing content</a></li>
+				</ul><!-- end tocNested2 -->
+			</li>
+			<li><a href="#library9">Uploading my own content</a></li>
+			<li><a href="#library10">How to use categories as filters</a></li>
+			<li><a href="#library11">What is the tag cloud and how do I use it?</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Teacher Settings</h2>
+		<ul class="tocNested">
+			<li><a href="#settings1">How to manage categories</a></li>			
+			<li><a href="#settings2">How to manage tags</a></li>
+			<li><a href="#settings3">USB/SD Import</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">		
+
+
+		<h1>How to use the Content Hub Lesson Planner</h1>
+
+		<h2>Home</h2>
+		<div class="howto" id="home1">
+			<h3>Featured lessons and library content explained</h3>
+
+
+			<p>Featured items give prominence to lesson and library content which is important to showcase to yourself or students once they land on the Lesson Planner home page. This gives the user a quick way to find what is important to them that day. By featuring what is relevant to students that week or day it will reduce the need to browse through the lessons or library pages and get straight into learning.</p>
+			<img src="/static/images/help-guide/home-view.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>How many items can I feature on the home page?</h3>
+			<p>You can feature an unlimited number of items on the home page but only 10 will display at a time. The user can navigate through the various pages if more than 10 items are featured.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Remove featured lessons and library content from the home page</h3>
+			<p>You can use the yellow star icon within the lesson or content item box to remove them from the featured section on your home page. Once you click the icon the items will automatically remove itself from the page.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<h2>Lessons</h2>
+		<div class="howto" id="lessons1">
+			<h3>What are lessons?</h3>
+			<p>Lessons are collections of educational content that you create for your students from the content within your library. The lessons page is where you can view and manage the lessons you have created. On this page you can also create a new lesson, feature a lesson, delete one or multiple lessons and edit the lesson names.</p>
+			<p>You can feature lessons so they appear on the home page of both the teacher and student views. This allows you to give more prominence to lessons that are being currently taught.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="lessons2">
+			<h3>How to create a lesson</h3>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Click the <strong>Create A New Lesson</strong> button on the top right of the content area</li>
+				<li>Enter a name in the <strong>Lesson Name</strong> text field and then click <strong>Create</strong>. If you do not wish to proceed with creating the lesson you can click the <strong>Cancel</strong> button.</li>
+			</ol>
+			<p>You will then see a pop up window indicating that the lesson was successfully created.</p>
+			<img src="/static/images/help-guide/what-are-lessons1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+<p>Lessons can be sorted  by <strong>date </strong>or <strong>name</strong>.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons2 -->
+
+		<div class="howto" id="lessons3">
+			<h3>How to add content to a lesson</h3>
+			<p>Once a lesson has been created you can add content from your library to it. </p>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Find the lesson from the listing that you want to add content to</li>
+<p></p>
+<img src="/static/images/help-guide/how-to-create-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+
+<p></p>
+
+
+				<li>Click the plus icon under the lessons name. This will bring you to the library page</li>
+<li> Here you can drag and drop content from the listing into the lesson in the left column.</li>
+			</ol>
+<p></p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+			<p>To add multiple library items into a lesson at the one time select the check box for each lesson library item  and click the <strong>Add to Lesson</strong> button.</p>
+<p>Once you click this the button will change to a dropdown menu where you select the lesson. Once you’ve selected the lesson click the tick button. If you want to cancel at any point click the <strong>X</strong> button</p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson2.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons3 -->
+
+		<div class="howto" id="lessons4">
+			<h3>How to edit a lesson name</h3>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Find the lesson from the listing that you want to edit</li>
+				<li>Click the pencil shaped icon and a text field will appear. You can edit the lesson name from here. To save your changes click the tick icon. To cancel the edit at any time just click the <strong>X</strong> button.</li>
+			</ol>
+			<p>You can also edit a lesson name from the lesson detail page via the pencil icon beside the lesson title.</p> 
+			<img src="/static/images/help-guide/edit-lesson-name.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons4 -->
+
+		<div class="howto" id="lessons5">
+			<h3>How to delete content items from a lesson</h3>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Find the lesson from the listing that you want to remove content from</li>
+				<li>Click the lesson icon or name to go to the lesson detail page</li>
+				<li>Use the checkbox to the right of the content items to select which ones you want to remove</li>
+				<li>Click the <strong>Remove From Lesson</strong> button on the top right of the content area</li>
+			</ol>
+			<img src="/static/images/help-guide/delete-cotent-in-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons5 -->
+
+		<div class="howto" id="lessons6">
+			<h3>How to feature a lesson</h3>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Find the lesson from the listing that you want to feature</li>
+				<li>Click the star icon below the lesson name. Yellow stars indicate that the lesson is featured, grey stars mean the lesson is not currently featured.</li>
+			</ol>
+			<p>Once a lesson has been featured it will be displayed on the home page of both the teacher and student view.<p>
+			<img src="/static/images/help-guide/feature-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons6 -->
+
+		<div class="howto" id="lessons7">
+			<h3>How to delete a lesson</h3>
+			<ol>
+				<li>Navigate to the <strong>Lessons</strong> page</li>
+				<li>Use the checkbox underneath the lesson name to select the lesson you want to delete</li>
+				<li>Click the <strong>Delete</strong> button near the top right of the content area</li>
+			</ol>
+			<p>You can also delete a lesson from the lesson detail page via the <strong>Delete This Lesson</strong> button near the top right of the content area.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons7 -->
+
+		<h2>Library</h2>
+
+		<div class="howto" id="library1">
+			<h3>What is the Library?</h3>
+			<p>The Library page displays the content that you have uploaded and any preloaded content that exists. On this page you can:</p>
+			<ul>
+				<li>Browse items by categories and tags</li>
+				<li>Edit the information related to uploaded content</li>
+				<li>Add content to lessons</li>
+				<li>Delete uploaded content</li>
+				<li>Upload content</li>
+				<li>Feature content</li>
+				<li>Hide/show content to students</li>
+			</ul>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library1 -->
+
+		<div class="howto" id="library2">
+			<h3>What is the difference between Preloaded and Uploaded content?</h3>
+			<p>The application can include preloaded educational content, i.e. educational content loaded before it begins to be used by teacher and students. This content may be loaded by, for example, the equipment manufacturer or a Ministry of Education before it is shipped to the school or educational establishment in which it is being used. Preloaded content cannot be deleted or edited.</p>
+			<p>Uploaded content is content that you the teacher upload from files on your computer. These can be any type of file &ndash; Excel document, Word document, HTML, PDF, E-Pub, video, image, etc. Uploaded content can be deleted and edited.</p>
+			<img src="/static/images/help-guide/preloaded-uploaded-tabs.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library2 -->
+
+		<div class="howto" id="library3">
+			<h3>How to manage content items</h3>
+			<h4>Feature content</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Use the star icon to the right of the library item you want to feature. Yellow means the content is featured, grey means it is unfeatured.</li>
+			</ol>
+			<p>This content will appear on the <strong>Home</strong> page under <strong>Featured Content</strong>.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library3 -->
+
+		<div class="howto" id="library4">
+			<h4>Edit uploaded content details</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Click the <strong>Uploaded Content</strong> tab</li>
+				<li>Click the pencil icon beside the content item that you want to edit</li>
+			</ol>
+			<p>You will be brought to a form with fields to edit the title, description, tags and categories related to that piece of content. Once you are done editing click <strong>Save</strong></p>
+			<img src="/static/images/help-guide/edit-content.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>			
+		</div><!-- end howto library4 -->
+
+		<div class="howto" id="library5">
+			<h4>Delete your Uploaded content</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Click the <strong>Uploaded Content</strong> tab</li>
+				<li>Use the checkbox to the right of the library item to select the one(s) you want to delete</li>
+				<li>Click the <strong>Delete</strong> button to the right of the <strong>My Uploaded Content</strong> tab</li>
+			</ol>
+			<p>You cannot delete preloaded content, only uploaded content may be deleted.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library5 -->
+
+		<div class="howto" id="library6">
+			<h4>Add content to a lesson</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Use the checkbox to the right of the library item to select the one(s) you want to add to a lesson</li>
+				<li>Use the <strong>Add To Lesson</strong> dropdown to the right of the <strong>My Uploaded Content</strong> tab to select the lesson you want to add to. Once you've done this click the tick button beside it</li>
+<p></p>
+<img src="/static/images/help-guide/add-content-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+
+<li>Once the lesson is visible in the lesson box to the left, you can drag and drop content from the library directly into the lesson.</li>
+</ol><p>
+To add <strong>multiple library items</strong> into a lesson simultaneously select the check box for each lesson and click the <strong>Add to Lesson</strong> button.</p>
+<p>
+Once you click this the button will change to a dropdown menu where you select the lesson. Once you’ve selected the lesson click the tick button. If you want to cancel at any point click the <strong>X</strong> button.</p>
+<p>Library items can be filtered using the category tree view menu</p>
+<p>There is a limit of three levels of categories. Any content item that isn’t categorised can be found in the ‘uncategorised’ category.</p> 
+
+<img src="/static/images/help-guide/adding-library-items-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			
+			<p>You can add preloaded and uploaded content to lessons.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Hide &amp; Show individual content items</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Use the eye icon to hide the content from a student. When the eye is crossed out the content is hidden from students</li>
+			</ol>
+			<p>Hiding content from the students will hide it from their library view and also from any lesson it is in.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Hide &amp; Show the library to students</h4>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page. In the bottom left corner you will see the option to “Allow student access to library?”</li>
+				<li>Select <strong>Yes</strong> or <strong>No</strong></li>
+			</ol>
+			<img src="/static/images/help-guide/hide-and-show-library.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library7 -->
+
+		<div class="howto" id="library8">
+
+			<h4>Accessing content</h4>
+			<p>You can access content items by clicking on the title. Depending on the file type and your browser configuration, the file will either open in a new tab or your browser will handle downloading the file.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library8 -->
+
+		<div class="howto" id="library9">
+			<h3>Uploading my own content</h3>
+			<p>You can upload almost any file type &ndash; .jpg, .pdf, e-pub, Word document, Excel document, video, audio, html and more.</p>
+			<ol>
+				<li>Navigate to the <strong>Library</strong> page</li>
+				<li>Click the <strong>Upload Content</strong> button</li>
+<li> Select File and browse to your file(s) on your computer.
+				<li>Multiple files can be uploaded simultaneously from your computer </li>
+<p>
+<img src="/static/images/help-guide\uploading-my-own-content-after-point-4.PNG" alt="Content Hub" class="imgBorder" /></p>
+				<li>The title of the file(s) will be entered in to the title field automatically. This is the only mandatory field.</li>
+<li>Description, Category and Tags are also added here.</li>
+<li>Enter a description into the description field.</li>
+<li>Enter relevant tags into the Tags Field. To enter more than one simply click Enter after each word.</li>
+<li>Only one category can be selected.</li>
+<li>This metadata will be applied to all files uploaded at this point (excluding IMS packages).</li>
+<p></p>
+<p><img src="/static/images/help-guide/uploading-my-own-content-after-point-10.PNG" alt="Content Hub" class="imgBorder" /></p>
+<p></p>
+
+				<li>Once you've finished entering the information click <strong>Upload</strong></li>
+<li>Files that are not categorised will appear in the uncategorised category.</li>
+			</ol>
+			<img src="/static/images/help-guide/uploading-my-own-content-after-point-12.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto contentMan1 -->
+
+
+		<div class="howto" id="library10">
+			<h3>How to apply filters</h3>
+<p>The library filters are a set of criteria that can be applied all together or individually to filter the result set.</p>
+<p>You can use the search box for a text based filter.</p>
+<p>You can filter by a Category. </p>
+<p>You can filter by a Tag.</p>
+<p>Once added, the applied criteria can be removed.</p>
+<img src="/static/images/help-guide/library-search.png" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto library12 -->
+
+		<div class="howto" id="library11">
+			<h4>What is the tag cloud and how do I use it?</h4>
+			<p>The tag cloud displays a shortened list of tags that have been assigned to content items. Tags are descriptive words used to make searching for content easier. Tags such as "science", "lab-exercise", "juniors" and "pdf" applied to content items will allow those content items to show up in searches for any of those terms.</p>
+			<p>The more often a tag is applied to content, the larger the tag will display in the tag cloud. The tag cloud is an easy way to browse content by tags and an easy way to see what type of tags are the most common in your content.</p>
+			<img src="/static/images/help-guide/what-are-tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>			
+		</div><!-- end howto library13 -->
+
+<h2>Teacher Settings</h2>
+		<div class="howto" id="settings1">
+			<h3>How to manage categories</h3>
+			<p>Click on the <strong>Manage</strong> button at the top right of the page. Choose <strong>Categories</strong> from the dropdown menu.</p>
+			<h4>Add New Primary Category</h4>
+			<ol>
+				<li>Click the <strong>Add New Primary Category</strong> button</li>
+				<li>Type a name for the category</li>
+				<li>Click the tick button to save your new category</li>
+			</ol>
+			<h4>Add a second or third level category</h4>
+			<ol>
+				<li>Click the <strong>+</strong> icon beside the category you wish to be a parent of your new sub category</li>
+				<li>Type a name for the category</li>
+				<li>Click the tick button to save your new category</li>
+			</ol>
+			<h4>Edit A Category Name</h4>
+			<ol>
+				<li>Click the pencil icon beside the category name you wish to edit</li>
+				<li>Type a new name for the category</li>
+				<li>Click the tick button to save your new category</li>
+			</ol>
+			<h4>Delete A Category</h4>
+			<ol>
+				<li>Click the bin icon beside the category name you wish to delete</li>
+				<li>Confirm you wish to delete the category in the pop up window</li>
+			</ol>
+			<p><strong>Please note:</strong> you cannot delete a category if content is assigned to it or it has a child category.</p>
+			<img src="/static/images/help-guide/categories-page.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto settings1 -->
+
+	<div class="howto" id="settings2">
+			<h3>How to manage tags</h3>
+			<p>Click on the <strong>Manage</strong> button at the top right of the page. Choose <strong>Tags</strong> from the dropdown menu.</p>
+			<h4>Edit A Tag</h4>
+			<ol>
+				<li>Click the pencil icon beside the tag name you wish to edit (tags for preloaded content cannot be deleted)</li>
+				<li>Type a new name for the tag</li>
+				<li>Click the tick button to save your new tag</li>
+			</ol>
+			<h4>Delete A Tag</h4>
+			<ol>
+				<li>Click the bin icon beside the tag name you wish to delete</li>
+				<li>Confirm you wish to delete the tag in the pop up window</li>
+			</ol>
+			<p><strong>Please note:</strong> you cannot modify tags associated with preloaded content.</p
+			<img src="/static/images/help-guide/tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto settings2-->
+
+	<div class="howto" id="settings3">
+			<h3>USB/SD Import</h3>
+			<p>Click on the <strong>Manage</strong> button at the top right of the page. Choose <strong>Settings</strong> from the dropdown menu and then select <strong>USB/SD Import</strong>.</p>
+			<h4>Import Files From USB</h4>
+			<ol>
+				<li>Use the arrows on the left side to open the various folders on the USB device</li>
+				<li>Click the checkbox to the left of the filename to select what you want to import</li>
+<li>Select the top level folder if you wish to import all files within that folder. (only files at the root of the folder will be selected, sub folders and files within them will not get added)
+				<li>Click the <strong>Import</strong> button to start importing the files to your <strong>Library</strong></li>
+			</ol>
+			<h4>Notes</h4>
+			<ul>
+				<li>Multiples files can be imported into the <strong>My Uploaded Content</strong> library</li>
+				<li>The title of each file will be based on the file name, and will be renamed with an incremental file name if the file name already exists</li>
+<li><strong>Please note:</strong> Description, Category and Tags are also added here. This metadata will be applied to all files uploaded at this point (excluding IMS packages).</li> 
+				
+
+<li>Metadata can be updated on individual files through the Edit Content Information feature within the Library.</li>				
+				<li>Folders cannot be imported.</li>
+				<li>Once you've finished entering the information click <strong>Import</strong>.</li>
+			</ul>
+			<img src="/static/images/help-guide/usb-	import1.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto settings2-->
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

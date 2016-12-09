@@ -1,0 +1,18 @@
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <div cg-busy="tagsPromise"></div>
+            
+	        <h1>Manage Tags</h1>
+            <p ng-if="tags.length > 0" class="manageTags">
+                <span ng-repeat="tag in tags" itemid='{$ tag.id $}' class="tagName">
+                    <span name='text' editable-text="tag.text" e-form="tagForm" e-required e-maxlength="25" onaftersave="update(tag, tagForm)" ng-bind="tag.text"></span> 
+                    <span name='uses'>({$ tag.uses $})</span> <a name='tagEdit' class="tagEdit" ng-click="tagForm.$show()" ng-hide="tagForm.$visible">edit</a> 
+                    <a name='tagDelete' class="tagDelete" ng-click="remove(tag.id)" ng-hide="tagForm.$visible">delete</a>
+                </span>
+            </p>
+            <p ng-if="tags.length === 0" class="manageTags">No tags yet</p>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

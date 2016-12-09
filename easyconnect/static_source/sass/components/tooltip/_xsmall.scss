@@ -1,0 +1,31 @@
+/* -----------------------------
+    VALIDATION STYLE TOOLTIP
+----------------------------- */
+
+form.editable-wrap, div.categoryTable{
+  position:relative;
+}
+
+ul.errorlist{
+  position:absolute;
+  top:30px;
+  left:0;
+  z-index:100;
+  li.ng-binding{
+    background:#ed1c24;
+    display:block;
+    padding:5px 10px;
+    color:#fff;
+  }
+  li{
+    float:none!important;
+    font-weight:normal;
+  }
+  li.errorArrow{
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;  
+    border-bottom: 5px solid #ed1c24;
+  }
+}

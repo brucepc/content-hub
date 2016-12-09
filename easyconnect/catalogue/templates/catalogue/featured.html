@@ -1,0 +1,32 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+<div id="management-container">
+    <div id="management-form-container">
+        <h3>featured Items</h3>
+        <ul>
+        {% for i in featuredItems %}
+        	<li> {{i.title}} <a href="{% url 'unfeature' i.id %}">unfeature</a> </li> 
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="management-form-container">
+        <h3>not featured Items</h3>
+        {% if unfeaturedItems %}
+        <form method="post" action="{% url 'manage-featureds' %}">
+        	{% csrf_token %}
+	        {% for i in unfeaturedItems %}
+	        	<input type="checkbox" name="item" value="{{i.id}}" /> {{i.title}}<br />
+	        {% endfor %}
+	        <input type="submit" value="Feature" />
+        </form>
+        {% else %}
+        	All items are featured
+        {% endif %}
+    </div>
+    <a href="{% url 'manage-index' %}"> back </a>
+</div>
+{% endblock body %}

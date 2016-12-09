@@ -1,0 +1,77 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+{% load browse_extras %}
+
+{% block title %}{{ block.super }}: Lesson detail{% endblock %}
+
+{% block body %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+
+<!-- LESSON LISTINGS -->
+        <div class="col-l12 detailView">
+
+        <div class="clearfix lessonBar">
+            <ul class="breadCrumbs">
+                {% breadcrumbs as bc_list %}
+                {% for crumb_text, crumb_url in bc_list %}
+                    <li>
+                    {% if not forloop.last %}
+                        <a href="{{ crumb_url }}">{{ crumb_text }}</a>
+                    {% else %}
+                        {{ crumb_text }}
+                    {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+
+                <h1 class="left detailTitle">{{ lesson.title|title }}</h1>
+                {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                <ul class="right batchActions">
+                    <li><a name='itemRemoveFromLessonBatch' style='opacity:0.3'  id="{{ lesson.id }}" class="batchDelete">Remove from this lesson</a></li>
+                </ul>
+                {% endif %}
+        </div><!-- end lessonBar -->
+
+        <div class="grid-l2 grid-m2 grid-s1 grid-xs1 lessonDetailContent">
+        {% for item in page.object_list %}
+            <div class="detailListing {% if user.is_authenticated and request.session.viewType == "teacher" %}teacherContentItem{% endif %}" id='{{ item.id }}'>
+                {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                    <input type="checkbox" itemid='{{ item.id }}' name="content" id='batch{{ item.id }}' value="Select" class="libraryCheckbox">
+                {% endif %}
+                <div class="mediaIcon {{ item.content_file.url|get_extension }}"></div>
+                <div class="listingInfo">
+                    <h1 class="listingTitle"><a name="itemDetail" id="{{ item.id }}">{{ item.title }}</a></h1>
+                    <p class="added">Added: <time>{{ item.date_added | date:"d/m/Y H:i" }}</time>&nbsp;&nbsp; &#124; &nbsp;&nbsp;<span class="size">{{ item.file_size | filesizeformat }}</span></p>
+
+
+                    <ul class="listingIcons dropdown dropdownVertical">
+                    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                    <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                        <!-- More Options Dropdown -->
+                        <ul class="optionsDrop">
+                            <li><a name='itemRemoveFromLesson' class="delete" gid='{{ lesson.id }}' id='{{ item.id }}'>Remove from lesson</a></li>
+                        {% if item.uploaded %}
+                            <li><a name='itemEdit' class="edit" id='{{ item.id }}'>Edit Details</a></li>
+                        {% endif %}
+                        </ul>
+                        
+                        </li><!-- end More Options Dropdown -->
+                        <li><a name='itemHide' class='hideItem {% if item.hidden %}on{% endif %} tooltip' id='{{ item.id }}' rel='tooltip' title='{% if item.hidden %} Show to {% else %} Hide from {% endif %}Students'></a></li>
+                        <li><a name='itemFeature' class="feature {% if item.featured %} on {% endif %}" id="{{ item.id }}" rel="tooltip" title="{% if item.featured %}Unf{% else %}F{% endif %}eature this content item on the home page"></a></li>
+                        <li><a href="{{ item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                    </ul>
+                    {% else %}
+                        <li><a href="{{ item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                    {% endif %}
+                </div><!-- end listingInfo -->
+                <span class="contentBottomBorder"></span>
+            </div><!-- end listing -->                    
+        {% endfor %}
+        </div><!-- /grid -->
+        {% load ec_paginator %}
+        {% ec_paginator %}
+        </div><!-- end detailView -->
+    </section><!-- end mainContent row -->
+
+{% endblock %}

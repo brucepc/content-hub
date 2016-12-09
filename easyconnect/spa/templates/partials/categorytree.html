@@ -1,0 +1,20 @@
+{% load i18n %}
+<span class="categoryRow {$ 'category'+ level $}" itemid="{$ current.id $}" style="display: block">
+    <span e-name="text" editable-text="current.name" e-form="categoryForm" e-maxlength="50" e-required e-class="catName" onbeforesave="validate($data, current, parent)" ng-bind="current.name"></span>
+    <span ng-hide="categoryForm.$visible" e-name="uses" ng-bind-template="({$ current.uses $})"></span>
+    <ul ng-hide="categoryForm.$visible" class="categoryOptions">
+        <li><a ng-if="level < 3" ng-click="addCategory(current, categoryForm)" class="addChildCategory"><i class="fa fa-plus"></i></a></li>
+        <li ng-if="!current.locked"><a name="categoryEdit" class="categoryEdit" ng-click="categoryForm.$show()"><span class="fa fa-pencil"></span></a></li>
+        <li ng-if="!current.locked && current.children.length === 0"><a name="categoryDelete" class="categoryDelete" ng-click="remove(current)" ng-hide="current.uses > 0"><span class="fa fa-trash-o"></span></a></li>
+    </ul>
+    <form editable-form name="categoryForm" onbeforesave="save(current, $data, categoryForm)" onhide="cancel(current)" ng-show="categoryForm.$visible" class="editable-wrap editable-text form-buttons form-inline" shown="current.id == 0">
+        <span class="editable-buttons">
+            <button type="submit" ng-disabled="categoryForm.$waiting" class="brandBtnColor"><span class="fa fa-check"></span></button>
+            <button type="button" ng-disabled="categoryForm.$waiting" ng-click="categoryForm.$cancel()"><span class="fa fa-times"></span></button>
+        </span>
+        <div class="editable-error ng-binding ng-hide" ng-show="$error" ng-bind="$error"></div>
+    </form>
+</span>
+<div ng-if="current.children.length > 0" ng-repeat="child in current.children |orderBy:'name'">
+    <div categorytree current="child" parent="current" level="level + 1" save="save" remove="remove" add-category="addCategory" cancel="cancel" validate="validate"></div>
+</div>

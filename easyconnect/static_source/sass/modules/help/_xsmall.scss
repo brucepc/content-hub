@@ -1,0 +1,116 @@
+body .mainContent.helpArea{
+  font-size:0.75rem;
+  padding:0 20px 0 20px!important;
+  .sideMenu{
+    padding-top:40px;
+    a{
+      text-decoration: none;
+      color:$brandGray;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
+    h2{
+      font-size:0.875rem;
+      color:$brandDividerBlue;
+      margin:0 0 10px;
+      padding:0 0 7px;
+      border-bottom:1px solid $brandLightestGray;
+    }
+  }
+  .listingsArea{
+    padding-top:38px!important;
+    padding-bottom:20px;
+    h1{
+      margin:0 0 20px;
+    }
+    h2{
+      font-size:1rem;
+      margin:0 0 15px;
+      padding:0 0 7px;
+      border-bottom:1px solid $brandLightestGray;
+      color:$brandDividerBlue;
+    }
+    h3{
+      font-size:0.9375rem;
+      margin:10px 0 12px;
+      color:$brandGray;
+    }
+    h4{
+      font-size:0.875rem;
+      font-style:italic;
+      font-weight:normal;
+      margin:0 0 10px;
+    }
+  }
+  ul{
+    list-style:disc;
+    margin:0 0 20px 20px;
+    li{
+      padding:2px 0;
+    }
+    ul{
+      margin:5px 0 5px 20px;
+      list-style:circle;
+    }
+  }
+  p{
+    margin:0 0 15px;
+  }
+  ol{
+    margin:0 0 15px 20px;
+    li{
+      padding:2px 0;
+    }
+  }
+}
+
+html[dir=rtl] body .mainContent.helpArea ul{
+  margin:0 20px 20px 0;
+}
+
+.navLinks .helpHeadertext{
+  font-size:1.25rem;
+  line-height:1;
+  color:#fff;
+  margin-top:-3px;
+}
+
+.spaceImgRight{
+  margin:0 0 10px 10px;
+}
+
+.spaceImgLeft{
+  margin:0 10px 10px 0;
+}
+
+.spaceImgTop{
+  margin:0 0 10px;
+}
+
+.spaceImgBottom{
+  margin:0 0 30px;
+}
+
+.helpArea img{
+  max-width:80%;
+}
+
+.helpArea .imgSmall{
+  max-width:150px
+}
+
+.imgBorder{
+  padding:2px;
+  border:1px solid #ebebeb;
+}
+
+.howto{
+  margin:0 0 75px;
+}
+
+.scrollup{
+  display:block;
+  margin:20px 0 0;
+}
+

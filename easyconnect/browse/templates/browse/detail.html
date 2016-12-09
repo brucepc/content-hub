@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load browse_extras %}
+
+
+            <span name='title' style='display:none'>{{ item.title|title }}</span><!-- used by jquery to get the dialog title -->
+
+        <!-- <h1 name='title'><a href="{{ item.content_file.url }}">{{ item.title|title }}</a></h1>--> <!-- column title -->
+
+        <!-- individual listing -->
+        <section id="contentListing" class="">
+            <div class="mediaIcon {{ item.content_file.url|get_extension }}"></div>
+            <div class="featuredInfo">
+                <ul class="itemInfo">
+                    <p>{{ item.description|default:'' }}</p>
+                    {% if item.categories.all %}
+                        <li>Categories: {% for category in item.categories.all %} {% for parent in category.ancestors %} {{ parent }} > {% endfor %}<a href="{% url 'library' %}?c={{ category.id }}">{{ category.name }} </a> {% endfor %}</li>
+                    {% endif %}
+                    {% if item.tags.all %}
+                        <li>Tags: {% for t in item.tags.all %} <a href="{% url 'library' %}?t={{ t.id }}">{{ t.text }}</a> {% if not forloop.last %},{% endif %}{%endfor%}</li>
+                    {% endif %}
+                </ul>
+                <!--
+                <p>{{ item.description |default:"No description" }}</p>
+                
+                Mime-type: {{ item.mime_type }}<br />
+                
+                Packages: {% for package_relationship in item.get_packages %} "{{ package_relationship.package.title }}" (position: {{ package_relationship.position }}) {% endfor %}<br />
+                -->
+
+                <p class="added">Added <time>{{ item.date_added }}</time>&nbsp;&nbsp; &#124; &nbsp;&nbsp;<span class="size">{{ item.file_size | filesizeformat }}</span></p>
+                
+                <p><a href="{{ item.content_file.url }}" onclick="javascript:close_detail_modal()" target="_blank" class="mainButton">Open<span></span></a></p>
+                
+        </div><!-- end featuredInfo -->
+        </section><!-- end contentListing -->

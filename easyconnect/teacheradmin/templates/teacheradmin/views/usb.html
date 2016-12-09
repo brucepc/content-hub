@@ -1,0 +1,69 @@
+{% load i18n %}
+<!--- USB IMPORT MARK OUT -->
+<section class="row mainContent">
+
+    <style>
+        .no_checkbox > .jstree-checkbox {
+            display: none;
+        }
+        
+        .hide_my_checkbox > .jstree-checkbox{
+            display: none;
+        }
+
+
+.multi-filename{
+    margin-right:10px;
+    font-size: 1rem;
+    color: #53565a;
+}
+.process_info_column {
+    float:left;
+    margin-right:20px;
+    width: 120px;
+}
+.fileDetails
+{
+    width:100% !important;
+}
+.manageArea{
+    max-width: 600px !important;
+    margin: 40px auto !important;
+}
+
+
+
+
+    </style>
+    <div class="single col-l12">
+        <section class="manageArea usbUpload clearfix">
+            <h1 class="margin-tb-20">{% trans "USB/SD Preload Import" %}</h1>
+            <div class="margin-bottom-20">{% trans "Import zip packages into Preloaded Content library" %}</div>
+
+            <div usbtree id="usb_browser" ng-show="!working" class="margin-bottom-20">{% trans "Please Wait..." %}</div>
+            <input type="button" value="{% trans "Reload" %}" ng-click="reload_page()" class="margin-bottom-20 brandBtnColor brandBtnHoverColor" ng-disabled="reload_disabled">
+            <!--<input type="button" value="{% trans "Add Metadata" %}" ng-click="toggleMetadata()">-->
+            <!-- Multiple file upload rename -->
+            <div class="usb-meta-container" ng-show="show_meta">
+
+                <div ng-repeat="file in file_title_mapping" class="multiFileUpload clearfix">
+                    <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">
+                        <div class="fileDetails">
+                            <div class="multi-filename">{$ file.filename $}</div>
+                                <div class="process_info_column copy_status">Copied: {$ file.copy_status $}</div>
+                                <div class="process_info_column zip_status">Unzipping: {$ file.zip_status $}</div>
+                                <div class="process_info_column import_status">Importing: {$ file.import_status $}</div>
+                        </div><!-- /.file details -->
+                        <div class="uploadcomplete-{$ file.uploaded $}"><img src="../static/images/ajax_loader_blue_32.gif"><span class="fa fa-times"></span></div>
+                    </ng-form>
+                </div>
+
+            </div>
+            <input type="button" value='{% trans "Import" %}' class="brandBtnColor brandBtnHoverColor" ng-click="submitUSB()" ng-disabled="!tree_ready || working">
+            <div ng-show="upload_error">{$ error_message $}</div>
+        </section>
+    </div>
+</section><!-- end mainContent row -->
+
+
+

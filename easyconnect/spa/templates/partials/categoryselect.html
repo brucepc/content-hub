@@ -1,0 +1,21 @@
+{% load i18n %}
+<div ng-init="init()">
+    <div class="dropMenu catdrop">
+        <!--Browse by Sub Category dropdown select -->
+        <select level="0" name="category1" ng-model="categoryselect.category1" ng-options="category.name for category in categories | filter:{parent:null} track by category.id" ng-placeholder="Category" ng-change="categoryselect.category2 = null; categoryselect.category3 = null">
+            <option value="">{% trans "Category" %}</option>
+        </select>
+    </div>
+    <div class="dropMenu catdrop">
+        <!--Browse by Sub Category dropdown select -->
+        <select level="1" name="category2" ng-model="categoryselect.category2" data-ng-disabled="!categoryselect.category1" ng-options="category.name for category in categories | filter:{parent:categoryselect.category1.id}:true track by category.id" ng-placeholder="SubCategory" ng-change="categoryselect.category3 = null">
+            <option value="">{% trans "Subcategory" %}</option>
+        </select>
+    </div>
+    <div class="dropMenu catdrop">
+        <!--Browse by Sub Category dropdown select -->
+        <select level="2" name="category3" ng-model="categoryselect.category3" data-ng-disabled="!categoryselect.category1 || !categoryselect.category2" ng-options="category.name for category in categories | filter:{parent:categoryselect.category2.id}:true track by category.id" ng-placeholder="SubCategory">
+            <option value="">{% trans "Subcategory" %}</option>
+        </select>
+    </div>
+</div>

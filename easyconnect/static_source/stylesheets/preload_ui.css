@@ -1,0 +1,204 @@
+/* ------Common------*/
+.preloadonlycss .multi-filename{
+    margin-right:10px;
+    font-size: 12px;
+    font-weight:bold;
+    word-wrap: break-word;
+    color: #53565a;
+    width:77%;
+}
+.preloadonlycss .process_info_column {
+    float:left;
+}
+
+html[dir=rtl] .preloadonlycss .process_info_column {
+    float: right !important;
+}
+
+.preloadonlycss .fileDetails
+{
+    width:100% !important;
+    padding: 10px;
+    margin: 0 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.1);
+    border: 1px solid #e6e6e6;
+}
+
+.preloadonlycss .fileCancelled-true{
+    text-decoration: line-through;
+}
+
+.preloadonlycss .packageUploadArea{
+    max-width: 600px !important;
+    margin: 40px auto !important;
+}
+.packageUploadArea .multiFileUpload{
+    margin-bottom:10px;
+}
+/* ------Upload------*/
+.preloadonlycss .fileCancelled-false{}
+
+.preloadonlycss .button-as-link {
+    /* Remove all decorations to look like normal text */
+    background: none;
+    border: none;
+    display: inline;
+    font: inherit;
+    margin: 5px 0 0;
+    padding: 0;
+    outline: none;
+    outline-offset: 0;
+    /* Additional styles to look like a link */
+    color: #00aeef;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+.preloadonlycss .button-as-link:disabled {
+    cursor: auto !important;
+}
+.preloadonlycss .padded-box{
+    padding:20px;
+    margin:0 0 30px;
+    border-radius:5px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.1);
+    border: 1px solid #e6e6e6;
+}
+.preloadonlycss .padded-box .sectionspacing{
+    margin-bottom:20px
+}
+
+
+/* ------USB------ */
+.preloadonlycss .no_checkbox > .jstree-checkbox {
+    display: none;
+}
+
+.preloadonlycss .hide_my_checkbox > .jstree-checkbox{
+    display: none;
+}
+
+.preloadonlycss .manageArea{
+    max-width: 600px !important;
+}
+
+.preloadonlycss .fileCancelled-false{}
+
+.preloadonlycss .highlight-upload{
+    padding:7px 10px;
+    background:#f7f2de;
+}
+
+.preloadonlycss .multiFileUpload .uploadcomplete-false,.preloadonlycss .multiFileUpload .uploadcomplete-true{
+    float: left;
+    position: relative;
+    margin: 0 10px 0 0;
+    bottom:1px;
+}
+
+html[dir=rtl] .preloadonlycss .multiFileUpload .uploadcomplete-false,
+html[dir=rtl] .preloadonlycss .multiFileUpload .uploadcomplete-true {
+    float: right !important;
+}
+.preloadonlycss .fileDetails span{
+    padding: 7px 5px;
+    background: #ebf4fa;
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    color:#53565a;
+}
+
+.preloadonlycss .batchDelete {
+    cursor: pointer;
+    text-decoration: none;
+}
+.preloadonlycss a.batchDelete:hover {
+    text-decoration: none !important;
+}
+
+/* tick */
+.preloadonlycss .fa-check::before{
+    content: "\f00c"!important;
+
+}
+/* x */
+.preloadonlycss .fa-times::before{
+    content: "\f00d"!important;
+}
+
+/* exclamation */
+.preloadonlycss .fa-warning::before{
+    content: "\f071"!important;
+}
+.preloadonlycss .fa-check, .preloadonlycss .fa-times, .preloadonlycss .fa-warning{
+    background: none !important;
+    color: #fff !important;
+    padding: 3px 0 0 !important;
+    margin:0 !important;
+}
+.preloadonlycss .uc-ok{
+    background:#a6ce39 !important;
+}
+.preloadonlycss .uc-warning{
+    background:#ffda00 !important;
+}
+.preloadonlycss .uc-error{
+    background:#ed1c24 !important;
+}
+.preloadonlycss .cancel_upload_pre, .preloadonlycss .cancel_upload_post {
+    position:absolute;
+    font-size: 12px;
+    top: 10px; 
+    color: #939598;
+    right: 13px;
+    cursor: pointer;
+}
+
+html[dir=rtl] .preloadonlycss .cancel_upload_pre,
+html[dir=rtl] .preloadonlycss .cancel_upload_post {
+    left: 13px !important;
+    right: auto !important;
+}
+.preloadonlycss .cancel_upload_pre span, .preloadonlycss .cancel_upload_post span{
+    font-size: 13px;
+    color: #ed1c24;
+    cursor: pointer;
+}
+.preloadonlycss .uploadcomplete-false span {
+    display: none;
+}
+
+
+
+/* ------MANAGE CONTENT------ */
+.admin-checklist input[type="checkbox"]{
+    width:5%;
+    float:left;
+    margin-top:2px;
+}
+.admin-checklist label{
+    float:left;
+    width:55%;
+    word-wrap:break-word;
+    margin-bottom: 10px;
+}
+.admin-checklist .rightcol1{
+    min-width: initial;
+}
+ul.checklist > li {
+  clear: both;
+  margin-bottom:10px;
+  margin-left:15px!important;
+}
+.admin-package-details {
+  float: right;
+  width: 40%;
+}
+.admin-feedback-text{
+    margin-left:25px!important;
+}
+

@@ -1,0 +1,42 @@
+{% load browse_extras %}
+{% if paginator.num_pages > 1 %}
+    <!-- Pagination -->
+
+    <ul class="pagination" style="float:left;">
+        {% if page.has_previous %}
+            <li class="widePaginationLink"><a href="{% firstof request.path %}?{% preserve_get %}&page={{ page.previous_page_number }}{% if paginator.sort_method %}&sort_by={{paginator.sort_method}}{% endif %}"><span class="chevron">&laquo;</span> Prev</a></li>
+        {% else %}
+            <li class="unavailable widePagination"><span class="chevron">&laquo;</span> Prev</li>
+        {% endif %}
+
+        {% if show_first %}
+            <li><a href="{% firstof request.path %}?{% preserve_get %}&page=1{% if paginator.sort_method %}&sort_by={{paginator.sort_method}}{% endif %}">1</a></li>
+            <li>...</li>
+        {% endif %}
+
+        {% for page_num in page_numbers %}
+            {% if page_num == page.number %}<li class="current">{% else %}<li>{% endif %}<a href="{% firstof request.path %}?{% preserve_get %}&page={{ page_num }}{% if paginator.sort_method %}&sort_by={{paginator.sort_method}}{% endif %}">{{ page_num }}</a></li>
+        {% endfor %}
+
+        {% if show_last %}
+            <li>...</li>
+            <li><a href="{% firstof request.path %}?{% preserve_get %}&page={{ paginator.num_pages }}{% if paginator.sort_method %}&sort_by={{paginator.sort_method}}{% endif %}">{{ paginator.num_pages }}</a></li>
+        {% endif %}
+
+        {% if page.has_next %}
+            <li  class="widePaginationLink"><a href="{% firstof request.path %}?{% preserve_get %}&page={{ page.next_page_number }}{% if paginator.sort_method %}&sort_by={{paginator.sort_method}}{% endif %}">Next <span class="chevron">&raquo;</span></a></li>
+        {% else %}
+            <li class="unavailable widePagination">Next <span class="chevron">&raquo;</span></li>
+        {% endif %}
+    </ul>
+
+    {% endif %}
+    
+    {% if not paginator.hide_sort %}
+    <div class="page-sort-description" style="float:right;">
+        Sort by:
+        {% for sort_method in paginator.sort_methods %}            
+            <a href="{% firstof request.path %}?{% preserve_get %}&page={{ page.number }}&sort_by={{ sort_method}}" class="sortbutton{% if sort_method == paginator.sort_method %} sort-active{% endif %}">{{ sort_method }}</a> 
+        {% endfor %}
+    </div>
+    {% endif %}

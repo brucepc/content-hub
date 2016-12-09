@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Centre de contenus</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Aide</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Gestion du contenu</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Présentation</a></li>
+			<li><a href="#home2">Ajout de contenus préchargés</a></li>
+			<li><a href="#home3">Suppression de contenus préchargés</a></li>
+			<li><a href="#home4">Suppression de contenus d’enseignant</a></li>
+			<li><a href="#home5">Suppression de catégories</a></li>
+			<li><a href="#home6">Mode enseignant</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>Utilisation de l’Outil de planification de leçons du Centre de contenus</h1>
+
+		<h2>Gestion des contenus</h2>
+		<div class="howto" id="home1">
+			<h3>Présentation</h3>
+
+			<p>L’écran Gérer le contenu (Manage Content) s’affiche par défaut lorsque l’administrateur se connecte à l’Outil de planification de leçons (Lesson Planner).</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>Un administrateur peut :</p>
+			<ul>
+				<li>ajouter ou supprimer des paquets de contenus préchargés ;</li>
+				<li>supprimer des contenus d’enseignant ;</li>
+				<li>supprimer des catégories.</li>
+			</ul>
+			<h4>Qu’est-ce qu’un contenu préchargé (preloaded content) ?</h4>
+			<p>Ce contenu pédagogique est importé dans l’Outil de planification de leçons avant que les enseignants et les élèves ne commencent à utiliser le logiciel. Par exemple, le fabricant ou le Ministère de l’Éducation peut importer des contenus avant la livraison des équipements à l’école ou l’établissement d’enseignement. Seul un administrateur peut charger, importer et supprimer des contenus préchargés.</p>
+			<h4>Qu’est-ce qu’un contenu d’enseignant (teacher content) ?</h4>
+			<ol>
+				<li>Il s’agit du contenu qu’un enseignant ajoute à la bibliothèque de l’Outil de planification de leçons, quelle qu’en soit la forme : classeur Excel, document Word, HTML, PDF, E-Pub, vidéo, image, etc.</li>
+				<li>Les leçons créées par un enseignant.</li>
+			</ol>
+			<h4>Qu’est-ce que les catégories (categories) ?</h4>
+			<p>Les catégories permettent aux enseignants et aux administrateurs de classer ou de regrouper des contenus dans la bibliothèque. Ces catégories peuvent être :</p>
+			<ol>
+				<li>Préassignées à un paquet de contenus préchargés et créées par l’administrateur au moment de l’importation ou du chargement des contenus préchargés dans l’Outil de planification de leçons.</li>
+				<li>Assignées par l’enseignant lorsqu’il charge ou importe du contenu dans l’Outil de planification de leçons.</li>
+				<li>Configurées par un enseignant dans l’écran Gérer les catégories (Manage Category) ou par un administrateur dans ce même écran lorsqu’il affiche l’Outil de planification de leçons en Mode enseignant.</li>
+			</ol>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Ajout de contenus préchargés</h3>
+			<p>Il existe deux façons d’ajouter des contenus préchargés dans l’Outil de planification de leçons :</p>
+			<ol>
+				<li>Dans votre navigateur, cliquez sur le lien Télécharger un paquet (Upload Package) dans la section Contenu préchargé (Preloaded Content) pour télécharger du contenu.</li>
+				<li>Pour importer un contenu stocké sur un périphérique USB, cliquez sur le lien Importer un paquet par USB (USB/SD Import Package) dans la section Contenu préchargé (Preloaded Content).</li>
+			</ol>
+			<p>Les fichiers dont la taille dépasse 2 Go doivent être transférés via le port USB. En effet, au-delà de cette taille, certains navigateurs ou serveurs imposent des restrictions aux fichiers. </p>
+			<h4>Téléchargement d’un paquet (Upload package)</h4>
+			<p>Pour télécharger un paquet de contenus préchargés via le navigateur :</p>
+			<ol>
+				<li>Rendez-vous dans la section Contenu préchargé (Preloaded Content) de l’écran Gérer le contenu (Manage Content).</li>
+				<li>Cliquez sur le lien Télécharger un paquet (Upload Package).<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>Dans l’écran Télécharger un paquet (Upload Package), cliquez sur le bouton Sélectionner des fichiers (Choose Files) pour importer le ou les paquets de contenus préchargés. Si un paquet de contenus préchargés du même nom existe déjà dans le système, un message vous invite à confirmer que vous voulez remplacer le fichier existant. Si l’administrateur choisit de ne pas remplacer un paquet existant, le paquet de contenus ne sera pas chargé dans le système ni importé dans l’Outil de planification de leçons.</li>
+				<li>Un message s’affiche pour confirmer l’ajout du paquet de contenus préchargés.</li>
+			</ol>
+			<h4>Importer un paquet par USB (USB/SD Import Package)</h4>
+			<p>Pour importer un paquet de contenus préchargés via le port USB :</p>
+			<ol>
+				<li>Connectez un périphérique USB au Point d’accès au contenu (Content Access Point).</li>
+				<li>Rendez-vous dans la section Contenu préchargé (Preloaded Content) de l’écran Gérer le contenu (Manage Content).</li>
+				<li>Cliquez sur le lien Importer un paquet par USB (USB/SD Import Package)<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>Dans cet écran, sélectionnez les paquets de contenus préchargés à importer. Si un paquet de contenus préchargés du même nom existe déjà dans le système, un message vous invite à confirmer que vous voulez remplacer le fichier existant. Si l’administrateur choisit de ne pas remplacer un paquet existant, le paquet de contenus ne sera pas chargé dans le système ni importé dans l’Outil de planification de leçons.</li>
+				<li>Un message s’affiche pour confirmer l’ajout du paquet de contenus préchargés.</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Suppression de contenus préchargés</h3>
+			<p>Un administrateur peut supprimer tous les paquets de contenus préchargés ou certains paquets de contenus préchargés.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>Pour supprimer tous les paquets de contenus préchargés :</p>
+			<ol>
+				<li>Rendez-vous dans la section Contenu préchargé (Preloaded Content) de l’écran Gérer le contenu (Manage Content).</li>
+				<li>Cochez la case Contenu préchargé (Preloaded Content). Cette case est désactivée s’il n’existe aucun contenu préchargé.</li>
+				<li>Cliquez sur le lien Supprimer (Delete).</li>
+				<li><strong><u>Tous</u></strong> les contenus préchargés dans le système seront supprimés de l’Outil de planification de leçons et du système.</li>
+			</ol>
+			<p>Pour supprimer des paquets de contenus préchargés donnés :</p>
+			<ol>
+				<li>Rendez-vous dans la section Contenu préchargé (Preloaded Content) de l’écran Gérer le contenu (Manage Content). La liste des paquets existants de contenus préchargés dans le système s’affiche.</li>
+				<li>Cochez la case en regard du paquet de contenus préchargés à supprimer.</li>
+				<li>Cliquez sur le lien Supprimer (Delete).</li>
+				<li>Le paquet de contenus préchargés sélectionné sera supprimé de l’Outil de planification de leçons et du système.</li>
+			</ol>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Suppression de contenus d’enseignant</h3>
+			<p>Pour supprimer des contenus d’enseignant :</p>
+			<ol>
+				<li>Rendez-vous dans la section Contenu d’enseignant (Teacher Content) de l’écran Gérer le contenu (Manage Content).</li>
+				<li>Cochez la case Contenu d’enseignant (Teacher Content). Cette case est désactivée s’il n’existe aucun contenu d’enseignant.</li>
+				<li>Cliquez sur le lien Supprimer (Delete).</li>
+				<li><strong><u>Tous</u></strong> les contenus de l’enseignant seront supprimés de l’Outil de planification de leçons et du système, notamment les contenus que l’enseignant a stockés dans la bibliothèque et toutes les leçons.</li>
+			</ol>
+			<p>En Mode administrateur, il est impossible de supprimer des contenus particuliers d’un enseignant. Toutefois, s’il se connecte en Mode enseignant, l’administrateur peut supprimer certains contenus.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Suppression de catégories</h3>
+			<p>Pour supprimer des catégories :</p>
+			<ol>
+				<li>Rendez-vous dans la section Catégories (Categories) de l’écran Gérer le contenu (Manage Content).</li>
+				<li>Cochez la case Catégories (Categories). Si toutes les catégories existantes sont vides, c&apos;est à dire qu’aucun contenu ne leur est associé, la case est désactivée.</li>
+				<li>Cliquez sur le lien Supprimer (Delete).</li>
+			</ol>
+			<p>Les catégories seront supprimées uniquement si elles ne contiennent aucun contenu, c.-à-d. qu’il est impossible de supprimer une catégorie dans l’écran Gérer le contenu (Manage Content) tant que des contenus appartiennent à cette catégorie.</p>
+			<p>En Mode administrateur, il est impossible de supprimer des catégories particulières. Toutefois, s’il se connecte en Mode enseignant, l’administrateur peut supprimer des catégories données.</p>
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Mode enseignant</h3>
+			<p>Lorsqu’il est connecté en Mode enseignant, l’administrateur peut effectuer les mêmes actions qu’un enseignant.</p>
+			<p>Pour utiliser l’Outil de planification de leçons en Mode enseignant, sélectionnez l’option de menu Mode enseignant (Teacher Mode) dans l’écran Gérer le contenu (Manage Content).</p>
+			<p>Lorsqu’il est connecté en Mode enseignant, un administrateur peut revenir à ce même écran en sélectionnant l’option de menu Mode administrateur (Administrator Mode).</p>
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

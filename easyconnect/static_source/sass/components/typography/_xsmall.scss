@@ -1,0 +1,148 @@
+p {
+  font-family: $primaryFont;
+  color: $brandGray;
+  font-size: 0.75rem; // 12px //
+  line-height: 1.25rem; // 20px;
+  margin:0 0 0.625rem;
+}
+a {
+  text-decoration: underline;
+  font-family: $primaryFont;
+  color: $brandDividerBlue;
+}
+a:hover {
+  color:$brandMidBlue; 
+}
+a:active, a:focus {
+  color:$brandDarkBlue;
+}
+a:visited {
+  // color: $visited;
+}
+.bold {
+  font-family: $customBoldFont;
+  font-weight: bolder;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $customBoldFont;
+  font-weight: bolder;
+  font-style: normal;
+  color: $brandGray;
+  margin: 0;
+}
+h1 {
+  @include font-size(1.25);
+  font-size: 1.25rem; /* 20px */
+  }
+h2 {
+  @include font-size(1.125);
+  font-size: 1.125rem; /* 18px */
+}
+h3 {
+  @include font-size(1);
+  font-size: 1rem; /* 16px */
+}
+h4 {
+  @include font-size(0.9375);
+font-size: 0.9375rem;  /* 15px */
+ }
+html h1.featuredTitle{
+  padding:0 0 7px;
+}
+.margin-tb-20{
+  margin:20px 0;
+}
+.listingTitle, .sideMenu h1, .featuredTitle a{
+  @include font-size(1.4);
+  font-size:0.875rem; //  14px
+  font-weight:normal;
+  cursor:pointer;
+  color:$brandGray;
+  text-decoration:none;
+}
+.featuredTitle a:hover{
+  text-decoration:underline;
+}
+.sideMenu h1{
+  font-weight:bold;
+}
+.listingTitle, .sideMenu h1{
+  cursor:default;
+}
+.topListing h1 {
+  @include font-size(1.6);
+  font-size:1rem; //16px
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right;}
+.uppercase { text-transform: uppercase; }
+.italic { font-style: italic; }
+
+
+/*  Common General Typography styles */
+
+.sectionTitle {
+  color: $brandDarkGray;
+  font-family: $customBoldFont;
+  @include font-size(1.4);
+  font-size: 0.875rem; // 14px;
+}
+
+.dropdownMenu {
+  color: $brandLightGray;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px //
+}
+.featuredInfo p{
+  margin:0 0 20px 0;
+}
+
+html h1.headingMargin{
+  margin-bottom:10px;
+}
+
+/*   Item Listings  */
+.itemTitle {
+  font-family: $primaryFont;
+  color: $brandMidBlue;
+  @include font-size(1.4);
+  font-size: 0.875rem; // 14px;
+}
+
+.itemAdded {
+  font-family: $primaryFont;
+  color: $brandLightGray;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 14px;
+}
+.normalFontSize{
+  font-size:0.75rem;
+}
+
+
+// Pre/Code styles
+code {
+  font-family: Courier, monotype;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+  line-height: 15px;
+}
+div.code {
+  display: block;
+  width: 100%;
+  margin: 0 10px 10px 10px;
+  padding: 10px 10px 10px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+.errorlist{
+  li{
+    color:$brandRed;
+  }
+}
+.browseArea h1 {
+  padding: 0 0 10px 0;
+}
+

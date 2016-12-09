@@ -1,0 +1,13 @@
+[ { "image" : "",
+    "noauth" : true,
+    "title" : "Agenda de la lección",
+    "url" : "/lessonplanner/",
+	"type" : "fa fa-book"
+  },
+  { "image" : "",
+    "noauth" : false,
+    "title" : "Configuración del dispositivo",
+    "url" : "/devicesettings/",
+  "type" : "fa fa-cogs"
+  }
+]

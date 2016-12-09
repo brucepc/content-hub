@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Centro de conteúdos</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guia de ajuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Gestão de conteúdos</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Visão geral</a></li>
+			<li><a href="#home2">Adicionar conteúdo pré-carregado</a></li>
+			<li><a href="#home3">Remover conteúdo pré-carregado</a></li>
+			<li><a href="#home4">Remover conteúdo de ensino</a></li>
+			<li><a href="#home5">Remover categorias</a></li>
+			<li><a href="#home6">Modo Professor</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>Como utilizar o Centro de Conteúdos do Planeador de Aulas</h1>
+
+		<h2>Gestão de conteúdos</h2>
+		<div class="howto" id="home1">
+			<h3>Visão geral</h3>
+
+			<p>O ecrã Gestão de Conteúdos (Manage Content) é apresentado por predefinição quando o administrador entra no Planeador de Aulas (Lesson Planner).</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>Um administrador pode:</p>
+			<ul>
+				<li>Adicionar/remover pacotes de conteúdo pré-carregados</li>
+				<li>Remover conteúdos de ensino</li>
+				<li>Remover categorias</li>
+			</ul>
+			<h4>O que é conteúdo pré-carregado (preloaded content)?</h4>
+			<p>Conteúdo pré-carregado é o conteúdo educativo carregado no Planeador de Aulas antes de ser utilizado pelo professor e pelos alunos. Este conteúdo pode ser carregado, por exemplo, através do fabricante do equipamento ou do Ministério da Educação antes de ser enviado para a escola ou estabelecimento de ensino no qual está a ser utilizado. O conteúdo pré-carregado apenas pode ser carregado/importado/removido por um administrador.</p>
+			<h4>O que é o conteúdo de ensino (teacher content)?</h4>
+			<ol>
+				<li>É o conteúdo que um professor acrescenta à biblioteca no Planeador de Aulas. Este pode ser qualquer tipo de ficheiro, por exemplo em Excel, Word, HTML, PDF, E-Pub, vídeo, imagem, etc.</li>
+				<li>Aulas criadas por um professor.</li>
+			</ol>
+			<h4>O que são as categorias (categories)?</h4>
+			<p>As categorias fornecem um mecanismo para professores/administradores agruparem/classificarem o conteúdo dentro da biblioteca. Uma categoria de conteúdo pode ser:</p>
+			<ol>
+				<li>Atribuída dentro de um pacote de conteúdo pré-carregado e criada quando o conteúdo pré-carregado é carregado/importado para o Planeador de Aulas por um administrador.</li>
+				<li>Atribuída quando o conteúdo é carregado/importado para o Planeador de Aulas por um professor.</li>
+				<li>Configurada por um professor através do ecrã Gestão de Categorias (Manage Category) ou configurada por um administrador através do ecrã Gestão de Categorias (Manage Category) ao visualizar o Planeador de Aulas em modo professor.</li>
+			</ol>
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Adicionar conteúdo pré-carregado</h3>
+			<p>Existem duas maneiras de adicionar conteúdo pré-carregado com o Planeador de Aulas:</p>
+			<ol>
+				<li>Carregar o conteúdo através do navegador, selecionado a ligação &quot;Carregar pacote&quot; (Upload Package) da secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content).</li>
+				<li>Importar conteúdo através de USB, selecionando a ligação &quot;Importação de pacote por USB&quot; (USB/SD Import Package) da secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content).</li>
+			</ol>
+			<p>Para ficheiros maiores de 2 GB, a opção de importação USB deve ser utilizada. Tal deve-se a restrições do navegador/servidor que podem ser aplicadas a ficheiros maiores. </p>
+			<h4>Carregar pacote (Upload package)</h4>
+			<p>Para carregar um pacote de conteúdo pré-carregado através do navegador:</p>
+			<ol>
+				<li>Ir para a secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content) no ecrã Gestão de Conteúdos (Manage Content).</li>
+				<li>Selecionar a ligação “Carregar pacote&quot; (Upload Package).<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>No ecrã Carregar pacote, selecionar a tecla &quot;Escolher Ficheiros&quot; (Choose Files) para selecionar o pacote de conteúdo pré-carregado que deseja carregar. Se um pacote de conteúdo pré-carregado com o mesmo nome já existir no dispositivo, será apresentada a opção de substituição do pacote existente. Se o administrador optar por não substituir um pacote, o pacote de conteúdo não será carregado para o dispositivo ou importado para o Planeador de Aulas.</li>
+				<li>Será apresentada uma mensagem confirmando que o pacote de conteúdo pré-carregado foi adicionado com sucesso.</li>
+			</ol>
+			<h4>Importar conteúdo por USB (USB/SD Import package)</h4>
+			<p>Para importar um pacote de conteúdo pré-carregado através de USB:</p>
+			<ol>
+				<li>Ligar um dispositivo USB ao ponto de acesso de conteúdos (Content Access Point).</li>
+				<li>Ir para a secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content) no ecrã Gestão de Conteúdos (Manage Content).</li>
+				<li>Selecionar a ligação “Importação de conteúdo por USB&quot; (USB/SD Import Package).<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>No ecrã Importação de conteúdo por USB (USB/SD Import Package), selecionar os pacotes de conteúdo pré-carregados que pretender carregar. Se um pacote de conteúdo pré-carregado com o mesmo nome já existir no dispositivo, será apresentada a opção de substituição do pacote existente. Se o administrador optar por não substituir um pacote, o pacote de conteúdo não será carregado para o dispositivo ou importado para o Planeador de Aulas.</li>
+				<li>Será apresentada uma mensagem confirmando que o pacote de conteúdo pré-carregado foi adicionado com sucesso.</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Remover conteúdo pré-carregado</h3>
+			<p>Um administrador pode remover todos os pacotes de conteúdo pré-carregado ou pacotes de conteúdo pré-carregados individuais.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>Para remover todos os pacotes de conteúdo pré-carregados:</p>
+			<ol>
+				<li>Ir para a secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content) no ecrã Gestão de Conteúdos (Manage Content).</li>
+				<li>Selecionar a opção &quot;Conteúdo pré-carregado&quot; (Preloaded Content). Se não existir qualquer conteúdo pré-carregado, esta opção estará desativada.</li>
+				<li>Selecionar a ligação Eliminar (Delete).</li>
+				<li><strong><u>Todo</u></strong> o conteúdo pré-carregado no dispositivo será eliminado do Planeador de Aulas e do dispositivo.</li>
+			</ol>
+			<p>Para remover os pacotes de conteúdo pré-carregado individuais:</p>
+			<ol>
+				<li>Ir para a secção &quot;Conteúdo pré-carregado&quot; (Preloaded Content) no ecrã Gestão de Conteúdos (Manage Content). Será apresentada uma lista de pacotes de conteúdo pré-carregados existentes no dispositivo.</li>
+				<li>Selecionar a opção ao lado do pacote de conteúdo pré-carregado que pretende eliminar.</li>
+				<li>Selecionar a ligação Eliminar (Delete).</li>
+				<li>O pacote de conteúdo pré-carregado selecionado será eliminado do Planeador de Aulas e do dispositivo.</li>
+			</ol>
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Remover conteúdos de ensino</h3>
+			<p>Para remover conteúdos de ensino:</p>
+			<ol>
+				<li>Ir para a secção &quot;Conteúdos de ensino&quot; (Teacher Content) no ecrã Gestão de Conteúdos (Manage Content)</li>
+				<li>Selecionar a opção &quot;Conteúdos de ensino&quot; (Teacher Content). Se não existir qualquer conteúdo de ensino, esta opção estará desativada.</li>
+				<li>Selecionar a ligação Eliminar (Delete)</li>
+				<li><strong><u>Todos</u></strong> os conteúdos de ensino serão eliminados do Planeador de Aulas e do dispositivo, ou seja, todo o conteúdo da biblioteca de ensino carregada e todas as aulas.</li>
+			</ol>
+			<p>Não é possível eliminar itens individuais do conteúdo de ensino em modo Administrador. No entanto, um administrador pode eliminar itens individuais de conteúdo em modo professor.</p>
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Remover categorias</h3>
+			<p>Para remover categorias:</p>
+			<ol>
+				<li>Ir para a secção &quot;Categorias&quot; (Categories) no ecrã Gestão de Conteúdos (Manage Content).</li>
+				<li>Selecionar a opção &quot;Categorias&quot; (Categories). Se não existirem categorias vazias, ou seja, categorias sem qualquer conteúdo associado, esta opção estará desativada.</li>
+				<li>Selecionar a ligação Eliminar (Delete).</li>
+			</ol>
+			<p>As categorias apenas serão eliminadas se não contiverem conteúdos, ou seja não é possível eliminar uma categoria no ecrã de Gestão de Conteúdos (Manage Content) se o conteúdo for classificado como pertencente a essa categoria.</p>
+			<p>Não é possível eliminar categorias individuais em modo Administrador. No entanto, um administrador pode eliminar categorias individuais quando em modo professor.</p>
+
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Modo Professor</h3>
+			<p>Um administrador pode executar todas as funções de um professor quando em modo professor.</p>
+			<p>Para utilizar o Planeador de Aulas em modo professor, selecionar a opção de menu &quot;Modo Professor&quot; (Teacher Mode) no ecrã de gestão de conteúdos (Manage Content).</p>
+			<p>Em modo professor, um administrador pode regressar ao ecrã de Gestão de Conteúdos (Manage Content), selecionando a opção do menu &quot;Modo Administrador&quot; (Administrator Mode).</p>
+
+			<a href="#" class="scrollup">Regressar acima</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

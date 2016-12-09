@@ -1,0 +1,848 @@
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-24 11:47+0100\n"
+"PO-Revision-Date: 2015-01-21 11:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\contentimport\models.py:240 .\spa\templates\base.html:71
+msgid "Lesson Planner"
+msgstr "مخطط الدروس"
+
+#: .\contentimport\models.py:241 .\spa\templates\base.html:105
+#: .\teacheradmin\templates\teacheradmin\index.html:58
+#: .\teacheradmin\templates\teacheradmin\views\home.html:9
+msgid "Device Settings"
+msgstr "إعدادات الجهاز"
+
+#: .\contentimport\models.py:242 .\spa\templates\base.html:106
+#: .\updater\templates\updater\index.html:58
+#: .\updater\templates\updater\views\home.html:9
+msgid "Software Update"
+msgstr "تحديث البرامج"
+
+#: .\contentimport\models.py:243 .\hub\templates\hub\views\home.html:6
+#: .\spa\templates\views\settings.html:21
+msgid "Add Tile"
+msgstr "إضافة لوحة"
+
+#: .\hub\templates\hub\index.html:94 .\spa\templates\base.html:134
+#: .\spa\templates\views\login.html:27
+#: .\teacheradmin\templates\teacheradmin\index.html:82
+#: .\updater\templates\updater\index.html:83
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\hub\templates\hub\index.html:95 .\spa\templates\base.html:125
+#: .\teacheradmin\templates\teacheradmin\index.html:83
+#: .\updater\templates\updater\index.html:84
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: .\hub\templates\hub\index.html:107
+msgid "Terms of Use"
+msgstr "شروط الاستخدام"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "Battery"
+msgstr "البطارية"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "version"
+msgstr "الإصدار"
+
+#: .\hub\templates\hub\partials\tile.html:15
+#: .\hub\templates\hub\views\home.html:101
+msgid "Edit Tile"
+msgstr "تعديل اللوحة"
+
+#: .\hub\templates\hub\partials\tile.html:21
+msgid "Delete Tile"
+msgstr "حذف اللوحة"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Show to All Users"
+msgstr "الإظهار لجميع المستخدمين"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Hide from All Users"
+msgstr "الإخفاء عن جميع المستخدمين"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Show to Students"
+msgstr "الإظهار للطلاب"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Hide from Students"
+msgstr "الإخفاء عن الطلاب"
+
+#: .\hub\templates\hub\partials\tile.html:39
+msgid "Tile is locked"
+msgstr "اللوحة مؤمّنة"
+
+#: .\hub\templates\hub\views\home.html:7
+msgid "Import a site or enter a URL."
+msgstr "استيراد موقع أو إدخال عنوان URL."
+
+#: .\hub\templates\hub\views\home.html:10
+msgid "Import Site"
+msgstr "استيراد موقع"
+
+#: .\hub\templates\hub\views\home.html:12
+#: .\spa\templates\views\categories.html:6
+#: .\spa\templates\views\preload-usb.html:31
+#: .\spa\templates\views\sidebar.html:32 .\spa\templates\views\tags.html:6
+#: .\spa\templates\views\upload.html:53 .\spa\templates\views\uploadIE9.html:38
+#: .\spa\templates\views\usb.html:20 .\spa\templates\views\usb.html.py:53
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:43
+msgid "Please Wait..."
+msgstr "الرجاء الانتظار..."
+
+#: .\hub\templates\hub\views\home.html:13
+#: .\spa\templates\views\preload-usb.html:65 .\spa\templates\views\usb.html:55
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:62
+msgid "Import"
+msgstr "استيراد"
+
+#: .\hub\templates\hub\views\home.html:14
+#: .\spa\templates\views\preload-usb.html:32 .\spa\templates\views\usb.html:21
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:44
+msgid "Reload"
+msgstr "إعادة التحميل"
+
+#: .\hub\templates\hub\views\home.html:19
+#: .\hub\templates\hub\views\home.html:110
+msgid "URL"
+msgstr "URL"
+
+#: .\hub\templates\hub\views\home.html:21
+#: .\hub\templates\hub\views\home.html:29
+#: .\hub\templates\hub\views\home.html:41
+#: .\hub\templates\hub\views\home.html:106
+#: .\hub\templates\hub\views\home.html:112
+#: .\spa\templates\views\lessons.html:34 .\spa\templates\views\login.html:32
+#: .\spa\templates\views\login.html:40 .\spa\templates\views\upload.html:31
+#: .\spa\templates\views\uploadIE9.html:22 .\spa\templates\views\usb.html:32
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:11
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:18
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:28
+msgid "This field is required."
+msgstr "هذا الحقل مطلوب."
+
+#: .\hub\templates\hub\views\home.html:23
+#: .\hub\templates\hub\views\home.html:113
+msgid "Preview"
+msgstr "معاينة"
+
+#: .\hub\templates\hub\views\home.html:27
+#: .\hub\templates\hub\views\home.html:104
+msgid "Tile Name"
+msgstr "اسم اللوحة"
+
+#: .\hub\templates\hub\views\home.html:30
+#: .\hub\templates\hub\views\home.html:107
+msgid "Duplicate"
+msgstr "تكرار"
+
+#: .\hub\templates\hub\views\home.html:34
+#: .\hub\templates\hub\views\home.html:116
+msgid "Icon"
+msgstr "الرمز"
+
+#: .\hub\templates\hub\views\home.html:49
+#: .\hub\templates\hub\views\home.html:130
+msgid "Hidden from Students"
+msgstr "مخفي عن الطلاب"
+
+#: .\hub\templates\hub\views\home.html:55
+#: .\hub\templates\hub\views\home.html:72
+#: .\hub\templates\hub\views\home.html:136
+#: .\hub\templates\hub\views\home.html:153
+#: .\spa\templates\views\settings.html:14
+msgid "Off"
+msgstr "إيقاف"
+
+#: .\hub\templates\hub\views\home.html:56
+#: .\hub\templates\hub\views\home.html:73
+#: .\hub\templates\hub\views\home.html:137
+#: .\hub\templates\hub\views\home.html:154
+#: .\spa\templates\views\settings.html:15
+msgid "On"
+msgstr "تشغيل"
+
+#: .\hub\templates\hub\views\home.html:66
+#: .\hub\templates\hub\views\home.html:147
+msgid "Hidden from All Users"
+msgstr "مخفي عن جميع المستخدمين"
+
+#: .\hub\templates\hub\views\home.html:82 .\spa\templates\views\lessons.html:38
+msgid "Create"
+msgstr "إنشاء"
+
+#: .\hub\templates\hub\views\home.html:92
+#: .\hub\templates\hub\views\home.html:166
+#: .\spa\templates\views\lessons.html:39
+#: .\spa\templates\views\preload-upload.html:64
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:37
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: .\hub\templates\hub\views\home.html:163
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:38
+#: .\updater\templates\updater\views\home.html:31
+msgid "Update"
+msgstr "تحديث"
+
+#: .\rest\views.py:647
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:34
+msgid "Passwords do not match."
+msgstr "كلمات المرور غير متطابقة."
+
+#: .\rest\views.py:656
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:21
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:31
+msgid "Invalid password."
+msgstr "كلمة المرور غير صحيحة."
+
+#: .\rest\views.py:1301
+msgid "There was a problem uploading the file."
+msgstr "هناك مشكلة في تحميل الملف."
+
+#: .\rest\views.py:1309
+msgid "There was a problem with the file."
+msgstr "هناك مشكلة في الملف."
+
+#: .\rest\views.py:1325 .\rest\views.py:1344
+msgid ""
+"Invalid update file.\n"
+"Please try again."
+msgstr ""
+"ملف تحديث غير صالح.\n"
+"يُرجى المحاولة مرة أخرى."
+
+#: .\rest\views.py:1329 .\rest\views.py:1331
+msgid ""
+"Update version must be greater than the current version.\n"
+"Please try again."
+msgstr ""
+"يجب أن يكون إصدار التحديث أكبر من الإصدار الحالي.\n"
+"يُرجى المحاولة مرة أخرى."
+
+#: .\spa\templates\base.html:100
+msgid "Manage"
+msgstr "إدارة"
+
+#: .\spa\templates\base.html:102 .\spa\templates\views\tags.html:8
+#: .\spa\templates\views\upload.html:45 .\spa\templates\views\upload.html:46
+#: .\spa\templates\views\uploadIE9.html:30
+#: .\spa\templates\views\uploadIE9.html:31 .\spa\templates\views\usb.html:45
+#: .\spa\templates\views\usb.html.py:46
+msgid "Tags"
+msgstr "العلامات"
+
+#: .\spa\templates\base.html:103 .\spa\templates\views\categories.html:8
+#: .\spa\templates\views\home.html:194
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:116
+msgid "Categories"
+msgstr "الفئات"
+
+#: .\spa\templates\base.html:104 .\spa\templates\views\upload.html:10
+#: .\spa\templates\views\uploadIE9.html:9 .\spa\templates\views\usb.html:17
+msgid "USB/SD Import"
+msgstr "استيراد عبر USB/SD"
+
+#: .\spa\templates\base.html:113
+msgid "Admin Mode"
+msgstr "وضع المسؤول"
+
+#: .\spa\templates\base.html:116
+msgid "Teacher View"
+msgstr "شاشة العرض الخاصة بالمعلم"
+
+#: .\spa\templates\base.html:119
+msgid "Teacher Mode"
+msgstr "وضع المعلم"
+
+#: .\spa\templates\base.html:120
+msgid "Student View"
+msgstr "شاشة العرض الخاصة بالطالب"
+
+#: .\spa\templates\base.html:123 .\spa\templates\base.html.py:124
+#: .\spa\templates\base.html:133
+msgid "Help"
+msgstr "مساعدة"
+
+#: .\spa\templates\base.html:145 .\spa\templates\views\lesson_detail.html:10
+#: .\spa\templates\views\lessons.html:8
+#: .\updater\templates\updater\views\home.html:40
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: .\spa\templates\base.html:146 .\spa\templates\views\lesson_detail.html:13
+#: .\spa\templates\views\lessons.html:11 .\spa\templates\views\lessons.html:14
+#: .\spa\templates\views\lessons.html:20
+msgid "Lessons"
+msgstr "الدروس"
+
+#: .\spa\templates\base.html:147
+msgid "Library"
+msgstr "المكتبة"
+
+#: .\spa\templates\base.html:153
+msgid "Search Lessons"
+msgstr "بحث في الدروس"
+
+#: .\spa\templates\base.html:153
+msgid "Search Library"
+msgstr "بحث في المكتبة"
+
+#: .\spa\templates\base.html:176
+#: .\teacheradmin\templates\teacheradmin\index.html:95
+#: .\updater\templates\updater\index.html:96
+msgid "Terms of use"
+msgstr "شروط الاستخدام"
+
+#: .\spa\templates\partials\categoryselect.html:6
+#: .\spa\templates\views\upload.html:51 .\spa\templates\views\uploadIE9.html:36
+#: .\spa\templates\views\usb.html:51
+msgid "Category"
+msgstr "الفئة"
+
+#: .\spa\templates\partials\categoryselect.html:12
+#: .\spa\templates\partials\categoryselect.html:18
+msgid "Subcategory"
+msgstr "الفئة الفرعية"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Remove from Featured Content"
+msgstr "إزالة من المحتوى المميز"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Add to Featured Content"
+msgstr "إضافة إلى المحتوى المميز"
+
+#: .\spa\templates\partials\contentitems.html:10
+#: .\spa\templates\views\upload.html:9
+msgid "Edit Content Information"
+msgstr "تحرير المعلومات الخاصة بالمحتوى"
+
+#: .\spa\templates\partials\contentitems.html:11
+msgid "Show/Hide from Students"
+msgstr "إظهار/إخفاء عن الطلاب"
+
+#. Translators: Date this item was added on
+#: .\spa\templates\partials\contentitems.html:24
+msgid "Added:"
+msgstr "تمت الإضافة:"
+
+#. Translators: Date this item was updated on
+#: .\spa\templates\partials\contentitems.html:26
+msgid "Updated:"
+msgstr "تم التحديث:"
+
+#: .\spa\templates\partials\contentitems.html:27
+msgid "File Size:"
+msgstr "حجم الملف:"
+
+#. Translators: List of tags associated with this item
+#: .\spa\templates\partials\contentitems.html:29
+msgid "Tags:"
+msgstr "العلامات:"
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Remove from Featured Lessons"
+msgstr "إزالة من المحتوى المميز"
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Add to Featured Lessons"
+msgstr "إضافة إلى الدروس المميزة"
+
+#: .\spa\templates\partials\lessons.html:8
+msgid "Edit Lesson Title"
+msgstr "تحرير عنوان الدرس"
+
+#: .\spa\templates\partials\lessons.html:9
+#: .\spa\templates\views\lesson_detail.html:36
+msgid "Add Content"
+msgstr "إضافة محتوى"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons created"
+msgstr "لم يتم إنشاء دروس"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons featured"
+msgstr "لا توجد دروس مميزة"
+
+#: .\spa\templates\partials\lessons.html:18
+msgid "Featured lessons will appear here"
+msgstr "ستظهر الدروس المميزة هنا"
+
+#: .\spa\templates\partials\lessons.html:19
+msgid "Create a new lesson"
+msgstr "إنشاء درس جديد"
+
+#: .\spa\templates\partials\lessons.html:20
+msgid "Please check your <a href=\"#lessons\">lesson listings</a>"
+msgstr "الرجاء التحقق من <a href=\"#lessons\">قوائم الدروس</a>"
+
+#: .\spa\templates\partials\lessons.html:24
+msgid "Your search returned no results, please try another search."
+msgstr "لم يقدم البحث أية نتائج، الرجاء تجربة بحث آخر."
+
+#: .\spa\templates\partials\sort.html:3
+msgid "Sort by:"
+msgstr "الفرز حسب:"
+
+#. Translators: sort filter - clicking will sort the list by title
+#: .\spa\templates\partials\sort.html:5
+msgid "title"
+msgstr "العنوان"
+
+#. Translators: sort filter - clicking will sort the list by date added/created
+#: .\spa\templates\partials\sort.html:7
+msgid "date"
+msgstr "التاريخ"
+
+#. Translators: Tagcloud showing tags that occur more frequently as larger
+#: .\spa\templates\partials\tagcloud.html:5
+msgid "Filter by Tag"
+msgstr "تصفية حسب العلامة"
+
+#: .\spa\templates\views\categories.html:9
+msgid "Add New Primary Category"
+msgstr "إضافة فئة أساسية جديدة"
+
+#: .\spa\templates\views\categories.html:17
+msgid "No categories created"
+msgstr "لم يتم إنشاء فئات"
+
+#: .\spa\templates\views\help.html:24
+#: .\spa\templates\views\student_help.html:24
+msgid "Help Guide"
+msgstr "دليل المساعدة"
+
+#: .\spa\templates\views\home.html:103
+msgid "Featured Lessons"
+msgstr "الدروس المميزة"
+
+#: .\spa\templates\views\home.html:105
+msgid "View all lessons"
+msgstr "عرض جميع الدروس"
+
+#: .\spa\templates\views\home.html:111
+msgid "Featured Content"
+msgstr "المحتوى المميز"
+
+#: .\spa\templates\views\home.html:113
+msgid "View all content"
+msgstr "عرض كافة المحتويات"
+
+#: .\spa\templates\views\home.html:122
+#: .\spa\templates\views\lesson_detail.html:35
+msgid "No content featured"
+msgstr "لا يوجد محتوى مميز"
+
+#: .\spa\templates\views\home.html:123
+msgid "Featured content will appear here"
+msgstr "سيظهر المحتوى المميز هنا"
+
+#: .\spa\templates\views\home.html:124
+msgid "My Library"
+msgstr "المكتبة"
+
+#: .\spa\templates\views\home.html:125
+msgid "Please check your <a href=\"#library\">library</a>"
+msgstr "الرجاء التحقق من <a href=\"#library\">المكتبة</a>"
+
+#: .\spa\templates\views\home.html:139
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:64
+msgid "Manage Content"
+msgstr "إدارة المحتوى"
+
+#. Translators: tab heading with a count of associated items 'pre loaded content (%count%)'
+#: .\spa\templates\views\home.html:147 .\spa\templates\views\library.html:22
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:72
+msgid "Preloaded Content"
+msgstr "محتوى تم تحميله مسبقًا"
+
+#: .\spa\templates\views\home.html:150 .\spa\templates\views\home.html:180
+#: .\spa\templates\views\home.html:197 .\spa\templates\views\lessons.html:22
+#: .\spa\templates\views\library.html:39
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:76
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:104
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:119
+msgid "Delete"
+msgstr "حذف"
+
+#: .\spa\templates\views\home.html:151
+#: .\spa\templates\views\preload-usb.html:28
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:77
+msgid "USB/SD Import Package"
+msgstr "حزمة استيراد عبر USB/SD"
+
+#: .\spa\templates\views\home.html:152
+#: .\spa\templates\views\preload-upload.html:31
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:78
+msgid "Upload Package"
+msgstr "رفع حزمة"
+
+#: .\spa\templates\views\home.html:177
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:101
+msgid "Teacher Content"
+msgstr "محتوى المعلم"
+
+#: .\spa\templates\views\home.html:184
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:108
+msgid "Teacher uploaded content and lessons will be deleted."
+msgstr "سيتم حذف المحتوى والدروس التي قام المعلم بتحميلها."
+
+#: .\spa\templates\views\home.html:201
+msgid "Categories will only be deleted if they don't contain any content."
+msgstr "سيتم حذف الفئات فقط إذا كانت لا يوجد بها أي محتوى."
+
+#: .\spa\templates\views\lesson_detail.html:22
+msgid "Delete this Lesson"
+msgstr "حذف هذا الدرس"
+
+#: .\spa\templates\views\lesson_detail.html:25
+msgid "Remove from Lesson"
+msgstr "إزالة من الدرس"
+
+#. Translators: Search label beside a user editable search box; 'search for the following'
+#: .\spa\templates\views\lessons.html:17
+msgid "Search:"
+msgstr "بحث:"
+
+#: .\spa\templates\views\lessons.html:23
+msgid "Create a new Lesson"
+msgstr "إنشاء درس جديد"
+
+#: .\spa\templates\views\lessons.html:32
+msgid "Lesson Name:"
+msgstr "اسم الدرس:"
+
+#: .\spa\templates\views\library.html:10
+msgid "Applied Filters"
+msgstr "المرشحات المستخدمة"
+
+#: .\spa\templates\views\library.html:16
+msgid "Clear All Filters"
+msgstr "مسح كافة المرشحات"
+
+#. Translators: tab heading with a count of associated items 'my uploaded content (%count%)'
+#: .\spa\templates\views\library.html:24
+msgid "My Uploaded Content"
+msgstr "المحتوى الذي تم تحميله"
+
+#: .\spa\templates\views\library.html:28 .\spa\templates\views\library.html:31
+#: .\spa\templates\views\library.html:32
+msgid "Add to Lesson"
+msgstr "إضافة إلى درس"
+
+#: .\spa\templates\views\library.html:40 .\spa\templates\views\upload.html:9
+#: .\spa\templates\views\uploadIE9.html:8
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:31
+msgid "Upload Content"
+msgstr "تحميل المحتوى"
+
+#: .\spa\templates\views\library.html:47
+msgid "{$ preloaded_items.range_start $}"
+msgstr "{$ preloaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:48
+msgid "{$ preloaded_items.range_end $}"
+msgstr "{$ preloaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:49
+msgid "{$ preloaded_items.count $}"
+msgstr "{$ preloaded_items.count $}"
+
+#: .\spa\templates\views\library.html:50 .\spa\templates\views\library.html:61
+#, python-format
+msgid "Showing %(range_start)s - %(range_end)s of %(result_total)s results"
+msgstr "عرض %(range_start)s - %(range_end)s من أصل %(result_total)s من النتائج"
+
+#: .\spa\templates\views\library.html:52 .\spa\templates\views\library.html:63
+msgid "Showing 0 results"
+msgstr "عرض 0 نتائج"
+
+#: .\spa\templates\views\library.html:58
+msgid "{$ uploaded_items.range_start $}"
+msgstr "{$ uploaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:59
+msgid "{$ uploaded_items.range_end $}"
+msgstr "{$ uploaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:60
+msgid "{$ uploaded_items.count $}"
+msgstr "{$ uploaded_items.count $}"
+
+#: .\spa\templates\views\login.html:24
+msgid "You are logged in as"
+msgstr "تم تسجيل الدخول كـ"
+
+#: .\spa\templates\views\login.html:24
+msgid "Log Out?"
+msgstr "هل تريد تسجيل الخروج؟"
+
+#: .\spa\templates\views\login.html:29
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: .\spa\templates\views\login.html:37
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: .\spa\templates\views\login.html:43
+msgid "Invalid username or password."
+msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
+
+#: .\spa\templates\views\login.html:46
+msgid "I am a student"
+msgstr "أنا طالب"
+
+#: .\spa\templates\views\login.html:48
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:6
+#: .\updater\templates\updater\partials\noauth.html:6
+msgid "Log In"
+msgstr "تسجيل الدخول"
+
+#: .\spa\templates\views\preload-upload.html:48
+#: .\spa\templates\views\preload-usb.html:44
+msgid "A package with this name already exists, select to overwrite"
+msgstr "الحزمة التي تحمل هذا الاسم موجودة بالفعل، اخترها للاستبدال"
+
+#: .\spa\templates\views\preload-upload.html:60
+#: .\spa\templates\views\preload-usb.html:57
+msgid "Remove"
+msgstr "إزالة"
+
+#: .\spa\templates\views\preload-upload.html:69
+#: .\spa\templates\views\preload-usb.html:64
+msgid "Back"
+msgstr "السابق"
+
+#: .\spa\templates\views\preload-upload.html:70
+#: .\spa\templates\views\upload.html:55 .\spa\templates\views\uploadIE9.html:40
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:53
+msgid "Upload"
+msgstr "تحميل"
+
+#: .\spa\templates\views\preload-usb.html:29
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:41
+msgid "Import zip packages into Preloaded Content library"
+msgstr "استيراد حزم zip في مكتبة المحتويات التي تم تحميلها مسبقًا"
+
+#: .\spa\templates\views\preload-usb.html:33 .\spa\templates\views\usb.html:22
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:45
+msgid "Add Metadata"
+msgstr "إضافة بيانات تعريف"
+
+#: .\spa\templates\views\settings.html:6
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: .\spa\templates\views\settings.html:8
+msgid "Import from USB"
+msgstr "استيراد من USB/SD"
+
+#: .\spa\templates\views\settings.html:20
+msgid "Enable student access to the content library"
+msgstr "تمكين وصول الطلاب إلى مكتبة المحتوى"
+
+#: .\spa\templates\views\sidebar.html:11
+msgid "Drag content to the lesson to add it directly."
+msgstr "اسحب المحتوى إلى الدرس لإضافته مباشرةً."
+
+#: .\spa\templates\views\sidebar.html:15
+msgid "Manage this lesson"
+msgstr "إدارة هذا الدرس"
+
+#: .\spa\templates\views\sidebar.html:24 .\spa\templates\views\sidebar.html:28
+msgid "Filter by Category"
+msgstr "تصفية حسب الفئة"
+
+#: .\spa\templates\views\sidebar.html:43
+msgid "Allow student access to library?"
+msgstr "هل تريد إتاحة وصول الطلاب إلى المكتبة؟"
+
+#: .\spa\templates\views\sidebar.html:48
+#: .\teacheradmin\templates\teacheradmin\views\home.html:21
+#: .\teacheradmin\templates\teacheradmin\views\home.html:63
+#: .\teacheradmin\templates\teacheradmin\views\home.html:78
+msgid "No"
+msgstr "لا"
+
+#: .\spa\templates\views\sidebar.html:49
+#: .\teacheradmin\templates\teacheradmin\views\home.html:22
+#: .\teacheradmin\templates\teacheradmin\views\home.html:64
+#: .\teacheradmin\templates\teacheradmin\views\home.html:79
+msgid "Yes"
+msgstr "نعم"
+
+#: .\spa\templates\views\tags.html:9
+msgid "Preloaded"
+msgstr "تم تحميله مسبقًا"
+
+#: .\spa\templates\views\tags.html:16
+msgid "Uploaded"
+msgstr "تم تحميله"
+
+#: .\spa\templates\views\tags.html:25
+msgid "No tags created"
+msgstr "لم يتم إنشاء علامات"
+
+#: .\spa\templates\views\upload.html:20 .\spa\templates\views\upload.html:21
+#: .\spa\templates\views\upload.html:29 .\spa\templates\views\upload.html:30
+#: .\spa\templates\views\uploadIE9.html:19
+#: .\spa\templates\views\uploadIE9.html:20
+msgid "Title"
+msgstr "العنوان"
+
+#: .\spa\templates\views\upload.html:32 .\spa\templates\views\uploadIE9.html:23
+#: .\spa\templates\views\usb.html:33
+msgid "{$ FIELD_VAL.contentItemMax $}"
+msgstr "{$ FIELD_VAL.contentItemMax $}"
+
+#: .\spa\templates\views\upload.html:33 .\spa\templates\views\uploadIE9.html:24
+#: .\spa\templates\views\usb.html:34
+#, python-format
+msgid "The maximum length of title is %(maxchars)s."
+msgstr "الحد الأقصى لطول العنوان هو %(maxchars)s."
+
+#: .\spa\templates\views\upload.html:42 .\spa\templates\views\upload.html:43
+#: .\spa\templates\views\uploadIE9.html:27
+#: .\spa\templates\views\uploadIE9.html:28 .\spa\templates\views\usb.html:40
+#: .\spa\templates\views\usb.html.py:42
+msgid "Description"
+msgstr "الوصف"
+
+#: .\spa\templates\views\upload.html:55
+msgid "Save"
+msgstr "حفظ"
+
+#: .\spa\templates\views\upload.html:58 .\spa\templates\views\usb.html:59
+msgid "Common metadata applied to all items (excludes IMS packages)."
+msgstr "تم استخدام بيانات تعريف شائعة على كافة العناصر (باستثناء مجموعات IMS)."
+
+#: .\spa\templates\views\usb.html:18
+msgid "Import multiple files into My Uploaded Content library"
+msgstr "استيراد ملفات عديدة داخل مكتبة المحتوى الذي تم تحميله"
+
+#: .\spa\templates\views\usb.html:31
+msgid " title"
+msgstr "العنوان"
+
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:4
+#: .\updater\templates\updater\partials\noauth.html:4
+msgid "You must log in to view this page"
+msgstr "يجب تسجيل الدخول لعرض هذه الصفحة"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:5
+msgid "Change Password"
+msgstr "تغيير كلمة المرور"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:8
+msgid "Old Password"
+msgstr "كلمة المرور القديمة"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:15
+msgid "New Password"
+msgstr "كلمة المرور الجديدة"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:25
+msgid "Confirm Password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:15
+msgid "Allow internet access via this device?"
+msgstr "السماح بالوصول إلى الإنترنت عبر هذا الجهاز؟"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:29
+msgid "Teacher Password"
+msgstr "كلمة مرور المعلم"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:30
+#: .\teacheradmin\templates\teacheradmin\views\home.html:45
+msgid "Change"
+msgstr "تغيير"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:33
+msgid "Teacher Account"
+msgstr "حساب المعلم"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:35
+msgid "Reset account to factory default"
+msgstr "إعادة ضبط الحساب على إعدادات المصنع الافتراضية"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:41
+msgid "Device Wireless Name (SSID):"
+msgstr "اسم الجهاز اللاسلكي (SSID):"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:51
+msgid "Services"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:57
+msgid "Enable remote management"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:72
+msgid "Enable Intel&reg; Education Study"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:123
+msgid "Categories will only be deleted if they don't contain content"
+msgstr "سيتم حذف الفئات إذا كانت لا يوجد بها محتوى"
+
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:40
+msgid "USB/SD Preload Import"
+msgstr "استيراد أو تحميل مسبق عبر منفذ USB/SD"
+
+#: .\updater\templates\updater\views\home.html:11
+msgid "Current version"
+msgstr "الإصدار الحالي"
+
+#: .\updater\templates\updater\views\home.html:12
+#, fuzzy, python-format
+msgid ""
+"The update file will be uploaded, the device will reboot, and the update "
+"will be applied. All connections to the device will be terminated. Do not "
+"disrupt the update process and make sure the device is plugged into an "
+"electrical outlet or has at least 80%% battery remaining."
+msgstr ""
+"سيتم رفع ملف التحديث، وإعادة تشغيل الجهاز، وتطبيق التحديث. كما سيتم إنهاء "
+"جميع الاتصالات بالجهاز. لا تقم بتعطيل عملية التحديث وتأكد من أن الجهاز متصل "
+"بمأخذ كهربائي أو شحن البطارية لا يقل عن 80%."
+
+#: .\updater\templates\updater\views\home.html:13
+msgid "Select an update file."
+msgstr "حدد أحد ملفات التحديث."
+
+#: .\updater\templates\updater\views\home.html:39
+msgid "You are not authorized to view this page."
+msgstr "غير مصرّح لك بعرض هذه الصفحة."
+
+#~ msgid "Teacher Login"
+#~ msgstr "تسجيل دخول المعلم"
+
+#~ msgid "Copyright &copy; 2014. All rights reserved."
+#~ msgstr "حقوق النشر والطبع؛ 2014. جميع الحقوق محفوظة."
+
+#~ msgid "Application Update"
+#~ msgstr "تحديث التطبيق"

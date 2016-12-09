@@ -1,0 +1,20 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+<div id="management-container">
+    <div id="management-form-container">
+        <h3>Groups List</h3>
+        <ul>
+        <form method="POST" action="">    
+            {% for i in groups %}
+            	<li><a href="{% url 'group-item-list' i.id %}">{{i.title}}</a> </li> 
+            {% endfor %}
+        </form>
+        </ul>
+    </div>
+    <a href="{% url 'manage-index' %}"> back </a>
+</div>
+{% endblock body %}

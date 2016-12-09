@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="RTL"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">دليل المساعدة</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>الصفحة الرئيسية</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">ما هو المحتوى المميز؟</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>الدروس</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">ما هي الدروس؟</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>المكتبة</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">ما هي المكتبة؟</a></li>
+				<li><a href="#library2">لا يمكنني عرض المكتبة الخاصة بي</a></li>
+				<li><a href="#library3">الوصول إلى المحتوى</a></li>
+				<li><a href="#library4">كيفية استخدام الفئات كمرشحات</a></li>
+				<li><a href="#library5">ما هي سحابة الكلمات الدلالية وكيف يمكنني استخدامها؟</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>كيفية استخدام مخطط دروس Content Hub</h1>
+
+			<h2>الصفحة الرئيسية</h2>
+			<div class="howto" id="home1">
+				<h3>ما هو المحتوى المميز؟</h3>
+				<p>تمنح العناصر المميزة أولوية للدروس ومحتوى المكتبة، ويعد ذلك مهمًا لتسليط الضوء على هذه العناصر بالنسبة لك بمجرد دخولك على الصفحة الرئيسية لمخطط الدروس. ويوفر لك ذلك طريقة سريعة لاكتشاف الأشياء المهمة في هذا اليوم.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>الدروس</h2>
+			<div class="howto" id="lessons1">
+				<h3>ما هي الدروس؟</h3>
+				<p>الدروس هي مجموعات من المحتويات التعليمية التي تم تجميعها معًا للتعرف على موضوع أو درس معين.</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>المكتبة</h2>
+
+			<div class="howto" id="library1">
+				<h3>ما هي المكتبة؟</h3>
+				<p>تعرض صفحة المكتبة المحتوى الذي قام معلمك بتحميله أو تم تحميله مسبقًا على الجهاز.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>لا يمكنني عرض المكتبة الخاصة بي</h3>
+				<p>يوجد لدى المعلمين إمكانية إخفاء المكتبة عن الطلاب. إذا كنت تحتاج إلى الوصول إلى المكتبة، ولا يمكنك رؤيتها، فاطلب من المعلم أن يقوم بتمكينها.</p>
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>الوصول إلى المحتوى</h3>
+				<p>يمكنك الوصول إلى عناصر المحتوى بالنقر فوق العنوان. وفقًا لنوع الملف وإعدادات تهيئة المتصفح الخاص بك، سيتم فتح الملف في علامة تبويب جديدة أو سيقوم المتصفح بمعالجة تنزيل الملف.</p>
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>كيفية استخدام المرشحات</h3>
+				<p>مرشحات المكتبة هي مجموعة من المعايير التي يمكن تطبيقها معًا أو بشكل فردي لتصفية مجموعة البحث.</p>
+				<p>يمكنك استخدام مربع البحث للحصول على تصفية حسب النص.</p>
+				<p>يمكنك التصفية حسب الفئة. </p>
+				<p>يمكنك التصفية حسب الكلمة الدلالية.</p>
+				<p>يمكنك إزالة المعيار المستخدم بمجرد إضافته.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>ما هي سحابة الكلمات الدلالية وكيف يمكنني استخدامها؟</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />تقوم سحابة الكلمات الدلالية بعرض الكلمات الدلالية المستخدمة بكثرة داخل محتوى المكتبة؟ كلما زاد تكرار الكلمة الدلالية في المحتوى، ستظهر الكلمة الدلالية بشكل أكبر في سحابة الكلمات الدلالية. تعد سحابة الكلمات الدلالية طريقة سهلة لاستعراض المحتوى من خلال الكلمات الدلالية المستخدمة في هذا المحتوى وطريقة سهلة أيضًا لعرض أنواع الكلمات الدلالية الأكثر استخدامًا في المحتوى الخاص بك.</p>
+				<a href="#" class="scrollup">العودة لأعلى الصفحة</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

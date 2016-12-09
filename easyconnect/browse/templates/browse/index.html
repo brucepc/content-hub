@@ -1,0 +1,129 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+{% load browse_extras %}
+
+{% block body %}
+
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+<div class="col-l12">
+<div class="clearfix lessonBar">
+    <h1 class="left">Featured Lessons</h1><!-- column title -->
+    <ul class="right batchActions">
+    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+        <li><a name="lessonDeleteBatch" style='opacity:0.3' class="batchDelete">Delete</a></li>
+    {% endif %}
+        <li><a href="{% url 'lessons' %}" class="mainButton">View all lessons</a></li>
+    </ul>
+</div><!-- /end top bar -->
+    {% if featured_lessons %}
+    <div class="grid-l5 grid-m3 grid-s2 grid-xs-1 featuredLessons clearfix">
+        {% for lesson in featured_lessons %}
+            <div class="featuredLessonItems" id='{{ lesson.id }}'>
+                <a href="{% url 'group-detail' lesson.id %}" class="lessonIcon"></a>
+                <div class="ellipsis"><div><a href="{% url 'group-detail' lesson.id %}" class="lessonName">{{ lesson.title|title }}</a></div></div>
+                {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                    <ul class="listingIcons dropdown dropdownVertical">
+                        <li><input type="checkbox" itemid='{{ item.id }}' id='batch{{ lesson.id }}' name="lesson" value="Select" class="css-checkbox"><label for="batch{{ lesson.id }}" class="css-label radGroup1">Label</label></li>
+                        <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                        <!-- More Options Dropdown -->
+                        <ul class="optionsDrop">
+                            <li><a name='lessonDelete' class="delete" id='{{ lesson.id }}'>Delete This Lesson</a></li>
+                            <li><a name='lessonEdit' class="edit" id='{{ lesson.id }}'>Edit Lesson Title</a></li>
+                        </ul>
+                        </li><!-- end More Options Dropdown -->
+                        <li><a name='lessonFeature' fade='true' class="feature {% if lesson.featured %} on {% endif %}" id="{{ lesson.id }}" rel="tooltip" title="{% if lesson.featured %}Unf{% else %}F{% endif %}eature this content item on the home page"></a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div><!-- /end featuredLessons -->
+    {% endif %}
+
+    <div class='nofeatured lessons' {% if featured_lessons %} style="display:none; {% endif %}">
+        <span>
+        <p>No featured lessons yet</p>
+        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+            <p>Start creating lessons to feature on your home page</p>
+            <p><a href="{% url 'library' %}?createlesson">Create a new lesson</a></p>
+        {% else %}
+            <p>Please check your <a href="{% url 'lessons' %}">lesson listings</a></p>
+        {% endif %}
+        </span>
+    </div>
+    
+    
+
+<div class="clearfix lessonBar">
+    <h1 class="left">Featured Content</h1><!-- column title -->
+    <ul class="right batchActions">
+    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+        <li><a name='itemAddToLessonBatch' style='opacity:0.3' class="batchAdd">Add To Lesson</a></li>
+    {% endif %}
+        <li><a href="{% url 'library' %}" class="mainButton">View all content</a></li>
+    </ul>
+</div><!-- /end top bar -->
+<!--- FEATURED CONTENT -->
+    {% if featured_items %}
+    <div class="grid-l2 grid-m2 grid-s1 grid-xs1  featuredContent">
+        {% for item in featured_items %}
+
+            {% if not item.hidden or request.session.viewType == "teacher"%}
+
+                <!-- individual listing -->
+                <div class="detailListing {% if user.is_authenticated and request.session.viewType == "teacher" %}teacherContentItem{% endif %}" id='{{ item.id }}'>
+                    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                        <input type="checkbox" itemid='{{ item.id }}' id='batch{{ item.id }}' name="content" value="Select" class="libraryCheckbox">
+                    {% endif %}
+                    <div class="mediaIcon {{ item.content_file.url|get_extension }}"></div>
+                    <div class="featuredInfo">
+                        <h1 class="listingTitle"><a name='itemDetail' id='{{ item.id }}'>{{ item.title|title }}</a></h1>
+                        <p class="added">Added <time>{{ item.date_added | date:"d/m/Y H:i" }}</time>&nbsp;&nbsp; &#124; &nbsp;&nbsp;<span class="size">{{ item.file_size | filesizeformat }}</span><a href="{{ item.content_file.url }}"><span class="downloadIcon" ></span></a></p>
+                        <ul class="listingIcons dropdown dropdownVertical">
+                        {% if user.is_authenticated and request.session.viewType == "teacher" %}         
+                            <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                            <!-- More Options Dropdown -->
+                            <ul class="optionsDrop">
+                                <li><a name="itemAddToLesson" class="add" id='{{ item.id }}'>Add To Lesson</a></li>
+                                {% if item.uploaded %}
+                                    <li><a class="delete" name="itemDelete" id='{{ item.id }}'>Delete This Item</a></li>
+                                    <li><a name='itemEdit' class="edit"  id='{{ item.id }}'>Edit Details</a></li>
+                                {% endif %}
+                            </ul>
+                            </li><!-- end More Options Dropdown -->
+                            <li><a name='itemHide' class='hideItem {% if item.hidden %}on{% endif %} tooltip' id='{{ item.id }}' rel='tooltip' title='{% if item.hidden %} Show to {% else %} Hide from {% endif %}Students'></a></li>
+                            <li><a name='itemFeature' fade='true' class="feature {% if item.featured %} on{% endif %}" id="{{ item.id }}" rel="tooltip" title="{% if item.featured %}Unf{% else %}F{% endif %}eature this content item on the home page"></a></li>
+                            <li><a href="{{ item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                        {% else %}
+                            <li><a href="{{ item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                        {% endif %}
+                        </ul>
+                </div><!-- end featuredInfo -->
+                <span class="contentBottomBorder"></span>
+            </div><!-- end contentListing -->
+
+            {% endif %} <!-- end hidden -->
+
+        {% endfor %}
+    </div><!-- end featuredContent column -->
+    
+    {% endif %}
+
+    <div class='nofeatured content' {% if featured_items %} style="display:none;" {% endif %}>
+        <span>
+        <p>No featured content yet</p>
+        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+            <p>Use your library to have content display here</p>
+            <p><a href="{% url 'library' %}">My Library</a></p>
+        {% else %}
+            <p>Please check your <a href="{% url 'library' %}">library</a></p>
+        {% endif %}
+        </span>
+    </div>
+    
+
+
+</div>
+</section><!-- end mainContent row -->
+
+{% endblock %}

@@ -1,0 +1,19 @@
+<span class="categoryRow {$ 'category'+ level $}" itemid="{$ parent.id $}" style="display: block">
+    <span e-name="text" editable-text="parent.name" e-form="categoryForm" e-maxlength="50" e-required e-class="catName" ng-bind="parent.name">
+        <span e-name="uses" ng-bind-template="({$ parent.uses $})"></span></span>
+    <ul ng-hide="categoryForm.$visible" class="categoryOptions">
+        <li><a ng-if="level < 3" ng-click="addCategory(parent, categoryForm)" class="addChildCategory"><i class="fa fa-plus"></i></a></li>
+        <li><a name="categoryEdit" class="categoryEdit" ng-click="categoryForm.$show()"><span class="intelicon-edit"></span></a></li>
+        <li><a name="categoryDelete" class="categoryDelete" ng-click="remove(parent)" ng-hide="parent.uses > 0"><span class="intelicon-trash-outlined"></span></a></li>
+    </ul>
+    <form editable-form name="categoryForm" onbeforesave="save(parent, $data, categoryForm)" ng-show="categoryForm.$visible" class="editable-wrap editable-text form-buttons form-inline" shown="parent.id == 0">
+        <span class="editable-buttons">
+            <button type="submit" ng-disabled="categoryForm.$waiting" class="btn btn-primary">save</button>
+            <button type="button" ng-disabled="categoryForm.$waiting" ng-click="categoryForm.$cancel()" class="btn btn-default">cancel</button>
+        </span>
+        <div class="editable-error ng-binding ng-hide" ng-show="$error" ng-bind="$error"></div>
+    </form>
+</span>
+<div ng-if="parent.children.length > 0" ng-repeat="child in parent.children |orderBy:'name'">
+    <div categorytree parent="child" level="level + 1" save="save" remove="remove" add-category="addCategory"></div>
+</div>

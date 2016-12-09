@@ -1,0 +1,23 @@
+#{enumerate('.col-l', 1, $cols - 1, '')} {
+  float: left;
+  margin-left: $gutter;
+}
+
+@for $i from 1 through $cols {
+	.col-l#{$i} {
+	@include cols($i);
+  }
+}
+
+@for $i from 1 through $cols {
+	.grid-l#{$i} > div{
+		@include cells($i);
+	}
+	.grid-l#{$i} > div:nth-of-type(n){
+		clear:none;
+	}
+	.grid-l#{$i} > div:nth-of-type(#{$i}n+1){
+		clear:both;
+    }
+
+}

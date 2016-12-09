@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guide d&apos;aide</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>Accueil</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">Présentation du contenu disponible</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Leçons</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">Présentation des leçons</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Bibliothèque</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">Présentation de la bibliothèque</a></li>
+				<li><a href="#library2">Je ne vois pas ma bibliothèque</a></li>
+				<li><a href="#library3">Accès au contenu</a></li>
+				<li><a href="#library4">Utiliser les catégories comme filtres</a></li>
+				<li><a href="#library5">Présentation et utilisation du nuage de mots-clés</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>Utiliser le planificateur de leçons Content Hub</h1>
+
+			<h2>Accueil</h2>
+			<div class="howto" id="home1">
+				<h3>Présentation du contenu disponible</h3>
+				<p>Les éléments disponibles mettent en avant le contenu des leçons et de la bibliothèque que vous devez voir lorsque vous accédez à la page d&apos;accueil du planificateur de leçons. Cela vous permet de rechercher rapidement les éléments importants ce jour-là.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Leçons</h2>
+			<div class="howto" id="lessons1">
+				<h3>Présentation des leçons</h3>
+				<p>Les leçons regroupent des contenus pédagogiques permettant de s&apos;informer sur un sujet ou une rubrique spécifique..</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Bibliothèque</h2>
+
+			<div class="howto" id="library1">
+				<h3>Présentation de la bibliothèque</h3>
+				<p>La page Bibliothèque affiche le contenu que votre formateur a mis à jour ou a préchargé dans le service.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>Je ne vois pas ma bibliothèque</h3>
+				<p>Les formateurs peuvent masquer la bibliothèque pour les stagiaires. Si vous devez accéder à la bibliothèque et ne pouvez pas la voir, demandez à votre formateur de l&apos;activer.</p>
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>Accès au contenu</h3>
+				<p>Vous pouvez accéder aux éléments de contenu en cliquant sur le titre. Selon le type de fichier et la configuration de votre navigateur, le fichier s&apos;ouvre dans un nouvel onglet ou votre navigateur gère son téléchargement.</p>
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>Appliquer des filtres</h3>
+				<p>Les filtres de bibliothèques regroupent des critères applicables collectivement ou individuellement au filtrage de l&apos;ensemble de résultats.</p>
+				<p>Vous pouvez utiliser la zone de recherche pour un filtre à base de texte.</p>
+				<p>Vous pouvez filtrer en fonction d&apos;une catégorie. </p>
+				<p>Vous pouvez filtrer en fonction d&apos;un mot-clé.</p>
+				<p>Une fois ajoutés, les critères appliqués peuvent être supprimés.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Retour au début</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>Présentation et utilisation du nuage de mots-clés</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />Le nuage de mots-clés affiche les mots-clés le plus fréquemment utilisés dans le contenu de la bibliothèque. La taille d&apos;un mot-clé dans le nuage de mots-clés est proportionnelle à sa fréquence d&apos;application au contenu. Le nuage de mots-clés est un moyen facile de parcourir le contenu par mot-clé appliqué à ces informations et de voir quel type de mot-clé est le plus courant dans votre contenu.</p>
+				<a href="#" class="scrollup">Retour au début</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% load i18n %}
+<section class="row mainContent" ng-cloak>
+
+<style>
+    .block-ui-container{
+        display:none !important;
+    }
+
+    .spinner-false{
+        display:none;
+    }
+    .messagepadding-false, .messagepadding-true{
+      float: left;
+      background: none;
+      bottom: 8px;
+      right: 0;
+      width: 30px;
+      height: 20px;
+    }
+    .uploadcomplete-false{
+        display:block !important;
+    }
+
+</style>
+
+    <!--UPLOAD AREA -->
+    <div class="single col-l12 preloadonlycss">
+        <section class="packageUploadArea uploadArea clearfix">   
+
+            <div class="clearfix">
+                <h1 class="left">{% trans "Upload Package" %}</h1>
+            </div>
+            <form id="chooseFile" name="uploadForm" enctype="multipart/form-data" novalidate="true">
+                <div ng-if="!editing" class="uploadFileInfo">
+                    <input id="clone-me" ng-disabled="working" type="file" ng-file-select="onFileSelect($files)" accept="application/zip" multiple ng-click="clearFileSelection($event)" onKeyDown="this.blur()" onContextMenu="return false;">
+                </div>
+                <p ng-if="fileErrors.length > 0" ng-repeat="file_error in fileErrors" class="errorlist">
+                    {$ file_error $}
+                </p>
+            <!-- Multiple file upload rename -->
+            <div ng-repeat="file in file_title_mapping" class="multiFileUpload clearfix">
+                <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">                    
+                    <div class="fileDetails">
+                        <div class="multi-filename fileCancelled-{$ file.cancelled $}">{$ file.filename $}</div>
+                        <span ng-if="!file.cancelled">
+                            <div ng-if="file.exists" style="color:red; margin-bottom:8px;">
+                                <div class="messagepadding-{$ file.uploaded $}"></div>
+                                {% trans "A package with this name already exists, select to overwrite" %}
+                                <input ng-disabled="working" ng-model="file.overwriteConfirmed" type="checkbox"/>
+                            </div>
+                            <div class="uploadcomplete-{$ file.uploaded $} {$ file.error ? 'uc-error' : ( file.warning ? 'uc-warning' : '') $}">
+                                <img class="spinner-{$ file.current $}" src="../static/images/ajax_loader_blue_32.gif">
+                                <span class="fa {$ file.error ? 'fa-times' : ( file.warning ? 'fa-warning' : 'fa-check') $}"></span>
+                            </div>
+                            
+                            <div class="process_info_column upload_status">{$ file.inprocess_prefix $}</div>
+                        </span>
+                    </div><!-- /.file details -->
+                    <div class="cancel_upload_pre" ng-hide="cancel1disabled($index)" ng-click="cancelUpload($index)">
+                        <span class="fa fa-minus-circle"></span> {% trans "Remove" %}
+                    </div>
+
+                    <div class="cancel_upload_post" ng-hide="!isCancelable($index)" ng-click="cancelUploadPost($index)">
+                        <span class="fa fa-times-circle"></span> {% trans "Cancel" %}
+                    </div>
+                    
+                </ng-form>
+            </div>
+                <button ng-click="backButtonClick()" class="button-as-link" style="margin-right: 150px;" ng-disabled="working">{% trans "Back" %}</button>
+                <input type="submit" value="{% trans "Upload" %}" class="margin-top-20 brandBtnColor right" ng-click="save(content, uploadForm)" ng-disabled="uploadForm.$invalid || uploadForm.$pristine || actual_files.length === 0 || working || !valid_upload_exists()">
+            </form>
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>

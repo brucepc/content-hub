@@ -1,0 +1,127 @@
+﻿{% load i18n %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="#" class="headerLogoLink brandLogo"></a>
+            <a href="#" class="headerLogoText brandLogoSide3"></a>
+	        <ul class="navLinks" style="float:right; margin:30px 0 0;">
+	            <li class="helpHeadertext">{% trans "Help Guide" %}</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>Home</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">What is featured content?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Lessons</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">What are lessons?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Library</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">What is the Library?</a></li>
+				<li><a href="#library2">I can't see my library</a></li>
+				<li><a href="#library3">Accessing content</a></li>
+				<li><a href="#library4">How to use categories as filters</a></li>
+				<li><a href="#library5">What is the tag cloud and how do I use it?</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>How to use the Content Hub Lesson Planner</h1>
+
+			<h2>Home</h2>
+			<div class="howto" id="home1">
+				<h3>What is featured content?</h3>
+				<p>Featured items give prominence to lesson and library content which is important to showcase to yourself as you land on the Lesson Planner home page. This gives you a quick way to find what is important that day.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Lessons</h2>
+			<div class="howto" id="lessons1">
+				<h3>What are lessons?</h3>
+				<p>Lessons are collections of educational content that is grouped together to learn about a specific topic or lesson.</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Library</h2>
+
+			<div class="howto" id="library1">
+				<h3>What is the Library?</h3>
+				<p>The Library page displays the content that your teacher has uploaded or has been preloaded onto the device.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>I can't see my library</h3>
+				<p>Teachers have the ability to hide the library from students. If you need access to the library and can't see it, ask your teacher to enable it.</p>
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>Accessing content</h3>
+				<p>You can access content items by clicking on the title. Depending on the file type and your browser configuration, the file will either open in a new tab or your browser will handle downloading the file.</p>
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>How to apply filters</h3>
+				<p>The library filters are a set of criteria that can be applied all together or individually to filter the result set.</p>
+				<p>You can use the search box for a text based filter.</p>
+				<p>You can filter by a Category. </p>
+				<p>You can filter by a Tag.</p>
+				<p>Once added, the applied criteria can be removed.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Back to Top</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>What is the tag cloud and how do I use it?</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />The tag cloud displays the most frequently used tags within the library content. The more often a tag is applied to content, the larger the tag will display in the tag cloud. The tag cloud is an easy way to browse content by tags applied to that content and an easy way to see what type of tags are the most common in your content.</p>
+				<a href="#" class="scrollup">Back to Top</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

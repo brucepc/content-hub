@@ -1,0 +1,1490 @@
+/* General Content page area styling */
+
+html, body, #container { height: 100%; }
+body > #container { height: auto; min-height: 100%; }
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+hr {
+  border-top: 1px solid $horizontalRuleGray;
+}
+
+.mainContent {
+  padding-bottom:48px!important;
+  & h1 {
+     color: $brandDarkGray;
+    font-family: $customBoldFont;
+    margin: 0;
+    padding: 0;
+  }
+  a.actionLink {
+    @include font-size(1.2); // 12px
+    font-size: 0.75rem; // 12px
+    color: $brandLightGray;
+    text-decoration: underline;
+    display: block;
+    line-height:2.3;
+    &:hover, &:active, &:focus{
+      color:$brandGray;
+    }
+  }
+}
+
+/* body padding for sides on small size, border */
+.sideMenu, .mainAreaSpacing, .listingsArea, .teacherHome, .teacherLessons {
+ margin: 0;
+ padding:30px 0;
+}
+
+
+.center-message{
+  margin:0 auto;
+  max-width:80%;
+  padding:10px;
+  background:#fff;
+  border-radius:3px;
+  @include mediumShadow;
+}
+
+/* -------------------------------
+     LOGIN PAGE LAYOUT
+--------------------------------- */
+#loginPage {
+  .mainLogin {
+  margin: -80px auto 0 auto;
+  text-align: center;
+  .loginLogo {
+    width: 211px;
+    height: 64px;
+    margin: 0 auto 20px auto;
+  }
+  div{
+    margin:0 0 20px;
+  }
+  form {
+    text-align: left;
+    h1 {
+    @include font-size(2.0);
+    font-size: 1.25rem; // 20px
+    }
+    input{
+      margin:0 0 5px 0;
+    }
+    margin: 0 auto;
+    padding: 20px;
+    width: 350px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    // @extend %darkShadow;
+    @include darkShadow;
+  a {
+    @include font-size(1.2); // 12px
+    font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $actionLinksBlue;
+    text-decoration: underline;
+    display: inline-block;
+    float: left;
+    padding: 5px 0 0 0;
+  }
+  button.login {
+    float: right;
+  }
+  }
+}
+}
+
+
+
+/* -------------------------------
+     TWO COLUMN TEACHER LAYOUT
+--------------------------------- */
+.sideMenu {
+  padding-right: 0; // no side padding on small sizes
+  border: none;  // no side border on small sizes
+}
+/* Left column */
+.browseArea {
+  display: block !important;
+  position: relative;
+  padding: 0;  // when small
+  margin: 0 0 20px 0;   // when small
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  background-color: $bgGray;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  h1 {
+     padding: 10px 0;
+  }
+  #browseToggle {
+      padding: 0;
+      margin: 00;
+    width: 100%;
+    background-color: transparent;
+    > span {
+      display: inline-block;
+      width: 9px;
+      height: 6px;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      z-index: 20;
+      background:transparent url('../images/drawer-arrow.png') no-repeat 0 0;
+      -webkit-transition: -webkit-transform 0.4s ease;
+       -moz-transition:    -moz-transform 0.4s ease;
+         -o-transition:      -o-transform 0.4s ease;
+            transition:         transform 0.4s ease;
+    }
+    &:hover {
+    background-color: $brandLightestGray;
+  }
+    h1 {
+      cursor: pointer;
+      padding: 10px 20px;
+      }
+  }
+  .browseDrawer {
+    display: block;
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.rotate {
+      -moz-transform: rotate(-180deg);
+-webkit-transform: rotate(-180deg);
+-o-transform: rotate(-180deg);
+-ms-transform: rotate(-180deg);
+transform: rotate(-180deg);
+      }
+
+
+/* Dropdown selects */
+.dropMenu {
+  margin-bottom: 20px;
+  color: $brandLightGray;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+  -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  & select {
+      // height: 28px;
+      padding: 5px;
+      border: 1px solid $selectBorder;
+      text-indent: 0.01px; /* Removes default arrow from firefox*/
+      text-overflow: "";  /*Removes default arrow from firefox*/
+      width: 100%;
+      -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  &.showDrop {
+    width: 150px;
+    float: right;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+/* Tag Cloud */
+.tagCloud {
+  max-height: 300px;
+  overflow: hidden;
+  width: 90%;
+  padding: 0;
+  margin-bottom: 20px;
+  span {
+    display: inline-block;
+    padding: 0 8px 0 0;
+  }
+}
+/* Create Area */
+.createArea {
+  width: 100%;
+  background-color: $bgGray;
+  display: block !important;
+  position: relative;
+  padding: 0;  // when small
+  margin: 0 0 20px 0;   // when small
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  background-color: $bgGray;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  #createToggle {
+    padding: 10px 20px;
+     margin: 0;
+    width: 100%;
+    background-color: transparent;
+    > span {
+      display: inline-block;
+      width: 9px;
+      height: 6px;
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      z-index: 20;
+      background: transparent url('../images/down-arrow.png') no-repeat 0 0;
+    }
+    &:hover {
+    background-color: $brandLightestGray;
+  }
+}
+.dragDropArea{
+  padding:10px; 
+  border:2px dashed #cecece;
+  border-radius:5px;
+  margin-bottom:10px;
+  min-height:100px;
+  background:#fff;
+}
+.lessonTitle{
+  color: $brandDarkGray;
+  padding: 7px 0 15px 27px;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px;
+  margin: 0 0 15px;
+  line-height:1.2;
+  border-bottom:1px solid #d7d7d7;
+  background: transparent url('../images/icon-sprite.png') no-repeat -734px -944px;
+}
+h2.createLessonLink {
+  color: $brandDarkGray;
+  padding: 7px 20px 7px 27px;
+  cursor: pointer;
+  @include font-size(1.2);
+    font-size: 0.75rem; // 12px;
+    margin: 0;
+    line-height:1.5;
+    // background: transparent url('../images/icon-sprite.png') no-repeat -250px -44px;
+    background: transparent url('../images/icon-sprite.png') no-repeat -47px -1814px;
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+  .createDrawer {
+  display: block;
+  padding: 0 20px 20px 20px;
+    p{
+      color:$brandLightGray;
+    }
+    .dropIcon{
+      background: transparent url('../images/icon-sprite.png') no-repeat -350px -1609px;
+      display:block;
+      width:32px;
+      height:29px;
+      margin:0 auto 10px;
+  }
+}
+  .createList li a {
+    color: $brandGray;
+    font-family: $customBoldFont;
+    @include font-size(1.2);
+  font-size: 0.75rem; // 12px;
+  line-height: 1.5rem; // 24px;
+}
+}
+
+.createList{
+  font-size: 0.75rem; // 12px;
+  font-weight:bold;
+  li{
+    padding:5px 0 0 0;
+    margin:5px 0 0 0;
+    border-top:1px solid $brandLightestGray;
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    white-space: pre-wrap;       /* css-3 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+    &:first-child{
+      border:none;
+      padding:0;
+      margin:0;
+    }
+  }
+}
+
+/* -----------------------------
+    DRAG AND DROP
+----------------------------- */
+
+
+.helper{
+  padding:5px 5px 5px 30px;
+  background: url('../images/icon-sprite.png') no-repeat -245px -895px;
+  background-color:#fff;
+  border-radius:3px;
+  border:1px solid $brandLightGray;
+  @include buttonShadow;
+  p{
+    padding:0;
+    margin:0;
+  }
+}
+
+.createArea div.ui-state-default{
+  background:#fff;
+  font-weight:bold;
+  border:2px dashed $brandDividerBlue;
+}
+
+
+
+
+/* Main column */
+.listingsArea, .styleArea {
+position: relative;
+ padding: 0px 0px 0px 0px;
+}
+.detailView {
+  position: relative;
+ margin: 0 !important;  // for small only
+ padding: 0px 0px 0px 0px;
+}
+
+.topListing {  //titles and dropdowns
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 0;  // margin-bottom on small
+    padding: 0 0 15px 0;
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+}
+div.librarySubNav {
+  margin: 0 0 25px 0; 
+}
+div.librarySubNav, div.lessonBar {
+  border-bottom:1px solid #d7d7d7;
+  .left, .right{
+    font-size:0.75rem;
+  }
+  .left li{
+    float:left;
+    margin:0 5px 0 0;
+    a{
+      display:inline-block;
+      padding:10px;
+      line-height:1;
+      background:#f5f5f5;
+      border:1px solid #d7d7d7;
+      border-bottom:none;
+      border-radius:5px 5px 0 0;
+      color:$brandLightGray;
+      position:relative;
+      text-decoration:none;
+      &:hover, &:active{
+        background:$brandLightestGray;
+        border-radius:5px 5px 0 0;
+        color:$brandGray;
+      }
+      &.activeTab{
+        color:$brandGray;
+        background:#e5e5e5;
+        border:1px solid #d7d7d7;
+        border-bottom:none;
+        border-radius:5px 5px 0 0;
+        &:after{
+          content:" ";
+          width: 0; 
+          height: 0; 
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #d7d7d7;
+          position:absolute;
+          bottom:-5px;
+          left:50%;
+          margin-left:-5px;
+        }
+       &:hover{
+        text-decoration: none;
+        cursor:default;
+       } 
+      }
+    }
+  }
+  .right li{
+    float:left;
+    margin:0 0 0 20px;
+    a{
+      display:inline-block;
+      padding:10px 0 10px 20px;
+      line-height:1;
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      text-decoration:none;
+      color:$brandGray;
+    &.batchDelete{
+      background-position: -550px 8px;
+    }
+    &.batchAdd{
+      // background-position: -645px -42px;
+      background-position: -645px -1933px;
+    }
+    &.batchUpload{
+      background-position: -780px 8px;
+    }
+    &:hover, &:active{
+      text-decoration:underline;
+      cursor:pointer;
+    }
+    }
+  }
+}
+
+div.lessonBar{
+  border:none;
+  .left{
+    font-size:1.25rem;
+  }
+}
+
+
+
+.listing{
+  position: relative;
+  border-bottom: 1px solid $brandLightestGray;
+  margin: 0 0 15px 0;
+  padding: 0 0 15px!important;
+  position:relative;
+  .mediaIcon {
+   float: left;
+   margin-top:4px;
+  }
+}
+
+
+
+.detailListing{
+  border-bottom: none;
+  margin: 0;
+  padding-bottom:15px!important;
+  position:relative;
+  .mediaIcon {
+   float: left;
+   margin-top:4px;
+  }
+  span.contentBottomBorder{
+    width:100%;
+    height:1px;
+    display:block;
+    margin-top:10px; 
+    background: $brandLightestGray;
+    clear:both;
+  }
+  .listingInfo p.added{
+    margin:0 0 13px 0;
+  }
+  .listingIcons {
+    bottom:25px;
+    right:0.625rem;
+  }
+  
+}
+
+
+
+h1.listingTitle {
+  margin: 0;
+  padding: 0 0 10px;
+  font-weight:normal;
+  a {
+    color: $brandMidBlue;
+    text-decoration: none;
+    cursor:pointer;
+    &:hover{
+      text-decoration:underline;
+     }
+  }
+}
+
+.listingInfo {
+  padding: 0 0 0 45px;  // padding to allow for media icon
+  margin: 0;
+  ul.listingIcons {
+  > li{
+    margin: 0 0 0 15px !important;
+    padding: 0;
+    float: right;
+    padding: 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+  p {
+    @include font-size(1.2);
+   font-size: 0.75rem; // 12px;
+   line-height: 1.25rem; // 20px;
+   padding: 0 0 10px 0;
+   margin: 0;
+  }
+ p.added {
+  color: $brandLightGray;
+  padding: 0 0 10px 0;
+  width: 100%;
+  float: left;
+  line-height:1;
+    }
+}
+
+
+.featuredContent{
+  margin-bottom:30px;
+}
+
+
+/*  Icons for manipulating listings */
+ul.listingIcons{
+  display: block;
+  float: none !important;
+  position: absolute;
+  right:0;
+  bottom: 15px;
+  width: 170px;
+  padding: 0 !important;
+  margin: 0;
+
+  > li{
+    margin: 0 0 0 12px;
+    float: right;
+    padding: 0;
+  }
+  > li.moreOptions{
+    //position:relative;
+    //z-index:500!important; 
+  }
+  li a {
+    height: 26px;
+    width:26px;
+    &.downloadIcon{
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -200px -300px;
+      &:hover, &:active, &:focus{
+        background-position:-250px -300px;
+      }
+    }
+    &.feature {
+       background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -200px -100px;
+      cursor: pointer;
+      &:hover, &:hover {
+      background-position: -250px -100px;
+      }
+     &.on {
+      background-position: -250px -100px;
+     }
+    }
+    &.moreOptionsMenu {
+      width:26px;
+      height:26px;
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -494px 6px;
+      background-color:#f3f3f3;
+      border:1px solid #c4c4c4;
+      padding:3px;
+      z-index:100;
+      cursor:pointer;
+      border-radius:3px;
+      @include buttonShadowEffect;
+      &:hover, &:focus {
+      background-color:#fff;
+      }
+     }
+     &.hideItem{
+      width:26px;
+      height:26px;
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -200px -197px;
+      cursor:pointer;
+      &:hover, &:focus {
+        background-position: -250px -197px;
+     }
+     &.on{
+      background-position: -200px -248px;
+      &:hover, &:focus {
+        background-position: -250px -248px;        
+      }
+      .hideItem, .feature, .downloadIcon{
+        z-index:99;
+      }
+     }
+   }
+  }
+}
+
+.detailView ul.listingIcons {
+   margin: 0;
+   padding: 0;
+  // float: left !important;
+}
+/* FEATURED LESSONS LISTINGS */
+
+.lessonBar{
+  margin:20px 0 30px;
+}
+  .featuredLessonItems {
+    // margin-bottom:40px;
+    font-size:0.875rem;
+    min-height:160px;
+    width: 130px;
+    color:$brandMidBlue;
+    text-align:center;
+    position:relative;
+    .lessonName{
+      // margin-top:68px;
+      display:block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      line-height:1.5;
+      }
+    a {
+      color: $brandMidBlue;
+      text-decoration: none;
+      &:hover, &:focus, &:active{
+        text-decoration:underline;
+      }
+    }
+    .listingIcons {
+      position:relative;
+    }
+    .lessonIcon {
+      display: block;
+      width: 47px !important;
+      height:53px !important;
+      margin: 0px auto 15px;
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -600px -500px;
+      &:hover, &:focus, &:active{
+        opacity:0.8;
+      }
+      &:after {
+         content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+      }
+    }
+    /*  Icons for manipulating listings */
+    ul.listingIcons {
+      width: 113px;
+      height: 30px;
+      padding: 0;
+      margin: 20px auto 0 auto!important;
+      a {
+        margin: 0;
+        padding: 0;
+      }
+      > li {
+        float: right;
+        margin: 0 0 0 15px;  // if you change this be sure to change the ul.listingIcons width!
+        padding: 0;
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      }
+}
+
+.moreOptions ul, .featuredLessonItems .moreOptions ul {
+  position: absolute;
+  //z-index: 100;
+  width: 160px;
+  top: 26px !important;
+  left: -133px !important;
+  display: none;
+  padding: 0;
+  margin: 0;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  color: $brandGray;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  @include mediumShadow;
+  &:before {
+    content: "";
+      position: absolute;
+      top: -8px;
+      left: 70px;
+      width: 10px;
+      height: 8px;
+      background: transparent url('../images/triangle.png') no-repeat 0 0;
+      @include mediumShadow;
+  }
+     > li {
+    width: 100%;
+    height: 100%;
+      a {
+      text-align: left;
+      color: $brandGray !important;
+      display: block !important;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0 !important;
+      padding: 6px 6px 6px 30px;
+      transition : background-color 0.2s;
+      cursor: pointer;
+      &:hover, &:focus, &:active {
+      background-color: #00aeef;
+      color: #fff !important;
+      text-decoration: none;
+      }
+      &:active {
+      background-color: $brandLightBlue;
+      color: #fff;
+      }
+      &.add {
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -240px -992px;
+      &:hover, &:focus {
+        background-image: url('../images/icon-sprite.png');
+        background-repeat: no-repeat;
+        background-position: -240px -1042px;
+        }
+      }
+      &.delete {
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -240px -1092px;
+        &:hover, &:focus {
+        background-image: url('../images/icon-sprite.png');
+        background-repeat: no-repeat;
+        background-position: -240px -1142px;
+        }
+      }
+      &.edit {
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -390px -992px;
+        &:hover, &:focus {
+        background-image: url('../images/icon-sprite.png');
+        background-repeat: no-repeat;
+        background-position: -390px -1042px;
+        }
+      }
+      &.hide {
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      background-position: -390px -1091px;
+        &:hover, &:focus {
+          background-image: url('../images/icon-sprite.png');
+        background-repeat: no-repeat;
+        background-position: -390px -1141px;
+        }
+      }
+    }
+  }
+}
+
+
+// .teacherDetail .moreOptions ul {
+// position: absolute;
+//   z-index: 7;
+//   width:150px;
+//   top: 25px;
+//   left: -38px !important;
+// }
+
+/* ------------------------
+    LESSON DETAIL PAGE
+------------------------- */
+  div.teacherDetailTop {
+    margin:10px 0 10px;
+  .right li{
+    float:left;
+    margin:0 0 0 10px;
+    a {
+      display:inline-block;
+      padding:10px 0 10px 20px;
+      margin-left:10px;
+      line-height:1;
+      background-image: url('../images/icon-sprite.png');
+      background-repeat: no-repeat;
+      font-size:0.75rem;
+      background-position: 0 0;
+      text-decoration:none;
+      color:$brandGray;
+    &.batchDelete{
+      background-position: -550px 8px;
+    }
+    &.batchAdd{
+      background-position: -645px 8px;
+    }
+    &.batchUpload{
+      background-position: -780px 8px;
+    }
+    }
+  }
+}
+// Listing Boxes
+.detailView {
+  padding: 0;
+  h4.detailTitle {
+    margin: 0 ;
+    padding: 0;
+  }
+  section.listing {
+    margin: inherit;
+ margin-bottom: 20px;
+  float: none !important;
+  clear: both;
+  padding-bottom: 10px;
+  p.added {
+    max-width: 100%;
+    float: left;
+  }
+  .teacherDetail {
+    display: block;
+    width: 120px;
+    float: none;
+    position: relative;
+    left: 0;
+    bottom: 0;
+  > li {
+    float: right;
+    margin: 0 12px 0 0;
+  }
+  }
+  }
+}
+
+
+
+
+
+/* ------------------------
+    SINGLE COLUMN PAGE
+------------------------- */
+.uploadArea {
+  width: 80%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+#chooseFile {
+  @include font-size(1.2); // 12px
+  font-size: 0.75rem; // 12px
+  width: 100%;
+  padding: 0;
+  margin: 20px 0 0;
+  position: relative;
+
+  .dropdown select {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  button.upload {
+    float: right;
+  }
+  .addTag, .fileTitle {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    @include font-size(1.4);
+    font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $brandGray;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid $selectBorder;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    // @extend %lightShadow;
+    @include lightShadow;
+    a {
+      display: block;
+      float: right;
+    }
+  }
+  .uploadFileInfo {
+     position: relative;
+     vertical-align: middle;
+    width: 100%;
+    //height: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    @include font-size(1.4);
+    font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $brandLightGray;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid $formBorder;
+    // @extend %lightShadow;
+    @include lightShadow;
+     -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    button {
+      margin-right: 10px;
+    }
+    span {
+      display: inline-block;
+    }
+    .mediaIcon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    }
+
+  }
+    h3{
+      margin:0 0 10px;
+      font-size:1rem;
+    }
+    .clearfix a{
+      line-height:2;
+    }
+}
+
+
+
+/* -------------------------------
+     TWO COLUMN STUDENT LAYOUT
+--------------------------------- */
+.featuredContent, .lessonDetailContent{
+  font-size:0;
+}
+/* Featured Content Column Left*/
+.featuredLessons, .itemContent {
+  font-size:0;
+  //padding:0 10px;
+  border:1px solid white;
+   p {
+    @include font-size(1.2);
+   font-size: 0.75rem; // 12px;
+   line-height: 1.25rem; // 20px;
+   padding: 0 0 10px 0;
+   margin: 0;
+ }
+ p.added {
+  width: 100%;
+  float: none; // made full width on its own line
+  color: $brandLightGray;
+  margin: 0 0 10px 0;
+  padding: 0;
+  position: relative;
+}
+.downloadIcon {
+   display: block;
+    height: 26px;
+    width: 26px;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin: 5px 0 0 0;
+    background-image: url('../images/icon-sprite.png');
+    background-repeat: no-repeat;
+     background-position: -200px -300px;
+     &:hover, &:hover {
+      background-position: -250px -300px;
+      }
+  }
+ h1.featuredTitle {
+  margin: 0;
+  padding: 0 0 7px 0;
+  font-weight:normal;
+      @include font-size(1.4);
+  font-size:0.875rem; //  14px
+  a{
+    color: $brandMidBlue;
+  }
+ }
+}
+ .featuredInfo {
+ padding: 0;
+ margin: 0 0 0 45px; // margin to allow for media icon
+ font-size:0.75rem;//12px
+ }
+.teacherContentItem .listingInfo, .teacherContentItem .featuredInfo{
+  padding: 0 0 0 70px; // margin to allow for media icon
+  margin:0;
+}
+
+ .itemContent {
+  h1 {
+   @include font-size(1.6);
+  font-size: 1rem;
+ }
+ }
+.contentListing {
+  width: 100%;
+  border-bottom: 1px solid $brandLightestGray;
+  margin-bottom: 20px;
+  div.mediaIcon {
+   float: left;
+   margin:4px 0 0;
+ }
+  a {
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+ }
+}
+// .contentListing, #lessonListing {
+//   border-bottom: 1px solid $brandLightestGray;
+//   margin-bottom: 20px;
+//   div.mediaIcon {
+//    float: left;
+//    margin:4px 0 0;
+//  }
+//   a {
+//   text-decoration: none;
+//   &:hover, &:focus {
+//     text-decoration: underline;
+//   }
+//  }
+// }
+.itemContent .contentListing {
+  border: 0;// no border on the bottom of the individual item listing
+   p, ul {
+    @include font-size(1.2);
+   font-size: 0.75rem; // 12px;
+   line-height: 1.375rem; // 22px;
+ }
+ p {
+  padding: 0 0 20px 0;  // more padding and larger line-height for individual item listing
+ }
+ ul.itemInfo {
+ padding: 0 0 10px 0;
+ margin: 0;
+ color: #939598;
+ a {
+  color: #0071c5;
+  text-decoration: underline;
+ }
+ }
+}
+
+
+
+
+
+/* ------------------------
+      STYLE GUIDE
+------------------------- */
+.styleArea {
+  & h1 {
+  @include font-size(3.2);
+  font-size: 2rem; /* 32pt */
+  margin: 0;
+  }
+  & h1, & h2, & h3, & h4, & h5, & h6 {
+    padding: 0 0 10px 0;
+    a {
+      color: $brandGray;
+      text-decoration: none;
+    }
+  }
+  .linkExample {
+    color: $brandMidBlue;
+    font-weight: bolder;
+  }
+  .hoverExample {
+    color: $brandDarkBlue;
+    font-weight: bolder;
+  }
+  .visitedExample {
+    color: $visited;
+    font-weight: bolder;
+  }
+  .browseh2Example {
+    color: $brandDarkGray;
+    font-weight: bolder;
+  }
+  .pagination {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .uploadFileInfo button {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/* -----------------------------
+    MODAL WINDOWS
+----------------------------- */
+
+.ui-widget-overlay{
+  background:#000;
+}
+
+html div.ui-widget{
+  padding:25px 30px 30px;
+  overflow: visible;
+  background:white;
+  border-radius:5px;
+  font-size:0.875rem; //14px
+  position:relative;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.2);
+  .ui-dialog-titlebar-close{
+    border:none;
+    position:absolute;
+    top:-30px;
+    right:-40px;
+    background:$brandLightGray url('../images/icon-sprite.png') no-repeat -38px -289px;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    &:hover, &:active{
+      background-color:$brandGray;
+    }
+  }
+}
+  .ui-dialog{
+    .ui-dialog-titlebar{
+      font-size:18px;
+      padding:0 0 10px 0!important;
+      background:none;
+      border:none;
+      line-height:1.4;
+      color:$brandGray;
+    }
+    .ui-dialog-titlebar{
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+    .ui-dialog-title{
+      margin:0;
+      width:100%;
+      white-space:normal;
+      overflow:auto;
+      text-overflow:normal;
+    }
+    .ui-dialog-content{
+      padding:0;
+    }
+    .mainButton{
+      margin:20px 0;
+      padding-right:45px!important;
+      position:relative;
+      span{
+        width:17px;
+        height:16px;
+        background-image:url('../images/icon-sprite.png');
+        background-repeat:no-repeat;
+        background-position:-735px -502px;
+        position:absolute;
+        right:20px;
+        top:7px;
+    }
+    }
+    .ui-dialog-buttonpane {
+      background:none;
+      border:none;
+      padding:0;
+      margin:0;
+    }
+    .ui-button-text-only .ui-button-text{
+      padding:0;
+    }
+  }
+
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background:none;
+  }
+
+  .ui-dialog .ui-dialog-buttonpane button{
+    margin:0;
+  }
+
+.ui-widget-overlay{
+  opacity:0.7;
+}
+
+.itemInfo{
+  li{
+    padding:0 0 5px 0;
+    color:$brandLightGray;
+  }
+}
+
+
+
+/* -----------------------------
+    TOOLTIP
+----------------------------- */
+
+.tooltipmessage{
+  width:100%;
+  position:fixed;
+  top:15px;
+  left:0;
+  z-index:100;
+  text-align:center;
+  span{
+    display:inline-block;
+    padding:10px; 
+    background:black;
+    color:#fff;
+    background:$brandGreen;
+    border-radius:5px;
+    @include darkShadow;
+    max-width:80%;
+    font-size:0.75rem; //12px
+    font-weight:bold;
+    border:1px solid #728f22;
+  }
+}
+
+
+/* -----------------------------
+    NO RESULTS
+----------------------------- */
+
+.noresults, .nofeatured{
+  width:100%;
+  text-align:center;
+  margin-bottom:50px;
+  span{
+  padding:20px;
+  background:#fff; 
+  display:inline-block;
+  border-radius:3px;
+  margin:50px auto;
+  text-align:center;
+  border:1px solid $brandLightestGray;
+  @include mediumShadow;
+  }
+  p{
+    padding:0 0 10px 0;
+    margin:0;
+    &:first-child{
+      font-size:1.25rem; //20px
+      font-weight:bold;
+    }
+    &:last-child{
+      padding:0!important;
+    }
+  }
+  &:after{
+    clear:both;
+  }
+}
+.nofeatured span{
+  margin:20px 0;
+}
+
+
+
+/* -----------------------------
+    MANAGE AREA
+----------------------------- */
+
+.manageArea{
+  max-width:500px;
+  margin:0 auto;
+  padding:30px 0;
+
+  /* Manage Categories */
+  .categoryTable{
+    margin:0;
+    .categoryRow{
+      display:block;
+      padding:10px 0;
+      line-height:1.3;
+      border-bottom:1px solid #e3e3e3;
+      font-size:0.875rem;
+      a{
+        cursor: pointer;
+        float:right;
+        &.categoryEdit{
+          width:15px; 
+          height:14px;
+          display:inline-block;
+          background: url('../images/icon-sprite.png') no-repeat -200px -150px;
+          text-indent:-9999px;
+          margin:0 5px;
+          position:relative;
+          top:2px;
+          &:hover, &:active{
+            background-position:-250px -150px;
+          }
+        }
+        &.categoryDelete{
+          width:15px; 
+          height:14px;
+          display:inline-block;
+          background: url('../images/icon-sprite.png') no-repeat -200px -1870px;
+          text-indent:-9999px;
+          margin:0 0 0 10px;
+          position:relative; 
+          top:2px;
+          &:hover, &:active{
+            background-position:-250px -1870px;
+          }
+      }
+    }
+  }
+    .category2{
+      padding-left:15px;
+    }
+    .category3{
+      padding-left:30px;
+    } 
+  }
+
+  /* Manage Tags */
+  .manageTags{
+    margin:20px 0 0;
+    .tagName{
+      float:left;
+      padding:10px;
+      margin:0 7px 7px 0;
+      line-height:1;
+      background:#f9f9f9;
+      border-radius:5px;
+      border:1px solid #dadada;
+     a{
+        cursor: pointer;
+        &.tagEdit{
+          width:15px; 
+          height:14px;
+          display:inline-block;
+          background: url('../images/icon-sprite.png') no-repeat -200px -150px;
+          text-indent:-9999px;
+          margin:0 10px 0 10px;
+          position:relative;
+          top:0px;
+          &:hover, &:active{
+            background-position:-250px -150px;
+          }
+        }
+        &.tagDelete{
+          width:15px; 
+          height:14px;
+          display:inline-block;
+          background: url('../images/icon-sprite.png') no-repeat -200px -1870px;
+          text-indent:-9999px;
+          margin:0;
+          position:relative; 
+          top:1px;
+          &:hover, &:active{
+            background-position:-250px -1870px;
+          }
+      }
+    }
+
+    }
+  }
+
+}
+
+
+
+/* -----------------------------
+    HELP AREA
+----------------------------- */
+
+.helpArea{
+  max-width:700px;
+  margin:0 auto;
+  padding:30px 0;
+  font-size:0.75rem;
+  ul{
+    list-style:disc;
+    margin:0 0 10px 20px;
+    li{
+      padding:2px 0;
+    }
+    ul{
+      margin:5px 0 5px 20px;
+      list-style:circle;
+    }
+  }
+  h2{
+    font-size:1rem;
+    margin:30px 0 15px;
+    padding:0 0 7px;
+    border-bottom:1px solid $brandLightestGray;
+    color:$brandDividerBlue;
+  }
+  h3{
+    font-size:0.9375rem;
+    margin:10px 0 12px;
+  }
+  h4{
+    font-size:0.875rem;
+    font-style:italic;
+    font-weight:normal;
+    margin:0 0 10px;
+  }
+  p{
+    margin:0 0 20px;
+  }
+}
+
+
+
+/* -----------------------------
+    USB IMPORT
+----------------------------- */
+
+.jstree-container-ul{
+  margin:0 0 30px;
+}
+
+
+
+/* -----------------------------
+    PAGE SORT FILTER
+----------------------------- */
+
+.page-sort-description{
+  font-size:0.75rem;
+  color:$brandLightGray;
+  text-transform: capitalize;
+  position:absolute;
+  top:40px;
+  right:0;
+  line-height:2;
+  margin:3px 0 0;
+  .sortbutton{
+    margin:0 0 0 5px;
+  }
+  .sort-active{
+    text-decoration:none;
+  }
+}

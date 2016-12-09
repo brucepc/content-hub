@@ -1,0 +1,30 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Manage Groups{% endblock %}
+
+{% block body %}
+<div id="management-container">
+    <div id="management-form-container">
+        <h3>Add Group</h3>
+        <form method="post" action="{% url 'add-group' %}">
+            {% csrf_token %}
+            {{ add_group_form }}
+            <input type="submit" value="Add" />
+        </form>
+        <h3>Edit Group</h3>
+        <form method="post" action="{% url 'edit-group' %}">
+            {% csrf_token %}
+            {{ edt_group_form }}
+            <input type="submit" value="Submit" />
+        </form>
+        <h3>Delete Group</h3>
+        <form method="post" action="{% url 'delete-group' %}">
+            {% csrf_token %}
+            {{ del_group_form }}
+            <input type="submit" value="Delete" />
+        </form>
+    </div>
+    <a href="{% url 'manage-index' %}"> back </a>
+</div>
+{% endblock body %}

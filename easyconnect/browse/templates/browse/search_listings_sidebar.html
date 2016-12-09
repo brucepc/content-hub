@@ -1,0 +1,88 @@
+{% load browse_extras %}
+    <div class="col-l3 sideMenu">
+{% if '/library' in request.path and user.is_authenticated and request.session.viewType == "teacher" %}
+        <!-- TEACHER CREATE LESSON -->
+            <div class="createArea">
+                <!-- <div class="createBox"> -->
+                <div id="createToggle"><h2 class="createLessonLink">Create a New Lesson</h2><h2 class="lessonTitle" style="display:none">Lesson Title</h2></div>
+                <div class="createDrawer" {% if request.GET.lesson and user.is_authenticated and request.session.viewType == "teacher" %}style='display:block'{% endif %}>
+                    <div name="dropArea" class="dragDropArea">      
+                        <p>Drag content to the lesson to add it directly.</p> 
+                        <span class="dropIcon"></span>
+                        <ul class="createList">
+                            <li></li>
+                        </ul><!-- ed193n createList ul -->   
+                    </div><!-- end dragDropArea div -->                 
+                    <a href="#" class="actionLink">Manage this lesson</a>
+                <!-- </div> --><!-- end createBox -->
+            </div><!-- end createDrawer -->
+        </div><!-- end createArea -->
+{% endif %}
+        <!-- BROWSE -->
+
+            <div class="browseArea">
+                <div id="browseToggle" class="only-s only-xs only-m"><h1>Browse by Category</h1>
+                    <span></span></div>
+                    <div class="only-l"><h1>Browse by Category</h1>
+                    <span></span></div>
+                <div class="browseDrawer">
+                    <form name="category" action="{{ request.path }}?{% preserve_get %}" method="GET" class="clearfix">
+                        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                            <select level='0' disabled="disabled">
+                                <option selected="selected" value=0>Category</option>
+                            </select>
+                        </div>
+                        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                            <select level='1' disabled="disabled">
+                                <option selected="selected" value=0>Subcategory</option>
+                            </select>
+                        </div>
+                        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                            <select level='2' disabled="disabled">
+                                <option selected="selected" value=0>Subcategory</option>
+                            </select>
+                        </div>
+
+                        {# {{ mydict|get_item:item.NAME }} #}
+                        <input name="c" type="hidden" value=0 />
+                        <input type="submit" value="SUBMIT" class="left" /> {% if '/library' in request.path and user.is_authenticated and request.session.viewType == "teacher" %}<a href="{% url 'manage-categories' %}" class="actionLink right">Edit Categories</a>{% endif %}
+                    </form>
+                    {% if tags %}
+                    <hr />
+                    <h1>Most Frequently Visited Tags</h1>
+                    <!-- TAG CLOUD -->
+                    <div class="tagCloud">
+                        {% for tag in tags %}
+                            <span class="tag{{tag.score}} {% tagActive tag.id %}"><a href="{{ request.path }}?{% preserve_get %}&t={{ tag.id }}">{{ tag.text }}</a></span>
+                        {% endfor %}
+                    </div><!-- end tagCloud -->
+                    {% endif %}
+                </div><!-- end browseDrawer -->
+            </div><!-- end browseArea -->
+
+        <div name='allcat' style='display:none'>
+            <select level='0'>
+            {% for category in categories|dictsort:"name" %}
+                <option value="{{ category.pk }}">{{ category.name | capfirst }}</option>
+            {% endfor %}
+            </select>
+        {% for category in categories|dictsort:"name" %}
+            <select parentid='{{ category.pk }}' level='1'>
+            {% for sub in category.children|dictsort:"name" %}
+                <option value="{{ sub.pk }}">{{ sub.name | capfirst }}</option>
+            {% endfor %}
+            </select>
+            {% for sub in category.children|dictsort:"name" %}
+                <select parentid='{{ sub.pk }}' level='2'>
+                {% for subsub in sub.children|dictsort:"name" %}
+                    <option value="{{ subsub.pk }}">{{ subsub.name | capfirst }}</option>
+                {% endfor %}
+                </select>
+            {% endfor %}
+        {% endfor %}
+        
+        </div>
+
+        </div><!-- end sideMenu -->
+
+

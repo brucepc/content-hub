@@ -1,0 +1,72 @@
+{% load i18n %}
+<!--- USB IMPORT MARK OUT -->
+<section class="row mainContent">
+
+    <style>
+        .block-ui-container{
+            display:none !important;
+        }
+        .spinner-false{
+            display:none;
+        }
+
+    .messagepadding-false, .messagepadding-true{
+      float: left;
+      background: none;
+      bottom: 8px;
+      right: 0;
+      width: 30px;
+      height: 20px;
+    }
+    .uploadcomplete-false{
+        display:block !important;
+    }
+
+    </style>
+    <div class="single col-l12 preloadonlycss">
+        <section class="manageArea usbUpload clearfix">
+            <h1 class="margin-tb-20">{% trans "USB/SD Import Package" %}</h1>
+            <div class="margin-bottom-20">{% trans "Import zip packages into Preloaded Content library" %}</div>
+
+            <div preloadusbtree id="usb_browser" ng-show="!working" class="margin-bottom-20">{% trans "Please Wait..." %}</div>
+            <input type="button" value="{% trans "Reload" %}" ng-click="reload_page()" class="margin-bottom-20 brandBtnColor brandBtnHoverColor" ng-disabled="reload_disabled || working">
+            <!--<input type="button" value="{% trans "Add Metadata" %}" ng-click="toggleMetadata()">-->
+            <!-- Multiple file upload rename -->
+            <div class="usb-meta-container" ng-show="show_meta">
+
+                <div ng-repeat="file in file_title_mapping" class="preloadonlycss multiFileUpload clearfix">
+                    <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">
+                        <div class="fileDetails">
+                            <div class="multi-filename fileCancelled-{$ file.cancelled $}">{$ file.filename $}</div>
+                            <span ng-if="!file.cancelled">
+                                <div ng-if="file.exists" style="color:red; margin-bottom:8px;">
+                                    <div class="messagepadding-{$ file.uploaded $}"></div>
+                                    {% trans "A package with this name already exists, select to overwrite" %}
+                                    <input ng-disabled="working" ng-model="file.overwriteConfirmed" type="checkbox"/>
+                                </div>
+                                <div class="uploadcomplete-{$ file.uploaded $} {$ file.error ? 'uc-error' : ( file.warning ? 'uc-warning' : '') $}">
+                                    <img class="spinner-{$ file.current $}" src="../static/images/ajax_loader_blue_32.gif">
+                                    <span class="fa {$ file.error ? 'fa-times' : ( file.warning ? 'fa-warning' : 'fa-check') $}"></span>
+                                </div>
+                                
+
+                                <div class="process_info_column upload_status">{$ file.inprocess_prefix $}</div>
+                            </span>
+                        </div><!-- /.file details -->
+                        <div class="cancel_upload_pre" ng-hide="cancel1disabled($index)" ng-click="cancelUpload($index)">
+                            <span class="fa fa-minus-circle"></span> {% trans "Remove" %}
+                        </div>
+
+                    </ng-form>
+                </div>
+
+            </div>
+            <button ng-click="backButtonClick()" class="button-as-link" style="margin-right: 150px;" ng-disabled="working">{% trans "Back" %}</button>
+            <input type="button" value='{% trans "Import" %}' class="brandBtnColor brandBtnHoverColor right" ng-click="submitUSB()" ng-disabled="!tree_ready || working || !valid_upload_exists()">
+            <div ng-show="upload_error">{$ error_message $}</div>
+        </section>
+    </div>
+</section><!-- end mainContent row -->
+
+
+

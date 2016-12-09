@@ -1,0 +1,33 @@
+#{enumerate('.col-xs', 1, $cols - 1, '')} {
+  float: left;
+  margin-left: $gutter;
+}
+
+@for $i from 1 through $cols {
+  .col-xs#{$i} {
+    @include cols($i);
+  }
+}
+
+[class*="grid-"] {
+    display: block;
+    padding: 0;
+    margin: 0 -0.625rem;
+    *zoom: 1;
+}
+
+[class*="grid-"]:before, [class*="grid-"]:after {
+    content: " ";
+    display: table;
+}
+
+[class*="grid-"]:after {
+    clear: both;
+}
+
+[class*="grid-"] > div {
+  display:inline-block;
+  padding-left:10px!important;
+  padding-right:10px!important;
+}
+

@@ -1,0 +1,216 @@
+{% load i18n %}
+
+<style>
+.manageArea{
+    margin: 0px !important;
+    max-width: 700px;
+}
+ul.checklist > li {
+    margin-left:15px;
+}
+.selectAllCheckbox{
+    margin-left:0px;
+}
+
+
+.admin-sectionHeader {
+    overflow: hidden;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.admin-sectionHeader > label > span {
+    font-size: 1.1rem;
+    margin: 0 0 25px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    color: #8E8E8E;
+}
+.admin-batchActions {
+    float:right;
+}
+.admin-batchActions > li {
+    float:right;
+    margin-left:10px;
+}
+.admin-checklist > li{
+    margin-left: 25px !important;
+}
+.sectionspacing{
+    margin-bottom: 40px;
+}
+.admin-feedback-text{
+    margin-left:28px;
+}
+.admin-package-details{
+    float:right;
+}
+.detail-spacer{
+    margin-left:25px;
+    float:right;
+}
+.rightcol1{
+min-width:150px;
+}
+
+.bu2 {
+  display: inline-block !important;
+  line-height: 1 !important;
+    padding-top:7px !important;
+  text-decoration: none !important;
+  color: #53565a !important;
+  height:30px;
+}
+
+.admin-sectionHeader a.batchUpload span {
+  font-size: 1rem;
+  margin: 0 5px 0 0;
+}
+.admin-sectionHeader a{
+  text-decoration: none;
+  color: #53565a;
+}
+
+html[dir=rtl] .admin-sectionHeader input[type="checkbox"] {
+    margin-left:10px;
+}
+html[dir=rtl] .admin-checklist input[type="checkbox"] {
+    float: right;
+}
+
+.batchDelete{
+    display: inline-block !important;
+    padding-top:9px !important;
+      line-height: 1 !important;
+      text-decoration: none !important;
+      color: #53565a !important;
+      height:30px;
+}
+.batchDelete:hover{
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.bu2:bu2{
+    text-decoration: underline !important;
+}
+</style>
+
+<!--- MAIN CONTENT SECTION -->
+    <section class="row mainContent" ng-if="!user.isAdmin()">
+    <div class="col-l12">
+    <div class="clearfix titleBar homeTitle">
+        <h1 class="left">{% trans "Featured Lessons" %}</h1><!-- column title -->
+        <ul class="right singleLine">
+            <li><a href="#lessons" class="mainButton brandBtnColor brandBtnHoverColor">{% trans "View all lessons" %}</a></li>
+        </ul>
+    </div><!-- /end top bar -->
+    <section lessons class="featuredLessons" ng-controller="LessonCtrl" ng-cloak ng-init="init({featured: 'True'})">
+    </section> 
+    <div class="clearfix titleBar">
+        <h1 class="left">{% trans "Featured Content" %}</h1><!-- column title -->
+        <ul class="right singleLine">
+            <li ng-if="(libhidden == false && user.isTeacher() == false) || user.isTeacher()"><a href="#library" class="mainButton brandBtnColor brandBtnHoverColor" ng-hide="!user.isTeacher() && ibhidden">{% trans "View all content" %}</a></li>
+        </ul>
+    </div><!-- /end top bar -->
+    <!--- FEATURED CONTENT -->
+        <section ng-controller="ContentItemCtrl" ng-cloak ng-init="init({featured: 'True', hidden : user.isTeacher() ? null : 'False' }, false)">
+            <section contentitems="contentitems.results" checked-items="checkedItems" class="featuredItems"></section>
+            <div pager model="contentitems" pagefn="page"></div>
+            <div class='nocontentMessage' ng-if="contentitems.count === 0">
+                <span>
+                <p>{% trans "No content featured" %}</p>
+                    <p ng-show="user.isTeacher()">{% trans "Featured content will appear here" %}</p>
+                    <p ng-show="user.isTeacher()"><a href="#library">{% trans "My Library" %}</a></p>
+                    <p ng-show="!user.isTeacher() && !libhidden">{% blocktrans %}Please check your <a href="#library">library</a>{% endblocktrans %}</p>
+                </span>
+            </div>
+        </section>
+
+    </div>
+</section><!-- end mainContent row -->
+
+<!--- ADMIN SECTION -->
+
+<section class="row mainContent" ng-controller="ManagePreloadedCtrl">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+            <section class="manageArea clearfix preloadonlycss" ng-if="user.is_authenticated && user.isAdmin()">
+            <h1 style="margin-bottom:25px;">{% trans "Manage Content" %}</h1>
+
+            <!--
+                PRELOADED CONTENT
+            -->
+            <div class="padded-box">
+                <div class="admin-sectionHeader">
+                    <label>
+                        <input id="packages-select-all" ng-click="checkToggleSelectAll()"  ng-disabled="isdisabledPreloaded()" type="checkbox" class="+"/><span>{% trans "Preloaded Content" %}</span>
+                    </label>
+                    <ul class="admin-batchActions">
+                        <li><a ng-click="batchDelete()" ng-disabled="!deletePackagesEnabled()" class="batchDelete" ng-class="{'disabled' : !deletePackagesEnabled() }" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                        <li><a href="#preload/usb" class="batchUpload bu2"><span class="fa fa-upload brandBtnColor"></span>{% trans "USB/SD Import Package" %}</a></li>                    
+                        <li><a href="#preload/up-load" class="batchUpload bu2"><span class="fa fa-upload brandBtnColor"></span>{% trans "Upload Package" %}</a></li>
+                    </ul>
+                </div>
+                <ul class="admin-checklist checklist sectionspacing">
+                    <li ng-repeat="package in packages">
+                        <input ng-change="checkAllButton()" type="checkbox" ng-model="checkedPackages[$index]" checklist-value="package.id"/>
+                        <label>
+                            {$ package.package_file | get_filename $}
+                        </label>
+
+                        <div class="admin-package-details">
+                            <div class="detail-spacer descriptionKeyword"><time>{$ package.date_added | date:"dd/MM/yyyy HH:mm" $} </time> </div>
+                            <div class="detail-spacer descriptionKeyword">{$ package.filesize | filesizeformat $} </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+            <!--
+                TEACHER CONTENT
+            -->
+            <div class="padded-box">
+                <div class="admin-sectionHeader">
+                    <label>
+                        <input ng-click="checkToggleTeacherContent()" ng-disabled="checkContentEnabled()" ng-checked="ischecked_teacher()" checklist-value="teachercontent" type="checkbox" class="+"/><span>{% trans "Teacher Content" %}</span>
+                    </label>
+                    <ul class="admin-batchActions">
+                        <li><a ng-click="deleteTeacherContent()" ng-disabled="" ng-class="{'disabled' : !ischecked_teacher() }" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                    </ul>
+                </div>
+                <div class="admin-feedback-text sectionspacing">
+                    {% trans "Teacher uploaded content and lessons will be deleted." %}
+                </div>
+            </div>
+
+            <!--
+                CATEGORIES
+            -->
+            <div class="padded-box">
+                <div class="admin-sectionHeader">
+                    <label>
+                        <input ng-click="checkToggleCategories()" ng-disabled="checkCategoriesEnabled()" ng-checked="ischecked_categories()" checklist-value="categories" type="checkbox" class="+"/><span>{% trans "Categories" %}</span>
+                    </label>
+                    <ul class="admin-batchActions">
+                        <li><a ng-click="deleteUnusedCategories()" ng-disabled="" ng-class="{'disabled' : !ischecked_categories()}" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                    </ul>
+                </div>
+                <div class="admin-feedback-text sectionspacing">
+                    {% trans "Categories will only be deleted if they don't contain any content." %}
+                </div>
+            </div>
+
+
+        </section>
+
+<!--
+        <div class="centerText" ng-if="user.is_authenticated === false && !user.is_superuser">
+            <ng-include src="'/angularpartials/teacheradmin/noauth.html'"></ng-include>
+        </div>
+-->
+
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->
+

@@ -1,0 +1,9 @@
+<div ng-if="tags && tags.length > 0">
+<hr />
+<h1>Most Frequently Visited Tags</h1>
+<!-- TAG CLOUD -->
+<div class="tagCloud">  
+    <span ng-repeat="tag in tags" ng-class="{'on' : $location.url().indexOf('t=' + tag.id) > -1 }" class="tag{$ tag.score $}"><a ng-href="" ng-click="tagFilter(tag)" ng-bind="tag.text"></a></span>
+</div>
+<!-- end tagCloud -->
+<div>

@@ -1,0 +1,464 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guide d&apos;aide</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Accueil</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Description des leçons et du contenu de la bibliothèque disponibles</a></li>
+			<li><a href="#home2">Nombre d&apos;éléments pouvant être intégrés sur la page d&apos;accueil</a></li>
+			<li><a href="#home3">Supprimer de la page d&apos;accueil les leçons et le contenu de la bibliothèque disponibles</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Leçons</h2>
+		<ul class="tocNested">
+			<li><a href="#lessons1">Présentation des leçons</a></li>
+			<li><a href="#lessons2">Créer une leçon</a></li>
+			<li><a href="#lessons3">Ajouter du contenu à une leçon</a></li>
+			<li><a href="#lessons4">Modifier le nom d&apos;une leçon</a></li>
+			<li><a href="#lessons5">Supprimer du contenu d&apos;une leçon</a></li>
+			<li><a href="#lessons6">Intégrer une leçon</a></li>
+			<li><a href="#lessons7">Supprimer une leçon</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Bibliothèque</h2>
+		<ul class="tocNested">
+			<li><a href="#library1">Présentation de la bibliothèque</a></li>
+			<li><a href="#library2">Différence entre le contenu préchargé et le contenu téléchargé</a></li>
+			<li><a href="#library3">Gérer les éléments de contenu</a>
+				<ul class="tocNested2">
+					<li><a href="#library3">Intégrer du contenu</a></li>
+					<li><a href="#library4">Modifier les détails du contenu téléchargé</a></li>
+					<li><a href="#library5">Supprimer le contenu téléchargé</a></li>
+					<li><a href="#library6">Ajouter du contenu à une leçon</a></li>
+					<li><a href="#library7">Afficher et masquer le contenu pour les stagiaires</a></li>
+					<li><a href="#library8">Accès au contenu</a></li>
+				</ul><!-- end tocNested2 -->
+			</li>
+			<li><a href="#library9">Téléchargement de mon propre contenu</a></li>
+			<li><a href="#library10">Utiliser les catégories comme filtres</a></li>
+			<li><a href="#library11">Présentation et utilisation du nuage de mots-clés</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Paramètres du formateur</h2>
+		<ul class="tocNested">
+			<li><a href="#settings1">Gérer les catégories</a></li>			
+			<li><a href="#settings2">Gérer les mots-clés</a></li>
+			<li><a href="#settings3">Importation USB</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">		
+
+
+		<h1>Utiliser le planificateur de leçons Content Hub</h1>
+
+		<h2>Accueil</h2>
+		<div class="howto" id="home1">
+			<h3>Description des leçons et du contenu de la bibliothèque disponibles</h3>
+
+
+			<p>Les éléments disponibles mettent en avant le contenu des leçons et de la bibliothèque que vous ou les stagiaires devez voir après avoir accédé à la page d&apos;accueil du planificateur de leçons. Cela permet à l&apos;utilisateur de rechercher rapidement les éléments important pour lui ce jour-là. L&apos;intégration des éléments pertinents pour les stagiaires cette semaine ou ce jour-là leur évite de parcourir les leçons ou les pages de la bibliothèque et leur permet d&apos;accéder directement à la formation.</p>
+			<img src="/static/images/help-guide/home-view.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Nombre d&apos;éléments pouvant être intégrés sur la page d&apos;accueil</h3>
+			<p>Vous pouvez intégrer un nombre illimité d&apos;éléments sur la page d&apos;accueil, mais seuls 10 éléments sont affichés en même temps. L&apos;utilisateur peut parcourir les différentes pages si plus de 10 éléments sont disponibles.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Supprimer de la page d&apos;accueil les leçons et le contenu de la bibliothèque disponibles</h3>
+			<p>Vous pouvez utiliser l&apos;icône d&apos;étoile jaune figurant dans la leçon ou dans la zone d&apos;élément de contenu pour supprimer celles-ci de la section disponible sur votre page d&apos;accueil. Une fois que vous avez cliqué sur l&apos;icône, les éléments sont automatiquement supprimés de la page.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<h2>Leçons</h2>
+		<div class="howto" id="lessons1">
+			<h3>Présentation des leçons</h3>
+			<p>Les leçons regroupent des contenus pédagogiques que vous créez pour vos stagiaires à partir du contenu de votre bibliothèque. La page des leçons vous permet d&apos;afficher et de gérer les leçons que vous avez créées. Sur cette page, vous pouvez aussi créer une leçon, en intégrer une, supprimer une ou plusieurs leçons et modifier le nom des leçons.</p>
+			<p>Vous pouvez intégrer les leçons de façon qu&apos;elles apparaissent sur la page d&apos;accueil des vues du formateur et du stagiaire. Cela met davantage en avant les leçons en cours.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="lessons2">
+			<h3>Créer une leçon</h3>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Cliquez sur le bouton <strong>Créer une nouvelle leçon</strong> situé en haut à droite de la zone de contenu.</li>
+				<li>Entrez un nom dans la zone de texte <strong>Nom de la leçon</strong>, puis cliquez sur <strong>Créer</strong>. Si vous ne souhaitez pas poursuivre la création de la leçon, cliquez sur le bouton <strong>Annuler</strong>.</li>
+			</ol>
+			<p>Une fenêtre contextuelle indiquant que la leçon a bien été créée s&apos;affiche alors.</p>
+			<img src="/static/images/help-guide/what-are-lessons1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+<p>Il est possible de trier les leçons par <strong>date </strong>ou par <strong>nom</strong>.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons2 -->
+
+		<div class="howto" id="lessons3">
+			<h3>Ajouter du contenu à une leçon</h3>
+			<p>Une fois que vous avez créé une leçon, vous pouvez lui ajouter du contenu de votre bibliothèque. </p>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Dans la liste, recherchez la leçon à laquelle ajouter du contenu.</li>
+<p></p>
+<img src="/static/images/help-guide/how-to-create-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+
+<p></p>
+
+
+				<li>Cliquez sur l&apos;icône plus située sous le nom des leçons. Vous accédez alors à la page de la bibliothèque.</li>
+<li> Dans cette page, vous pouvez faire glisser du contenu de la liste vers la leçon dans la colonne de gauche.</li>
+			</ol>
+<p></p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+			<p>Pour ajouter simultanément plusieurs éléments de la bibliothèque à une leçon, cochez la case de chaque élément et cliquez sur <strong>Ajouter à la leçon</strong>.</p>
+<p>Le bouton se transforme alors en menu déroulant dans lequel vous sélectionnez la leçon. Une fois la leçon sélectionnée, cliquez sur la coche. Pour annuler à tout moment, cliquez sur le bouton <strong>X</strong>.</p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson2.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons3 -->
+
+		<div class="howto" id="lessons4">
+			<h3>Modifier le nom d&apos;une leçon</h3>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Dans la liste, recherchez la leçon à modifier.</li>
+				<li>Cliquez sur l&apos;icône de crayon. Un champ de texte s&apos;affiche alors. Vous pouvez modifier le nom de la leçon dans ce champ. Pour enregistrer les modifications, cliquez sur l&apos;icône de coche. Pour annuler une modification à tout moment, cliquez sur le bouton <strong>X</strong>.</li>
+			</ol>
+			<p>Vous pouvez également modifier le nom d&apos;une leçon sur la page des détails de la leçon au moyen de l&apos;icône de crayon située en regard du titre de la leçon.</p> 
+			<img src="/static/images/help-guide/edit-lesson-name.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons4 -->
+
+		<div class="howto" id="lessons5">
+			<h3>Supprimer des éléments de contenu d&apos;une leçon</h3>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Dans la liste, recherchez la leçon dont vous voulez supprimer du contenu.</li>
+				<li>Cliquez sur l&apos;icône ou le nom de la leçon pour accéder à la page des détails de la leçon.</li>
+				<li>Utilisez la case à cocher située à droite des éléments de contenu pour sélectionner ceux que vous voulez supprimer.</li>
+				<li>Cliquez sur le bouton <strong>Retirer de la leçon</strong> situé en haut à droite de la zone de contenu.</li>
+			</ol>
+			<img src="/static/images/help-guide/delete-cotent-in-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons5 -->
+
+		<div class="howto" id="lessons6">
+			<h3>Intégrer une leçon</h3>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Dans la liste, recherchez la leçon à intégrer.</li>
+				<li>Cliquez sur l&apos;icône d&apos;étoile située sous le nom de la leçon. Une étoile jaune indique que la leçon est disponible actuellement et une étoile grise indique qu&apos;elle ne l&apos;est pas.</li>
+			</ol>
+			<p>Une fois disponible, une leçon est affichée sur la page d&apos;accueil de la vue du formateur et du stagiaire.<p>
+			<img src="/static/images/help-guide/feature-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons6 -->
+
+		<div class="howto" id="lessons7">
+			<h3>Supprimer une leçon</h3>
+			<ol>
+				<li>Accédez à la page <strong>Leçons</strong>.</li>
+				<li>Utilisez la case à cocher située sous le nom de la leçon pour sélectionner la leçon à supprimer.</li>
+				<li>Cliquez sur le bouton <strong>Supprimer</strong> situé en haut à droite de la zone de contenu.</li>
+			</ol>
+			<p>Vous pouvez également supprimer une leçon à partir de la page des détails de la leçon en cliquant sur le bouton <strong>Supprimer cette leçon</strong> situé en haut à droite de la zone de contenu.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto lessons7 -->
+
+		<h2>Bibliothèque</h2>
+
+		<div class="howto" id="library1">
+			<h3>Présentation de la bibliothèque</h3>
+			<p>La page Bibliothèque affiche le contenu que vous avez téléchargé et le contenu préchargé existant. Sur cette page, vous pouvez :</p>
+			<ul>
+				<li>Parcourir les éléments par catégorie et mot-clé</li>
+				<li>Modifier les informations liées au contenu téléchargé</li>
+				<li>Ajouter du contenu aux leçons</li>
+				<li>Supprimer du contenu téléchargé</li>
+				<li>Charger du contenu</li>
+				<li>Intégrer du contenu</li>
+				<li>Afficher/masquer le contenu pour les stagiaires</li>
+			</ul>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library1 -->
+
+		<div class="howto" id="library2">
+			<h3>Différence entre le contenu préchargé et le contenu téléchargé</h3>
+			<p>L&apos;application peut inclure du contenu pédagogique préchargé, c&apos;est-à-dire chargé avant d&apos;être utilisé par le formateur et les stagiaires. Ce contenu peut être chargé par le fabricant de l&apos;équipement ou le ministère de l&apos;Éducation, par exemple, avant d&apos;être expédié à l&apos;établissement d&apos;enseignement pour y être utilisé. Il est impossible de supprimer ou de modifier du contenu préchargé.</p>
+			<p>Le contenu téléchargé est le contenu que vous, en tant que formateur, chargez à partir de fichiers de votre ordinateur. Il peut s&apos;agir de fichiers de tout type &ndash; document Excel, document Word, fichier HTML, PDF, E-Pub, vidéo, image, etc. Il est possible de supprimer et de modifier du contenu téléchargé.</p>
+			<img src="/static/images/help-guide/preloaded-uploaded-tabs.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library2 -->
+
+		<div class="howto" id="library3">
+			<h3>Gérer les éléments de contenu</h3>
+			<h4>Intégrer du contenu</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Utilisez l&apos;icône d&apos;étoile située à droite de l&apos;élément de bibliothèque que vous voulez intégrer. La couleur jaune indique que le contenu est disponible et la couleur grise indique qu&apos;il ne l&apos;est pas.</li>
+			</ol>
+			<p>Ce contenu apparaîtra sur la page <strong>Accueil</strong> sous <strong>Contenu disponible</strong>.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library3 -->
+
+		<div class="howto" id="library4">
+			<h4>Modifier les détails du contenu téléchargé</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Cliquez sur l&apos;onglet <strong>Contenu téléchargé</strong>.</li>
+				<li>Cliquez sur l&apos;icône de crayon située en regard de l&apos;élément de contenu que vous voulez modifier.</li>
+			</ol>
+			<p>Vous accédez à un formulaire dont les champs permettent de modifier le titre, la description, les mots-clés et les catégories liés au contenu concerné. Une fois les modifications terminées, cliquez sur <strong>Enregistrer</strong>.</p>
+			<img src="/static/images/help-guide/edit-content.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>			
+		</div><!-- end howto library4 -->
+
+		<div class="howto" id="library5">
+			<h4>Supprimer le contenu téléchargé</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Cliquez sur l&apos;onglet <strong>Contenu téléchargé</strong>.</li>
+				<li>Utilisez la case à cocher située à droite des éléments de bibliothèque pour sélectionner ceux que vous voulez supprimer.</li>
+				<li>Cliquez sur le bouton <strong>Supprimer</strong> situé à droite de l&apos;onglet <strong>Mon contenu téléchargé</strong>.</li>
+			</ol>
+			<p>Vous ne pouvez pas supprimer du contenu préchargé, uniquement du contenu téléchargé.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library5 -->
+
+		<div class="howto" id="library6">
+			<h4>Ajouter du contenu à une leçon</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Utilisez la case à cocher située à droite des éléments de bibliothèque pour sélectionner ceux que vous voulez ajouter à une leçon.</li>
+				<li>Utilisez le menu déroulant <strong>Ajouter à la leçon</strong> situé à droite de l&apos;onglet <strong>Mon contenu téléchargé</strong> pour sélectionner la leçon à laquelle ajouter du contenu. Une fois cela fait, cliquez sur la coche placée en regard de la leçon.</li>
+<p></p>
+<img src="/static/images/help-guide/add-content-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+
+<li>Lorsque la leçon est visible dans la zone de leçon située à gauche, vous pouvez faire glisser du contenu directement de la bibliothèque vers la leçon.</li>
+</ol><p>
+Pour ajouter simultanément <strong>plusieurs éléments de bibliothèque</strong> à une leçon, cochez la case de chaque élément et cliquez sur <strong>Ajouter à la leçon</strong>.</p>
+<p>
+Le bouton se transforme alors en menu déroulant dans lequel vous sélectionnez la leçon. Une fois la leçon sélectionnée, cliquez sur la coche. Pour annuler à tout moment, cliquez sur le bouton <strong>X</strong>.</p>
+<p>Il est possible de filtrer les éléments de bibliothèque au moyen du menu de l&apos;arborescence des catégories.</p>
+<p>Il existe une limite de trois niveaux de catégories. Tout élément de contenu n&apos;appartenant à aucune catégorie se trouve dans la catégorie « non catégorisé ».</p> 
+
+<img src="/static/images/help-guide/adding-library-items-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			
+			<p>Vous pouvez ajouter du contenu préchargé et téléchargé aux leçons.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Masquer et afficher des éléments de contenu individuels</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Utilisez l&apos;icône d&apos;œil pour masquer le contenu pour un stagiaire. Lorsque l&apos;œil est barré, le contenu est masqué pour les stagiaires.</li>
+			</ol>
+			<p>Si vous masquez du contenu pour les stagiaires, il est également masqué dans leur vue de bibliothèque et dans les leçons dans lesquelles il figure.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Masquer et afficher la bibliothèque pour les stagiaires</h4>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>. Dans l&apos;angle inférieur gauche figure l&apos;option « Permettre aux stagiaires d&apos;accéder à la bibliothèque ? ».</li>
+				<li>Sélectionnez <strong>Oui</strong> ou <strong>Non</strong>.</li>
+			</ol>
+			<img src="/static/images/help-guide/hide-and-show-library.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library7 -->
+
+		<div class="howto" id="library8">
+
+			<h4>Accès au contenu</h4>
+			<p>Vous pouvez accéder aux éléments de contenu en cliquant sur le titre. Selon le type de fichier et la configuration de votre navigateur, le fichier s&apos;ouvre dans un nouvel onglet ou votre navigateur gère le téléchargement du fichier.</p>
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library8 -->
+
+		<div class="howto" id="library9">
+			<h3>Chargement de mon propre contenu</h3>
+			<p>Vous pouvez charger quasiment tous les types de fichiers &ndash; .jpg, .pdf, e-pub, document Word, document Excel, vidéo, audio, HTML, etc.</p>
+			<ol>
+				<li>Accédez à la page <strong>Bibliothèque</strong>.</li>
+				<li>Cliquez sur le bouton <strong>Charger du contenu</strong>.</li>
+<li> Sélectionnez Fichier et accédez aux fichiers sur votre ordinateur.
+				<li>Vous pouvez charger simultanément plusieurs fichiers à partir de votre ordinateur. </li>
+<p>
+<img src="/static/images/help-guide\uploading-my-own-content-after-point-4.PNG" alt="Content Hub" class="imgBorder" /></p>
+				<li>Le titre des fichiers figurera automatiquement dans le champ Titre. Il s&apos;agit du seul champ obligatoire.</li>
+<li>La description, la catégorie et les mots-clés sont également ajoutés ici.</li>
+<li>Entrez une description dans le champ Description.</li>
+<li>Entrez les mots-clés appropriés dans le champ Mots-clés. Pour en entrer plusieurs, cliquez sur Entrer après chaque mot.</li>
+<li>Il n&apos;est possible de sélectionner qu&apos;une catégorie.</li>
+<li>Ces métadonnées seront appliquées à tous les fichiers chargés à ce stade (à l&apos;exception des éléments IMS).</li>
+<p></p>
+<p><img src="/static/images/help-guide/uploading-my-own-content-after-point-10.PNG" alt="Content Hub" class="imgBorder" /></p>
+<p></p>
+
+				<li>Une fois la saisie des informations terminée, cliquez sur <strong>Charger</strong>.</li>
+<li>Les fichiers non catégorisés sont affichés dans la catégorie « non catégorisé ».</li>
+			</ol>
+			<img src="/static/images/help-guide/uploading-my-own-content-after-point-12.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto contentMan1 -->
+
+
+		<div class="howto" id="library10">
+			<h3>Appliquer des filtres</h3>
+<p>Les filtres de bibliothèques regroupent des critères applicables collectivement ou individuellement au filtrage de l&apos;ensemble de résultats.</p>
+<p>Vous pouvez utiliser la zone de recherche pour un filtre à base de texte.</p>
+<p>Vous pouvez filtrer en fonction d&apos;une catégorie. </p>
+<p>Vous pouvez filtrer en fonction d&apos;un mot-clé.</p>
+<p>Une fois ajoutés, les critères appliqués peuvent être supprimés.</p>
+<img src="/static/images/help-guide/library-search.png" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto library12 -->
+
+		<div class="howto" id="library11">
+			<h4>Présentation et utilisation du nuage de mots-clés</h4>
+			<p>Le nuage de mots-clés affiche une liste restreinte de mots-clés qui ont été affectés à des éléments de contenu. Les mots-clés facilitent la recherche de contenu. Des mots-clés comme « science », « exercice pratique », « juniors » et « pdf » appliqués à des éléments de contenu permettent à ceux-ci d&apos;apparaître dans les recherches de ces termes.</p>
+			<p>La taille d&apos;un mot-clé dans le nuage de mots-clés est proportionnelle à sa fréquence d&apos;application au contenu. Le nuage de mots-clés est un moyen facile de parcourir le contenu par mot-clé et de voir quel type de mot-clé est le plus courant dans votre contenu.</p>
+			<img src="/static/images/help-guide/what-are-tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>			
+		</div><!-- end howto library13 -->
+
+<h2>Paramètres du formateur</h2>
+		<div class="howto" id="settings1">
+			<h3>Gérer les catégories</h3>
+			<p>Cliquez sur le bouton <strong>Gérer</strong> situé en haut à droite de la page. Choisissez <strong>Catégories</strong> dans le menu déroulant.</p>
+			<h4>Ajouter une nouvelle catégorie principale</h4>
+			<ol>
+				<li>Cliquez sur le bouton <strong>Ajouter une nouvelle catégorie principale</strong>.</li>
+				<li>Tapez un nom pour la catégorie.</li>
+				<li>Cliquez sur la coche pour enregistrer la nouvelle catégorie.</li>
+			</ol>
+			<h4>Ajouter une catégorie de deuxième ou troisième niveau</h4>
+			<ol>
+				<li>Cliquez sur l&apos;icône <strong>+</strong> en regard de la catégorie qui doit être un parent de la nouvelle sous-catégorie.</li>
+				<li>Tapez un nom pour la catégorie.</li>
+				<li>Cliquez sur la coche pour enregistrer la nouvelle catégorie.</li>
+			</ol>
+			<h4>Modifier un nom de catégorie</h4>
+			<ol>
+				<li>Cliquez sur l&apos;icône de crayon située sous le nom de catégorie à modifier.</li>
+				<li>Tapez un nouveau nom pour la catégorie.</li>
+				<li>Cliquez sur la coche pour enregistrer la nouvelle catégorie.</li>
+			</ol>
+			<h4>Supprimer une catégorie</h4>
+			<ol>
+				<li>Cliquez sur l&apos;icône de corbeille sous le nom de la catégorie à supprimer.</li>
+				<li>Confirmez la suppression de la catégorie dans la fenêtre contextuelle.</li>
+			</ol>
+			<p><strong>Remarque :</strong> vous ne pouvez pas supprimer une catégorie si du contenu lui est affecté ou si elle possède une catégorie enfant.</p>
+			<img src="/static/images/help-guide/categories-page.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto settings1 -->
+
+	<div class="howto" id="settings2">
+			<h3>Gérer les mots-clés</h3>
+			<p>Cliquez sur le bouton <strong>Gérer</strong> situé en haut à droite de la page. Choisissez <strong>Mots-clés</strong> dans le menu déroulant.</p>
+			<h4>Modifier un mot-clé</h4>
+			<ol>
+				<li>Cliquez sur l&apos;icône de crayon en regard du mot-clé à modifier (les mots-clés de contenu préchargé ne peuvent pas être supprimés).</li>
+				<li>Tapez un nouveau nom pour le mot-clé.</li>
+				<li>Cliquez sur la coche pour enregistrer le nouveau mot-clé.</li>
+			</ol>
+			<h4>Supprimer un mot-clé</h4>
+			<ol>
+				<li>Cliquez sur l&apos;icône de corbeille située sous le nom du mot-clé à supprimer.</li>
+				<li>Confirmez la suppression du mot-clé dans la fenêtre contextuelle.</li>
+			</ol>
+			<p><strong>Remarque :</strong> vous ne pouvez pas modifier des mots-clés associés à du contenu préchargé.</p
+			<img src="/static/images/help-guide/tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto settings2-->
+
+	<div class="howto" id="settings3">
+			<h3>Importation USB</h3>
+			<p>Cliquez sur le bouton <strong>Gérer</strong> situé en haut à droite de la page. Choisissez <strong>Paramètres</strong> dans le menu déroulant, puis sélectionnez <strong>Importation USB</strong>.</p>
+			<h4>Importer des fichiers à partir de l&apos;USB</h4>
+			<ol>
+				<li>Utilisez les flèches sur la gauche pour ouvrir les différents dossiers du périphérique USB.</li>
+				<li>Cochez la case à gauche du nom de fichier pour sélectionner les éléments à importer.</li>
+<li>Sélectionnez le dossier de niveau supérieur pour en importer tous les fichiers. (Seuls les fichiers à la racine du dossier sont sélectionnés. Les sous-dossiers et les fichiers qu&apos;ils contiennent ne sont pas ajoutés.)
+				<li>Cliquez sur le bouton <strong>Importer</strong> pour lancer l&apos;importation des fichiers dans votre <strong>bibliothèque</strong>.</li>
+			</ol>
+			<h4>Remarques</h4>
+			<ul>
+				<li>Vous pouvez importer plusieurs fichiers dans la bibliothèque <strong>Mon contenu téléchargé</strong>.</li>
+				<li>Le titre de chaque fichier est basé sur le nom du fichier. Il est renommé de manière incrémentielle si le nom de fichier existe déjà.</li>
+<li><strong>Remarque :</strong> la description, la catégorie et les mots-clés sont également ajoutés ici. Ces métadonnées seront appliquées à tous les fichiers chargés à ce stade (à l&apos;exception des éléments IMS).</li> 
+				
+
+<li>Il est possible de mettre à jour des fichiers individuels via la fonction Modifier les informations sur le contenu de la bibliothèque.</li>
+				
+				<li>Il est impossible d&apos;importer des dossiers.</li>
+				<li>Une fois la saisie des informations terminée, cliquez sur <strong>Importer</strong>.</li>
+			</ul>
+			<img src="/static/images/help-guide/usb-	import1.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Retour au début</a>
+		</div><!-- end howto settings2-->
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

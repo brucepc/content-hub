@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">帮助指南</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>内容管理</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">概述</a></li>
+			<li><a href="#home2">概述</a></li>
+			<li><a href="#home3">移除预安装内容</a></li>
+			<li><a href="#home4">移除教师内容</a></li>
+			<li><a href="#home5">移除分类</a></li>
+			<li><a href="#home6">教师模式</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>如何使用内容中心的课程计划</h1>
+
+		<h2>内容管理</h2>
+		<div class="howto" id="home1">
+			<h3>概述</h3>
+
+			<p>当管理员登录课程计划时，内容中心会默认显示内容管理。</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>管理员可以进行如下操作：</p>
+			<ul>
+				<li>增加/删除预安装内容包</li>
+				<li>移除教师内容</li>
+				<li>移除分类</li>
+			</ul>
+			<h4>预安装内容是什么？</h4>
+			<p>预安装内容会预存在课程计划中，教师和学生都可以使用。这些内容可以有不同的单位进行预装，例如，工厂，教育机构。只有管理员对预安装内容有管理权限（上传、导入和移除）。</p>
+			<h4>教师内容是什么？</h4>
+			<ol>
+				<li>教师添加的内容—教师可以添加内容到课程计划的内容库中。内容可以是不同格式的文件，例如，Excel, Word, HTML, PDF, E-Pub, 音频，图片等。</li>
+				<li>教师创建的课程</li>
+			</ol>
+			<h4>分类功能是什么？</h4>
+			<p>通过分类功能，教师和管理员能够对内容进行分组或分类。分类包含以下功能：</p>
+			<ol>
+				<li>管理员可以对预安装的内容分类，也可以在上传或导入内容时分类</li>
+				<li>教师在上传或导入内容时分类</li>
+				<li>教师可以在分类管理页面进行配置，管理员可以在教师模式下的分类管理页面对内容进行配置</li>
+			</ol>
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>添加预安装内容</h3>
+			<p>有两种方法可以添加预安装内容到课程计划</p>
+			<ol>
+				<li>通过浏览器，在“预安装内容”部分选择“上传内容包”，然后上传需要的内容</li>
+				<li>插入USB移动硬盘，在“预安装内容”部分，选择“USB 导入包”导入内容</li>
+			</ol>
+			<p>对于大于2GB的文件，必须用USB导入的方式。这是由浏览器对上传文件大小的限制导致的。</p>
+			<h4>上传内容包</h4>
+			<p>通过浏览器上传预装内容包：</p>
+			<ol>
+				<li>在内容管理页面，打开“预装内容”功能</li>
+				<li>选择“上传内容”<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>在上传内容包页面，点击“选择文件”按钮，选择想要上传的内容包。如果预装内容包命名与已经存在的内容重名，会显示一个“覆盖已存在的内容包”选项。 如果管理员选择不覆盖内容包，内容包将不上传。</li>
+				<li>如果预装内容成功上传，将会有确认信息出现。</li>
+			</ol>
+			<h4>导入内容包</h4>
+			<p>通过USB导入功能导入预装内容包：</p>
+			<ol>
+				<li>将USB设备插入教育路由器</li>
+				<li>进入内容管理页面的“预装内容”功能</li>
+				<li>选择“USB导入内容包”<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>在USB导入内容包页面，选择需要上传得内容包。如果预装内容包命名与已经存在的内容重名，会显示一个“覆盖已存在的内容包”选项。 如果管理员选择不覆盖内容包，内容包将不上传。</li>
+				<li>如果预装内容成功上传，将会有确认信息出现。</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>移除预装内容</h3>
+			<p>管理员可以移除所有预安装的内容包，也可以移除单个的内容包。</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>移除所有内容包：</p>
+			<ol>
+				<li>在内容管理页面，打开“预装内容”功能</li>
+				<li>选取“预装内容”选项。如果没有预装内容，此选项将没有功能</li>
+				<li>点击“删除”</li>
+				<li>所有预装内容都会被删除。</li>
+			</ol>
+			<p>删除单个预装内容包：</p>
+			<ol>
+				<li>在内容管理页面，打开“预装内容”功能，所有预装内容会以列表形式显示。</li>
+				<li>选择想要删除的内容包</li>
+				<li>点击“删除”</li>
+				<li>所有选择的内容包将被删除。</li>
+			</ol>
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>移除教师内容</h3>
+			<p>移除教师内容：</p>
+			<ol>
+				<li>在内容管理页面，打开“教师内容”功能</li>
+				<li>选择“教师内容”选项。如果没有教师内容，此选项将无功能。</li>
+				<li>点击“删除”</li>
+				<li>设备中的所有教师内容包将被删除 （例如，教师上传内容和课程</li>
+			</ol>
+			<p>在管理员模式下，单个内容包不能被删除。然而，管理员可以进入教师模式对单个内容包进行删除。</p>
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>移除分类</h3>
+			<p>移除分类：</p>
+			<ol>
+				<li>在内容管理页面，打开“分类”功能</li>
+				<li>选择“分类”选项，如果分类中没有相关内容，此功能将无效。</li>
+				<li>点击“删除”</li>
+			</ol>
+			<p>只有空的分类才可以被删除。如果有内容归于某个分类，此分类将不能被删除。</p>
+			<p>在管理员模式下，单个分类不能被删除。然而，管理员可以进入教师模式对单个内容包进行删除。</p>
+
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>教师模式</h3>
+			<p>管理员可以进入教师模式并进行所有教师模式下的操作</p>
+			<p>在内容管理页面下，选择菜单中的“教师模式”，然后可以使用课程划功能</p>
+			<p>在教师模式下，管理员可以通过选择菜单中的“管理员模式”返回内容管理页面</p>
+
+			<a href="#" class="scrollup">回到顶部</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

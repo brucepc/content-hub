@@ -1,0 +1,41 @@
+{% extends "browse/header_simple.html" %}
+{% load staticfiles %}
+{% load browse_extras %}
+
+{% block body %}
+
+<!--- MAIN CONTENT SECTION -->
+<style>
+    #iframe_cont{
+        position: absolute;
+        width: 100%;
+        top:75px;
+        bottom:5px;
+    }
+    #frame{
+        width: 100%;
+        height: 100%;
+    }
+
+    #simple_header{
+        position: absolute;
+        height: 75px;
+        top:0px;
+        margin-top: 5px;
+    }
+    #simple_footer{
+        position: absolute;
+        bottom: 0px;
+        height: 50px;
+    }
+    .row.headerContent{
+        margin-top: 0px !important; 
+    }
+
+</style>
+<div id="iframe_cont">
+    <iframe id="frame" src="{{item_url}}" frameborder="0"></iframe>
+</div>
+
+
+{% endblock %}

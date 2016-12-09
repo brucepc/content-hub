@@ -1,0 +1,136 @@
+﻿2016-06-22 10:57:57,312 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 10:57:57,364 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 10:57:57,379 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 10:57:58,550 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 10:57:59,332 --- INFO --- wsgi --- ::: Startup completed in: 1.831022 seconds
+2016-06-22 10:58:47,563 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 10:58:47,612 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 10:58:47,628 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 10:58:48,832 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 10:58:49,618 --- INFO --- wsgi --- ::: Startup completed in: 1.865307 seconds
+2016-06-22 10:58:52,373 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 10:59:09,454 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 10:59:09,509 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 10:59:09,521 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 10:59:10,657 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 10:59:11,432 --- INFO --- wsgi --- ::: Startup completed in: 1.820917 seconds
+2016-06-22 10:59:23,531 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 10:59:23,580 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 10:59:23,595 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 10:59:24,795 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 10:59:25,580 --- INFO --- wsgi --- ::: Startup completed in: 1.861391 seconds
+2016-06-22 10:59:28,372 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:03:21,916 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:03:21,969 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:03:21,982 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:03:23,160 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:03:23,911 --- INFO --- wsgi --- ::: Startup completed in: 1.818774 seconds
+2016-06-22 11:03:26,741 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:22:19,904 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:22:19,954 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:22:19,965 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:22:21,120 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:22:21,859 --- INFO --- wsgi --- ::: Startup completed in: 1.823246 seconds
+2016-06-22 11:22:24,783 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:22:51,067 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:22:51,118 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:22:51,131 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:22:52,308 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:22:53,041 --- INFO --- wsgi --- ::: Startup completed in: 1.80061 seconds
+2016-06-22 11:22:55,895 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:24:46,335 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:24:46,387 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:24:46,399 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:24:47,552 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:24:48,299 --- INFO --- wsgi --- ::: Startup completed in: 1.817341 seconds
+2016-06-22 11:24:51,146 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:26:38,505 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:26:38,620 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:26:38,646 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:26:40,129 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:26:40,875 --- INFO --- wsgi --- ::: Startup completed in: 1.944656 seconds
+2016-06-22 11:26:41,574 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:33:07,301 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:33:07,404 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:33:07,438 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:33:08,920 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:33:09,654 --- INFO --- wsgi --- ::: Startup completed in: 1.921431 seconds
+2016-06-22 11:33:10,353 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+
+2016-06-22 11:39:22,251 --- INFO --- wsgi --- ::: Starting CH Boot Sequence...
+2016-06-22 11:39:22,356 --- INFO --- startup_database --- ::: Database exists, checking if startup completed last time
+2016-06-22 11:39:22,390 --- INFO --- startup_database --- ::: __dbcomplete entry exists
+2016-06-22 11:39:23,871 --- INFO --- startup_user_accounts --- ::: API account name does not exist.
+2016-06-22 11:39:24,625 --- INFO --- wsgi --- ::: Startup completed in: 1.906816 seconds
+2016-06-22 11:39:25,326 --- WARNING --- platforms --- ::: /usr/local/lib/python2.7/dist-packages/celery/platforms.py:766: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+

@@ -1,0 +1,1268 @@
+﻿{% load staticfiles %}
+{% load browse_extras %}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1"/>
+    <link href="{% static 'stylesheets/jquery-ui-1.10.4.custom.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'js/jstree/themes/default/style.min.css' %}" />
+    <link href="{% static 'stylesheets/jquery.tagit.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'stylesheets/tagit.ui-zendesk.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'stylesheets/style.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{% static 'djangular/css/styles.css' %}" rel="stylesheet" />
+	<link href="{% static 'djangular/css/bootstrap3.css' %}" rel="stylesheet" />
+	
+
+    <title>Content Hub</title>
+    <!--[if lt IE 9]>
+        <script src="{% static 'js/html5shiv.js' %}"></script>
+
+        <script src="{% static 'js/respond.min.js' %}"></script>
+        <script src="{% static 'js/rem.js' %}"></script>
+        <script src="{% static 'js/selectivizr-min.js' %}"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="container">
+    <!--- HEADER SECTION -->
+    <header>
+        <section class="row headerContent">
+            <div class="col-l12" id="mainLogo">
+                    <a href="{% url 'index' %}" class="headerLogoLink">Content Access Point</a>
+                    <div id="navToggle"><span></span></div><!-- small size toggle button for navigation -->
+                    <div id="navContainer"><!-- container for nav elements -->
+
+                        <ul class="navTabs">
+                            {% tabActive tab='home' %}<a class="navHome" href="{% url 'index' %}">Home</a></li>
+                            {% tabActive tab='lessons' %}<a class="navLessons" href="{% url 'lessons' %}">Lessons</a></li>
+                            {% tabActive tab='library' %}<a class="navLibrary" href="{% url 'library' %}">Library</a></li>
+                        </ul><!-- end navTabs -->
+                        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+
+                        <ul class="navLinks">
+
+                            <ul class="navLinks manageheader dropdown">
+                                <li class="manage moreOptions">
+                                    <a class="manageLink">Manage</a>
+                                    <ul class="manageList moreOptionsMenu">
+                                        <li><a href="{% url 'manage-tags' %}">Tags</a></li>
+                                        <li><a href="{% url 'manage-categories' %}">Categories</a></li>
+                                        <li><a href="{% url 'usb-file' %}">USB/SD Import</a></li>
+                                        {% if internet %}
+                                            <li><a href="{% url 'toggle-net' %}">Disable Internet</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'toggle-net' %}">Enable Internet</a></li>
+                                        {% endif %}
+                                        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                                            <li><a href="/togglelibrary" class="hideLibraryBtn">{% if libhidden == true %}Show Library To Students{% else %} Hide Library From Students{% endif %}</a></li>
+                                        {% endif %}                                        
+                                    </ul><!-- end manageList -->
+                                </li><!-- end manage -->
+                            </ul>
+
+                            {% if request.session.viewType == "student" %}
+                                <li class="teacherViewLink"><a href="{% url 'toggle-view' %}">Teacher View</a></li>
+                            {% endif %}
+                            {% if request.session.viewType == "teacher" %}
+                                <li class="studentViewLink "><a href="{% url 'toggle-view' %}">Student View</a></li>
+                            {% endif %}
+
+                            <!-- <li class="notice"><a id="" href="#">Flag</a></li> -->
+                            <li class="actions">
+                                <ul class="actionLinks">                          
+                                    <li><a href="{% url 'help' %}">Help</a></li>
+                                    <li><a class="logout" href="{% url 'logout' %}?next={% firstof request.path '/' %}">Logout</a></li>
+                                </ul><!-- end actionLinks -->
+                            </li><!-- end actions -->
+                        </ul><!-- end navLinks -->
+
+                            <!-- NOTIFICATIONS -->
+<!-- Hiding notifications for now
+                            <div class="noticeWrapper">
+                                <div id="notificationBox">
+                                    <h3>two new notifications</h3>
+                                    <ul class="dropdownNotice">
+                                        <li>14 new content item imported in the latest sync. <a href="#">View updates</a></li>
+                                        <li>New category added on the 27/04/14</li>
+                                        <li><a href="#">View archived notifications</a></li>
+                                    </ul>
+                                </div>
+-->
+                                <!-- end notificationBox -->
+<!--
+                                <div id="flag"><span id="notification"><div>12</div></span></div>
+                            </div>
+-->
+                            <!-- end noticeWrapper -->
+                            <!-- end NOTIFICATIONS -->
+                        {% else %}
+                            <ul class="studentLinks">
+
+                                {% if request.session.viewType == "student" %}
+                                
+                                    <li class="studentViewLink"><a href="/toggle">Teacher View</a></li>
+                                    {% endif %}
+                                    {% if request.session.viewType == "teacher" %}
+                                    <li class="studentViewLink"><a href="/toggle">Student View</a></li>
+                                
+                                {% endif %}
+                                <li><a class="help" href="{% url 'help' %}">Help</a></li>
+                                <li><a class="teacherLog" href="{% url 'login' %}?next={% firstof request.path '/' %}">Teacher Login</a></li>
+                            </ul><!-- end studentLinks -->
+                        {% endif %}
+
+                    </div><!-- end navContainer -->
+            </div><!-- end 12 columns -->
+        </section><!-- end row headerContent -->
+
+        <section class="breadcrumbArea">
+            <div class="row">
+                <ul class="tabsNavBelow">
+                            {% tabActive tab='home' below=True %}<a class="navHomeBelow" href="{% url 'index' %}">Home</a></li>
+                            {% tabActive tab='lessons' below=True %}<a class="navLessonsBelow" href="{% url 'lessons' %}">Lessons</a></li>
+                            
+                            {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                                {% tabActive tab='library' below=True %}<a class="navLibraryBelow" href="{% url 'library' %}">Library</a></li>
+
+                            {% elif libhidden != true %}
+                                {% tabActive tab='library' below=True %}<a class="navLibraryBelow" href="{% url 'library' %}">Library</a></li>                                
+                            {% endif %}
+                </ul><!-- end tabsNavBelow -->
+                    <!-- <ul>
+                        <li><a href="#">Home</a></li>
+                        <li>Library</li>
+                    </ul> -->
+                   <!--  <ul>
+                        {% breadcrumbs as bc_list %}
+                        {% for crumb_text, crumb_url in bc_list %}
+                            <li>
+                            {% if not forloop.last %}
+                                <a href="{{ crumb_url }}">{{ crumb_text }}</a>
+                            {% else %}
+                                {{ crumb_text }}
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul> -->
+                        <ul class="searchTop">
+                            <li>
+                                {% ec_searchbox %}
+                            </li>
+                        </ul>
+                        <!-- end searchTop -->
+            </div><!-- end row -->
+        </section><!-- end breadcrumbArea which is not in the row -->
+    </header>
+
+    <section class='tooltipmessage' style='display:none;height:50px;z-index:100;'><span></span></section>
+    <div name='item-delete-confirm' id="delete-confirm" style="display:none" title="Delete confirmation">
+        <p>Are you sure you wish to delete this item?</p>
+    </div>
+
+    <div name='item-delete-batch-confirm' id="batch-delete-confirm" style="display:none" title="Delete confirmation">
+        <p>Are you sure you wish to delete these items?</p>
+    </div>
+
+    <div name='lesson-create-dialog' id="createLesson" style="display:none" title="Create new lesson">
+        <form>
+            <input type="text" name="name" autocomplete="off" id="name">
+        </form>
+    </div>
+
+    <div name='lesson-edit-dialog' id="editLesson" style="display:none" title="Edit lesson title">
+        <form>
+            <input type="text" name="name" autocomplete="off" id="name">
+        </form>
+    </div>
+
+    <div name="lesson-choice-dialog" id='chooseLesson' style="display:none" title="Choose the lesson">
+        <form>
+            <select>
+            </select>
+        </form>
+    </div>
+
+    <div name='item-detail-update-dialog' id="update-dialog" style="display:none" title="Update item">
+        <form id="update-form" method="post" action=".">
+        </form>
+    </div>
+
+    <div name="item-detail-dialog" title='' style="display:none"></div>
+
+{% block body %}
+
+    <!-- BODY GOES HERE -->
+
+{% endblock body %}
+
+
+   <!-- <button onclick="mediaCapab()">Check Browser capabilities</button>-->
+
+
+
+</div><!-- /end container -->
+
+<!--- FOOTER SECTION -->
+<div class="footerBG">
+    <footer>
+            <p class="copyright left">Copyright &copy; 2014. All rights reserved.</p>
+            <div class="batteryIndicator right">Battery <span>{{ battery }}</div>
+    </footer>
+</div>
+
+<!--- jQuery SCRIPTS -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+<script src="{% static 'js/jquery.touchPunch.js' %}"></script>
+<script src="{% static 'js/tag-it.min.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'js/jstree/jstree.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/siteScripts.js' %}"></script>
+<script src="{% static 'js/jspatch.js' %}"></script>
+<script src="{% static 'js/jquery.tooltipster.min.js' %}"></script>
+<!-- dropdown touch script -->
+<script src="{% static 'js/runOnLoad-readystatechange.js' %}"></script>
+<script src="{% static 'js/Dropdown.js' %}"></script>
+
+<!-- angular / djangular -->
+<!--<script src="{% static 'angularjs/angular.js' %}" type="text/javascript"></script>
+<script src="{% static 'djangular/js/django-angular.js' %}" type="text/javascript"></script>
+-->
+
+{% include 'autocomplete_light/static.html' %}
+
+<script>
+    // start tooltips
+    $(document).ready(function() {
+        Dropdown.initialise();
+        $('.tooltip').tooltipster();
+    });
+</script>
+
+<script>
+function useHeaderTemplate(event, url){
+    if(event.preventDefault)
+        event.preventDefault();
+    else
+        event.returnValue = false;
+    window.location = "{% url 'contentitem-frame' %}?item_url=" + url;
+}
+
+// Update the list of created lessons
+function updateLessonList(selector) {
+    $.ajax({
+        type: "GET",
+        url: "{% url 'groups-list' %}",
+        dataType: 'json',
+        async: true,
+        success: function(data){
+
+            var options = '';
+            for (var i = 0; i < data['groups'].length; i++) {
+                NAME = data['groups'][i];
+                ID = i + 1;
+                options += '<option value=\"'+ ID +'\">' + NAME+ '</option>';
+            }
+            selector.html(options);
+        }
+    });
+}
+
+// For opening lesson create drawer at page load based on get request
+function expandLessonDrawer(lessonName, lessonID, members, instant){
+
+    if(typeof(instant)==='undefined' || instant === false) {
+        $(".createDrawer").slideToggle('0.5s');
+        // Replace create button with new lesson name
+        $('div#createToggle > h2.lessonTitle').text(lessonName);
+        $('div#createToggle > h2.createLessonLink').fadeOut('fast', function(){
+            $('div#createToggle > h2.lessonTitle').fadeIn('fast');
+        });
+    } else {
+        $(".createDrawer").css('display', 'block');
+        // Replace create button with new lesson name
+        $('div#createToggle > h2.lessonTitle').text(lessonName);
+        $('div#createToggle > h2.createLessonLink').remove();
+        $('div#createToggle > h2.lessonTitle').css('display', 'block');
+    }
+
+    // Add id to title
+    $('h2.lessonTitle').attr('id', lessonID);
+
+    // Add existing members if there are any
+    if(typeof(members)!=='undefined') {
+        updateLessonDrawerMembers(members, lessonID);
+    }
+
+    // Create manage lesson link
+    var manage_url = '/lessons/' + lessonID + '/';
+    $( "div.createDrawer > a.actionLink" ).attr('href', manage_url);
+
+    // Add 'lesson' to all URL links with a GET in them. Assuming a url with a '?' is a GET url...
+    var get_addition = "&lesson=" + lessonID;
+    $('a[href*="?"]').attr('href', function(i, val){
+        var new_href = val + get_addition;
+        return new_href;
+    });
+    $('input[type=search]').after('<input name="lesson" type="hidden" value="' + lessonID +'">');
+
+    // Turn off the create lesson button
+    $( "div#createToggle" ).unbind('click');
+
+}
+
+// Just take a list of strings and rewrite the html in the create lesson drawer
+function updateLessonDrawerMembers(members, group_id) {
+
+    $( "div[name=dropArea] > p" ).remove();
+    $( "div[name=dropArea] > span" ).remove();
+
+	//check if visible
+	var visible_id = $('#createToggle').find('.lessonTitle').attr('id');
+
+	if(visible_id == group_id){
+        var members_string = '';
+        $( "div[name=dropArea] > ul.createList" ).html('<li></li>'); // clear it out
+        for (var i = 0; i < members.length; i++) {
+            $( "div[name=dropArea] > ul.createList > li" ).append( "<li>" + members[i] +"</li>" );
+        }
+    }
+}
+
+// Get the members list for lesson lessonID and execute a callback depending on success or failure
+function getExistingLessonMembers(lessonID, callback_success, callback_error) {
+    $.ajax({
+        type: "GET",
+        url: "{% url 'groups-list' %}",
+        dataType: 'json',
+        async: true,
+        data: {
+            'id': lessonID,
+        }, 
+        success: callback_success,
+        error: callback_error,
+    });
+}
+
+{% if 'lesson' in request.GET and user.is_authenticated and request.session.viewType == "teacher" %}
+    getExistingLessonMembers({{ request.GET.lesson }}, function(data) {
+        expandLessonDrawer(data['title'], data['id'], data['members'], true);
+    }, 
+    function() {
+        $('.createDrawer').css('display', 'none');
+    });
+{% endif %}
+
+function mediaCapab(){
+    //this could be duplicated for all video and audio formats
+    var canPlayMP4 = false;
+    var capabString = "";
+    var v = document.createElement('video');
+    if(v.canPlayType && v.canPlayType('video/mp4').replace(/no/, '')) {
+       capabString += "This Browser can play:MP4 videos\n";
+    }else{
+        capabString += "This Browser can not play:MP4 videos\n";
+    }
+    if(v.canPlayType && v.canPlayType('video/mov').replace(/no/, '')) {
+       capabString += "This Browser can play:mov videos\n";
+    }else{
+        capabString += "This Browser can not play:mov videos\n";
+    }
+    var a = document.createElement('audio');
+    if(a.canPlayType && a.canPlayType('audio/mp3').replace(/no/, '')) {
+       capabString += "This Browser can play:MP3\n";
+    }else{
+        capabString += "This Browser can not play:MP3\n";
+    }
+    if (navigator.mimeTypes
+          && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+          && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+        capabString += "This Browser can play/display:Flash\n"
+    }else{
+        capabString += "This Browser can not play/display:Flash\n"
+    }
+    alert(capabString);
+}
+
+var autocomplete = $('input[name="q"]').yourlabsAutocomplete({
+    url: 'autocomplete/ContentItemAutocomplete',
+});
+
+
+// on window resize run function
+$(window).resize(function () {
+    fluidDialog();
+});
+
+// catch dialog if opened within a viewport smaller than the dialog width
+$(document).on("dialogopen", ".ui-dialog", function (event, ui) {
+    fluidDialog();
+});
+
+function fluidDialog() {
+    var $visible = $(".ui-dialog:visible");
+    // each open dialog
+    $visible.each(function () {
+        var $this = $(this);
+        var dialog = $this.find(".ui-dialog-content").data("ui-dialog");
+        // if fluid option == true
+        if (dialog.options.fluid) {
+            var wWidth = $(window).width();
+            // check window width against dialog width
+            if (wWidth < (parseInt(dialog.options.maxWidth) + 50))  {
+                // keep dialog from filling entire screen
+                $this.css("max-width", "90%");
+            } else {
+                // fix maxWidth bug
+                $this.css("max-width", dialog.options.maxWidth + "px");
+            }
+            //reposition dialog
+            dialog.option("position", dialog.options.position);
+        }
+    });
+}
+
+// Display 'message' in a tooltip to the user
+function messageToUser(message) {
+    $('section.tooltipmessage > span').text(message);
+    $('section.tooltipmessage').fadeIn({
+        duration: 500,
+        done: function() {
+            $('section.tooltipmessage').delay(4000).fadeOut({
+                duration: 500,
+                queue: true,
+            });
+        },
+    });
+}
+
+// Make an AJAX request using a single item id
+function itemAJAXRequest(item_id, url, additional_data, callback) {
+
+    var data = {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        id: item_id,
+    };
+
+    var request_data = $.extend({}, data, additional_data);
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: 'json',
+        async: true,
+        data: request_data,
+        success: callback,
+    });
+}
+
+// Make an AJAX request using multiple item ids
+function batchAJAXRequest(item_ids, url, additional_data, callback) {
+
+    var data = {
+        csrfmiddlewaretoken: '{{ csrf_token }}',
+        ids: item_ids,
+    };
+
+    var request_data = $.extend({}, data, additional_data);
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: 'json',
+        async: true,
+        data: request_data,
+        success: callback,
+    });
+}
+
+
+//Handler methods for lesson maniplulation.
+function changeLessonCheckbox(){
+    val = this.checked;
+    if (val) {
+        $("a[name='lessonDeleteBatch']").fadeTo(400, 1);
+    } else {
+        // Check if there's any checked boxes left
+        var isOneChecked = $("input[type='checkbox'][name='lesson']").is(":checked");
+        if (!isOneChecked){
+            $("a[name='lessonDeleteBatch']").fadeTo(400, 0.5);
+        }
+    }
+}
+
+// Just quickly toggles the feature icon to its 'on' state
+function clickLessonFeature(){
+    $(this).toggleClass('on');
+    featureToggle($(this), '{% url "groups-feature" %}', 'lesson');
+}
+
+// Make an AJAX request to toggle the 'featured' state of an item, changing the icon state after the fact depending on the response
+function featureToggle(selector, url, type_string) {
+    var additional_data = {};
+    var item_id = selector.attr('id');
+
+    itemAJAXRequest(item_id, url, additional_data, function(response){
+
+        if (response['result'] === true) {
+            selector.addClass('on');
+            selector.attr('title', "Unfeature this " + type_string + " on the home page");
+            messageToUser('Item featured');
+        } else {
+            selector.removeClass('on');
+            selector.attr('title', "Feature this " + type_string + " on the home page");
+
+            if (response['maxfeatured'] == true){
+                messageToUser('You can only feature 10 items. Unfeature some first');
+            }
+            else{
+                messageToUser('Item unfeatured');
+            }
+
+            if (selector.attr('fade') === 'true') {
+                var name = selector.attr('name');
+
+                if (name === 'lessonFeature') {
+                    $('div.featuredLessonItems#'+item_id).fadeOut('slow', function(){
+                        $(this).remove();
+                        if($('.featuredLessons > div').length == 0){
+                            $('.nofeatured.lessons').show();
+                        }
+                    });
+
+
+                } else if (name === 'itemFeature') {
+                    
+                    //$('div.detailListing#'+item_id).fadeOut('slow');
+                    $('.featuredContent').find('.detailListing#' + item_id).fadeOut('slow', function(){
+                        $(this).remove();
+                        if($('.featuredContent > div').length == 0){
+                            $('.nofeatured.content').show();
+                        }
+                    });
+                }
+            }
+        }
+
+        return response['result'];
+    });
+}
+
+function clickDeleteLesson(event) {
+    // Attempt delete
+    var selector = $(event.target);
+    var additional_data = {};
+    var item_id = selector.attr('id');
+
+    itemAJAXRequest(item_id, '{% url "groups-delete" %}', additional_data, function(response) {
+
+        if (response['result'] === true){
+            //$('div.featuredLessonItems#'+item_id).fadeOut('slow');
+            //messageToUser('Lesson deleted');
+            location.reload();
+        } else {
+            messageToUser('Lesson delete failed');
+        }
+    });
+}
+
+function clickEditLesson(event) {
+    $( "div[name=lesson-edit-dialog]" ).dialog('option', 'buttons', {
+        "Rename lesson": function(){
+            // Close modal window
+            $(this).dialog( "close" );
+            // Create the lesson
+            var selector = $(event.target);
+            var item_id = selector.attr('id');
+            var formdiv = $(this);
+            var name = formdiv.find( "form > input#name" ).val();
+            var additional_data = { new_title: name };
+
+            itemAJAXRequest(item_id, '{% url "groups-edit" %}', additional_data, function(response) {
+
+                if (response['result'] == false){
+                    messageToUser('Lesson rename failed');
+                } else {
+                    messageToUser('Lesson renamed');
+                    $('div.featuredLessonItems#'+ item_id).find('a.lessonName').text(name); // lesson tab
+                    $('div.featuredLessonItems#'+ item_id).find('div.title').text(name); // index
+                    updateLessonList($('div[name=lesson-choice-dialog] > form > select')); //update the dropdowns
+                    formdiv.find( "form > input#name" ).val('');
+                }
+            });
+            return false;
+        },
+    });
+    var lessonID = $(event.target).attr('id');
+    var lessonSelector = $('.featuredLessons').find('.featuredLessonItems#' + lessonID).find('.lessonName');
+    $( "div[name=lesson-edit-dialog]" ).data('lessonSelector', lessonSelector);
+    $( "div[name=lesson-edit-dialog]" ).dialog( "open" );
+
+    return false;
+}
+
+function close_detail_modal(){
+    $( "div[name=item-detail-dialog]" ).dialog('close')
+}
+
+function update_edited_item_details(response){
+    //update in main list
+    $('.listingTitle').find('#' + response['id']).html(response['title'])
+    //update in drag/drop area
+    $('.createList li[itemid=' + response['id'] + ']').html(response['title'])
+}
+
+$(document).ready(function() {
+
+    updateLessonList($('div[name=lesson-choice-dialog] > form > select'));
+
+    // Find the first button in a dialog and bind the 'enter' key to it
+    $.extend($.ui.dialog.prototype.options, { 
+        create: function() {
+            var $this = $(this);
+
+            $this.parent().find('.ui-dialog-buttonpane button:first').focus();
+            $this.keypress(function(e) {
+                if( e.keyCode == $.ui.keyCode.ENTER ) {
+                    $this.parent().find('.ui-dialog-buttonpane button:first').click();
+                    return false;
+                }
+            });
+        } 
+    });
+
+// Fade in and out batch controls in listings view
+    $(":checkbox[name='content']").bind('change', function(){        
+        val = this.checked;
+
+        if (val) {
+            $("a[name='itemDeleteBatch']").fadeTo(400, 1);
+            $("a[name='itemAddToLessonBatch']").fadeTo(400, 1);
+            $("a[name='itemRemoveFromLessonBatch']").fadeTo(400, 1);
+        } else {
+            // Check if there's any checked boxes left
+            var isOneChecked = $("input[type='checkbox'][name='content']").is(":checked");
+            if (!isOneChecked){
+                $("a[name='itemDeleteBatch']").fadeTo(400, 0.5);
+                $("a[name='itemAddToLessonBatch']").fadeTo(400, 0.5);
+                $("a[name='itemRemoveFromLessonBatch']").fadeTo(400, 0.5);
+            }
+        }
+    });
+
+    
+    $(":checkbox[name='lesson']").bind('change', changeLessonCheckbox);
+
+
+
+    /*
+    // Category sidebar (and upload form)
+        $("div.catdrop").change(function() {
+            childCategoryDropDown($(this));
+        });
+    */
+
+// Featuring
+
+    // Item feature toggle
+    $("a[name=itemFeature]").click(function(){
+        $(this).toggleClass('on');
+        featureToggle($(this), '{% url "manage-feature" %}', 'content item');
+    });
+
+    // Lesson feature toggle
+    $("a[name=lessonFeature]").bind('click', clickLessonFeature);
+
+
+// Hiding
+
+    // Hide item toggle
+    $("a[name=itemHide]").click(function(){
+        var selector = $(this);
+        var url = '{% url "manage-hidden" %}';
+        var item_id = selector.attr('id');
+        var additional_data = {};
+
+        selector.toggleClass('on');
+
+        itemAJAXRequest(item_id, url, additional_data, function(response){
+
+            if (response['result'] === true) {
+                selector.addClass('on');
+                selector.attr('title', "Show to Students");
+                messageToUser('Item hidden');
+            } else {
+                selector.removeClass('on');
+                selector.attr('title', "Hide from Students");
+                messageToUser('Item unhidden');
+            }
+
+            return response['result'];
+        });
+    });
+
+// Deleting
+
+    // Deleting single item confirmation modal
+    $( "div[name=item-delete-confirm]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+    });
+
+    // Deleting single item
+    $("a[name=itemDelete]").click(function(event) {
+
+        $("div[name=item-delete-confirm]").dialog('option', 'buttons', {
+            "Delete": function() {
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                // Attempt delete
+                var selector = $(event.target);
+                var additional_data = {};
+                var item_id = selector.attr('id');
+
+                itemAJAXRequest(item_id, '{% url "manage-delete" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        //$('section#'+item_id).fadeOut('slow');
+                        location.reload();
+                        //messageToUser('Item deleted');
+                    } else {
+                        messageToUser('Item delete failed');
+                    }
+                });
+            }
+        });
+
+        $( "div[name=item-delete-confirm]" ).dialog( "open" );
+    });
+
+    // Deleting multiple items confirmation modal
+    $( "div[name=item-delete-batch-confirm]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+    });
+
+    // Deleting multiple items
+    $("a[name=itemDeleteBatch]").click(function(event) {
+
+        // Do nothing if link is faded out
+        if ($(this).css('opacity') < 1 ){ return false; }
+
+        $("div[name=item-delete-batch-confirm]").dialog('option', 'buttons', {
+            "Delete": function() {
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                // Attempt delete
+                var selector = $(event.target);
+                var additional_data = {};
+                var item_ids = $('input:checkbox:checked[name="content"]').map(function() { return $(this).attr('itemid'); }).get();
+
+                batchAJAXRequest(item_ids, '{% url "batch-delete-items" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        //$('input:checkbox:checked[name="content"]').parents('section.listing').fadeOut('slow');
+                        //messageToUser('Items deleted');
+                        location.reload();
+                    } else {
+                        messageToUser('Item deletes failed');
+                    }
+                });
+            }
+        });
+
+        $( "div[name=item-delete-batch-confirm]" ).dialog( "open" );
+    });
+
+    // Deleting single lesson
+    $("a[name=lessonDelete]").click(function(event) {
+        clickDeleteLesson(event);
+    });
+
+    // Deleting multiple lessons
+    $("a[name=lessonDeleteBatch]").click(function(event) {
+
+        // Do nothing if link is faded out
+        if ($(this).css('opacity') < 1 ){ return false; }
+
+        // Attempt delete
+        var additional_data = {};
+        var item_ids = $('input:checkbox:checked[name="lesson"]').map(function() { return $(this).parents('div.featuredLessonItems').attr('id'); }).get();
+
+        batchAJAXRequest(item_ids, '{% url "groups-batch-delete" %}', additional_data, function(response) {
+
+            if (response['result'] === true){
+                //$('input:checkbox:checked[name="lesson"]').parents('div.featuredLessonItems').fadeOut('slow');
+                //messageToUser('Lessons deleted');
+                location.reload();
+            } else {
+                messageToUser('Lesson deletes failed');
+            }
+        });
+    });
+
+// Lesson edit modal
+    $( "div[name=lesson-edit-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        open: function(event, ui){
+            var lessonSelector = $( "div[name=lesson-edit-dialog]" ).data('lessonSelector');
+            $( "div[name=lesson-edit-dialog]" ).find('input').val(lessonSelector.html());
+        }/*,
+        close: function(event, ui){
+            var lessonSelector = $( "div[name=lesson-edit-dialog]" ).data('lessonSelector');
+            var val = $( "div[name=lesson-edit-dialog]" ).find('input').val();
+            lessonSelector.html(val);
+        }*/
+    });
+
+    $( "a[name=lessonEdit]" ).click(function(event) {
+        return clickEditLesson(event);
+    });
+
+// Adding / Removing to Lessons
+
+    // Add item to lesson modal
+    $( "div[name=lesson-choice-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+    });
+
+    // Add single item to lesson
+    $("a[name=itemAddToLesson]").click(function(event) {
+
+        $("div[name=lesson-choice-dialog]").dialog('option', 'buttons', {
+            "Add to lesson": function() {
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                var group_id = $(this).find( "select" ).val();
+
+                // Attempt to add to lesson
+                var selector = $(event.target);
+                var item_id = selector.attr('id');
+                var additional_data = {
+                    'group': group_id,
+                };
+
+                itemAJAXRequest(item_id, '{% url "groups-add" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        messageToUser('Items added to lesson');
+                        getExistingLessonMembers(group_id, function(data){
+                            updateLessonDrawerMembers(data['members'], group_id);
+                        });
+                    } else {
+                        messageToUser('Item could not be added to lesson');
+                    }
+                });
+            }
+        });
+
+        $( "div[name=lesson-choice-dialog]" ).dialog( "open" );
+    });
+
+    // Add multiple items to lessons
+    $("a[name=itemAddToLessonBatch]").click(function(event) {
+
+        // Do nothing if link is faded out
+        if ($(this).css('opacity') < 1 ){ return false; }
+
+        $("div[name=lesson-choice-dialog]").dialog('option', 'buttons', {
+            "Add to lesson": function() {
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                var group_id = $(this).find( "select" ).val();
+
+                // Attempt to add to lesson
+                var selector = $(event.target);
+                var item_ids = $('input:checkbox:checked[name="content"]').map(function() { return $(this).attr('itemid'); }).get();
+                var additional_data = {
+                    'group': group_id,
+                };
+
+                batchAJAXRequest(item_ids, '{% url "groups-batch-add" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        messageToUser('Items added to lesson');
+                        getExistingLessonMembers(group_id, function(data){
+                            updateLessonDrawerMembers(data['members'], group_id);
+                        });
+                        $('.libraryCheckbox').attr('checked', false);
+                    } else {
+                        messageToUser('Items could not be added to lesson');
+                    }
+                });
+            }
+        });
+
+        $( "div[name=lesson-choice-dialog]" ).dialog( "open" );
+    });
+
+    // Remove single item from lesson
+    $("a[name=itemRemoveFromLesson]").click(function() {
+
+        // Attempt to remove from lesson
+        var selector = $(this);
+        var item_id = selector.attr('id');
+        var group_id = selector.attr('gid');
+        var additional_data = {
+            'group': group_id,
+        };
+
+        itemAJAXRequest(item_id, '{% url "groups-remove" %}', additional_data, function(response) {
+
+            if (response['result'] === true){
+                messageToUser('Item removed from lesson');
+                selector.parents('div.detailListing').fadeOut('slow');
+            } else {
+                messageToUser('Item could not be removed from lesson');
+            }
+        });
+    });
+
+    // Remove multiple items from lessons
+    $("a[name=itemRemoveFromLessonBatch]").click(function(event) {
+
+        // Do nothing if link is faded out
+        if ($(this).css('opacity') < 1 ){ return false; }
+
+        var group_id = $(this).attr('id');
+
+        // Attempt to remove from lesson
+        var item_ids = $('input:checkbox:checked[name="content"]').map(function() { return $(this).parents('div.detailListing').attr('id'); }).get();
+        var additional_data = {
+            'group': group_id,
+        };
+
+        batchAJAXRequest(item_ids, '{% url "groups-batch-remove" %}', additional_data, function(response) {
+
+            if (response['result'] === true){
+                messageToUser('Item removed from lesson');
+                $('input:checkbox:checked[name="content"]').parents('div.detailListing').fadeOut('slow');
+                $('input:checkbox:checked[name="content"]').removeAttr('checked');
+            } else {
+                messageToUser('Item could not be removed from lesson');
+            }
+        });
+
+    });
+
+
+// Create lesson sidebar
+    $("select[name=create]").change(function() {
+        $lesson_id = $(this).val()
+        if ($lesson_id == '') {
+            $("ul.createList").html("");
+        }
+        else {
+            var url = "{% url 'lessons-json' %}";
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: 'json',
+                async: true,
+                data: {
+                    id: $(this).val()
+                },
+                success: function(data){
+                    var options = '';
+                    for (var i = 0; i < data.length; i++) {
+                        options += '<li><a href="#">' + data[i].fields['title'] + '</a></li>';
+                    }
+                    $("ul.createList").html(options);
+                }
+            });
+        }
+    });
+
+    // We only want these areas draggable for logged in users, and only in the library listing
+    {% if user.is_authenticated and request.session.viewType == "teacher" and '/library' in request.path %}
+
+        //$( "section.listing" ).draggable({ 
+    $( ".overlay-helper-for-draggable, .listingTitle > a" ).draggable({
+        revert: true,
+        delay: 200,
+        zIndex: 1000,
+        cursorAt: { left: 5 },
+        helper: function(){
+            var filename = $(this).parent().parent().find('h1 > a').text();
+            return $("<div class='helper'><p>" + filename + "</p><span></span></div>");
+        },
+    });
+
+        $( "div[name=dropArea]" ).droppable({
+            accept: ".overlay-helper-for-draggable, .listingTitle > a",
+            activeClass: "ui-state-default",
+            tolerance: 'touch',
+            drop: function( event, ui ) {
+                ui.helper.fadeOut();
+                var file_title = ui.draggable.parent().parent().find('div.listingInfo > h1.listingTitle > a').text();
+                if(!file_title){
+                    //if not using the helper overlay
+                    file_title = ui.draggable.text();
+                }
+
+                // Attempt to add to lesson
+                var item_id = ui.draggable.parent().parent().attr('id');
+                if(!item_id){
+                    //if not using the helper overlay
+                    item_id = ui.draggable.attr('id');
+                }
+                var group_id = $('h2.lessonTitle').attr('id');
+                var additional_data = {
+                    'group': group_id,
+                };
+
+                itemAJAXRequest(item_id, '{% url "groups-add" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        $( "div[name=dropArea] > p" ).remove();
+                        $( "div[name=dropArea] > span" ).remove();
+                        $( "div[name=dropArea] > ul.createList > li" ).append( "<li itemid='" + item_id + "''>" + file_title +"</li>" );
+                    } else {
+                        messageToUser('Item could not be added to lesson');
+                    }
+                });
+            },
+        });
+
+    {% endif %}
+
+// Item detail modal
+    $( "div[name=item-detail-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        close: function (event, ui) {
+            // Clear out the div on close
+            $("div[name=item-detail-dialog]").empty();
+        },
+    });
+
+    var close_detail_modal = function(){
+        $( "div[name=item-detail-dialog]" ).dialog('close')
+    }
+
+    $("a[name=itemDetail]").click(function(event) {
+
+        var url = '{% url "detail" %}';
+        $("div[name=item-detail-dialog]").load(url + '?id=' + $(this).attr('id'), function() {
+            var title = $(this).find('span[name=title]').text();
+            $("div[name=item-detail-dialog]").dialog('option', 'title', title);
+        });
+
+        // TODO: callback function to set dialog title
+
+        $( "div[name=item-detail-dialog]" ).dialog( "open" );
+    });
+
+    $('div[name=item-detail-update-dialog]').dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        close: function (event, ui) {
+            // Clear out the div on close
+            $("div[name=item-detail-update-dialog]").empty();
+            $("div[name=item-detail-dialog]").dialog('option', 'title', '');
+        },
+    });
+
+    $("a[name=itemEdit]").click(function(event) {
+        var url = "{% url 'items-edit' %}";
+        var title = 'no title';
+        var description = 'no description';
+        var c = 0;
+        var tags = '';
+
+        $("div[name=item-detail-update-dialog]").load(url + '?id=' + $(this).attr('id'), function() {
+            var formdiv = $(this);
+            title = formdiv.find( "form > input#id_title" );
+            description = formdiv.find( "form > textarea#id_description" );
+            c = formdiv.find( "form > input[name=c]" );
+            tags = formdiv.find( "form > input[name=tags]" );
+            $('div[name=item-detail-update-dialog]').dialog('option', 'position', 'center');
+        });
+
+        $("div[name=item-detail-update-dialog]").dialog('option', 'buttons', {
+            "Update": function() {
+                // Close modal window
+                $( this ).dialog( "close" );
+
+                // Attempt update
+                var selector = $(event.target);
+
+                var additional_data = {
+                    title: title.val(),
+                    description: description.val(),
+                    c: c.val(),
+                    tags: tags.val(),
+                };
+                var item_id = selector.attr('id');
+
+                itemAJAXRequest(item_id, '{% url "items-edit" %}', additional_data, function(response) {
+
+                    if (response['result'] === true){
+                        messageToUser('Item updated');
+                        update_edited_item_details(response);
+                    } else {
+                        messageToUser('Item update failed');
+                    }
+                });
+            },
+            "Cancel": function() {
+                $(this).dialog( "close" );
+                $(this).empty();
+            }
+        });
+
+        $( "div[name=item-detail-update-dialog]" ).dialog( "open" );
+    });
+
+// Upload form
+    $('input[type=file]').change(function(){
+        var filename = $(this).val().split('\\').pop();
+        var name = filename.substr(0, filename.lastIndexOf("."));
+        var ext = filename.substr(filename.lastIndexOf(".") + 1);
+
+        $('div.mediaIcon').removeClass().addClass('mediaIcon').addClass(ext);
+        $('input[id=id_title]').val(name);
+    });
+
+    $("#tagit").tagit({
+        availableTags: {{ tags_json|safe|default:"[]"}},
+        placeholderText: 'Tags',
+        caseSensitive: false,
+        allowSpaces: true
+    });
+});
+
+// Category drop down
+function updateCatDrop(level, parentID, selectedID){
+    if(typeof(level)==='undefined') level = 0;
+
+    var search_selector = 'div[name=allcat] > select[level=' + level + ']';
+
+    if (typeof(parentID) !== 'undefined' && !isNaN(parentID)) {
+        search_selector = search_selector + '[parentid=' + parentID + ']';
+    }
+
+    if (level === 0 )
+        var level_default_text = 'Category';
+    else
+        var level_default_text = 'Subcategory';
+
+    var level_html = $(search_selector).html();
+
+    if (level_html != undefined) {
+        level_html = '<option value=0>' + level_default_text + '</option>' + level_html;
+        $('div.catdrop > select[level=' + level + ']').removeAttr('disabled');
+    } else {
+        level_html = '<option value=0>' + level_default_text + '</option>';
+        $('div.catdrop > select[level=' + level + ']').attr('disabled', 'disabled');
+    }
+
+    $('div.catdrop > select[level=' + level + ']').html(level_html);
+
+    if(typeof(selectedID) !== 'undefined') $('div.catdrop > select[level=' + level + ']').find('option[value='+selectedID+']').attr('selected', 'selected');
+}
+
+function initialCatDrop(categoryID){
+    if(typeof(categoryID)==='undefined') {
+        updateCatDrop();
+        return false;
+    }
+
+    var parentID = parseInt($('div[name=allcat] > select > option[value=' + categoryID + ']').parent().attr('parentid'));
+    var level = parseInt($('div[name=allcat] > select > option[value=' + categoryID + ']').parent().attr('level'));
+    if (isNaN(parentID)){
+        level = 0;
+    }
+    
+    if ( $('div[name=allcat] > select[level='+ parseInt(level + 1) +']').length > 0 &&
+         $('div.catdrop > select[level='+ parseInt(level + 1) +'][disabled]').length > 0 ) {
+
+        updateCatDrop(parseInt(level + 1), categoryID);
+    }
+
+    updateCatDrop(level, parentID, categoryID);
+
+    if (!isNaN(parentID)) initialCatDrop(parentID);
+}
+
+$(document).ready(function() {
+
+    initialCatDrop({{ request.GET.c }});
+
+    $("input[name=c]").val({{ request.GET.c }});
+
+    $("div.catdrop").change(function() {
+
+        var category_id = $(this).children("select:first-of-type").val();
+        var level = parseInt($(this).find('select').attr('level'));
+
+        if (category_id != 0) {
+            $("input[name=c]").val(category_id);
+        } else {
+            var next_category_up = $(this).prev().children("select:first-of-type").val();
+            $("input[name=c]").val(next_category_up);
+        }
+
+        updateCatDrop(level + 1, category_id);
+
+        // Just making sure (cheating) to cover all three
+        $('div.catdrop > select[level=' +  parseInt(level+2) + ']').html('<option selected="selected" value=0>Subcategory</option>');
+        $('div.catdrop > select[level=' +  parseInt(level+2) + ']').attr('disabled', 'disabled');
+    });
+});
+</script>
+{% block more_js %}
+{% endblock more_js %}
+
+</body>
+</html>

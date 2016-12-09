@@ -1,0 +1,31 @@
+<section class="row mainContent" ng-cloak>
+
+    <!--UPLOAD AREA -->
+    <div class="single col-l12">
+        <section class="uploadArea clearfix">
+            <h1>{$ editing ? 'Edit' : 'Upload'$} Content</h1>
+            <form id="chooseFile" name="uploadForm" enctype="multipart/form-data" novalidate>
+                <div ng-if="!editing" class="uploadFileInfo">
+                    <input id="id_content_file" name="content_file" file-upload required type="file" />
+                    <div class="mediaIcon {$ filename | get_extension $}"></div>
+                </div>
+                <ul ng-if="uploadForm.content_file.$error.required && uploadForm.content_file.$dirty" class="errorlist"><li>This field is required.</li></ul>
+                <input id="id_title" maxlength="100" name="title" ng-model="content.title" placeholder="Title" type="text" required>
+                <ul ng-if="uploadForm.title.$error.required && uploadForm.title.$dirty" class="errorlist"><li>This field is required.</li></ul>
+                <textarea cols="40" id="id_description" name="description" ng-model="content.description" placeholder="Description" rows="7"></textarea>
+                <div ng-controller="TagCtrl">
+                <h3>Add Tags</h3>
+                <tags-input name="tags" ng-model="content.tags" on-tag-added="addTag($tag)" max-length="25">
+                    <auto-complete source="lookupTag($query)"></auto-complete>
+                </tags-input>
+                </div>
+                <h3>Assign Categories</h3>
+                <div categoryselect="content"></div>
+
+                <input type="submit" value="`{$ editing ? 'Save' : 'Upload' $}" class="margin-top-20" ng-click="save(content, uploadForm, content_file)" ng-disabled="uploadForm.$invalid || uploadForm.$pristine">
+            </form>
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>

@@ -1,0 +1,13 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+{% block title %}{{ block.super }}Hide{% endblock %}
+
+{% block body %}
+	<div class="column" id="right">
+		<form action="" method="post">
+		{% csrf_token %}
+			<p> Are you sure you want to hide "{{item}}" from students?</p>
+			<input type="submit" value="Confirm">
+		</form>
+	</div>
+{% endblock body %}

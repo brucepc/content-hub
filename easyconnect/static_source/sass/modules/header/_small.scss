@@ -1,0 +1,327 @@
+// turn off the navToggle button
+#navToggle {
+  display: none;
+}
+#navContainer {
+  display: inline-block !important;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  text-align: left;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Nav Tabs */
+.navTabs {
+  display: none;
+}
+
+html[dir=rtl] .navLinks{
+  float:left;
+  li{
+    float:right;
+    span, i{
+      float:right;
+      margin:0 0 0 5px;
+    }
+    .fa-chevron-down{
+      float:left;
+      margin:3px 5px 0 0!important;
+    }
+    &.studentViewLink, &.teacherViewLink{
+      border-right: 1px solid $brandDividerBlue;
+      border-left: none;
+    }
+  }
+  .actionLinks li{
+      border-right: 1px solid $brandDividerBlue;
+      border-left: none;
+      &:last-child a{
+        padding-left:0;
+      }
+  }
+}
+
+
+html[dir=rtl] .manage ul{
+  text-align:right;
+  left: -95px !important;
+}
+
+/* Nav small admin links */
+.navLinks {
+  background-color: transparent !important;
+  display: inline-block !important;
+  position:relative;
+  float: right;
+  margin: 30px 0 0 0;
+  li {
+    float:left;
+    @include font-size(1.2);
+    font-size: 0.75rem; // 12px
+    span{
+      @include font-size(1.4);
+      font-size: 1rem; // 16px
+      margin-right:5px;
+      vertical-align: middle;
+      position:relative; 
+      top:-1px;
+	  display: inline-block;
+    }
+    i{
+      @include font-size(1.4);
+      font-size: 0.875rem; // 14px
+      margin-right:5px;
+      vertical-align: middle;
+      position:relative; 
+      top:-1px;
+    }
+    &.manage {
+    position: relative;
+    padding-bottom:10px!important;
+    span.fa-chevron-down{
+      color:#fff;
+      font-size:0.75rem;
+      margin:0 0 0 2px;
+    }
+    }
+    &.manage > a {
+    padding-right: 12px;
+    position: relative;
+    cursor:default;
+    &:hover, &:active, &:focus{
+      text-decoration:underline;
+    }
+    }
+    .manageList > a {
+    background-image: none;
+      // take the dropdown arrow off the nested list
+  }
+  &.studentViewLink, &.teacherViewLink{
+    border-left: 1px solid $brandDividerBlue;
+    a{
+      padding:0 10px
+    }
+  }
+  &.studentViewLink a{
+    background: none
+  }
+  &.actions {
+    position: relative;
+    right: 0;
+    // top: 50px;
+  }
+  & a {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding:0 10px;
+    &:hover, &:focus, &:active{
+	  background-color: transparent;
+      text-decoration:underline;
+      cursor:pointer;
+    }
+    &:visited {
+      color: #fff;
+    }
+  }
+}
+.actionLinks li {
+  border-left: 1px solid $brandDividerBlue;
+  &:last-child {
+    margin: 0;
+  }
+a {
+  &.logout {
+  margin-right: 0;
+  }
+}
+}
+// manage drop down
+.manage ul {
+  z-index: 8;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 180px !important;
+  position: absolute;
+  top:  22px !important;
+  left: 15px !important; 
+  background-color: #fff;
+  //border: 1px solid #d7d7d7;
+   @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  @include darkShadow;
+  &:before {
+    content: "";
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 120px;
+      height: 5px;
+      margin-left:-60px; 
+      //background: transparent url('../images/triangle.png') no-repeat 0 0;
+      @include mediumShadow;
+  }
+  li {
+     width: 100%;
+     margin: 0;
+     padding: 0;
+    &:first-child a{
+      border-radius:3px 3px 0 0;
+    }
+    &:last-child a{
+      border-radius:0 0 3px 3px;
+    }
+  }
+  li a {
+    padding:6px 15px 6px 15px!important;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    color: $brandGray !important;
+    border:none!important;
+    transition : background 0.2s;
+    &:hover, &:focus {
+     background-color: #f4f4f4;
+     text-decoration: none;
+    }
+
+    &:active {
+    background-color: #f4f4f4;
+    //color: #fff;
+    }
+  }
+}
+
+.manage:hover ul, .manage:hover {
+  display: inline-block;
+  // left:auto;
+  // margin:0 0 0 -33px;
+  // padding:0;
+  ul li{
+    display:block!important;
+    position:relative;
+    width:100%;
+  }
+}
+  // .manageList {
+    // position: absolute;
+    // width: 8.75em;
+    // left: -999em;
+    // display: block;
+    // background:#fff;
+    // @include font-size(1.2);
+    // font-size: 0.75rem; // 12px
+    // background-color: #fff;
+    // border: 1px solid $brandMidBlue;
+    // color: $brandLightGray;
+    // -webkit-border-radius:3px;
+    // -moz-border-radius:3px;
+    // border-radius:3px;
+    // -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    // -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    // box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    //   & li a {
+    //   display: block;
+    //   line-height: 0.75rem;
+    //   margin: 0;
+    //   padding: 0;
+    //   width: 100%;
+    //   color: $brandLightGray !important;
+    //   text-decoration: none;
+    //   &:hover, &:focus {
+    //     color: $brandLightGray !important;
+    //   }
+    // }
+  // } // end .manageList
+  // }//end ul.adminLinks
+
+// STUDENT header links
+.studentLinks {
+  display: inline-block !important;
+  float: right;
+  margin: 30px 0 0 0;
+  li {
+    display: inline-block;
+    color: #fff;
+    @include font-size(1.2);
+    font-size: 0.75rem; // 12px
+    border-left: 1px solid $brandDividerBlue;
+    margin: 0 10px 0 0;
+    &:last-child {
+      margin: 0;
+    }
+    &:first-child {
+      border: 0;
+    }
+    & a {
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 23px;
+    color: #fff;
+    &:hover, &:focus {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #fff !important;
+    }
+    background: transparent url("../images/icon-sprite.png") no-repeat -766px -1200px;
+    &.teacherLog {
+      margin-right: 0;
+      background: transparent url("../images/icon-sprite.png") no-repeat -645px -1250px;
+    }
+  } 
+  &.studentViewLink a{
+    background:none;
+  }
+  }
+}
+
+.manageheader{
+margin: 0px !important;
+padding: 0px !important;
+float:left !important;
+position: relative;
+z-index: 50;
+}
+
+
+
+
+
+
+/* ------------------------
+      GREY BAR
+------------------------- */
+// Breadcrumbs not to touch sides of browser
+.breadcrumb {
+  margin: 0 0 0 20px;
+  width: 100%;
+}
+} 
+
+.overlay-helper-for-draggable {
+background:transparent; height:100%;position:absolute; top: 0; left: 0; right: 50px; z-index:0; -ms-touch-action:none !important;
+}
+.listingTitle a{
+  position: relative; 
+  z-index: 50;}
+.listingIcons li {
+  position: relative; 
+  //z-index: 60;
+}
+
+.searchTop{
+  width:235px;
+  form{
+    width:235px;
+  }
+}

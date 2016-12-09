@@ -1,0 +1,82 @@
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent" ng-init="init()">
+
+    <div sidebar class="col-s3 sideMenu"></div>
+    <!-- end sideMenu -->
+
+    <div class="listingsArea col-s9">
+        <div class="topListing clearfix">
+            <ul class="breadCrumbs">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#library">Library</a>
+                </li>
+                <li ng-if="!breadcrumbs.search && !breadcrumbs.tag && !breadcrumbs.category1" ng-bind-template="{$ isTeacher() ? isUploaded ? 'Uploaded' : 'Preloaded' : 'All Items' $}"></li>
+                <li ng-if="breadcrumbs.search || breadcrumbs.tag || breadcrumbs.category1"><a href="" ng-click="replaceFilter()" ng-bind-template="{$ isUploaded ? 'Uploaded' : 'Preloaded' $}"></a></li>
+                <li ng-if="breadcrumbs.category1 && (!breadcrumbs.category2 && !breadcrumbs.tag && !breadcrumbs.search)" ng-bind="breadcrumbs.category1.name"></li>
+                <li ng-if="breadcrumbs.category1 && (breadcrumbs.category2 || breadcrumbs.tag || breadcrumbs.search)">
+                    <a href="" ng-click="replaceFilter('1', breadcrumbs.category1.id)" ng-bind="breadcrumbs.category1.name"></a>
+                </li>
+                <li ng-if="breadcrumbs.category2 && (!breadcrumbs.category3 && !breadcrumbs.tag && !breadcrumbs.search)" ng-bind="breadcrumbs.category2.name"></li>
+                <li ng-if="breadcrumbs.category2 && (breadcrumbs.category3 || breadcrumbs.tag || breadcrumbs.search)">
+                    <a href="" ng-click="replaceFilter('2', breadcrumbs.category2.id)" ng-bind="breadcrumbs.category2.name"></a>
+                </li>
+                <li ng-if="breadcrumbs.category3 && (!breadcrumbs.tag && !breadcrumbs.search)" ng-bind="breadcrumbs.category3.name"></li>
+                <li ng-if="breadcrumbs.category3 && (breadcrumbs.tag || breadcrumbs.search)">
+                    <a href="" ng-click="replaceFilter('3', breadcrumbs.category3.id)" ng-bind="breadcrumbs.category3.name"></a>
+                </li>
+                <li ng-if="breadcrumbs.tag && !breadcrumbs.search" ng-bind-template="Tag: '{$breadcrumbs.tag.text $}'"></li>
+                <li ng-if="breadcrumbs.tag && breadcrumbs.search">
+                    <a href="" ng-click="replaceFilter('term')" ng-bind="breadcrumbs.tag.text"></a>
+                </li>
+                <li ng-if="breadcrumbs.search" ng-bind-template="Search: '{$breadcrumbs.search $}'"></li>
+                
+            </ul>
+            <div cg-busy="contentItemsPromise"></div>
+            <div class="clearfix" ng-if="isUploaded">
+                <h1 ng-if="uploaded_items.count > 0" class="left">Showing {$ uploaded_items.range_start $} - {$ uploaded_items.range_end $} of {$ uploaded_items.count $} results</h1>
+                <h1 ng-if="uploaded_items.count === 0" class="left">Showing 0 results</h1>
+            </div>
+            <div class="clearfix" ng-if="isPreloaded">
+                <h1 ng-if="preloaded_items.count > 0" class="left">Showing {$ preloaded_items.range_start $} - {$ preloaded_items.range_end $} of {$ preloaded_items.count $} results</h1>
+                <h1 ng-if="preloaded_items.count === 0" class="left">Showing 0 results</h1>
+            </div>
+    
+        </div>
+        <!-- end topListing div for title and dropdowns -->
+
+        <div ng-if="isTeacher()" class="librarySubNav clearfix">
+            <ul class="left">
+                <li><a href="" ng-click="switchview('preloaded')" ng-class="{'activeTab' : isPreloaded }">Pre Loaded Content ({$ preloaded_items.count $})</a></li>
+                <li><a href="" ng-click="switchview('uploaded')" ng-class="{'activeTab' : isUploaded}">My Uploaded Content ({$ uploaded_items.count $})</a></li>
+            </ul>
+            <ul class="right batchActions">
+                <li>
+                    <button ng-disabled="!selectedLesson || !checkedItems || checkedItems.length === 0" type="button" ng-click="batchAdd(selectedLesson)"><span class="fa fa-plus"></span></button>
+                    <select ng-disabled="!checkedItems || checkedItems.length === 0" ng-model="selectedLesson" ng-options="les.title for les in lessons" ng-placeholder="Add To Lesson">
+                        <option value="">Add To Lesson</option>
+                    </select>
+                </li>
+                <li ng-if="isUploaded"><a name='itemDeleteBatch'ng-disabled="!checkedItems || checkedItems.length === 0" ng-click="batchDelete()" class="batchDelete"><span class="intelicon-trash-outlined"></span>Delete</a></li>
+                <li><a href="#library/upload" class="batchUpload"><span class="intelicon-upload-solid"></span>Upload Content</a></li>
+            </ul>
+        </div>
+        <!-- end of librarySubNav div -->
+        <div ng-if="isPreloaded">
+            <div cg-busy="preloadedPromise"></div>
+            <div contentitems="preloaded_items.results" user="user" is-teacher="isTeacher" lesson="lesson" checked-items="checkedItems"></div>            
+            <div pager model="preloaded_items" pagefn="page"></div>
+            <p ng-if="preloaded_items.count === 0">Your search returned no results, please try another search. </p>
+        </div>
+        <div ng-if="isUploaded">
+            <div cg-busy="uploadedPromise"></div>
+            <div contentitems="uploaded_items.results" user="user" is-teacher="isTeacher" lesson="lesson" checked-items="checkedItems"></div>
+            <div pager model="uploaded_items" pagefn="page"></div>
+            <p ng-if="uploaded_items.count === 0">Your search returned no results, please try another search. </p>
+            <div>
+            </div>
+        </div>
+        <!-- end listings Area -->
+</section>

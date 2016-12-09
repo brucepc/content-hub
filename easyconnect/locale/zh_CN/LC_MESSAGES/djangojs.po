@@ -1,0 +1,659 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-24 11:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\static\js\app\app.js:33 .\static\js\app\directives.js:357
+#: .\static\js\app\directives.js.c:368 .\static\js\app\directives.js:645
+#: .\static\js\app\directives.js.c:656 .\static\js\hubApp\app.js:21
+#: .\static\js\teacheradmin\app.js:20
+#: .\static\js\teacheradmin\directives.js:187
+#: .\static\js\teacheradmin\directives.js:198 .\static\js\updater\app.js:20
+#: .\static_source\js\app\app.js:33 .\static_source\js\app\directives.js:357
+#: .\static_source\js\app\directives.js:368
+#: .\static_source\js\app\directives.js:645
+#: .\static_source\js\app\directives.js:656 .\static_source\js\hubApp\app.js:21
+#: .\static_source\js\teacheradmin\app.js:20
+#: .\static_source\js\teacheradmin\directives.js:187
+#: .\static_source\js\teacheradmin\directives.js:198
+#: .\static_source\js\updater\app.js:20
+msgid "Please Wait..."
+msgstr "请稍候..."
+
+#: .\static\js\app\directives.js:28
+#: .\static\js\app\controllers\LessonCtrl.js:100
+#: .\static_source\js\app\directives.js:28
+#: .\static_source\js\app\controllers\LessonCtrl.js:100
+msgid "Featured"
+msgstr "特色"
+
+#: .\static\js\app\directives.js:28
+#: .\static\js\app\controllers\LessonCtrl.js:100
+#: .\static_source\js\app\directives.js:28
+#: .\static_source\js\app\controllers\LessonCtrl.js:100
+msgid "Unfeatured"
+msgstr "无特色"
+
+#: .\static\js\app\directives.js:39 .\static_source\js\app\directives.js:39
+msgid "Hidden"
+msgstr "隐藏"
+
+#: .\static\js\app\directives.js:39 .\static_source\js\app\directives.js:39
+msgid "Visible"
+msgstr "可见"
+
+#: .\static\js\app\directives.js:367 .\static\js\app\directives.js.c:655
+#: .\static\js\teacheradmin\directives.js:197
+#: .\static_source\js\app\directives.js:367
+#: .\static_source\js\app\directives.js:655
+#: .\static_source\js\teacheradmin\directives.js:197
+msgid ""
+"No USB drive was detected, please connect USB drive and press Reload to try "
+"again. If issue persists contact administrator."
+msgstr ""
+"未检测到 USB/SD 驱动器，请连接 USB/SD 驱动器并按“重新加载”重试。如果问题仍然"
+"存在，请联系管理员。"
+
+#: .\static\js\app\directives.js:435 .\static_source\js\app\directives.js:435
+msgid "Uncategorised"
+msgstr "未分类"
+
+#: .\static\js\app\directives.js:439 .\static_source\js\app\directives.js:439
+msgid "No categories created"
+msgstr "未创建类别"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:27
+#: .\static\js\app\controllers\ContentItemCtrl.js:36
+#: .\static\js\app\controllers\UploadCtrl.js:23
+#: .\static\js\app\controllers\controllers.js:371
+#: .\static\js\app\controllers\controllers.js:378
+#: .\static\js\hubApp\controllers.js:265 .\static\js\updater\controllers.js:37
+#: .\static\js\updater\controllers.js:45
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:27
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:36
+#: .\static_source\js\app\controllers\UploadCtrl.js:23
+#: .\static_source\js\app\controllers\controllers.js:371
+#: .\static_source\js\app\controllers\controllers.js:378
+#: .\static_source\js\hubApp\controllers.js:265
+#: .\static_source\js\updater\controllers.js:37
+#: .\static_source\js\updater\controllers.js:45
+msgid "If you leave this page all unsaved changes will be lost, are you sure?"
+msgstr "如果离开此页面，所有未保存的更改都将丢失，是否确定要离开？"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:95
+#: .\static\js\app\controllers\LessonCtrl.js:194
+#: .\static\js\app\controllers\LessonCtrl.js:221
+#: .\static\js\app\controllers\LibraryCtrl.js:323
+#: .\static\js\app\controllers\controllers.js:209
+#: .\static\js\app\controllers\controllers.js:322
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:95
+#: .\static_source\js\app\controllers\LessonCtrl.js:194
+#: .\static_source\js\app\controllers\LessonCtrl.js:221
+#: .\static_source\js\app\controllers\LibraryCtrl.js:323
+#: .\static_source\js\app\controllers\controllers.js:209
+#: .\static_source\js\app\controllers\controllers.js:322
+msgid "Are you sure you want to delete?"
+msgstr "是否确定要删除？"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:98
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:98
+msgid "Item deleted"
+msgstr "项目已删除"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:114
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:114
+msgid "Item successfully updated"
+msgstr "项目已成功更新"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:127
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:127
+msgid "Added to %(lesson)s"
+msgstr "已添加到 %(lesson)s"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:130
+#: .\static\js\app\controllers\LibraryCtrl.js:365
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:130
+#: .\static_source\js\app\controllers\LibraryCtrl.js:365
+msgid "Item already in list"
+msgstr "项目已在列表中"
+
+#: .\static\js\app\controllers\LessonCtrl.js:149
+#: .\static_source\js\app\controllers\LessonCtrl.js:149
+msgid "Lesson added"
+msgstr "课程已添加"
+
+#: .\static\js\app\controllers\LessonCtrl.js:162
+#: .\static\js\app\controllers\controllers.js:197
+#: .\static_source\js\app\controllers\LessonCtrl.js:162
+#: .\static_source\js\app\controllers\controllers.js:197
+msgid "This is a required field"
+msgstr "这是必填字段"
+
+#: .\static\js\app\controllers\LessonCtrl.js:167
+#: .\static_source\js\app\controllers\LessonCtrl.js:167
+msgid "The maximum length of title is %(max)s"
+msgstr "标题最大长度为 %(max)s"
+
+#: .\static\js\app\controllers\LessonCtrl.js:175
+#: .\static\js\app\controllers\controllers.js:193
+#: .\static\js\app\controllers\controllers.js:308
+#: .\static_source\js\app\controllers\LessonCtrl.js:175
+#: .\static_source\js\app\controllers\controllers.js:193
+#: .\static_source\js\app\controllers\controllers.js:308
+msgid "Duplicate"
+msgstr "重复"
+
+#: .\static\js\app\controllers\LessonCtrl.js:188
+#: .\static_source\js\app\controllers\LessonCtrl.js:188
+msgid "Title Updated"
+msgstr "标题已更新"
+
+#: .\static\js\app\controllers\LessonCtrl.js:198
+#: .\static\js\app\controllers\LessonCtrl.js:229
+#: .\static_source\js\app\controllers\LessonCtrl.js:198
+#: .\static_source\js\app\controllers\LessonCtrl.js:229
+msgid "Lesson Deleted"
+msgstr "课程已删除"
+
+#: .\static\js\app\controllers\LessonCtrl.js:206
+#: .\static_source\js\app\controllers\LessonCtrl.js:206
+msgid "Remove from Lesson?"
+msgstr "从课程删除？"
+
+#: .\static\js\app\controllers\LessonCtrl.js:211
+#: .\static_source\js\app\controllers\LessonCtrl.js:211
+msgid "Items Removed"
+msgstr "项目已删除"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:19
+#: .\static_source\js\app\controllers\LibraryCtrl.js:19
+msgid "Category"
+msgstr "类别"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:20
+#: .\static_source\js\app\controllers\LibraryCtrl.js:20
+msgid "Search"
+msgstr "搜索"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:21
+#: .\static_source\js\app\controllers\LibraryCtrl.js:21
+msgid "Tag"
+msgstr "标记"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:270
+#: .\static\js\app\controllers\LibraryCtrl.js:344
+#: .\static_source\js\app\controllers\LibraryCtrl.js:270
+#: .\static_source\js\app\controllers\LibraryCtrl.js:344
+msgid "No Lesson selected"
+msgstr "未选择课程"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:292
+#: .\static\js\app\controllers\LibraryCtrl.js:337
+#: .\static_source\js\app\controllers\LibraryCtrl.js:292
+#: .\static_source\js\app\controllers\LibraryCtrl.js:337
+msgid "No items selected"
+msgstr "未选择项目"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:309
+#: .\static\js\app\controllers\LibraryCtrl.js:352
+#: .\static_source\js\app\controllers\LibraryCtrl.js:309
+#: .\static_source\js\app\controllers\LibraryCtrl.js:352
+msgid "Added to %(lessontitle)s"
+msgstr "已添加到 %(lessontitle)s"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:316
+#: .\static_source\js\app\controllers\LibraryCtrl.js:316
+msgid "Items already in list"
+msgstr "项目已在列表中"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:331
+#: .\static_source\js\app\controllers\LibraryCtrl.js:331
+msgid "Items deleted"
+msgstr "项目已删除"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:424
+#: .\static_source\js\app\controllers\LibraryCtrl.js:424
+msgid "No results returned."
+msgstr "未返回结果。"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:77
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:77
+msgid "Are you sure you want to delete these packages?"
+msgstr "是否确定要删除这些包？"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:80
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:80
+msgid "Packages deleted"
+msgstr "包已删除"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:86
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:86
+msgid "No packages selected"
+msgstr "未选择包"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:98
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:98
+msgid "Are you sure you want to delete all teacher content?"
+msgstr "是否确定要删除所有教师内容？"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:101
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:101
+msgid "Teacher content deleted"
+msgstr "教师内容已删除"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:110
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:155
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:110
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:155
+msgid "Nothing selected"
+msgstr "未选择任何内容"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:145
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:145
+msgid "Are you sure you want to delete all unused categories?"
+msgstr "是否确定要删除所有未用类别？"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:148
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:148
+msgid "Unused categories deleted"
+msgstr "未用类别已删除"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:40
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:50
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:40
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:50
+msgid ""
+"If a package was successfully transferred, it will be added to the database "
+"in the background."
+msgstr "包成功传送后，将在后台添加到数据库。"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:50
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:58
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:50
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:58
+msgid ""
+"If a package was successfully transferred, it will be added to the database "
+"in the background.\n"
+"\n"
+"Are you sure you want to leave this page?"
+msgstr ""
+"包成功传送后，将在后台添加到数据库。\n"
+"\n"
+"是否确定要离开此页面？"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:84
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:423
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:84
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:423
+msgid "Uploading "
+msgstr "正在上载"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:140
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:140
+msgid "Contacting server, attempting to cancel."
+msgstr "正在联系服务器，正在尝试取消。"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:227
+#: .\static\js\app\controllers\UploadCtrl.js:54
+#: .\static\js\app\controllers\UploadCtrl.js:127
+#: .\static\js\updater\controllers.js:63
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:227
+#: .\static_source\js\app\controllers\UploadCtrl.js:54
+#: .\static_source\js\app\controllers\UploadCtrl.js:127
+#: .\static_source\js\updater\controllers.js:63
+msgid "%(filename)s : The maximum length of the filename is %(maxchars)s."
+msgstr "%(filename)s : 文件名最大长度为 %(maxchars)s。"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:229
+#: .\static\js\app\controllers\UploadCtrl.js:56
+#: .\static\js\app\controllers\UploadCtrl.js:129
+#: .\static\js\hubApp\controllers.js:393 .\static\js\updater\controllers.js:65
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:229
+#: .\static_source\js\app\controllers\UploadCtrl.js:56
+#: .\static_source\js\app\controllers\UploadCtrl.js:129
+#: .\static_source\js\hubApp\controllers.js:393
+#: .\static_source\js\updater\controllers.js:65
+msgid "%(filename)s : The maximum size of a file is %(maxsize)s."
+msgstr "%(filename)s : 文件最大为 %(maxsize)s。"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:231
+#: .\static\js\updater\controllers.js:67
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:231
+#: .\static_source\js\updater\controllers.js:67
+msgid "%(filename)s : Only ZIP files are allowed"
+msgstr "%(filename)s : 仅允许 ZIP 文件"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:239
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:222
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:239
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:222
+msgid "Pending"
+msgstr "待处理"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:276
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:261
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:276
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:261
+msgid "Unzipping "
+msgstr "正在解压缩"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:288
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:273
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:288
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:273
+msgid "Adding to database"
+msgstr "正在添加到数据库"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:299
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:283
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:299
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:283
+msgid "Success"
+msgstr "成功"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:302
+#: .\static\js\app\controllers\UploadCtrl.js:89
+#: .\static\js\app\controllers\UploadCtrl.js:210
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:302
+#: .\static_source\js\app\controllers\UploadCtrl.js:89
+#: .\static_source\js\app\controllers\UploadCtrl.js:210
+msgid "Item successfully uploaded"
+msgstr "项目已成功上载"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:314
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:438
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:297
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:314
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:438
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:297
+msgid "Failed"
+msgstr "失败"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:318
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:300
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:318
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:300
+msgid "Invalid package"
+msgstr "包无效"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:381
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:381
+msgid "Uploading"
+msgstr "正在上载"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:398
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:400
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:398
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:400
+msgid "A file error occurred"
+msgstr "发生文件错误"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:91
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:91
+msgid ""
+"A package with this name is already selected, remove the other selection to "
+"continue"
+msgstr "已选择具有此名称的包，删除另一选项以继续"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:128
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:128
+msgid "Cancelled"
+msgstr "已取消"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:285
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:285
+msgid "Item successfully imported"
+msgstr "项目已成功导入"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:367
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:367
+msgid "Copying"
+msgstr "正在复制"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static\js\app\controllers\controllers.js:456
+#: .\static\js\common\services.js:406 .\static\js\hubApp\controllers.js:348
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static_source\js\app\controllers\controllers.js:456
+#: .\static_source\js\common\services.js:406
+#: .\static_source\js\hubApp\controllers.js:348
+msgid ""
+"There is not enough space on the internal drive.  Please connect external "
+"drive and retry."
+msgstr "内部存储空间不足，请外接存储设备并重试。"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static\js\hubApp\controllers.js:348
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static_source\js\hubApp\controllers.js:348
+msgid "There was a problem with the USB device"
+msgstr "USB/SD 设备遇到问题"
+
+#: .\static\js\app\controllers\controllers.js:44
+#: .\static_source\js\app\controllers\controllers.js:44
+msgid "Library Hidden From Students"
+msgstr "库对学生隐藏"
+
+#: .\static\js\app\controllers\controllers.js:47
+#: .\static_source\js\app\controllers\controllers.js:47
+msgid "Library Visible To Students"
+msgstr "库对学生可见"
+
+#: .\static\js\app\controllers\controllers.js:97
+#: .\static\js\teacheradmin\controllers.js:70
+#: .\static_source\js\app\controllers\controllers.js:97
+#: .\static_source\js\teacheradmin\controllers.js:70
+msgid "Are you sure you want to reset the Teacher account?"
+msgstr "是否确定要重置教师帐户？"
+
+#: .\static\js\app\controllers\controllers.js:105
+#: .\static\js\teacheradmin\controllers.js:78
+#: .\static_source\js\app\controllers\controllers.js:105
+#: .\static_source\js\teacheradmin\controllers.js:78
+msgid "The teacher account was not reset."
+msgstr "教师帐户未重置。"
+
+#: .\static\js\app\controllers\controllers.js:108
+#: .\static\js\teacheradmin\controllers.js:81
+#: .\static_source\js\app\controllers\controllers.js:108
+#: .\static_source\js\teacheradmin\controllers.js:81
+msgid "Teacher account reset."
+msgstr "教师帐户已重置。"
+
+#: .\static\js\app\controllers\controllers.js:288
+#: .\static\js\app\controllers\controllers.js:294
+#: .\static_source\js\app\controllers\controllers.js:288
+#: .\static_source\js\app\controllers\controllers.js:294
+msgid "name required"
+msgstr "姓名必填"
+
+#: .\static\js\app\controllers\controllers.js:300
+#: .\static_source\js\app\controllers\controllers.js:300
+msgid "only %(max)s characters allowed"
+msgstr "最多为 %(max)s 个字符"
+
+#: .\static\js\app\controllers\controllers.js:334
+#: .\static_source\js\app\controllers\controllers.js:334
+msgid "nothing to remove"
+msgstr "没有可删除项"
+
+#: .\static\js\app\controllers\controllers.js:447
+#: .\static\js\hubApp\controllers.js:336
+#: .\static_source\js\app\controllers\controllers.js:447
+#: .\static_source\js\hubApp\controllers.js:336
+msgid "Item(s) successfully uploaded"
+msgstr "项目已成功上传"
+
+#: .\static\js\common\controllers.js:45
+#: .\static_source\js\common\controllers.js:45
+msgid "You do not have access to the requested page"
+msgstr "您无法访问请求的页面"
+
+#: .\static\js\common\services.js:372 .\static_source\js\common\services.js:372
+msgid ""
+"Please verify your connection and try again. If issue persists contact "
+"administrator."
+msgstr "请验证连接并重试。如果问题仍然存在，请联系管理员。"
+
+#: .\static\js\common\services.js:372 .\static_source\js\common\services.js:372
+msgid "Connection unavailable."
+msgstr "连接不可用。"
+
+#: .\static\js\common\services.js:376 .\static_source\js\common\services.js:376
+msgid "Bad Request"
+msgstr "无效的请求"
+
+#: .\static\js\common\services.js:418 .\static_source\js\common\services.js:418
+msgid "An Error has occurred (%(status)s)"
+msgstr "发生了错误 (%(status)s)"
+
+#: .\static\js\common\services.js:419 .\static_source\js\common\services.js:419
+msgid "Please try again!"
+msgstr "请重试！"
+
+#: .\static\js\hubApp\controllers.js:11
+#: .\static_source\js\hubApp\controllers.js:11
+msgid ""
+"If you leave this page all unsaved changes will be lost and any content "
+"which has been imported will be removed from the device. Are you sure?"
+msgstr ""
+"如果离开此页面，所有未保存的更改将丢失，所有已导入的内容将从设备中删除。是否"
+"确定要离开？"
+
+#: .\static\js\hubApp\controllers.js:209
+#: .\static_source\js\hubApp\controllers.js:209
+msgid "Tile added"
+msgstr "添加的磁贴"
+
+#: .\static\js\hubApp\controllers.js:242
+#: .\static_source\js\hubApp\controllers.js:242
+msgid "Tile updated"
+msgstr "更新的磁贴"
+
+#: .\static\js\hubApp\controllers.js:252
+#: .\static_source\js\hubApp\controllers.js:252
+msgid ""
+"This tile and any associated imported content will be deleted from the "
+"device. Are you sure you want to delete?"
+msgstr "此磁贴及所有相关的导入内容将从此设备删除。确认要执行删除吗？"
+
+#: .\static\js\hubApp\controllers.js:256
+#: .\static_source\js\hubApp\controllers.js:256
+msgid "Tile Deleted"
+msgstr "删除的磁贴"
+
+#: .\static\js\hubApp\controllers.js:294
+#: .\static_source\js\hubApp\controllers.js:294
+msgid "Hidden from All Users"
+msgstr "对所有用户隐藏"
+
+#: .\static\js\hubApp\controllers.js:294
+#: .\static_source\js\hubApp\controllers.js:294
+msgid "Visible to All Users"
+msgstr "对所有用户可见"
+
+#: .\static\js\hubApp\controllers.js:297
+#: .\static_source\js\hubApp\controllers.js:297
+msgid "Hidden from Students"
+msgstr "对学生隐藏"
+
+#: .\static\js\hubApp\controllers.js:297
+#: .\static_source\js\hubApp\controllers.js:297
+msgid "Visible to Students"
+msgstr "对学生可见"
+
+#: .\static\js\hubApp\controllers.js:399
+#: .\static_source\js\hubApp\controllers.js:399
+msgid "%(filename)s : Only images can be used for icons."
+msgstr "%(filename)s : 只有图像可用于图标。"
+
+#: .\static\js\teacheradmin\controllers.js:24
+#: .\static_source\js\teacheradmin\controllers.js:24
+msgid "Internet Access Enabled"
+msgstr "已启用互联网接入"
+
+#: .\static\js\teacheradmin\controllers.js:27
+#: .\static_source\js\teacheradmin\controllers.js:27
+msgid "Internet Access Disabled"
+msgstr "已禁用互联网接入"
+
+#: .\static\js\teacheradmin\controllers.js:48
+#: .\static_source\js\teacheradmin\controllers.js:48
+msgid "Problem updating SSID"
+msgstr "更新 SSID 时出现问题"
+
+#: .\static\js\teacheradmin\controllers.js:53
+#: .\static_source\js\teacheradmin\controllers.js:53
+msgid ""
+"Changing the SSID will terminate all connections to this device. Are you "
+"sure you want to proceed?"
+msgstr "更改 SSID 将终止与此设备的所有连接。是否确定要继续？"
+
+#: .\static\js\teacheradmin\controllers.js:94
+#: .\static_source\js\teacheradmin\controllers.js:94
+msgid "Remote Management Enabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:97
+#: .\static_source\js\teacheradmin\controllers.js:97
+msgid "Remote Management Disabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:102
+#: .\static_source\js\teacheradmin\controllers.js:102
+msgid "Error occurred Enabling/Disabling Remote Management"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:131
+#: .\static_source\js\teacheradmin\controllers.js:131
+msgid "Intel Education Study Enabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:135
+#: .\static_source\js\teacheradmin\controllers.js:135
+msgid "Intel Education Study Disabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:139
+#: .\static_source\js\teacheradmin\controllers.js:139
+msgid "An error occurred enabling/disabling Study"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:164
+#: .\static_source\js\teacheradmin\controllers.js:164
+#, fuzzy
+msgid "An error occurred getting Study status"
+msgstr "发生了错误 (%(status)s)"
+
+#: .\static\js\teacheradmin\controllers.js:191
+#: .\static_source\js\teacheradmin\controllers.js:191
+msgid "Password updated successfully"
+msgstr "密码已成功更新"
+
+#: .\static\js\teacheradmin\controllers.js:199
+#: .\static_source\js\teacheradmin\controllers.js:199
+msgid "Problem updating Password"
+msgstr "更新密码时出现问题"
+
+#: .\static\js\updater\controllers.js:98
+#: .\static_source\js\updater\controllers.js:98
+msgid ""
+"The device will now restart & the update will be applied.\n"
+"Do not disrupt the update process and make sure the device is plugged into "
+"an electrical outlet or has at least 80% battery remaining."
+msgstr ""
+"设备即将重启，更新将应用。\n"
+"不要中断更新过程，确保设备与电源插座连接或电池至少剩余 80% 电量。"

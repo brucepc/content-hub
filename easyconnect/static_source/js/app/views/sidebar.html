@@ -1,0 +1,41 @@
+<!-- TEACHER CREATE LESSON -->
+<div ng-if="isTeacher() && lesson !== null" class="createArea">
+    <div id="createToggle">
+        <h2 class="lessonTitle" ng-bind="lesson.title"></h2>
+    </div>
+    <div class="createDrawer" ng-if="lesson !== null" style="display: block;">
+        <div name="dropArea" class="dragDropArea" ng-drop="true" ui-on-Drop="addToLesson($data)">
+            <ul class="createList" >
+                <li ng-repeat="item in lesson_contents" ng-bind="item.title"></li>
+                <li class="placeholder" ng-hide="lesson_contents && lesson_contents.length > 0">Drag content to the lesson to add it directly.</li>
+            </ul>
+        </div>
+        <!-- end dragDropArea div -->
+        <a ng-if="lesson !== null" ng-href="#lessons/{$ lesson.id $}" class="actionLink">Manage this lesson</a>
+    </div>
+    <!-- end createDrawer -->
+</div>
+<!-- end createArea -->
+
+<!-- BROWSE -->
+
+<div class="browseArea">
+    <div id="browseToggle" class="only-s only-xs only-m">
+        <h1>Browse by Category</h1>
+        <span></span>
+    </div>
+    <div class="only-l">
+        <h1>Browse by Category</h1>
+        <span></span>
+    </div>
+    <div class="browseDrawer">
+        <form name="category" method="GET" class="clearfix">
+            <div categoryselect="selectedCategory"></div>
+            <input name="c" type="hidden" value="0" />
+            <input type="submit" value="SUBMIT" ng-disabled="!selectedCategory.category1" ng-click="categoryFilter(selectedCategory)" class="left" /><a ng-if="user.is_authenticated && isTeacher() && (isUploaded || isPreloaded)" href="#manage/categories" class="actionLink right">Edit Categories</a>
+        </form>
+        <div tagcloud></div>
+    </div>
+    <!-- end browseDrawer -->
+</div>
+<!-- end browseArea -->

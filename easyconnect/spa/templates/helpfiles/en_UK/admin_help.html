@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Help Guide</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Managing Content</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Overview</a></li>
+			<li><a href="#home2">Adding preloaded content</a></li>
+			<li><a href="#home3">Removing preloaded content</a></li>
+			<li><a href="#home4">Removing teacher content</a></li>
+			<li><a href="#home5">Removing categories</a></li>
+			<li><a href="#home6">Teacher mode</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>How to use the Content Hub Lesson Planner</h1>
+
+		<h2>Managing Content</h2>
+		<div class="howto" id="home1">
+			<h3>Overview</h3>
+
+			<p>The Manage Content screen is displayed by default when the Administrator logs into the Lesson Planner.</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>An Administrator can:</p>
+			<ul>
+				<li>Add/remove preloaded content packages</li>
+				<li>Remove teacher content</li>
+				<li>Remove categories</li>
+			</ul>
+			<h4>What is preloaded content?</h4>
+			<p>Preloaded content is educational content loaded into the Lesson Planner before it is used by the teacher and students. This content may be loaded by, for example, the equipment manufacturer or a Ministry of Education before it is shipped to the school or educational establishment in which it is being used. Preloaded content can only be uploaded/imported/removed by an Administrator.</p>
+			<h4>What is teacher content?</h4>
+			<ol>
+				<li>Content that a teacher adds to the library in the lesson planner. These can be any type of file e.g. excel document, word document, HTML, PDF, E-Pub, video, image, etc.</li>
+				<li>Lessons that a teacher creates</li>
+			</ol>
+			<h4>What are categories?</h4>
+			<p>Categories provide a mechanism for teachers/administrators to group/classify content within the library. A content category can be:</p>
+			<ol>
+				<li>Assigned within a preloaded content package and created when preloaded content is uploaded/imported to the Lesson Planner by an Administrator</li>
+				<li>Assigned when teacher content is uploaded/imported to the Lesson Planner by a Teacher</li>
+				<li>Configured by a teacher through the Manage Category screen, or configured by an administrator through the Manage Category screen when viewing the Lesson Planner in teacher mode</li>
+			</ol>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Adding preloaded content</h3>
+			<p>There are two ways to add preloaded content to the Lesson Planner</p>
+			<ol>
+				<li>Upload content via the browser by selecting the “Upload Package” link from the “Preloaded Content” section</li>
+				<li>Import content via USB by selecting the “USB/SD Import Package” link from the “Preloaded Content” section</li>
+			</ol>
+			<p>For files > 2GB the USB import option must be used. This is due to browser/server restrictions which may apply for larger file sizes. </p>
+			<h4>Upload package</h4>
+			<p>To upload a preloaded content package via the browser:</p>
+			<ol>
+				<li>Go to the “Preloaded Content” section in the Manage Content screen</li>
+				<li>Select the “Upload Package” link<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>In the Upload Package screen, select the “Choose Files” button to select the preloaded content package(s) you want to upload. If a preloaded content package with the same name already exists on the device, an option will be displayed to overwrite the existing package. If the Administrator chooses not to overwrite a package then that content package will not be uploaded to the device or imported into the Lesson Planner</li>
+				<li>A message will be displayed confirming that the preloaded content package has been added successfully</li>
+			</ol>
+			<h4>USB/SD Import package</h4>
+			<p>To import a preloaded content package via USB:</p>
+			<ol>
+				<li>Connect a USB device to the Content Access Point</li>
+				<li>Go to the “Preloaded Content” section in the Manage Content screen</li>
+				<li>Select the “USB/SD Import Package” link<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>In the USB/SD Import Package screen, select the preloaded content packages you want to upload. If a preloaded content package with the same name already exists on the device, an option will be displayed to overwrite the existing package. If the Administrator chooses not to overwrite a package then that content package will not be uploaded to the device or imported into the Lesson Planner</li>
+				<li>A message will be displayed confirming that the preloaded content package has been added successfully</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Removing preloaded content</h3>
+			<p>An Administrator can remove all preloaded content packages or individual preloaded content packages.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>To remove all preloaded content packages:</p>
+			<ol>
+				<li>Go to the “Preloaded Content” section in the Manage Content screen</li>
+				<li>Select the “Preloaded Content” checkbox. If there is no preloaded content, this checkbox will be disabled</li>
+				<li>Select the Delete link</li>
+				<li><strong><u>All</u></strong> preloaded content on the device will be deleted from the lesson planner and from the device</li>
+			</ol>
+			<p>To remove individual preloaded content packages:</p>
+			<ol>
+				<li>Go to the “Preloaded Content” section in the Manage Content screen. A list of existing preloaded content packages on the device will be listed</li>
+				<li>Select the checkbox beside the preloaded content package you want to delete</li>
+				<li>Select the Delete link</li>
+				<li>The selected preloaded content package will be deleted from the lesson planner and from the device</li>
+			</ol>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Removing teacher content</h3>
+			<p>To remove teacher content:</p>
+			<ol>
+				<li>Go to the “Teacher Content” section in the Manage Content screen</li>
+				<li>Select the “Teacher Content” checkbox. If there is no teacher content, this checkbox will be disabled</li>
+				<li>Select the Delete link</li>
+				<li><strong><u>All</u></strong> teacher content will be deleted from the lesson planner and from the device, i.e. all teacher uploaded library content and all lessons</li>
+			</ol>
+			<p>It is not possible to delete individual items of teacher content in Administrator mode. However, an Administrator can delete individual items of content when in Teacher mode.</p>
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Removing categories</h3>
+			<p>To remove categories:</p>
+			<ol>
+				<li>Go to the “Categories” section in the Manage Content screen</li>
+				<li>Select the “Categories” checkbox. If there are no empty categories, i.e. categories with no associated content, this checkbox will be disabled</li>
+				<li>Select the Delete link</li>
+			</ol>
+			<p>Categories will only be deleted if they do not contain content, i.e. it is not possible to delete a category via the Manage Content screen if content is classified as belonging to that category</p>
+			<p>It is not possible to delete individual categories in Administrator mode. However, an Administrator can delete individual categories when in <i>Teacher mode</i>.</p>
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Teacher mode</h3>
+			<p>An Administrator can perform all the functions of a Teacher when in Teacher mode</p>
+			<p>To use the Lesson Planner in Teacher mode, select the “Teacher mode” menu option on the Manage Content screen</p>
+			<p>When in teacher mode, an Administrator can return to the Manage Content screen by selecting the “Administrator mode” menu option</p>
+
+			<a href="#" class="scrollup">Back to Top</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

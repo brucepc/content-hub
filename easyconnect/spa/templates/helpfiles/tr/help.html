@@ -1,0 +1,464 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Yardım Kılavuzu</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Ana Sayfa</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Öne çıkan dersler ve kütüphane içeriğine yönelik açıklama</a></li>
+			<li><a href="#home2">Ana sayfada kaç adet öğeyi öne çıkarabilirim?</a></li>
+			<li><a href="#home3">Ana sayfadan öne çıkan dersleri ve kütüphane içeriğini kaldırma</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Dersler</h2>
+		<ul class="tocNested">
+			<li><a href="#lessons1">Dersler nedir?</a></li>
+			<li><a href="#lessons2">Ders nasıl oluşturulur?</a></li>
+			<li><a href="#lessons3">Derse içerik nasıl eklenir?</a></li>
+			<li><a href="#lessons4">Ders adı nasıl düzenlenir?</a></li>
+			<li><a href="#lessons5">Dersteki içerik nasıl silinir?</a></li>
+			<li><a href="#lessons6">Ders nasıl öne çıkarılır?</a></li>
+			<li><a href="#lessons7">Ders nasıl silinir?</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Kütüphane</h2>
+		<ul class="tocNested">
+			<li><a href="#library1">Kütüphane nedir?</a></li>
+			<li><a href="#library2">Önceden Yüklenen ve Yüklenmiş içerik arasındaki fark nedir?</a></li>
+			<li><a href="#library3">İçerik öğeleri nasıl yönetilir?</a>
+				<ul class="tocNested2">
+					<li><a href="#library3">İçeriği öne çıkarma</a></li>
+					<li><a href="#library4">Yüklenmiş içerik ayrıntılarını düzenleme</a></li>
+					<li><a href="#library5">Yüklenmiş içeriğinizi silme</a></li>
+					<li><a href="#library6">Bir derse içerik ekleme</a></li>
+					<li><a href="#library7">İçeriği öğrencilerden gizleme ve içeriği öğrencilere gösterme</a></li>
+					<li><a href="#library8">İçeriğe erişme</a></li>
+				</ul><!-- end tocNested2 -->
+			</li>
+			<li><a href="#library9">Kendi içeriğinizi yükleme</a></li>
+			<li><a href="#library10">Kategoriler filtre olarak nasıl kullanılır?</a></li>
+			<li><a href="#library11">Etiket bulutu nedir ve nasıl kullanılır?</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>Öğretmen Ayarları</h2>
+		<ul class="tocNested">
+			<li><a href="#settings1">Kategoriler nasıl yönetilir?</a></li>			
+			<li><a href="#settings2">Etiketler nasıl yönetilir?</a></li>
+			<li><a href="#settings3">USB&apos;den Alma</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">		
+
+
+		<h1>Content Hub Ders Planlayıcı nasıl kullanılır?</h1>
+
+		<h2>Ana Sayfa</h2>
+		<div class="howto" id="home1">
+			<h3>Öne çıkan dersler ve kütüphane içeriğine yönelik açıklama</h3>
+
+
+			<p>Öne çıkan öğeler, Ders Planlayıcı ana sayfasına gelindiğinde siz veya öğrenciler tarafından görülmesinin önemli olduğu ders ve kütüphane içeriğini öne çıkarır. Bu, kullanıcıya o gün kendileri için önemli olan öğeleri bulmak için kolay bir yol sağlar. Öğrenciler için o hafta veya gün önemli olan öğeler öne çıkarıldığında, dersler veya kütüphane sayfaları arasında dolaşma ihtiyacı azalacak ve öğrenciler doğrudan öğrenme aşamasına geçebilecektir.</p>
+			<img src="/static/images/help-guide/home-view.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Ana sayfada kaç adet öğeyi öne çıkarabilirim?</h3>
+			<p>Ana sayfada sınırsız sayıda öğeyi öne çıkarabilirsiniz ancak bir kerede yalnızca 10 tanesi görüntülenir. 10 taneden fazla öne çıkan öğe varsa kullanıcı sayfalar arasında dolaşabilir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Ana sayfadan öne çıkan dersleri ve kütüphane içeriğini kaldırma</h3>
+			<p>Ders veya içerik öğesi kutusunun içindeki sarı yıldız simgesini kullanarak bunları ana sayfanızdaki öne çıkanlar bölümünden kaldırabilirsiniz. Simgeyi tıklattığınızda öğeler otomatik olarak sayfadan kalkacaktır.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<h2>Dersler</h2>
+		<div class="howto" id="lessons1">
+			<h3>Dersler nedir?</h3>
+			<p>Dersler, kütüphanenizdeki içerikten öğrencileriniz için oluşturduğunuz eğitim amaçlı içeriklerden oluşan koleksiyonlardır. Dersler sayfasında oluşturduğunuz dersleri görüntüleyebilir ve yönetebilirsiniz. Ayrıca bu sayfada yeni bir ders oluşturabilir, bir dersi öne çıkarabilir, bir veya daha fazla dersi silebilir ve ders adlarını düzenleyebilirsiniz.</p>
+			<p>Hem öğretmen hem de öğrenci görünümlerinin ana sayfasında görüntülenmeleri için dersleri öne çıkarabilirsiniz. Bu, o anda öğretilmekte olan derslere daha fazla önem vermenize olanak tanır.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="lessons2">
+			<h3>Ders nasıl oluşturulur?</h3>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>İçerik alanının sağ üstünde bulunan <strong>Yeni Bir Ders Oluştur</strong> düğmesini tıklatın.</li>
+				<li><strong>Ders Adı</strong> metin alanına bir ad girin ve ardından <strong>Oluştur</strong>&apos;u tıklatın. Dersi oluşturmaya devam etmek istemiyorsanız <strong>İptal</strong> düğmesini tıklatabilirsiniz.</li>
+			</ol>
+			<p>Ardından, dersin başarıyla oluşturulduğunu bildiren bir açılır pencere görürsünüz.</p>
+			<img src="/static/images/help-guide/what-are-lessons1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+<p>Dersler <strong>tarihe</strong> veya <strong>ada</strong> göre sıralanabilir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons2 -->
+
+		<div class="howto" id="lessons3">
+			<h3>Derse içerik nasıl eklenir?</h3>
+			<p>Bir ders oluşturulduktan sonra, bu derse kütüphanenizden içerik ekleyebilirsiniz. </p>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>Listeden içerik eklemek istediğiniz dersi bulun.</li>
+<p></p>
+<img src="/static/images/help-guide/how-to-create-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+
+<p></p>
+
+
+				<li>Ders adının altındaki artı simgesini tıklatın. Bu sizi kütüphane sayfasına götürür.</li>
+<li> Burada, listeden sol sütundaki derse içerik sürükleyip bırakabilirsiniz.</li>
+			</ol>
+<p></p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+			<p>Bir derse bir kerede birden fazla kütüphane öğesi eklemek için her bir ders kütüphane öğesinin onay kutusunu işaretleyin ve <strong>Derse Ekle</strong> düğmesini tıklatın.</p>
+<p>Bunu tıklattığınızda düğme dersi seçebileceğiniz bir açılır menüye dönüşecektir. Dersi seçtiğinizde onay işareti düğmesini tıklatın. Herhangi bir noktada iptal etmek isterseniz <strong>X</strong> düğmesini tıklatabilirsiniz.</p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson2.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons3 -->
+
+		<div class="howto" id="lessons4">
+			<h3>Ders adı nasıl düzenlenir?</h3>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>Listeden düzenlemek istediğiniz dersi bulun.</li>
+				<li>Kalem şeklindeki simgeyi tıklattığınızda bir metin alanı görüntülenir. Ders adını buradan düzenleyebilirsiniz. Değişikliklerinizi kaydetmek için onay işareti simgesini tıklatın. Düzenlemeyi istediğiniz zaman iptal etmek için <strong>X</strong> düğmesini tıklatmanız yeterlidir.</li>
+			</ol>
+			<p>Ayrıca bir ders adını, ders ayrıntıları sayfasında ders başlığının yanındaki kalem simgesi aracılığıyla da düzenleyebilirsiniz.</p> 
+			<img src="/static/images/help-guide/edit-lesson-name.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons4 -->
+
+		<div class="howto" id="lessons5">
+			<h3>Dersteki içerik öğeleri nasıl silinir?</h3>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>Listeden içinden içerik kaldırmak istediğiniz dersi bulun.</li>
+				<li>Ders ayrıntıları sayfasına gitmek için ders simgesini veya adını tıklatın.</li>
+				<li>Kaldırmak istediklerinizi seçmek için içerik öğelerinin sağındaki onay kutularını kullanın</li>
+				<li>İçerik alanının sağ üstünde bulunan <strong>Dersten Kaldır</strong> düğmesini tıklatın.</li>
+			</ol>
+			<img src="/static/images/help-guide/delete-cotent-in-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons5 -->
+
+		<div class="howto" id="lessons6">
+			<h3>Ders nasıl öne çıkarılır?</h3>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>Listeden öne çıkarmak istediğiniz dersi bulun.</li>
+				<li>Ders adının altındaki yıldız simgesini tıklatın. Sarı yıldızlar dersin öne çıkarılmış durumda olduğunu, gri yıldızlar ise dersin o anda öne çıkarılmamış olduğunu gösterir.</li>
+			</ol>
+			<p>Bir ders öne çıkarıldığında, hem öğretmen hem de öğrenci görünümünün ana sayfasında görüntülenir.<p>
+			<img src="/static/images/help-guide/feature-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons6 -->
+
+		<div class="howto" id="lessons7">
+			<h3>Ders nasıl silinir?</h3>
+			<ol>
+				<li><strong>Dersler</strong> sayfasına gidin.</li>
+				<li>Silmek istediğiniz dersi seçmek için ders adının altındaki onay kutusunu kullanın.</li>
+				<li>İçerik alanının sağ üstünde bulunan <strong>Sil</strong> düğmesini tıklatın.</li>
+			</ol>
+			<p>Ayrıca, ders ayrıntıları sayfasında içerik alanının sağ üstündeki <strong>Bu Dersi Sil</strong> düğmesini kullanarak da ders silebilirsiniz.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons7 -->
+
+		<h2>Kütüphane</h2>
+
+		<div class="howto" id="library1">
+			<h3>Kütüphane nedir?</h3>
+			<p>Kütüphane sayfası, sizin yüklediğiniz içerikleri ve önceden yüklenen mevcut içeriği görüntüler. Bu sayfada:</p>
+			<ul>
+				<li>Öğelere kategorilere ve etiketlere göre göz atabilirsiniz</li>
+				<li>Yüklenmiş içerikle ilişkili bilgileri düzenleyebilirsiniz</li>
+				<li>Derslere içerik ekleyebilirsiniz</li>
+				<li>Yüklenmiş içeriği silebilirsiniz</li>
+				<li>İçerik yükleyebilirsiniz</li>
+				<li>İçeriği öne çıkarabilirsiniz</li>
+				<li>İçeriği öğrencilerden gizleyebilir veya içeriği öğrencilere gösterebilirsiniz</li>
+			</ul>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library1 -->
+
+		<div class="howto" id="library2">
+			<h3>Önceden Yüklenen ve Yüklenmiş içerik arasındaki fark nedir?</h3>
+			<p>Uygulama önceden yüklenen eğitim amaçlı içeriğe, yani öğretmenler ve öğrenciler tarafından kullanılmaya başlamadan önce yüklenen eğitim amaçlı içeriğe sahip olabilir. Örneğin, bu içerik kullanılacağı okula veya eğitim kurumuna gönderilmeden önce ekipman üreticisi veya Eğitim Bakanlığı tarafından yüklenmiş olabilir. Önceden yüklenen içerik silinemez veya düzenlenemez.</p>
+			<p>Yüklenmiş içerik, öğretmenin bilgisayarındaki dosyalardan yüklediği içeriktir. Bu herhangi bir türde dosya olabilir &ndash; Excel belgesi, Word belgesi, HTML, PDF, E-Pub, video, görüntü vb. Yüklenmiş içerik silinebilir ve düzenlenebilir.</p>
+			<img src="/static/images/help-guide/preloaded-uploaded-tabs.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library2 -->
+
+		<div class="howto" id="library3">
+			<h3>İçerik öğeleri nasıl yönetilir?</h3>
+			<h4>İçeriği öne çıkarma</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li>Öne çıkarmak istediğiniz kütüphane simgesinin sağındaki yıldız simgesini kullanın. Sarı içeriğin öne çıkarıldığı, gri ise öne çıkarılmadığı anlamına gelir.</li>
+			</ol>
+			<p>Bu içerik <strong>Ana Sayfa</strong>&apos;da <strong>Öne Çıkan İçerik</strong> altında görüntülenir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library3 -->
+
+		<div class="howto" id="library4">
+			<h4>Yüklenmiş içerik ayrıntılarını düzenleme</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li><strong>Yüklenmiş İçerik </strong>sekmesini tıklatın.</li>
+				<li>Düzenlemek istediğiniz içerik öğesinin yanındaki kalem simgesini tıklatın</li>
+			</ol>
+			<p>İlgili içerikle alakalı başlığı, açıklamayı, etiketleri ve kategorileri düzenleyebileceğiniz alanların bulunduğu bir forma yönlendirileceksiniz. Düzenlemeyi tamamladığınızda <strong>Kaydet</strong>&apos;i tıklatın.</p>
+			<img src="/static/images/help-guide/edit-content.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>			
+		</div><!-- end howto library4 -->
+
+		<div class="howto" id="library5">
+			<h4>Yüklenmiş içeriğinizi silme</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li><strong>Yüklenmiş İçerik </strong>sekmesini tıklatın.</li>
+				<li>Silmek istediklerinizi seçmek için kütüphane öğelerinin sağındaki onay kutularını kullanın.</li>
+				<li><strong>Yüklenmiş İçeriğim</strong> sekmesinin sağ tarafındaki <strong>Sil</strong> düğmesini tıklatın.</li>
+			</ol>
+			<p>Önceden yüklenen içeriği silemezsiniz. Yalnızca yüklenmiş içerikler silinebilir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library5 -->
+
+		<div class="howto" id="library6">
+			<h4>Bir derse içerik ekleme</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li>Bir derse eklemek istediklerinizi seçmek için kütüphane öğelerinin sağındaki onay kutularını kullanın.</li>
+				<li>Eklemek istediğiniz dersi seçmek için <strong>Yüklenmiş İçeriğim</strong> sekmesinin sağ tarafındaki <strong>Derse Ekle</strong> açılır menüsünü kullanın. Bunu yaptıktan sonra yanındaki onay işaretini tıklatın.</li>
+<p></p>
+<img src="/static/images/help-guide/add-content-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+
+<li>Ders soldaki ders kutusunda göründüğünde, kütüphaneden içerik sürükleyip doğrudan derse bırakabilirsiniz.</li>
+</ol><p>
+Bir derse aynı anda <strong>birden fazla kütüphane öğesi</strong> eklemek için her bir öğenin onay kutusunu işaretleyin ve <strong>Derse Ekle</strong> düğmesini tıklatın.</p>
+<p>
+Bunu tıklattığınızda düğme dersi seçebileceğiniz bir açılır menüye dönüşecektir. Dersi seçtiğinizde onay işareti düğmesini tıklatın. Herhangi bir noktada iptal etmek isterseniz <strong>X</strong> düğmesini tıklatabilirsiniz.</p>
+<p>Kütüphane öğeleri, kategori ağaç görünümü menüsü kullanılarak filtrelenebilir</p>
+<p>Üç kategori düzeyi sınırı vardır. Kategorize edilmemiş tüm içerik öğeleri ‘kategorize edilmemiş’ kategorisinde bulunabilir.</p> 
+
+<img src="/static/images/help-guide/adding-library-items-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			
+			<p>Derslere önceden yüklenen veya yüklenmiş içerik ekleyebilirsiniz.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Ayrı ayrı içerik öğelerini gizleme ve gösterme</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li>İçeriği öğrencilerden gizlemek için göz simgesini kullanın. Gözün üzeri çizildiğinde, içerik öğrencilerden gizli durumdadır.</li>
+			</ol>
+			<p>Öğrencilerden içerik gizlendiğinde, içerik öğrencilerin kütüphane görünümünden ve aynı zamanda içinde bulunduğu derslerden de gizlenir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>Öğrencilerden kütüphaneyi gizleme ve öğrencilere kütüphaneyi gösterme</h4>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin. Sol alt köşede “Kütüphaneye öğrenci erişimine izin verilsin mi?” seçeneğini göreceksiniz.</li>
+				<li><strong>Evet</strong> veya <strong>Hayır</strong>&apos;ı seçin.</li>
+			</ol>
+			<img src="/static/images/help-guide/hide-and-show-library.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library7 -->
+
+		<div class="howto" id="library8">
+
+			<h4>İçeriğe erişme</h4>
+			<p>Başlığını tıklatarak içerik öğelerine erişebilirsiniz. Dosya türüne ve tarayıcı yapılandırmanıza bağlı olarak dosya yeni bir sekmede açılır veya tarayıcınız dosyayı indirme işlemini halleder.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library8 -->
+
+		<div class="howto" id="library9">
+			<h3>Kendi içeriğinizi yükleme</h3>
+			<p>Neredeyse her dosya türünü yükleyebilirsiniz &ndash; .jpg, .pdf, e-pub, Word belgesi, Excel belgesi, video, ses, html ve daha fazlası.</p>
+			<ol>
+				<li><strong>Kütüphane</strong> sayfasına gidin.</li>
+				<li><strong>İçerik Yükle</strong> düğmesini tıklatın.</li>
+<li> Dosya&apos;yı seçin ve dosyanın bilgisayarınızdaki konumuna göz atın.
+				<li>Bilgisayarınızdan aynı anda birden fazla dosya yükleyebilirsiniz. </li>
+<p>
+<img src="/static/images/help-guide\uploading-my-own-content-after-point-4.PNG" alt="Content Hub" class="imgBorder" /></p>
+				<li>Dosyaların başlıkları, başlık alanına otomatik olarak girilir. Tek zorunlu alan budur.</li>
+<li>Açıklama, Kategori ve Etiketler de buraya eklenir.</li>
+<li>Açıklama alanına bir açıklama girin.</li>
+<li>Etiketler alanına ilgili etiketleri girin. Birden fazla etiket girmek için her bir kelimeden sonra Enter&apos;a basın.</li>
+<li>Yalnızca bir kategori seçilebilir.</li>
+<li>Bu meta veriler, bu noktada yüklenen tüm dosyalara (IMS paketleri hariç) uygulanır.</li>
+<p></p>
+<p><img src="/static/images/help-guide/uploading-my-own-content-after-point-10.PNG" alt="Content Hub" class="imgBorder" /></p>
+<p></p>
+
+				<li>Bilgileri girmeyi tamamladığınızda <strong>Yükle</strong>&apos;yi tıklatın.</li>
+<li>Herhangi bir kategoriye eklenmemiş dosyalar kategorize edilmemiş kategorisinde görüntülenir.</li>
+			</ol>
+			<img src="/static/images/help-guide/uploading-my-own-content-after-point-12.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto contentMan1 -->
+
+
+		<div class="howto" id="library10">
+			<h3>Filtreler nasıl uygulanır?</h3>
+<p>Kütüphane filtreleri, sonuç kümesini filtrelemek için hep birlikte veya tek tek uygulanabilen ölçüt kümeleridir.</p>
+<p>Metin tabanlı bir filtre için arama kutusunu kullanabilirsiniz.</p>
+<p>Bir Kategoriye göre filtreleyebilirsiniz. </p>
+<p>Bir Etikete göre filtreleyebilirsiniz.</p>
+<p>Eklendiğinde, uygulanan ölçüt kaldırılamaz.</p>
+<img src="/static/images/help-guide/library-search.png" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto library12 -->
+
+		<div class="howto" id="library11">
+			<h4>Etiket bulutu nedir ve nasıl kullanılır?</h4>
+			<p>Etiket bulutu, içerik öğelerine atanmış etiketlerin kısaltılmış bir listesini görüntüler. Etiketler, içeriği daha kolay aramak için kullanılan açıklayıcı kelimelerdir. İçerik öğelerine uygulanan &quot;bilim&quot;, &quot;laboratuvar alıştırması&quot;, &quot;yeniler&quot; ve &quot;pdf&quot; gibi etiketler, söz konusu içerik öğelerinin bu terimlere yönelik aramalarda görünmesini sağlar.</p>
+			<p>Bir etiket bir içeriğe daha çok uygulandıkça bulutta daha büyük görünecektir. Etiket bulutu, içeriğe etiketlere göre göz atmak için ve içeriğinizde hangi tür etiketlerin daha yaygın olduğunu görmek için kolay bir yoldur.</p>
+			<img src="/static/images/help-guide/what-are-tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>			
+		</div><!-- end howto library13 -->
+
+<h2>Öğretmen Ayarları</h2>
+		<div class="howto" id="settings1">
+			<h3>Kategoriler nasıl yönetilir?</h3>
+			<p>Sayfanın sağ üstündeki <strong>Yönet</strong> düğmesini tıklatın. Açılır menüden <strong>Kategoriler</strong>&apos;i seçin.</p>
+			<h4>Yeni Birincil Kategori Ekleme</h4>
+			<ol>
+				<li><strong>Yeni Birincil Kategori Ekle</strong> düğmesini tıklatın.</li>
+				<li>Kategori için bir ad yazın</li>
+				<li>Yeni kategorinizi kaydetmek için onay işareti düğmesini tıklatın.</li>
+			</ol>
+			<h4>İkinci veya üçüncü düzeyde bir kategori ekleme</h4>
+			<ol>
+				<li>Yeni alt kategorinizin ana kategorisi olmasını istediğiniz kategorinin yanındaki <strong>+</strong> simgesini tıklatın.</li>
+				<li>Kategori için bir ad yazın.</li>
+				<li>Yeni kategorinizi kaydetmek için onay işareti düğmesini tıklatın.</li>
+			</ol>
+			<h4>Bir Kategori Adını Düzenleme</h4>
+			<ol>
+				<li>Düzenlemek istediğiniz kategori adının yanındaki kalem simgesini tıklatın.</li>
+				<li>Kategori için yeni bir ad yazın.</li>
+				<li>Yeni kategorinizi kaydetmek için onay işareti düğmesini tıklatın.</li>
+			</ol>
+			<h4>Bir Kategoriyi Silme</h4>
+			<ol>
+				<li>Silmek istediğiniz kategori adının yanındaki çöp kutusu simgesini tıklatın.</li>
+				<li>Açılır pencerede kategoriyi silmek istediğinizi onaylayın.</li>
+			</ol>
+			<p><strong>Lütfen dikkat:</strong> Atanmış içeriği varsa veya alt kategoriye sahipse bir kategoriyi silemezsiniz.</p>
+			<img src="/static/images/help-guide/categories-page.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto settings1 -->
+
+	<div class="howto" id="settings2">
+			<h3>Etiketler nasıl yönetilir?</h3>
+			<p>Sayfanın sağ üstündeki <strong>Yönet</strong> düğmesini tıklatın. Açılır menüden <strong>Etiketler</strong>&apos;i seçin.</p>
+			<h4>Bir Etiketi Düzenleme</h4>
+			<ol>
+				<li>Düzenlemek istediğiniz etiket adının yanındaki kalem simgesini tıklatın (önceden yüklenen içeriğe yönelik etiketler silinemez)</li>
+				<li>Etiket için yeni bir ad yazın.</li>
+				<li>Yeni etiketinizi kaydetmek için onay işareti düğmesini tıklatın.</li>
+			</ol>
+			<h4>Bir Etiketi Silme</h4>
+			<ol>
+				<li>Silmek istediğiniz etiket adının yanındaki çöp kutusu simgesini tıklatın.</li>
+				<li>Açılır pencerede etiketi silmek istediğinizi onaylayın.</li>
+			</ol>
+			<p><strong>Lütfen dikkat:</strong> Önceden yüklenen içerikle ilişkili etiketleri değiştiremezsiniz.</p
+			<img src="/static/images/help-guide/tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto settings2-->
+
+	<div class="howto" id="settings3">
+			<h3>USB&apos;den Alma</h3>
+			<p>Sayfanın sağ üstündeki <strong>Yönet</strong> düğmesini tıklatın. Açılır menüden <strong>Ayarlar</strong>&apos;ı seçin ve ardından <strong>USB&apos;den Alma</strong>&apos;yı belirleyin.</p>
+			<h4>USB&apos;den Dosya Alma</h4>
+			<ol>
+				<li>USB cihazındaki çeşitli klasörleri açmak için sol taraftaki okları kullanın.</li>
+				<li>Almak istediklerinizi seçmek için dosya adının solundaki onay kutusunu tıklatın.</li>
+<li>Söz konusu klasör içindeki tüm dosyaları almak istiyorsanız en üst düzeydeki klasörü seçin. (Yalnızca klasörün kökündeki dosyalar seçilir, bunların içindeki alt klasörler ve dosyalar eklenmez)
+				<li>Dosyaları <strong>Kütüphanenize</strong> almaya başlamak için <strong>Al</strong> düğmesini tıklatın.</li>
+			</ol>
+			<h4>Notlar</h4>
+			<ul>
+				<li><strong>Yüklenmiş İçeriğim</strong> kütüphanesine birden fazla dosya alınabilir.</li>
+				<li>Her dosyanın başlığı dosya adına dayalı olur ve dosya adı zaten mevcutsa artımlı bir dosya adı ile yeniden adlandırılır.</li>
+<li><strong>Lütfen dikkat:</strong> Açıklama, Kategori ve Etiketler de buraya eklenir. Bu meta veriler, bu noktada yüklenen tüm dosyalara (IMS paketleri hariç) uygulanır.</li> 
+				
+
+<li>Meta veriler, Kütüphane&apos;deki İçerik Bilgisini Düzenle özelliği aracılığıyla ayrı ayrı dosyalarda güncellenebilir.</li>
+				
+				<li>Klasörler alınamaz.</li>
+				<li>Bilgileri girmeyi tamamladığınızda <strong>Al</strong>&apos;ı tıklatın.</li>
+			</ul>
+			<img src="/static/images/help-guide/usb-	import1.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto settings2-->
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

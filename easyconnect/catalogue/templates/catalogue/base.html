@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>{% block title %}Page Name: {% endblock %}</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="/">Content Hub</a>
+        </div>
+        <div id="nav">
+            {% if user.is_authenticated %}
+                Welcome, {{user.username}} <a href="{% url 'logout' %}?next={% firstof request.path '/' %}">Logout</a>  |  <a href="{% url 'upload' %}?next={% firstof request.path '/' %}">Upload</a>
+            {% else %}
+                <a href="{% url 'login' %}?next={% firstof request.path '/' %}">Login</a>
+            {% endif %}
+        </div>
+        {% block body %}
+        {% endblock body %}
+        <div id="footer"> Copyright info etc. </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+{% load staticfiles %}
+{% load browse_extras %}
+{% is_source source='preloaded' as is_preloaded_flag %}
+<!-- COURSE LISTINGS -->
+        <div class="listingsArea col-l9">
+            <div class="topListing clearfix">
+
+                    <ul class="breadCrumbs">
+                        {% breadcrumbs as bc_list %}
+                        {% for crumb_text, crumb_url in bc_list %}
+                            <li>
+                            {% if not forloop.last and crumb_url != '' %}
+                                <a href="{{ crumb_url }}">{{ crumb_text }}</a>
+                            {% else %}
+                                {{ crumb_text }}
+                            {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                <div class="clearfix">
+                    {% if page.object_list %}
+                        <h1 class="left">Showing {{ page.start_index }} - {{ page.end_index }} of {{ paginator.count }} results</h1>
+                    {% else %}
+                        <h1 class="left">Showing 0 results</h1>
+                    {% endif %}
+
+                </div>
+                    <div class="dropMenu showDrop" style="display:none"> <!-- Show all Content -->
+                        <form name="showContent" action="" method="">
+                            <select name="Show Content">
+                                <option>Show All Content</option>
+                                <option value="Content1">Content 1</option>
+                                <option value="Content2">Grade 2</option>
+                            </select>
+                        </form>
+                        </div><!-- end show all content dropdown -->
+                </div><!-- end topListing div for title and dropdowns -->
+
+        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+            <div class="librarySubNav clearfix">
+                <ul class="left">
+                    <li><a href="{% url 'library' source='preloaded' %}?{% preserve_get %}" class="{% tab_active source='preloaded' %}">Pre Loaded Content ({% if is_preloaded_flag %}{{paginator.this_count}}{% else %}{{paginator.other_count}}{% endif %})</a></li>
+                    <li><a href="{% url 'library' source='uploaded' %}?{% preserve_get %}" class="{% tab_active source='uploaded' %}">My Uploaded Content ({% if is_preloaded_flag %}{{paginator.other_count}}{% else %}{{paginator.this_count}}{% endif %})</a></li>
+                </ul>
+                
+                <ul class="right batchActions">
+
+                {% if not is_preloaded_flag %}
+                    <li><a name='itemDeleteBatch' style='opacity:0.3' class="batchDelete">Delete</a></li>
+                {% endif %}
+                    <li><a name='itemAddToLessonBatch' style='opacity:0.3' class="batchAdd">Add To Lesson</a></li>
+                    <li><a href="{% url 'upload' %}" class="batchUpload">Upload Content</a></li>
+                </ul>
+            </div><!-- end of librarySubNav div -->
+        {% endif %}
+
+    
+        {% for teacheritem in page.object_list %}
+            {% with library_item=teacheritem.object|default:teacheritem %}
+            <section class="listing clearfix {% if user.is_authenticated and request.session.viewType == "teacher" %}teacherContentItem{% endif %}" id='{{ library_item.id }}'>
+                {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                    <input type="checkbox" itemid='{{ library_item.id }}' id='batch{{ library_item.id }}' name="content" value="Select" class="libraryCheckbox">
+                {% endif %}
+                <a class="mediaIcon {{ library_item.content_file.url|get_extension }}"></a>
+                <div class="listingInfo">
+                    <h1 class="listingTitle"><a name="itemDetail" id="{{ library_item.id }}">{{ library_item.title }}</a></h1>
+                    <!--
+                    {% if library_item.description %}
+                        <p>
+                            {{ library_item.description | truncatechars:100 }}
+                            {% if library_item.description|length > 100 %}
+                                <a name="itemDetail" id="{{ library_item.id }}"> (read more) </a>
+                            {% endif %}
+                        </p>
+                    {% endif %}
+                    -->
+                    <p class="added">Added <time>{{ library_item.date_added | date:"d/m/Y H:i" }}</time>&nbsp;&nbsp; &#124; &nbsp;&nbsp;<span class="size">{{ library_item.file_size | filesizeformat }}</span></p>
+
+            <div class="overlay-helper-for-draggable"></div>
+
+                    <ul class="listingIcons dropdown dropdownVertical">
+                    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+
+                        <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                        <!-- More Options Dropdown -->
+                        <ul class="optionsDrop">
+                            <li><a name="itemAddToLesson" class="add" id='{{ library_item.id }}'>Add To Lesson</a></li>
+                            {% if library_item.uploaded %}
+                                <li><a class="delete" name="itemDelete" id='{{ library_item.id }}'>Delete This Item</a></li>
+                                <li><a name='itemEdit' class="edit"  id='{{ library_item.id }}'>Edit Details</a></li>
+                            {% endif %}
+                        </ul>
+                        </li><!-- end More Options Dropdown -->
+                        <li><a name='itemHide' class='hideItem {% if library_item.hidden %}on{% endif %} tooltip' id='{{ library_item.id }}' rel='tooltip' title='{% if library_item.hidden %} Show to {% else %} Hide from {% endif %}Students'></a></li>
+                        <li><a name='itemFeature' class="feature {% if library_item.featured %} on{% endif %} tooltip" id="{{ library_item.id }}" rel="tooltip" title="{% if library_item.featured %}Unf{% else %}F{% endif %}eature this content item on the home page"></a></li>
+                        <li><a href="{{ library_item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                    {% else %}
+                        <li><a href="{{ library_item.content_file.url }}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                    {% endif %}
+                    </ul>
+                </div><!-- end listingInfo -->
+            </section><!-- end listing -->
+            {% endwith %}
+        {% empty %}
+                <p>Your search returned no results, please try another search. </p>
+            </section><!-- end listing -->
+            </div><!-- end listings Area -->
+        {% endfor %}
+
+        {% if page.object_list %}
+            {% load ec_paginator %}
+            {% ec_paginator %}
+        {% endif %}
+
+
+        </div><!-- end listings Area -->

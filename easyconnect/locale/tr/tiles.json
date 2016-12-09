@@ -1,0 +1,14 @@
+
+[ { "image" : "",
+    "noauth" : true,
+    "title" : "Ders Planlayıcı",
+    "url" : "/lessonplanner/",
+	"type" : "fa fa-book"
+  },
+  { "image" : "",
+    "noauth" : false,
+    "title" : "Cihaz Ayarları",
+    "url" : "/devicesettings/",
+  "type" : "fa fa-cogs"
+  }
+]

@@ -1,0 +1,48 @@
+{% load i18n %}
+<section class="row mainContent changePassword" ng-cloak>
+    <div class="single col-l12">
+        <section class="manageArea passwordContent clearfix" ng-if="user.is_authenticated">  
+            <h1>{% trans "Change Password" %}</h1>
+            <form id="changepassForm" name="changepassForm" novalidate="true">
+                <div class="bottomSpacing">
+                    <label for="oldPassword">{% trans "Old Password" %}</label>
+                    <input name="oldPassword" required ng-model="changepass.oldPassword" type="password"/>
+                    <p ng-if="changepassForm.oldPassword.$error.required && changepassForm.oldPassword.$dirty" class="errorlist">
+                        {% trans "This field is required." %}
+                    </p>
+                </div>
+                <div class="bottomSpacing">
+                    <label for="newPassword">{% trans "New Password" %}</label>
+                    <input name="newPassword" required ng-pattern="/{$ FIELD_VAL.passwordPattern $}/" ng-model="changepass.newPassword" type="password"/>
+                    <p ng-if="changepassForm.newPassword.$error.required && changepassForm.newPassword.$dirty" class="errorlist">
+                        {% trans "This field is required." %}
+                    </p>
+                    <p ng-if="changepassForm.newPassword.$error.pattern && changepassForm.newPassword.$dirty" class="errorlist">
+                        {% trans "Invalid password." %}
+                    </p>
+                </div>
+                <div class="bottomSpacing">
+                    <label for="confirmPassword">{% trans "Confirm Password" %}</label>
+                    <input name="confirmPassword" required ng-pattern="/{$ FIELD_VAL.passwordPattern $}/" ng-model="changepass.confirmPassword" match="changepass.newPassword" type="password"/>
+                    <p ng-if="changepassForm.confirmPassword.$error.required && changepassForm.confirmPassword.$dirty" class="errorlist">
+                        {% trans "This field is required." %}
+                    </p>
+                    <p ng-if="changepassForm.confirmPassword.$error.pattern && changepassForm.confirmPassword.$dirty" class="errorlist">
+                        {% trans "Invalid password." %}
+                    </p>
+                    <p ng-if="changepassForm.confirmPassword.$error.match && changepassForm.confirmPassword.$dirty" class="errorlist">
+                        {% trans "Passwords do not match." %}
+                    </p>
+                </div>
+                <input type="button" class="cancelBtn left margin-top-10" value="{% trans "Cancel" %}" ng-click="cancel(changepassForm)"/>
+                <input type="submit" value="{% trans "Update" %}" class="login margin-top-10 right brandBtnColor" ng-click="update(changepass, changepassForm)" ng-disabled="changepassForm.$invalid || changepassForm.$pristine"/>
+                
+            </form>
+
+        </section>
+        <div class="centerText" ng-if="user.is_authenticated === false">
+            <ng-include src="'/angularpartials/teacheradmin/noauth.html'"></ng-include>
+        </div>
+    </div>
+    <!-- end single column -->
+</section>

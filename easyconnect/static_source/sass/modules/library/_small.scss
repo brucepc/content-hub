@@ -1,0 +1,24 @@
+.sideMenu {
+  padding:32px 20px 30px 0;
+  margin: 0;
+}
+.listingsArea, .styleArea {
+   margin: 0; 
+   padding:35px 0 0 20px;
+}
+.listingsArea {
+  border-left:1px solid $horizontalRuleGray;
+}
+
+html[dir=rtl] .libraryContent .listingsArea {
+  float:right;
+  padding:12px 20px 0 0;
+  margin:0;
+  border-right:1px solid #d9d9d9;
+  border-left:0;
+}
+
+html[dir=rtl] .libraryContent .sideMenu {
+  float:right;
+  padding:32px 0 30px 20px;
+}

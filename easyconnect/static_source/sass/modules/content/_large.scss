@@ -1,0 +1,129 @@
+
+.sideMenu {
+  padding:42px 20px 30px 0;
+  margin: 0;
+}
+
+/* Single column page */
+.uploadArea {
+  width: 40%;
+  margin: 0 auto;
+  padding: 30px 0 30px;
+}
+
+.ui-dialog-content .uploadArea{
+  width: 100%;
+  padding:0 10px;
+}
+
+/*  Browse Drawer */
+.browseArea {
+  display: block !important;
+  position: relative;
+  padding: 0 !important;// when large
+  margin: 0 !important; // when large
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  margin-bottom: 0;
+  cursor: default !important;
+   .browseDrawer {
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+    margin: 10px 0 0 0;
+  }
+  #browseToggle {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+        > span {
+      display: none;
+      background: none;
+    }
+      h1 {
+      padding: 0 0 10px 0;
+      cursor: default;
+      }
+      &:hover {
+      background-color: transparent;
+      }
+}
+  }
+
+.createArea {
+   padding: 10px 20px;
+   cursor: default !important;
+  #createToggle {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+       > span {
+      display: none;
+      background: none;
+    }
+      &:hover {
+      background-color: transparent;
+      }
+  h1 {
+      padding: 0;
+      cursor: default !important;
+      }
+}
+  .createDrawer {
+    display: none;
+    padding: 0;
+  }
+}
+
+/* Middle column */
+.listingsArea, .styleArea {
+   margin: 0; 
+   padding:15px 0 30px 20px;
+}
+.listingsArea {
+  border-left:1px solid $horizontalRuleGray;
+}
+.topListing,  {  //titles and dropdowns
+    margin: 0;  // margin-bottom on large
+}
+
+
+.listingsArea, .styleArea {
+ margin: 0;  // for small only
+}
+
+
+/* ------------------------
+    LESSON DETAIL PAGE
+------------------------- */
+// Listing Boxes
+// .detailView {
+//   section.listing {
+//   max-width: 46% !important;
+//   margin: 0 40px 20px 0;
+//   float: left !important;
+//   clear: none !important;
+//   &:nth-child(odd) {
+//     margin-right: 0 !important;
+//   }
+//   }
+// }
+
+.featuredLessons p.added, .itemContent p.added {
+  margin: 0;
+}
+.featuredLessons, .itemContent  {
+  .downloadIcon {
+     display: block;
+    height: 26px;
+    width: 26px;
+    position: relative;
+    margin: 0;
+    top: -20px;
+    left: 93% !important;
+  }
+}

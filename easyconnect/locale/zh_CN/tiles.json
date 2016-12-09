@@ -1,0 +1,14 @@
+
+[ { "image" : "",
+    "noauth" : true,
+    "title" : "课程计划人",
+    "url" : "/lessonplanner/",
+	"type" : "fa fa-book"
+  },
+  { "image" : "",
+    "noauth" : false,
+    "title" : "设备设置",
+    "url" : "/devicesettings/",
+  "type" : "fa fa-cogs"
+  }
+]

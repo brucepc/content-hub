@@ -1,0 +1,85 @@
+.titleBar{
+	margin:17px 0 20px;
+  h1{
+    position:relative;
+    top:-5px;
+    margin:0 10px 0 0;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+      }
+    .icon-title-edit{
+      float:left;
+	  color:$brandLighterGray;
+		&:hover{
+			color:$brandLightGray;
+		}
+		&:active, &:focus{
+			color:$brandGray;
+		}
+    }
+
+}
+html[dir=rtl] .titleBar h1{
+  margin:0 0 0 10px;
+}
+html[dir=rtl] .icon-title-edit{
+  float:right;
+}
+body .homeTitle{
+  margin-top:40px
+}
+
+.featuredItems {
+  margin-bottom:50px;
+}
+
+.featuredLessons .LessonItems .listingIcons {
+  width:102px;
+  left:5px;
+  > li:last-child{
+    display:none;
+  }
+}
+html[dir=rtl] .featuredLessons .LessonItems .listingIcons {
+  left:0px;
+}
+
+
+/* -----------------------------
+    NO RESULTS
+----------------------------- */
+
+.nocontentMessage{
+  width:100%;
+  text-align:center;
+  margin-bottom:50px;
+  span{
+  padding:20px 20px 10px;
+  background:#fff; 
+  display:inline-block;
+  border-radius:3px;
+  margin:50px auto;
+  text-align:center;
+  border:1px solid $brandLightestGray;
+  @include mediumShadow;
+  }
+  p{
+    padding:0 0 10px 0;
+    margin:0;
+    &:first-child{
+      font-size:1.25rem; //20px
+      font-weight:bold;
+    }
+    &:last-child{
+      padding:0!important;
+    }
+  }
+  &:after{
+    clear:both;
+  }
+}

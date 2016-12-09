@@ -1,0 +1,680 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-24 11:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\static\js\app\app.js:33 .\static\js\app\directives.js:357
+#: .\static\js\app\directives.js.c:368 .\static\js\app\directives.js:645
+#: .\static\js\app\directives.js.c:656 .\static\js\hubApp\app.js:21
+#: .\static\js\teacheradmin\app.js:20
+#: .\static\js\teacheradmin\directives.js:187
+#: .\static\js\teacheradmin\directives.js:198 .\static\js\updater\app.js:20
+#: .\static_source\js\app\app.js:33 .\static_source\js\app\directives.js:357
+#: .\static_source\js\app\directives.js:368
+#: .\static_source\js\app\directives.js:645
+#: .\static_source\js\app\directives.js:656 .\static_source\js\hubApp\app.js:21
+#: .\static_source\js\teacheradmin\app.js:20
+#: .\static_source\js\teacheradmin\directives.js:187
+#: .\static_source\js\teacheradmin\directives.js:198
+#: .\static_source\js\updater\app.js:20
+msgid "Please Wait..."
+msgstr "Veuillez patienter..."
+
+#: .\static\js\app\directives.js:28
+#: .\static\js\app\controllers\LessonCtrl.js:100
+#: .\static_source\js\app\directives.js:28
+#: .\static_source\js\app\controllers\LessonCtrl.js:100
+msgid "Featured"
+msgstr "Disponible"
+
+#: .\static\js\app\directives.js:28
+#: .\static\js\app\controllers\LessonCtrl.js:100
+#: .\static_source\js\app\directives.js:28
+#: .\static_source\js\app\controllers\LessonCtrl.js:100
+msgid "Unfeatured"
+msgstr "Non disponible"
+
+#: .\static\js\app\directives.js:39 .\static_source\js\app\directives.js:39
+msgid "Hidden"
+msgstr "Masqué"
+
+#: .\static\js\app\directives.js:39 .\static_source\js\app\directives.js:39
+msgid "Visible"
+msgstr "Visible"
+
+#: .\static\js\app\directives.js:367 .\static\js\app\directives.js.c:655
+#: .\static\js\teacheradmin\directives.js:197
+#: .\static_source\js\app\directives.js:367
+#: .\static_source\js\app\directives.js:655
+#: .\static_source\js\teacheradmin\directives.js:197
+msgid ""
+"No USB drive was detected, please connect USB drive and press Reload to try "
+"again. If issue persists contact administrator."
+msgstr ""
+"Aucun lecteur USB n'a été détecté, veuillez connecter un lecteur USB et "
+"appuyer sur Recharger pour réessayer. Si le problème persiste, contactez "
+"l'administrateur."
+
+#: .\static\js\app\directives.js:435 .\static_source\js\app\directives.js:435
+msgid "Uncategorised"
+msgstr "Non catégorisé"
+
+#: .\static\js\app\directives.js:439 .\static_source\js\app\directives.js:439
+msgid "No categories created"
+msgstr "Aucune catégorie sélectionnée"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:27
+#: .\static\js\app\controllers\ContentItemCtrl.js:36
+#: .\static\js\app\controllers\UploadCtrl.js:23
+#: .\static\js\app\controllers\controllers.js:371
+#: .\static\js\app\controllers\controllers.js:378
+#: .\static\js\hubApp\controllers.js:265 .\static\js\updater\controllers.js:37
+#: .\static\js\updater\controllers.js:45
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:27
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:36
+#: .\static_source\js\app\controllers\UploadCtrl.js:23
+#: .\static_source\js\app\controllers\controllers.js:371
+#: .\static_source\js\app\controllers\controllers.js:378
+#: .\static_source\js\hubApp\controllers.js:265
+#: .\static_source\js\updater\controllers.js:37
+#: .\static_source\js\updater\controllers.js:45
+msgid "If you leave this page all unsaved changes will be lost, are you sure?"
+msgstr ""
+"Si vous quittez cette page, toutes les modifications non enregistrées seront "
+"perdues. Voulez-vous continuer ?"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:95
+#: .\static\js\app\controllers\LessonCtrl.js:194
+#: .\static\js\app\controllers\LessonCtrl.js:221
+#: .\static\js\app\controllers\LibraryCtrl.js:323
+#: .\static\js\app\controllers\controllers.js:209
+#: .\static\js\app\controllers\controllers.js:322
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:95
+#: .\static_source\js\app\controllers\LessonCtrl.js:194
+#: .\static_source\js\app\controllers\LessonCtrl.js:221
+#: .\static_source\js\app\controllers\LibraryCtrl.js:323
+#: .\static_source\js\app\controllers\controllers.js:209
+#: .\static_source\js\app\controllers\controllers.js:322
+msgid "Are you sure you want to delete?"
+msgstr "Souhaitez-vous vraiment supprimer ?"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:98
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:98
+msgid "Item deleted"
+msgstr "Élément supprimé"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:114
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:114
+msgid "Item successfully updated"
+msgstr "Élément mis à jour"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:127
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:127
+msgid "Added to %(lesson)s"
+msgstr "Ajouté à %(lesson)s"
+
+#: .\static\js\app\controllers\ContentItemCtrl.js:130
+#: .\static\js\app\controllers\LibraryCtrl.js:365
+#: .\static_source\js\app\controllers\ContentItemCtrl.js:130
+#: .\static_source\js\app\controllers\LibraryCtrl.js:365
+msgid "Item already in list"
+msgstr "Élément déjà présent dans la liste"
+
+#: .\static\js\app\controllers\LessonCtrl.js:149
+#: .\static_source\js\app\controllers\LessonCtrl.js:149
+msgid "Lesson added"
+msgstr "Leçon ajoutée"
+
+#: .\static\js\app\controllers\LessonCtrl.js:162
+#: .\static\js\app\controllers\controllers.js:197
+#: .\static_source\js\app\controllers\LessonCtrl.js:162
+#: .\static_source\js\app\controllers\controllers.js:197
+msgid "This is a required field"
+msgstr "Ce champ est obligatoire"
+
+#: .\static\js\app\controllers\LessonCtrl.js:167
+#: .\static_source\js\app\controllers\LessonCtrl.js:167
+msgid "The maximum length of title is %(max)s"
+msgstr "La longueur maximale du titre est %(max)s"
+
+#: .\static\js\app\controllers\LessonCtrl.js:175
+#: .\static\js\app\controllers\controllers.js:193
+#: .\static\js\app\controllers\controllers.js:308
+#: .\static_source\js\app\controllers\LessonCtrl.js:175
+#: .\static_source\js\app\controllers\controllers.js:193
+#: .\static_source\js\app\controllers\controllers.js:308
+msgid "Duplicate"
+msgstr "Doublon"
+
+#: .\static\js\app\controllers\LessonCtrl.js:188
+#: .\static_source\js\app\controllers\LessonCtrl.js:188
+msgid "Title Updated"
+msgstr "Titre mis à jour"
+
+#: .\static\js\app\controllers\LessonCtrl.js:198
+#: .\static\js\app\controllers\LessonCtrl.js:229
+#: .\static_source\js\app\controllers\LessonCtrl.js:198
+#: .\static_source\js\app\controllers\LessonCtrl.js:229
+msgid "Lesson Deleted"
+msgstr "Leçon supprimée"
+
+#: .\static\js\app\controllers\LessonCtrl.js:206
+#: .\static_source\js\app\controllers\LessonCtrl.js:206
+msgid "Remove from Lesson?"
+msgstr "Retirer de la leçon ?"
+
+#: .\static\js\app\controllers\LessonCtrl.js:211
+#: .\static_source\js\app\controllers\LessonCtrl.js:211
+msgid "Items Removed"
+msgstr "Éléments supprimés"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:19
+#: .\static_source\js\app\controllers\LibraryCtrl.js:19
+msgid "Category"
+msgstr "Catégorie"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:20
+#: .\static_source\js\app\controllers\LibraryCtrl.js:20
+msgid "Search"
+msgstr "Rechercher"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:21
+#: .\static_source\js\app\controllers\LibraryCtrl.js:21
+msgid "Tag"
+msgstr "Mot-clé"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:270
+#: .\static\js\app\controllers\LibraryCtrl.js:344
+#: .\static_source\js\app\controllers\LibraryCtrl.js:270
+#: .\static_source\js\app\controllers\LibraryCtrl.js:344
+msgid "No Lesson selected"
+msgstr "Aucune leçon sélectionnée"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:292
+#: .\static\js\app\controllers\LibraryCtrl.js:337
+#: .\static_source\js\app\controllers\LibraryCtrl.js:292
+#: .\static_source\js\app\controllers\LibraryCtrl.js:337
+msgid "No items selected"
+msgstr "Aucun élément sélectionné"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:309
+#: .\static\js\app\controllers\LibraryCtrl.js:352
+#: .\static_source\js\app\controllers\LibraryCtrl.js:309
+#: .\static_source\js\app\controllers\LibraryCtrl.js:352
+msgid "Added to %(lessontitle)s"
+msgstr "Élément ajouté à %(lessontitle)s"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:316
+#: .\static_source\js\app\controllers\LibraryCtrl.js:316
+msgid "Items already in list"
+msgstr "Éléments déjà présents dans la liste"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:331
+#: .\static_source\js\app\controllers\LibraryCtrl.js:331
+msgid "Items deleted"
+msgstr "Éléments supprimés"
+
+#: .\static\js\app\controllers\LibraryCtrl.js:424
+#: .\static_source\js\app\controllers\LibraryCtrl.js:424
+msgid "No results returned."
+msgstr "Aucun résultat renvoyé"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:77
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:77
+msgid "Are you sure you want to delete these packages?"
+msgstr "Voulez-vous vraiment supprimer ces packages ?"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:80
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:80
+msgid "Packages deleted"
+msgstr "Packages supprimés"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:86
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:86
+msgid "No packages selected"
+msgstr "Aucun package sélectionné"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:98
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:98
+msgid "Are you sure you want to delete all teacher content?"
+msgstr "Voulez-vous vraiment supprimer tout le contenu du formateur ?"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:101
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:101
+msgid "Teacher content deleted"
+msgstr "Contenu du formateur supprimé"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:110
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:155
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:110
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:155
+msgid "Nothing selected"
+msgstr "Aucune sélection"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:145
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:145
+msgid "Are you sure you want to delete all unused categories?"
+msgstr "Voulez-vous vraiment supprimer toutes les catégories inutilisées ?"
+
+#: .\static\js\app\controllers\ManagePreloadedCtrl.js:148
+#: .\static_source\js\app\controllers\ManagePreloadedCtrl.js:148
+msgid "Unused categories deleted"
+msgstr "Catégories inutilisées supprimées"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:40
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:50
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:40
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:50
+msgid ""
+"If a package was successfully transferred, it will be added to the database "
+"in the background."
+msgstr ""
+"Si un package a été correctement transféré, il est ajouté à la base de "
+"données en arrière-plan."
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:50
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:58
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:50
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:58
+msgid ""
+"If a package was successfully transferred, it will be added to the database "
+"in the background.\n"
+"\n"
+"Are you sure you want to leave this page?"
+msgstr ""
+"Si un package a été correctement transféré, il est ajouté à la base de "
+"données en arrière-plan.\n"
+"\n"
+"Voulez-vous vraiment quitter cette page ?"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:84
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:423
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:84
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:423
+msgid "Uploading "
+msgstr "Téléchargement"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:140
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:140
+msgid "Contacting server, attempting to cancel."
+msgstr "Contact du serveur, tentative d'annulation."
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:227
+#: .\static\js\app\controllers\UploadCtrl.js:54
+#: .\static\js\app\controllers\UploadCtrl.js:127
+#: .\static\js\updater\controllers.js:63
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:227
+#: .\static_source\js\app\controllers\UploadCtrl.js:54
+#: .\static_source\js\app\controllers\UploadCtrl.js:127
+#: .\static_source\js\updater\controllers.js:63
+msgid "%(filename)s : The maximum length of the filename is %(maxchars)s."
+msgstr ""
+"%(filename)s : La longueur maximale du nom de fichier est %(maxchars)s."
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:229
+#: .\static\js\app\controllers\UploadCtrl.js:56
+#: .\static\js\app\controllers\UploadCtrl.js:129
+#: .\static\js\hubApp\controllers.js:393 .\static\js\updater\controllers.js:65
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:229
+#: .\static_source\js\app\controllers\UploadCtrl.js:56
+#: .\static_source\js\app\controllers\UploadCtrl.js:129
+#: .\static_source\js\hubApp\controllers.js:393
+#: .\static_source\js\updater\controllers.js:65
+msgid "%(filename)s : The maximum size of a file is %(maxsize)s."
+msgstr "%(filename)s : La taille maximale d'un fichier est %(maxsize)s."
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:231
+#: .\static\js\updater\controllers.js:67
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:231
+#: .\static_source\js\updater\controllers.js:67
+msgid "%(filename)s : Only ZIP files are allowed"
+msgstr "%(filename)s : seuls les fichiers ZIP sont autorisés"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:239
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:222
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:239
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:222
+msgid "Pending"
+msgstr "En attente"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:276
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:261
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:276
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:261
+msgid "Unzipping "
+msgstr "Décompression"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:288
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:273
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:288
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:273
+msgid "Adding to database"
+msgstr "Ajout à la base de données"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:299
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:283
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:299
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:283
+msgid "Success"
+msgstr "Réussites"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:302
+#: .\static\js\app\controllers\UploadCtrl.js:89
+#: .\static\js\app\controllers\UploadCtrl.js:210
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:302
+#: .\static_source\js\app\controllers\UploadCtrl.js:89
+#: .\static_source\js\app\controllers\UploadCtrl.js:210
+msgid "Item successfully uploaded"
+msgstr "Élément téléchargé"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:314
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:438
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:297
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:314
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:438
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:297
+msgid "Failed"
+msgstr "Échec"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:318
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:300
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:318
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:300
+msgid "Invalid package"
+msgstr "Package non valide"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:381
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:381
+msgid "Uploading"
+msgstr "Téléchargement"
+
+#: .\static\js\app\controllers\PreloadUploadCtrl.js:398
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:400
+#: .\static_source\js\app\controllers\PreloadUploadCtrl.js:398
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:400
+msgid "A file error occurred"
+msgstr "Une erreur de fichier est survenue"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:91
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:91
+msgid ""
+"A package with this name is already selected, remove the other selection to "
+"continue"
+msgstr ""
+"Un package portant ce nom existe déjà, supprimez l'autre sélection pour "
+"continuer"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:128
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:128
+msgid "Cancelled"
+msgstr "Annulé"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:285
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:285
+msgid "Item successfully imported"
+msgstr "Élément correctement importé"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:367
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:367
+msgid "Copying"
+msgstr "Copie"
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static\js\app\controllers\controllers.js:456
+#: .\static\js\common\services.js:406 .\static\js\hubApp\controllers.js:348
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static_source\js\app\controllers\controllers.js:456
+#: .\static_source\js\common\services.js:406
+#: .\static_source\js\hubApp\controllers.js:348
+msgid ""
+"There is not enough space on the internal drive.  Please connect external "
+"drive and retry."
+msgstr ""
+"La capacité de stockage interne n’est pas suffisante. Veuillez connecter un "
+"disque externe et essayer de nouveau."
+
+#: .\static\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static\js\hubApp\controllers.js:348
+#: .\static_source\js\app\controllers\PreloadUsbCtrl.js:392
+#: .\static_source\js\hubApp\controllers.js:348
+msgid "There was a problem with the USB device"
+msgstr "Un problème lié au périphérique USB/SD est survenu"
+
+#: .\static\js\app\controllers\controllers.js:44
+#: .\static_source\js\app\controllers\controllers.js:44
+msgid "Library Hidden From Students"
+msgstr "Bibliothèque masquée vis-à-vis des stagiaires"
+
+#: .\static\js\app\controllers\controllers.js:47
+#: .\static_source\js\app\controllers\controllers.js:47
+msgid "Library Visible To Students"
+msgstr "Bibliothèque visible aux stagiaires"
+
+#: .\static\js\app\controllers\controllers.js:97
+#: .\static\js\teacheradmin\controllers.js:70
+#: .\static_source\js\app\controllers\controllers.js:97
+#: .\static_source\js\teacheradmin\controllers.js:70
+msgid "Are you sure you want to reset the Teacher account?"
+msgstr "Voulez-vous vraiment réinitialiser le compte du formateur ?"
+
+#: .\static\js\app\controllers\controllers.js:105
+#: .\static\js\teacheradmin\controllers.js:78
+#: .\static_source\js\app\controllers\controllers.js:105
+#: .\static_source\js\teacheradmin\controllers.js:78
+msgid "The teacher account was not reset."
+msgstr "Le compte du formateur n'a pas été réinitialisé."
+
+#: .\static\js\app\controllers\controllers.js:108
+#: .\static\js\teacheradmin\controllers.js:81
+#: .\static_source\js\app\controllers\controllers.js:108
+#: .\static_source\js\teacheradmin\controllers.js:81
+msgid "Teacher account reset."
+msgstr "Compte du formateur réinitialisé."
+
+#: .\static\js\app\controllers\controllers.js:288
+#: .\static\js\app\controllers\controllers.js:294
+#: .\static_source\js\app\controllers\controllers.js:288
+#: .\static_source\js\app\controllers\controllers.js:294
+msgid "name required"
+msgstr "nom obligatoire"
+
+#: .\static\js\app\controllers\controllers.js:300
+#: .\static_source\js\app\controllers\controllers.js:300
+msgid "only %(max)s characters allowed"
+msgstr "%(max)s caractères autorisés seulement"
+
+#: .\static\js\app\controllers\controllers.js:334
+#: .\static_source\js\app\controllers\controllers.js:334
+msgid "nothing to remove"
+msgstr "rien à supprimer"
+
+#: .\static\js\app\controllers\controllers.js:447
+#: .\static\js\hubApp\controllers.js:336
+#: .\static_source\js\app\controllers\controllers.js:447
+#: .\static_source\js\hubApp\controllers.js:336
+msgid "Item(s) successfully uploaded"
+msgstr "Élément(s) téléchargé(s)"
+
+#: .\static\js\common\controllers.js:45
+#: .\static_source\js\common\controllers.js:45
+msgid "You do not have access to the requested page"
+msgstr "Vous n'avez pas accès à la page demandée"
+
+#: .\static\js\common\services.js:372 .\static_source\js\common\services.js:372
+msgid ""
+"Please verify your connection and try again. If issue persists contact "
+"administrator."
+msgstr ""
+"Vérifiez votre connexion et réessayez. Si le problème persiste, contactez "
+"l'administrateur."
+
+#: .\static\js\common\services.js:372 .\static_source\js\common\services.js:372
+msgid "Connection unavailable."
+msgstr "Connexion indisponible."
+
+#: .\static\js\common\services.js:376 .\static_source\js\common\services.js:376
+msgid "Bad Request"
+msgstr "Demande erronée"
+
+#: .\static\js\common\services.js:418 .\static_source\js\common\services.js:418
+msgid "An Error has occurred (%(status)s)"
+msgstr "Une erreur s’est produite (%(status)s)"
+
+#: .\static\js\common\services.js:419 .\static_source\js\common\services.js:419
+msgid "Please try again!"
+msgstr "Réessayez."
+
+#: .\static\js\hubApp\controllers.js:11
+#: .\static_source\js\hubApp\controllers.js:11
+msgid ""
+"If you leave this page all unsaved changes will be lost and any content "
+"which has been imported will be removed from the device. Are you sure?"
+msgstr ""
+"Si vous quittez cette page, toutes les modifications non enregistrées seront "
+"perdues et le contenu importé supprimé du périphérique. Voulez-vous "
+"continuer ?"
+
+#: .\static\js\hubApp\controllers.js:209
+#: .\static_source\js\hubApp\controllers.js:209
+msgid "Tile added"
+msgstr "Mosaïque ajoutée"
+
+#: .\static\js\hubApp\controllers.js:242
+#: .\static_source\js\hubApp\controllers.js:242
+msgid "Tile updated"
+msgstr "Mosaïque mise à jour"
+
+#: .\static\js\hubApp\controllers.js:252
+#: .\static_source\js\hubApp\controllers.js:252
+msgid ""
+"This tile and any associated imported content will be deleted from the "
+"device. Are you sure you want to delete?"
+msgstr ""
+"Cette mosaïque et le contenu importé associé seront supprimés du "
+"périphérique. Êtes-vous sûr de vouloir les supprimer ?"
+
+#: .\static\js\hubApp\controllers.js:256
+#: .\static_source\js\hubApp\controllers.js:256
+msgid "Tile Deleted"
+msgstr "Mosaïque supprimée"
+
+#: .\static\js\hubApp\controllers.js:294
+#: .\static_source\js\hubApp\controllers.js:294
+msgid "Hidden from All Users"
+msgstr "Masqué pour tous les utilisateurs"
+
+#: .\static\js\hubApp\controllers.js:294
+#: .\static_source\js\hubApp\controllers.js:294
+msgid "Visible to All Users"
+msgstr "Visible pour tous les utilisateurs"
+
+#: .\static\js\hubApp\controllers.js:297
+#: .\static_source\js\hubApp\controllers.js:297
+msgid "Hidden from Students"
+msgstr "Masqué pour les stagiaires"
+
+#: .\static\js\hubApp\controllers.js:297
+#: .\static_source\js\hubApp\controllers.js:297
+msgid "Visible to Students"
+msgstr "Visible pour les stagiaires"
+
+#: .\static\js\hubApp\controllers.js:399
+#: .\static_source\js\hubApp\controllers.js:399
+msgid "%(filename)s : Only images can be used for icons."
+msgstr ""
+"%(filename)s : seules des images peuvent être utilisées pour les icônes."
+
+#: .\static\js\teacheradmin\controllers.js:24
+#: .\static_source\js\teacheradmin\controllers.js:24
+msgid "Internet Access Enabled"
+msgstr "Accès Internet activé"
+
+#: .\static\js\teacheradmin\controllers.js:27
+#: .\static_source\js\teacheradmin\controllers.js:27
+msgid "Internet Access Disabled"
+msgstr "Accès Internet désactivé"
+
+#: .\static\js\teacheradmin\controllers.js:48
+#: .\static_source\js\teacheradmin\controllers.js:48
+msgid "Problem updating SSID"
+msgstr "Problème pendant la mise à jour du SSID"
+
+#: .\static\js\teacheradmin\controllers.js:53
+#: .\static_source\js\teacheradmin\controllers.js:53
+msgid ""
+"Changing the SSID will terminate all connections to this device. Are you "
+"sure you want to proceed?"
+msgstr ""
+"La modification du SSID mettra fin à toutes les connexions à ce "
+"périphérique. Voulez-vous vraiment poursuivre ?"
+
+#: .\static\js\teacheradmin\controllers.js:94
+#: .\static_source\js\teacheradmin\controllers.js:94
+msgid "Remote Management Enabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:97
+#: .\static_source\js\teacheradmin\controllers.js:97
+msgid "Remote Management Disabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:102
+#: .\static_source\js\teacheradmin\controllers.js:102
+msgid "Error occurred Enabling/Disabling Remote Management"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:131
+#: .\static_source\js\teacheradmin\controllers.js:131
+msgid "Intel Education Study Enabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:135
+#: .\static_source\js\teacheradmin\controllers.js:135
+msgid "Intel Education Study Disabled"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:139
+#: .\static_source\js\teacheradmin\controllers.js:139
+msgid "An error occurred enabling/disabling Study"
+msgstr ""
+
+#: .\static\js\teacheradmin\controllers.js:164
+#: .\static_source\js\teacheradmin\controllers.js:164
+#, fuzzy
+msgid "An error occurred getting Study status"
+msgstr "Une erreur s’est produite (%(status)s)"
+
+#: .\static\js\teacheradmin\controllers.js:191
+#: .\static_source\js\teacheradmin\controllers.js:191
+msgid "Password updated successfully"
+msgstr "Mot de passe mis à jour"
+
+#: .\static\js\teacheradmin\controllers.js:199
+#: .\static_source\js\teacheradmin\controllers.js:199
+msgid "Problem updating Password"
+msgstr "Problème pendant la mise à jour du mot de passe"
+
+#: .\static\js\updater\controllers.js:98
+#: .\static_source\js\updater\controllers.js:98
+msgid ""
+"The device will now restart & the update will be applied.\n"
+"Do not disrupt the update process and make sure the device is plugged into "
+"an electrical outlet or has at least 80% battery remaining."
+msgstr ""
+"Le périphérique va maintenant redémarrer et la mise à jour sera appliquée.\n"
+"N'interrompez pas le processus de mise à jour et vérifiez que le "
+"périphérique est branché sur une prise électrique ou qu'il dispose d'au "
+"moins 80 % de charge de batterie restante."

@@ -1,0 +1,26 @@
+{% load i18n %}
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12" ng-if="user.is_authenticated && user.isTeacher()">
+        <section class="manageArea clearfix">
+            <h1>{% trans "Settings" %}</h1>
+            <div class="row">
+                <a href="#/usb">{% trans "Import from USB" %}</a>
+            </div>
+            <div class="row">
+                <label class="switch-light switch-candy" onclick="">
+                  <input type="checkbox" name="accessLibrary" ng-checked="libhidden" ng-click="toggleLibrary()" id="accessLibrary">
+                 <span>                     
+                    <span>{% trans "Off" %}</span>
+                    <span>{% trans "On" %}</span>
+                  </span>
+
+                  <a></a>
+                </label>                                  
+                   {% trans "Enable student access to the content library" %}
+                <div style="display:none;">{% trans "Add Tile" %}</div>
+                    
+           </div>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

@@ -1,0 +1,9 @@
+<customize-brand>
+	<company-logo>brand-edu-logo.png</company-logo>
+	<content-hub-logo>content-hub-text.png</content-hub-logo>
+  <brand-logo>class-connect-text.png</brand-logo>
+	<lesson-planner-logo>lesson-planner-text.png</lesson-planner-logo>
+	<banner-bkgnd-color>#666666</banner-bkgnd-color>
+  <buttons-icons-color>#FF9900</buttons-icons-color>
+  <buttons-icons-highlighted-color>#666666</buttons-icons-highlighted-color>
+</customize-brand>

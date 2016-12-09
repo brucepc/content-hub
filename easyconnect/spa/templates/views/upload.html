@@ -1,0 +1,66 @@
+{% load i18n %}
+<section class="row mainContent" ng-cloak>
+
+    <!--UPLOAD AREA -->
+    <div class="single col-l12">
+        <section class="uploadArea clearfix">   
+
+            <div class="clearfix">
+                <h1 class="left">{$ editing ? '{% trans "Edit Content Information" %}' : '{% trans "Upload Content" %}'$}</h1>
+                <a ng-if="!editing" href='#usb' class="right" style="font-size:0.75rem; line-height:2.9;">{% trans "USB/SD Import" %}</a>
+            </div>
+            <form id="chooseFile" name="uploadForm" novalidate="true">
+                <div ng-if="!editing" class="uploadFileInfo">
+                    <input type="file" ng-file-select="onFileSelect($files)" multiple ng-click="clearFileSelection($event)">
+                </div>
+
+                <p ng-if="fileErrors.length > 0" ng-repeat="file_error in fileErrors" class="errorlist">
+                    {$ file_error $}
+                </p>                
+                <label for="id_title" ng-if="editing">{% trans "Title" %}</label>
+                <input id="id_title" ng-if="editing" maxlength="{$ FIELD_VAL.contentItemMax $}" ng-maxlength="{$ FIELD_VAL.contentItemMax $}" name="title" ng-model="content.title" placeholder="{% trans "Title" %}" type="text" required>
+
+            <!-- Multiple file upload rename -->
+            <div ng-repeat="file in file_title_mapping" class="multiFileUpload clearfix">
+                <ng-form id="addFiles" name="addFiles" enctype="multipart/form-data" novalidate="true">                    
+                    <div class="mediaIcon {$ file.filename | get_extension $}"></div>
+                    <div class="fileDetails">
+                        <div class="multi-filename">{$ file.filename $}</div>
+                        <label ng-show="editing">{% trans "Title" %}</label>
+                        <input name="title" ng-model="file.title" placeholder="{% trans "Title" %}" maxlength="{$ FIELD_VAL.contentItemMax $}" ng-maxlength="{$ FIELD_VAL.contentItemMax $}" type="text" ng-required required>
+                    <p ng-if="addFiles.title.$error.required && addFiles.title.$dirty" class="errorlist">{% trans "This field is required." %}</p>
+                    {% trans "{$ FIELD_VAL.contentItemMax $}" as maxchars %}
+                    <p ng-if="addFiles.title.$error.maxlength && addFiles.title.$dirty" class="errorlist">{% blocktrans %}The maximum length of title is {{ maxchars }}.{% endblocktrans %}</p>
+                    </div><!-- /.file details -->
+                    <div class="uploadcomplete-{$ file.uploaded $}"><img src="../static/images/ajax_loader_blue_32.gif"><span class="fa fa-times"></span></div>
+
+                </ng-form>
+            </div>
+            
+            <!-- Single or common metadata -->
+            <form id="metadata" name="metadata" enctype="multipart/form-data" novalidate="true">
+                <label for="id_description">{% trans "Description" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></label>
+                <textarea cols="40" id="id_description" name="description" ng-model="content.description" placeholder="{% trans "Description" %}" rows="7"></textarea>
+                <div ng-controller="TagCtrl" ng-init="init()">
+                <h3>{% trans "Tags" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></h3>
+                <tags-input name="tags" ng-model="content.tags" on-tag-added="addTag($tag)" min-length="1" max-length="25" placeholder="{% trans "Tags" %}">
+                    <auto-complete source="lookupTag($query)"></auto-complete>
+                </tags-input>
+                </div>
+
+                <label>{% trans "Category" %}<span class="meta_asterix" ng-if="actual_files.length > 1">*</span></label>
+
+                <div categoryhierarchy data-initselected="selected_category_id" onselect="selectCategory" ondeselect="clearCategory" class="margin-bottom-20" id="cat_hierarchy_sidebar">{% trans "Please Wait..." %}</div>
+            </form>
+                <input type="submit" value="{$ editing ? '{% trans "Save" %}' : '{% trans "Upload" %}' $}" class="margin-top-20 brandBtnColor brandBtnHoverColor" ng-click="save(content, uploadForm)" ng-disabled="uploadForm.$invalid || uploadForm.$pristine || actual_files.length === 0">
+                <div class="common_metadata_warning margin-top-20" ng-if="actual_files.length > 1">
+                    <span class="meta_asterix">*</span>
+                    {% trans "Common metadata applied to all items (excludes IMS packages)." %}
+                </div>
+
+            </form>
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>

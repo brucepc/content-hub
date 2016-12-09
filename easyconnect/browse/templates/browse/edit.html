@@ -1,0 +1,97 @@
+{% load staticfiles %}
+{% load browse_extras %}
+
+<section class="uploadArea clearfix">
+    <form id="chooseFile" action="{% url 'items-edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="uploadFileInfo">
+                {{ form.content_file }}
+                <div class="mediaIcon"></div>
+            </div>
+            {{ form.title }}
+            {{ form.description }}
+
+        <div class="clearfix"><h3 class="left">Add Tags</h3></div>
+        <input name="tags" type="hidden" id="tagit" value="{{ existing_tags }}" />
+
+        <div class="clearfix"><h3 class="left">Assign Categories</h3></div>
+ 
+        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+            <select level='0'>
+                <option selected="selected" value=0>Category</option>
+            </select>
+        </div>
+        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+            <select level='1' disabled="disabled">
+                <option selected="selected" value=0>Subcategory</option>
+            </select>
+        </div>
+        <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+            <select level='2' disabled="disabled">
+                <option selected="selected" value=0>Subcategory</option>
+            </select>
+        </div>
+
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+
+        <input name="id" type="hidden" value={{ item_id }} />
+    	<input name="c" type="hidden" value=0 />
+	</form>
+</section><!-- end uploadArea -->
+<div name='allcat' style='display:none'>
+    <select level='0'>
+    {% for category in categories|dictsort:"name" %}
+        <option value="{{ category.pk }}">{{ category.name | capfirst }}</option>
+    {% endfor %}
+    </select>
+{% for category in categories|dictsort:"name" %}
+    <select parentid='{{ category.pk }}' level='1'>
+    {% for sub in category.children|dictsort:"name" %}
+        <option value="{{ sub.pk }}">{{ sub.name | capfirst }}</option>
+    {% endfor %}
+    </select>
+    {% for sub in category.children|dictsort:"name" %}
+        <select parentid='{{ sub.pk }}' level='2'>
+        {% for subsub in sub.children|dictsort:"name" %}
+            <option value="{{ subsub.pk }}">{{ subsub.name | capfirst }}</option>
+        {% endfor %}
+        </select>
+    {% endfor %}
+{% endfor %}
+
+</div>
+
+<script>
+$(document).ready(function() {
+
+    initialCatDrop({{ existing_category }});
+
+    $("input[name=c]").val({{ existing_category }});
+
+    $("div.catdrop").change(function() {
+
+        var category_id = $(this).children("select:first-of-type").val();
+        var level = parseInt($(this).find('select').attr('level'));
+
+        if (category_id != 0) {
+            $("input[name=c]").val(category_id);
+        } else {
+            var next_category_up = $(this).prev().children("select:first-of-type").val();
+            $("input[name=c]").val(next_category_up);
+        }
+
+        updateCatDrop(level + 1, category_id);
+
+        // Just making sure (cheating) to cover all three
+        $('div.catdrop > select[level=' +  parseInt(level+2) + ']').html('<option selected="selected" value=0>Subcategory</option>');
+        $('div.catdrop > select[level=' +  parseInt(level+2) + ']').attr('disabled', 'disabled');
+    });
+
+    $("#tagit").tagit({
+        availableTags: {{ tags_json|safe|default:"[]"}},
+        placeholderText: 'Tags',
+        caseSensitive: false,
+    });
+});
+</script>

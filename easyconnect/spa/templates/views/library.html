@@ -1,0 +1,78 @@
+{% load i18n %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent libraryContent" ng-init="init()">
+
+    <div sidebar class="col-s3 sideMenu"></div>
+    <!-- end sideMenu -->
+
+    <div class="listingsArea col-s9">
+       <div ng-show="filters.length > 0" class="filterArea clearfix">
+            <p class="smallText">{% trans "Applied Filters" %}</p>
+            <ul>
+                <li ng-repeat="f in filters">
+                    <a ng-click="clearFilter(f.type)"><b>{$ f.displayType $}:</b> {$ f.text $} <span class="fa fa-times"><span></a>
+                </li>
+            </ul>
+            <a ng-click="clearFilter('all')" style="cursor:pointer" class="clearAll">{% trans "Clear All Filters" %}</a>
+        </div>
+
+        <div ng-if="user.isTeacher()" class="librarySubNav clearfix">
+            <ul class="left">
+                {# Translators: tab heading with a count of associated items 'pre loaded content (%count%)' #}
+                <li><a href="" ng-click="switchview('preloaded')" ng-class="{'activeTab' : isUploaded === false }">{% trans "Preloaded Content" %} ({$ preloaded_items.count $})</a></li>
+                {# Translators: tab heading with a count of associated items 'my uploaded content (%count%)' #}
+                <li><a href="" ng-click="switchview('uploaded')" ng-class="{'activeTab' : isUploaded}">{% trans "My Uploaded Content" %} ({$ uploaded_items.count $})</a></li>
+            </ul>
+            <ul class="right batchActions">
+                <li ng-hide="showSelectLesson" class="margin-left-0">
+                    <a ng-disabled="!checkedItems || checkedItems.length === 0" ng-class="{'disabled' : !checkedItems || checkedItems.length === 0}" class="addLessonBtn" ng-click="showAddToLesson()"><span class="fa fa-book brandBtnColor3"></span>{% trans "Add to Lesson" %}</a>
+                </li>
+                <li ng-show="showSelectLesson" class="margin-left-0">
+                    <select ng-disabled="!checkedItems || checkedItems.length === 0" ng-model="selectedLesson" ng-options="les.title for les in lessons" ng-placeholder="{% trans "Add to Lesson" %}">
+                        <option value="">{% trans "Add to Lesson" %}</option>
+                    </select>
+                    <span class="editable-buttons">
+                        <button ng-disabled="!selectedLesson || !checkedItems || checkedItems.length === 0" type="submit" ng-click="batchAdd(selectedLesson)" class="brandBtnColor"><span class="fa fa-check"></span></button>
+                        <button type="button" ng-click="hideAddToLesson()"><span class="fa fa-times"></span></button>
+                    </span>
+                </li>
+                <li ng-if="isUploaded"><a name='itemDeleteBatch'ng-disabled="!checkedItems || checkedItems.length === 0" ng-click="batchDelete()" ng-class="{'disabled' : !checkedItems || checkedItems.length === 0}" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                <li><a href="#library/upload?next={$ $location.path() $}{$ $location.search() | encode_params $}" class="batchUpload"><span class="fa fa-upload brandBtnColor3"></span>{% trans "Upload Content" %}</a></li>
+            </ul>
+        </div>
+        <!-- end of librarySubNav div -->
+ 
+        <div class="clearfix margin-bottom-10" ng-if="isUploaded === false">
+            <h1 ng-if="preloaded_items.count > 0" class="left">
+                {% trans "{$ preloaded_items.range_start $}" as range_start %}
+                {% trans "{$ preloaded_items.range_end $}" as range_end %}
+                {% trans "{$ preloaded_items.count $}" as result_total %}
+                {% blocktrans %}Showing {{ range_start }} - {{ range_end }} of {{ result_total }} results{% endblocktrans %}
+            </h1>
+            <h1 ng-if="preloaded_items.count === 0" class="left">{% trans "Showing 0 results" %}</h1>
+            <div sort="sortby"></div>
+        </div>
+
+        <div class="clearfix margin-bottom-10" ng-if="isUploaded">
+            <h1 ng-if="uploaded_items.count > 0" class="left">
+                {% trans "{$ uploaded_items.range_start $}" as range_start %}
+                {% trans "{$ uploaded_items.range_end $}" as range_end %}
+                {% trans "{$ uploaded_items.count $}" as result_total %}
+                {% blocktrans %}Showing {{ range_start }} - {{ range_end }} of {{ result_total }} results{% endblocktrans %}
+            </h1>
+            <h1 ng-if="uploaded_items.count === 0" class="left">{% trans "Showing 0 results" %}</h1>
+            <div sort="sortby"></div>
+        </div>
+            
+        <div ng-if="isUploaded === false">
+            <div contentitems="preloaded_items.results" user="user" is-teacher="isTeacher" lesson="lesson" checked-items="checkedItems"></div>            
+            <div pager model="preloaded_items" pagefn="page"></div>
+            <p ng-if="preloaded_items.count === 0 && (uploaded_items.count === 0 || uploaded_items.count == null) " ng-bind="resultsMessage(preloaded_items.count)"></p>
+        </div>
+        <div ng-if="isUploaded">
+            <div contentitems="uploaded_items.results" user="user" is-teacher="isTeacher" lesson="lesson" checked-items="checkedItems"></div>
+            <div pager model="uploaded_items" pagefn="page"></div>
+            <p ng-if="preloaded_items.count === 0 && uploaded_items.count === 0" ng-bind="resultsMessage(uploaded_items.count)"></p>
+        </div>
+        <!-- end listings Area -->
+</section>

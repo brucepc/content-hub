@@ -1,0 +1,165 @@
+/* General form typography and colors */
+
+form{
+  -webkit-appearance:none;
+  h1 {
+    color: $brandDarkGray;
+    font-family: $customBoldFont;
+  }
+  label {
+    display: block;
+    @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+    font-family: $customBoldFont;
+    color: $brandLightGray;
+    margin: 0 0 8px 0;
+    padding: 0;
+  }
+ input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset!important;
+}
+  input[type="text"], input[type="password"], textarea, select, .tagit{
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    @include font-size(1.2);
+    font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $brandLightGray;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid $formBorder;
+    // @extend %lightShadow;
+    @include lightShadow;
+     -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    &:hover, &:focus{
+      border: 1px solid $brandLightGray;
+      color:$brandGray;
+    }
+
+  }
+ 
+  select {
+    //-webkit-appearance: none;
+    //-moz-appearance: none;
+    &::-ms-expand {
+        //display: none; // removes default Explorer arrow
+      }
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $brandLightGray;
+    vertical-align: middle;
+    line-height:1;
+    background-color: #fff;
+      // height: 28px;
+      padding: 5px;
+      border: 1px solid $selectBorder;
+      text-indent: 0.01px; /* Removes default arrow from firefox*/
+      text-overflow: "";  /*Removes default arrow from firefox*/
+      //background:  #fff url('../images/down-arrow.png') no-repeat;
+      //background-position: 94% 10px;
+      -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    @include lightShadow;
+  }
+  a {
+  @include font-size(1.2); // 12px
+    font-size: 0.75rem; // 12px
+    font-family: $primaryFont;
+    color: $actionLinksBlue;
+    text-decoration: underline;
+    display: inline-block;
+  }
+}
+
+#chooseFile{
+  h3{
+    margin:0 0 10px 0;
+  }
+}
+
+.addCategoryForm{
+  margin:0 0 10px 0;
+  li {
+      float:left;
+      width:35%;
+      margin:0 3% 0 0; 
+      input{
+        width:100%;
+      }
+      label{
+        height:20px;
+        line-height:20px;
+      }
+  }
+  input[type=submit]{
+    float:left;
+    margin-top:28px;
+  }
+}
+
+/* On/Off toggle switch */
+.onoffswitch {
+    position: relative; width: 70px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    display:inline-block;
+    margin:0 10px 0 0;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFFFFF; border-radius: 0px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 26px; padding: 0; line-height: 26px;
+    font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #00AEEF; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #B1BABF; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 10px; margin: 8px;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF; border-radius: 0px;
+    position: absolute; top: 0; bottom: 0; right: 50px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.inlineText{
+  position: relative;
+  top: -9px;
+}

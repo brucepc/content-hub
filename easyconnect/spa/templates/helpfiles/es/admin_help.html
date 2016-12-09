@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Centro de contenidos</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guía de ayuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>Gestionar contenidos</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Presentación</a></li>
+			<li><a href="#home2">Añadir contenidos precargados</a></li>
+			<li><a href="#home3">Eliminar contenidos precargados</a></li>
+			<li><a href="#home4">Eliminar contenidos de profesor</a></li>
+			<li><a href="#home5">Eliminar categorías</a></li>
+			<li><a href="#home6">Modo profesor</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>Cómo usar el planificador de lecciones del centro de contenidos</h1>
+
+		<h2>Gestionar contenidos</h2>
+		<div class="howto" id="home1">
+			<h3>Presentación</h3>
+
+			<p>La pantalla Gestionar contenidos (Manage Content) aparece de forma predeterminada cuando el administrador inicia sesión en el planificador de lecciones (Lesson Planner).</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>Un administrador puede:</p>
+			<ul>
+				<li>añadir y eliminar paquetes de contenidos precargados;</li>
+				<li>eliminar contenidos de profesor;</li>
+				<li>eliminar categorías.</li>
+			</ul>
+			<h4>¿Qué son los contenidos precargados (preloaded content)?</h4>
+			<p>Los contenidos precargados son materiales educativos que se han subido al planificador de lecciones antes de que los usen el profesor y los estudiantes. Pueden haberlos cargado, por ejemplo, los fabricantes de un equipo o el Ministerio de Educación antes de que se envíen a la escuela o al centro educativo donde se están usando. El contenido precargado solo lo puede cargar, importar o eliminar un administrador.</p>
+			<h4>¿Qué son los contenidos de profesor (teacher content)?</h4>
+			<ol>
+				<li>Son los materiales que los profesores añaden a la biblioteca del planificador de lecciones. Pueden venir en cualquier tipo de archivo, por ejemplo documentos Excel y Word, HTML, PDF, E-Pub, vídeos, imágenes, etc.</li>
+				<li>Lecciones que crea un profesor.</li>
+			</ol>
+			<h4>¿Qué son las categorías (categories)?</h4>
+			<p>Las categorías son un mecanismo que permite a los profesores y administradores agrupar o clasificar los contenidos de la biblioteca. Las categorías de contenidos pueden:</p>
+			<ol>
+				<li>Asignarse dentro de un paquete de contenidos precargados o crearse cuando el administrador carga o importa contenido precargado en el planificador de lecciones.</li>
+				<li>Asignarse cuando un profesor carga o importa contenidos de profesor en el planificador de lecciones.</li>
+				<li>Ser configuradas por un profesor en la pantalla Gestionar categorías (Manage Category) o por un administrador en Gestionar categorías cuando navega por el planificador de lecciones en modo profesor.</li>
+			</ol>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Añadir contenidos precargados</h3>
+			<p>Hay dos maneras de añadir contenidos precargados al planificador de lecciones:</p>
+			<ol>
+				<li>Cargando el contenido con el navegador seleccionando el vínculo Cargar paquete (Upload Package) de la sección Contenidos precargados (Preloaded Content).</li>
+				<li>Importando el contenido con una memoria USB seleccionando el vínculo Importar paquete de USB (USB/SD Import Package) de la sección Contenidos precargados (Preloaded Content).</li>
+			</ol>
+			<p>Para subir archivos de más de 2 GB, se debe usar la opción de importar desde USB, ya que existen restricciones en el navegador y el servidor a la hora de cargar archivos grandes. </p>
+			<h4>Cargar paquete (Upload Package)</h4>
+			<p>Cómo subir un paquete de contenidos precargados a través del navegador:</p>
+			<ol>
+				<li>Ve a la sección Contenidos precargados (Preloaded Content) de la pantalla Gestionar contenidos (Manage Content). </li>
+				<li>Selecciona el vínculo Cargar paquete (Upload Package).<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>En la pantalla Cargar paquete, selecciona el botón Elegir archivos (Choose Files) para escoger los paquetes de contenidos precargados que quieres subir. Si ya hay un paquete precargado con el mismo nombre en el dispositivo, aparecerá la opción de sobrescribir el paquete existente. Si el administrador elige no sobrescribirlo, el paquete de contenidos no se cargará en el dispositivo ni se importará al planificador de lecciones.</li>
+				<li>Aparecerá un mensaje para confirmar que el paquete de contenidos precargados se ha añadido correctamente.</li>
+			</ol>
+			<h4>Importación de paquete de USB (USB/SD Import package)</h4>
+			<p>Cómo importar un paquete de contenidos precargados a través de USB:</p>
+			<ol>
+				<li>Conecta un dispositivo USB al Punto de acceso de contenidos.</li>
+				<li>Ve a la sección Contenidos precargados (Preloaded Content) de la pantalla Gestionar contenidos (Manage Content). </li>
+				<li>Selecciona el vínculo Importar paquete de USB (USB/SD Import Package).<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>En la pantalla Importar paquete de USB (USB/SD Import Package), selecciona los paquetes de contenidos precargados que quieres subir. Si ya hay un paquete precargado con el mismo nombre en el dispositivo, aparecerá la opción de sobrescribir el paquete existente. Si el administrador elige no sobrescribirlo, el paquete de contenidos no se cargará en el dispositivo ni se importará al planificador de lecciones.</li>
+				<li>Aparecerá un mensaje para confirmar que el paquete de contenidos precargados se ha añadido correctamente.</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Eliminar contenidos precargados</h3>
+			<p>Los administradores pueden eliminar paquetes de contenidos precargados en bloque o individualmente.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>Cómo eliminar todos los paquetes de contenidos precargados:</p>
+			<ol>
+				<li>Ve a la sección Contenidos precargados (Preloaded Content) de la pantalla Gestionar contenidos (Manage Content). </li>
+				<li>Selecciona la casilla Contenidos precargados (Preloaded Content). Si no hay ningún contenido, esta casilla no podrá utilizarse.</li>
+				<li>Selecciona el vínculo Eliminar (Delete).</li>
+				<li><strong><u>Todos</u></strong> los contenidos precargados del dispositivo desaparecerán del planificador de lecciones y del dispositivo.</li>
+			</ol>
+			<p>Cómo eliminar paquetes individuales de contenidos precargados:</p>
+			<ol>
+				<li>Ve a la sección Contenidos precargados (Preloaded Content) de la pantalla Gestionar contenidos. Aparecerá una lista con todos los paquetes de contenidos precargados que hay en el dispositivo.</li>
+				<li>Marca las casillas contiguas a los paquetes que quieras eliminar.</li>
+				<li>Selecciona el vínculo Eliminar (Delete).</li>
+				<li>Los paquetes de contenidos precargados seleccionados desaparecerán del planificador de lecciones y del dispositivo.</li>
+			</ol>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Eliminar contenidos de profesor</h3>
+			<p>Cómo eliminar contenidos de profesor:</p>
+			<ol>
+				<li>Ve a la sección Contenidos de profesor (Teacher Content) de la pantalla Gestionar contenidos (Manage Content).</li>
+				<li>Selecciona la casilla Contenidos de profesor (Teacher Content). Si no hay ningún contenido, la casilla no podrá utilizarse.</li>
+				<li>Selecciona el vínculo Eliminar (Delete).</li>
+				<li><strong><u>Todos</u></strong> los contenidos de profesor desaparecerán del planificador de lecciones y del dispositivo, es decir, todos los materiales de la biblioteca subidos por el profesor y todas las lecciones.</li>
+			</ol>
+			<p>No se pueden eliminar elementos individuales de los contenidos de profesor en el modo administrador. Pero, en el modo profesor, los administradores sí pueden hacerlo.</p>
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Eliminar categorías</h3>
+			<p>Cómo eliminar categorías:</p>
+			<ol>
+				<li>Ve a la sección Categorías (Categories) de la pantalla Gestionar contenidos (Manage Content).</li>
+				<li>Selecciona la casilla Categorías (Categories). Si no hay categorías vacías, es decir, categorías sin contenido asociado, esta casilla no estará habilitada.</li>
+				<li>Selecciona el vínculo Eliminar (Delete).</li>
+			</ol>
+			<p>Las categorías solo se pueden eliminar si no tienen contenido: no es posible borrar una categoría a través de la pantalla Gestionar contenidos si esta está vinculada a alguno.</p>
+			<p>No se pueden eliminar categorías individuales en el modo administrador. Pero, en el modo profesor, los administradores sí pueden hacerlo.</p>
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Modo profesor</h3>
+			<p>En el modo profesor, los administradores pueden llevar a cabo las mismas funciones que un profesor.</p>
+			<p>Para usar el planificador de lecciones en modo profesor, selecciona la opción Modo profesor (Teacher Mode) en la pantalla Gestionar contenidos (Manage Content).</p>
+			<p>Una vez dentro del modo profesor, un administrador puede regresar a la pantalla Gestionar contenidos (Manage Content) seleccionando la opción Modo administrador (Administrator Mode).</p>
+
+			<a href="#" class="scrollup">Volver al principio</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

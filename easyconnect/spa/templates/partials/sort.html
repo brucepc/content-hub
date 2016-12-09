@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="page-sort-description right">
+    {% trans "Sort by:" %}
+        {# Translators: sort filter - clicking will sort the list by title #}
+        <a ng-click="sort('{$ titlekey $}')" class="sortbutton">{% trans "title" %}</a> <!-- title is the default so unless stated it should always be highlighted as active -->
+        {# Translators: sort filter - clicking will sort the list by date added/created #}
+        <a ng-click="sort('{$ datekey $}')" class="sortbutton">{% trans "date" %}</a> 
+</div>

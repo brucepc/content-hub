@@ -1,0 +1,23 @@
+    <div cg-busy="lessonsPromise"></div>
+    <div ng-if="lessons.count > 0" class="grid-l5 grid-m4 grid-s3 grid-xs-2 lessonGrid clearfix">
+            <div class="LessonItems" ng-class="{ 'checkedLesson' : checkedLessons.indexOf(lesson) > -1 }" ng-repeat="lesson in lessons.results" ng-click="checkedtoggle(lesson)">
+                <a href="#lessons/{$ lesson.id $}" class="lessonIcon"><span class="intelicon-bookmarks-solid"></span></a>
+                <a href="#lessons/{$ lesson.id $}" class="lessonName" editable-text="lesson.title" e-form="editForm" e-class="inline-edit-form" e-required e-maxlength="100" onaftersave="update(lesson, editForm)" ng-bind="lesson.title"></a>
+                <ul class="listingIcons" ng-class="{'homeIcons' : $location.path() == '/'}" ng-show="isTeacher() && !editForm.$visible">
+                    <li><a name="lessonFeature" fade='true' ng-click="featuretoggle(lesson)" ng-disabled="working" class="feature tooltip tooltipstered" ng-class="{'on' : lesson.featured}" id="{$ lesson.id $}" rel="tooltip" title="{$ item.featured ? 'Un' : 'F' $}eature this content item on the home page"><span class="intelicon-favorite-rating-solid"></span></a></li>
+                    <li><a name='lessonEdit' ng-click="editForm.$show()"><span class="intelicon-edit"></span></a></li>
+                    <li><a name='lessonAdd' ng-href="#/library/?&amp;lesson={$ lesson.id $}"><span class="fa fa-plus"></span></a></li>
+                    <li><input type="checkbox" ng-hide="$location.path() == '/'" name="selectedlessons[]" ng-checked="checkedLessons.indexOf(lesson) > -1" ng-click="checkedtoggle(lesson)" value="{$ lesson.id $}"/></li>
+                </ul>
+            </div>
+    </div><!-- /end featuredLessons -->
+    <div pager model="lessons" pagefn="page"></div>
+    <div class="nocontentMessage" ng-show="lessons.count == 0">
+        <span>
+        <p>No lessons yet</p>
+        <p ng-if="isTeacher()">Start creating lessons to feature on your home page</p>
+        <p ng-if="isTeacher()"><a href="#library?createlesson">Create a new lesson</a></p>
+        <p ng-hide="isTeacher()">Please check your <a href="#lessons">lesson listings</a></p>
+        </span>
+    </div>
+ 

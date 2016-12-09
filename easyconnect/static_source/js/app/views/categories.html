@@ -1,0 +1,24 @@
+<section class="row mainContent" ng-init="init('tree')">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <div cg-busy="categoriesPromise"></div>
+            <div class="clearfix settingsBar">
+                <h1 class="left">Existing Categories</h1>
+                <input type="button" class="mainButton right" ng-click="addCategory(null)" value="Add New Primary Category" />
+            </div>
+            <p>
+                <div ng-repeat="category in categories.results | orderBy : 'name'" class="categoryTable">
+                    <div categorytree parent="category" level="1" save="save" remove="remove" add-category="addCategory"></div>
+                </div>
+            </p>
+            <p ng-if="categories.count === 0">
+                No categories yet
+            </p>
+
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>
+<!-- end mainContent row -->

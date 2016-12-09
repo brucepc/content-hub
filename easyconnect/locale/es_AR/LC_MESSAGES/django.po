@@ -1,0 +1,857 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-24 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\contentimport\models.py:240 .\spa\templates\base.html:71
+msgid "Lesson Planner"
+msgstr "Planificador de clases"
+
+#: .\contentimport\models.py:241 .\spa\templates\base.html:105
+#: .\teacheradmin\templates\teacheradmin\index.html:58
+#: .\teacheradmin\templates\teacheradmin\views\home.html:9
+msgid "Device Settings"
+msgstr "Configuración del dispositivo"
+
+#: .\contentimport\models.py:242 .\spa\templates\base.html:106
+#: .\updater\templates\updater\index.html:58
+#: .\updater\templates\updater\views\home.html:9
+msgid "Software Update"
+msgstr "Actualización de software"
+
+#: .\contentimport\models.py:243 .\hub\templates\hub\views\home.html:6
+#: .\spa\templates\views\settings.html:21
+msgid "Add Tile"
+msgstr "Agregar mosaico"
+
+#: .\hub\templates\hub\index.html:94 .\spa\templates\base.html:134
+#: .\spa\templates\views\login.html:27
+#: .\teacheradmin\templates\teacheradmin\index.html:82
+#: .\updater\templates\updater\index.html:83
+msgid "Login"
+msgstr "Inicio de sesión"
+
+#: .\hub\templates\hub\index.html:95 .\spa\templates\base.html:125
+#: .\teacheradmin\templates\teacheradmin\index.html:83
+#: .\updater\templates\updater\index.html:84
+msgid "Logout"
+msgstr "Cierre de sesión"
+
+#: .\hub\templates\hub\index.html:107
+msgid "Terms of Use"
+msgstr "Términos de uso"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "Battery"
+msgstr "Batería"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "version"
+msgstr "versión"
+
+#: .\hub\templates\hub\partials\tile.html:15
+#: .\hub\templates\hub\views\home.html:101
+msgid "Edit Tile"
+msgstr "Editar mosaico"
+
+#: .\hub\templates\hub\partials\tile.html:21
+msgid "Delete Tile"
+msgstr "Eliminar mosaico"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Show to All Users"
+msgstr "Mostrar a todos los usuarios"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Hide from All Users"
+msgstr "Ocultar en la vista de todos los usuarios"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Show to Students"
+msgstr "Mostrar a los alumnos"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Hide from Students"
+msgstr "Ocultar en la vista de alumno"
+
+#: .\hub\templates\hub\partials\tile.html:39
+msgid "Tile is locked"
+msgstr "El mosaico está bloqueado"
+
+#: .\hub\templates\hub\views\home.html:7
+msgid "Import a site or enter a URL."
+msgstr "Importe un sitio o ingrese una dirección URL."
+
+#: .\hub\templates\hub\views\home.html:10
+msgid "Import Site"
+msgstr "Importar sitio"
+
+#: .\hub\templates\hub\views\home.html:12
+#: .\spa\templates\views\categories.html:6
+#: .\spa\templates\views\preload-usb.html:31
+#: .\spa\templates\views\sidebar.html:32 .\spa\templates\views\tags.html:6
+#: .\spa\templates\views\upload.html:53 .\spa\templates\views\uploadIE9.html:38
+#: .\spa\templates\views\usb.html:20 .\spa\templates\views\usb.html.py:53
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:43
+msgid "Please Wait..."
+msgstr "Espere..."
+
+#: .\hub\templates\hub\views\home.html:13
+#: .\spa\templates\views\preload-usb.html:65 .\spa\templates\views\usb.html:55
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:62
+msgid "Import"
+msgstr "Importar"
+
+#: .\hub\templates\hub\views\home.html:14
+#: .\spa\templates\views\preload-usb.html:32 .\spa\templates\views\usb.html:21
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:44
+msgid "Reload"
+msgstr "Recargar"
+
+#: .\hub\templates\hub\views\home.html:19
+#: .\hub\templates\hub\views\home.html:110
+msgid "URL"
+msgstr "Dirección URL"
+
+#: .\hub\templates\hub\views\home.html:21
+#: .\hub\templates\hub\views\home.html:29
+#: .\hub\templates\hub\views\home.html:41
+#: .\hub\templates\hub\views\home.html:106
+#: .\hub\templates\hub\views\home.html:112
+#: .\spa\templates\views\lessons.html:34 .\spa\templates\views\login.html:32
+#: .\spa\templates\views\login.html:40 .\spa\templates\views\upload.html:31
+#: .\spa\templates\views\uploadIE9.html:22 .\spa\templates\views\usb.html:32
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:11
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:18
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:28
+msgid "This field is required."
+msgstr "Este campo es necesario."
+
+#: .\hub\templates\hub\views\home.html:23
+#: .\hub\templates\hub\views\home.html:113
+msgid "Preview"
+msgstr "Vista previa"
+
+#: .\hub\templates\hub\views\home.html:27
+#: .\hub\templates\hub\views\home.html:104
+msgid "Tile Name"
+msgstr "Nombre del mosaico"
+
+#: .\hub\templates\hub\views\home.html:30
+#: .\hub\templates\hub\views\home.html:107
+msgid "Duplicate"
+msgstr "Duplicar"
+
+#: .\hub\templates\hub\views\home.html:34
+#: .\hub\templates\hub\views\home.html:116
+msgid "Icon"
+msgstr "Ícono"
+
+#: .\hub\templates\hub\views\home.html:49
+#: .\hub\templates\hub\views\home.html:130
+msgid "Hidden from Students"
+msgstr "Oculto en la vista de alumno"
+
+#: .\hub\templates\hub\views\home.html:55
+#: .\hub\templates\hub\views\home.html:72
+#: .\hub\templates\hub\views\home.html:136
+#: .\hub\templates\hub\views\home.html:153
+#: .\spa\templates\views\settings.html:14
+msgid "Off"
+msgstr "Desactivar"
+
+#: .\hub\templates\hub\views\home.html:56
+#: .\hub\templates\hub\views\home.html:73
+#: .\hub\templates\hub\views\home.html:137
+#: .\hub\templates\hub\views\home.html:154
+#: .\spa\templates\views\settings.html:15
+msgid "On"
+msgstr "Activar"
+
+#: .\hub\templates\hub\views\home.html:66
+#: .\hub\templates\hub\views\home.html:147
+msgid "Hidden from All Users"
+msgstr "Oculto en la vista de todos los usuarios"
+
+#: .\hub\templates\hub\views\home.html:82 .\spa\templates\views\lessons.html:38
+msgid "Create"
+msgstr "Crear"
+
+#: .\hub\templates\hub\views\home.html:92
+#: .\hub\templates\hub\views\home.html:166
+#: .\spa\templates\views\lessons.html:39
+#: .\spa\templates\views\preload-upload.html:64
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:37
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\hub\templates\hub\views\home.html:163
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:38
+#: .\updater\templates\updater\views\home.html:31
+msgid "Update"
+msgstr "Actualizar"
+
+#: .\rest\views.py:647
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:34
+msgid "Passwords do not match."
+msgstr "Las contraseñas no coinciden."
+
+#: .\rest\views.py:656
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:21
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:31
+msgid "Invalid password."
+msgstr "La contraseña no es válida."
+
+#: .\rest\views.py:1301
+msgid "There was a problem uploading the file."
+msgstr "Hubo un problema al cargar el archivo."
+
+#: .\rest\views.py:1309
+msgid "There was a problem with the file."
+msgstr "Hubo un problema con el archivo."
+
+#: .\rest\views.py:1325 .\rest\views.py:1344
+msgid ""
+"Invalid update file.\n"
+"Please try again."
+msgstr ""
+"Archivo de actualización no válido.\n"
+"Inténtelo nuevamente."
+
+#: .\rest\views.py:1329 .\rest\views.py:1331
+msgid ""
+"Update version must be greater than the current version.\n"
+"Please try again."
+msgstr ""
+"La versión de actualización debe ser posterior a la versión actual.\n"
+"Inténtelo nuevamente."
+
+#: .\spa\templates\base.html:100
+msgid "Manage"
+msgstr "Administrar"
+
+#: .\spa\templates\base.html:102 .\spa\templates\views\tags.html:8
+#: .\spa\templates\views\upload.html:45 .\spa\templates\views\upload.html:46
+#: .\spa\templates\views\uploadIE9.html:30
+#: .\spa\templates\views\uploadIE9.html:31 .\spa\templates\views\usb.html:45
+#: .\spa\templates\views\usb.html.py:46
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: .\spa\templates\base.html:103 .\spa\templates\views\categories.html:8
+#: .\spa\templates\views\home.html:194
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:116
+msgid "Categories"
+msgstr "Categorías"
+
+#: .\spa\templates\base.html:104 .\spa\templates\views\upload.html:10
+#: .\spa\templates\views\uploadIE9.html:9 .\spa\templates\views\usb.html:17
+msgid "USB/SD Import"
+msgstr "Importar desde USB/SD"
+
+#: .\spa\templates\base.html:113
+msgid "Admin Mode"
+msgstr "Modo Administrador"
+
+#: .\spa\templates\base.html:116
+msgid "Teacher View"
+msgstr "Vista del maestro"
+
+#: .\spa\templates\base.html:119
+msgid "Teacher Mode"
+msgstr "Modo Maestro"
+
+#: .\spa\templates\base.html:120
+msgid "Student View"
+msgstr "Vista del alumno"
+
+#: .\spa\templates\base.html:123 .\spa\templates\base.html.py:124
+#: .\spa\templates\base.html:133
+msgid "Help"
+msgstr "Ayuda"
+
+#: .\spa\templates\base.html:145 .\spa\templates\views\lesson_detail.html:10
+#: .\spa\templates\views\lessons.html:8
+#: .\updater\templates\updater\views\home.html:40
+msgid "Home"
+msgstr "Inicio"
+
+#: .\spa\templates\base.html:146 .\spa\templates\views\lesson_detail.html:13
+#: .\spa\templates\views\lessons.html:11 .\spa\templates\views\lessons.html:14
+#: .\spa\templates\views\lessons.html:20
+msgid "Lessons"
+msgstr "Clases"
+
+#: .\spa\templates\base.html:147
+msgid "Library"
+msgstr "Biblioteca"
+
+#: .\spa\templates\base.html:153
+msgid "Search Lessons"
+msgstr "Buscar clases"
+
+#: .\spa\templates\base.html:153
+msgid "Search Library"
+msgstr "Buscar en biblioteca"
+
+#: .\spa\templates\base.html:176
+#: .\teacheradmin\templates\teacheradmin\index.html:95
+#: .\updater\templates\updater\index.html:96
+msgid "Terms of use"
+msgstr "Términos de uso"
+
+#: .\spa\templates\partials\categoryselect.html:6
+#: .\spa\templates\views\upload.html:51 .\spa\templates\views\uploadIE9.html:36
+#: .\spa\templates\views\usb.html:51
+msgid "Category"
+msgstr "Categoría"
+
+#: .\spa\templates\partials\categoryselect.html:12
+#: .\spa\templates\partials\categoryselect.html:18
+msgid "Subcategory"
+msgstr "Subcategoría"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Remove from Featured Content"
+msgstr "Quitar del contenido destacado"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Add to Featured Content"
+msgstr "Agregar al contenido destacado"
+
+#: .\spa\templates\partials\contentitems.html:10
+#: .\spa\templates\views\upload.html:9
+msgid "Edit Content Information"
+msgstr "Editar información de contenido"
+
+#: .\spa\templates\partials\contentitems.html:11
+msgid "Show/Hide from Students"
+msgstr "Mostrar/ocultar en la vista de alumno"
+
+#. Translators: Date this item was added on
+#: .\spa\templates\partials\contentitems.html:24
+msgid "Added:"
+msgstr "Agregado:"
+
+#. Translators: Date this item was updated on
+#: .\spa\templates\partials\contentitems.html:26
+msgid "Updated:"
+msgstr "Actualizado:"
+
+#: .\spa\templates\partials\contentitems.html:27
+msgid "File Size:"
+msgstr "Tamaño del archivo:"
+
+#. Translators: List of tags associated with this item
+#: .\spa\templates\partials\contentitems.html:29
+msgid "Tags:"
+msgstr "Etiquetas:"
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Remove from Featured Lessons"
+msgstr "Quitar de clases destacadas"
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Add to Featured Lessons"
+msgstr "Agregar a clases destacadas"
+
+#: .\spa\templates\partials\lessons.html:8
+msgid "Edit Lesson Title"
+msgstr "Editar título de la clase"
+
+#: .\spa\templates\partials\lessons.html:9
+#: .\spa\templates\views\lesson_detail.html:36
+msgid "Add Content"
+msgstr "Agregar contenido"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons created"
+msgstr "No hay clases creadas"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons featured"
+msgstr "No hay clases destacadas"
+
+#: .\spa\templates\partials\lessons.html:18
+msgid "Featured lessons will appear here"
+msgstr "Las clases destacadas aparecerán aquí"
+
+#: .\spa\templates\partials\lessons.html:19
+msgid "Create a new lesson"
+msgstr "Crear una clase nueva"
+
+#: .\spa\templates\partials\lessons.html:20
+msgid "Please check your <a href=\"#lessons\">lesson listings</a>"
+msgstr "Revise su <a href=\"#lessons\">lista de clases</a>"
+
+#: .\spa\templates\partials\lessons.html:24
+msgid "Your search returned no results, please try another search."
+msgstr "Su búsqueda no arrojó resultados, inténtelo nuevamente."
+
+#: .\spa\templates\partials\sort.html:3
+msgid "Sort by:"
+msgstr "Ordenar por:"
+
+#. Translators: sort filter - clicking will sort the list by title
+#: .\spa\templates\partials\sort.html:5
+msgid "title"
+msgstr "título"
+
+#. Translators: sort filter - clicking will sort the list by date added/created
+#: .\spa\templates\partials\sort.html:7
+msgid "date"
+msgstr "fecha"
+
+#. Translators: Tagcloud showing tags that occur more frequently as larger
+#: .\spa\templates\partials\tagcloud.html:5
+msgid "Filter by Tag"
+msgstr "Filtrar por etiqueta"
+
+#: .\spa\templates\views\categories.html:9
+msgid "Add New Primary Category"
+msgstr "Agregar una nueva categoría principal"
+
+#: .\spa\templates\views\categories.html:17
+msgid "No categories created"
+msgstr "No hay categorías creadas"
+
+#: .\spa\templates\views\help.html:24
+#: .\spa\templates\views\student_help.html:24
+msgid "Help Guide"
+msgstr "Guía de ayuda"
+
+#: .\spa\templates\views\home.html:103
+msgid "Featured Lessons"
+msgstr "Clases destacadas"
+
+#: .\spa\templates\views\home.html:105
+msgid "View all lessons"
+msgstr "Ver todas las clases"
+
+#: .\spa\templates\views\home.html:111
+msgid "Featured Content"
+msgstr "Contenido destacado"
+
+#: .\spa\templates\views\home.html:113
+msgid "View all content"
+msgstr "Ver todo el contenido"
+
+#: .\spa\templates\views\home.html:122
+#: .\spa\templates\views\lesson_detail.html:35
+msgid "No content featured"
+msgstr "No hay contenido destacado"
+
+#: .\spa\templates\views\home.html:123
+msgid "Featured content will appear here"
+msgstr "El contenido destacado aparecerá aquí"
+
+#: .\spa\templates\views\home.html:124
+msgid "My Library"
+msgstr "Mi biblioteca"
+
+#: .\spa\templates\views\home.html:125
+msgid "Please check your <a href=\"#library\">library</a>"
+msgstr "Revise su <a href=\"#library\">biblioteca</a>"
+
+#: .\spa\templates\views\home.html:139
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:64
+msgid "Manage Content"
+msgstr "Administrar contenido"
+
+#. Translators: tab heading with a count of associated items 'pre loaded content (%count%)'
+#: .\spa\templates\views\home.html:147 .\spa\templates\views\library.html:22
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:72
+msgid "Preloaded Content"
+msgstr "Contenido precargado"
+
+#: .\spa\templates\views\home.html:150 .\spa\templates\views\home.html:180
+#: .\spa\templates\views\home.html:197 .\spa\templates\views\lessons.html:22
+#: .\spa\templates\views\library.html:39
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:76
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:104
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:119
+msgid "Delete"
+msgstr "Borrar"
+
+#: .\spa\templates\views\home.html:151
+#: .\spa\templates\views\preload-usb.html:28
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:77
+msgid "USB/SD Import Package"
+msgstr "Paquete de importación USB/SD"
+
+#: .\spa\templates\views\home.html:152
+#: .\spa\templates\views\preload-upload.html:31
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:78
+msgid "Upload Package"
+msgstr "Cargar paquete"
+
+#: .\spa\templates\views\home.html:177
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:101
+msgid "Teacher Content"
+msgstr "Contenido del maestro"
+
+#: .\spa\templates\views\home.html:184
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:108
+msgid "Teacher uploaded content and lessons will be deleted."
+msgstr "El maestro cargó contenido y se borrarán las clases."
+
+#: .\spa\templates\views\home.html:201
+msgid "Categories will only be deleted if they don't contain any content."
+msgstr "Solo se borrarán las categorías si no tienen contenido."
+
+#: .\spa\templates\views\lesson_detail.html:22
+msgid "Delete this Lesson"
+msgstr "Borrar esta clase"
+
+#: .\spa\templates\views\lesson_detail.html:25
+msgid "Remove from Lesson"
+msgstr "Quitar de la clase"
+
+#. Translators: Search label beside a user editable search box; 'search for the following'
+#: .\spa\templates\views\lessons.html:17
+msgid "Search:"
+msgstr "Buscar:"
+
+#: .\spa\templates\views\lessons.html:23
+msgid "Create a new Lesson"
+msgstr "Crear una clase nueva"
+
+#: .\spa\templates\views\lessons.html:32
+msgid "Lesson Name:"
+msgstr "Nombre de la clase:"
+
+#: .\spa\templates\views\library.html:10
+msgid "Applied Filters"
+msgstr "Filtros aplicados"
+
+#: .\spa\templates\views\library.html:16
+msgid "Clear All Filters"
+msgstr "Borrar todos los filtros"
+
+#. Translators: tab heading with a count of associated items 'my uploaded content (%count%)'
+#: .\spa\templates\views\library.html:24
+msgid "My Uploaded Content"
+msgstr "Mi contenido cargado"
+
+#: .\spa\templates\views\library.html:28 .\spa\templates\views\library.html:31
+#: .\spa\templates\views\library.html:32
+msgid "Add to Lesson"
+msgstr "Agregar a la clase"
+
+#: .\spa\templates\views\library.html:40 .\spa\templates\views\upload.html:9
+#: .\spa\templates\views\uploadIE9.html:8
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:31
+msgid "Upload Content"
+msgstr "Cargar contenido"
+
+#: .\spa\templates\views\library.html:47
+msgid "{$ preloaded_items.range_start $}"
+msgstr "{$ preloaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:48
+msgid "{$ preloaded_items.range_end $}"
+msgstr "{$ preloaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:49
+msgid "{$ preloaded_items.count $}"
+msgstr "{$ preloaded_items.count $}"
+
+#: .\spa\templates\views\library.html:50 .\spa\templates\views\library.html:61
+#, python-format
+msgid "Showing %(range_start)s - %(range_end)s of %(result_total)s results"
+msgstr ""
+"Se muestran los resultados %(range_start)s - %(range_end)s de "
+"%(result_total)s"
+
+#: .\spa\templates\views\library.html:52 .\spa\templates\views\library.html:63
+msgid "Showing 0 results"
+msgstr "Se muestran 0 resultados"
+
+#: .\spa\templates\views\library.html:58
+msgid "{$ uploaded_items.range_start $}"
+msgstr "{$ uploaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:59
+msgid "{$ uploaded_items.range_end $}"
+msgstr "{$ uploaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:60
+msgid "{$ uploaded_items.count $}"
+msgstr "{$ uploaded_items.count $}"
+
+#: .\spa\templates\views\login.html:24
+msgid "You are logged in as"
+msgstr "Ha iniciado sesión como"
+
+#: .\spa\templates\views\login.html:24
+msgid "Log Out?"
+msgstr "¿Cerrar sesión?"
+
+#: .\spa\templates\views\login.html:29
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: .\spa\templates\views\login.html:37
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\spa\templates\views\login.html:43
+msgid "Invalid username or password."
+msgstr "El nombre de usuario o la contraseña no son válidos."
+
+#: .\spa\templates\views\login.html:46
+msgid "I am a student"
+msgstr "Soy alumno"
+
+#: .\spa\templates\views\login.html:48
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:6
+#: .\updater\templates\updater\partials\noauth.html:6
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: .\spa\templates\views\preload-upload.html:48
+#: .\spa\templates\views\preload-usb.html:44
+msgid "A package with this name already exists, select to overwrite"
+msgstr ""
+"Ya existe un paquete con este nombre. Seleccione la opción de sobrescribir."
+
+#: .\spa\templates\views\preload-upload.html:60
+#: .\spa\templates\views\preload-usb.html:57
+msgid "Remove"
+msgstr "Eliminar"
+
+#: .\spa\templates\views\preload-upload.html:69
+#: .\spa\templates\views\preload-usb.html:64
+msgid "Back"
+msgstr "Atrás"
+
+#: .\spa\templates\views\preload-upload.html:70
+#: .\spa\templates\views\upload.html:55 .\spa\templates\views\uploadIE9.html:40
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:53
+msgid "Upload"
+msgstr "Cargar"
+
+#: .\spa\templates\views\preload-usb.html:29
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:41
+msgid "Import zip packages into Preloaded Content library"
+msgstr "Importar paquetes .zip a la biblioteca de contenido precargado"
+
+#: .\spa\templates\views\preload-usb.html:33 .\spa\templates\views\usb.html:22
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:45
+msgid "Add Metadata"
+msgstr "Agregar metadatos"
+
+#: .\spa\templates\views\settings.html:6
+msgid "Settings"
+msgstr "Configuración"
+
+#: .\spa\templates\views\settings.html:8
+msgid "Import from USB"
+msgstr "Importar desde USB/SD"
+
+#: .\spa\templates\views\settings.html:20
+msgid "Enable student access to the content library"
+msgstr "Permitir el acceso de los alumnos a la biblioteca de contenido"
+
+#: .\spa\templates\views\sidebar.html:11
+msgid "Drag content to the lesson to add it directly."
+msgstr "Arrastre el contenido a la clase para agregarlo directamente."
+
+#: .\spa\templates\views\sidebar.html:15
+msgid "Manage this lesson"
+msgstr "Administrar esta clase"
+
+#: .\spa\templates\views\sidebar.html:24 .\spa\templates\views\sidebar.html:28
+msgid "Filter by Category"
+msgstr "Filtrar por categoría"
+
+#: .\spa\templates\views\sidebar.html:43
+msgid "Allow student access to library?"
+msgstr "¿Permite el acceso de los alumnos a la biblioteca?"
+
+#: .\spa\templates\views\sidebar.html:48
+#: .\teacheradmin\templates\teacheradmin\views\home.html:21
+#: .\teacheradmin\templates\teacheradmin\views\home.html:63
+#: .\teacheradmin\templates\teacheradmin\views\home.html:78
+msgid "No"
+msgstr "No"
+
+#: .\spa\templates\views\sidebar.html:49
+#: .\teacheradmin\templates\teacheradmin\views\home.html:22
+#: .\teacheradmin\templates\teacheradmin\views\home.html:64
+#: .\teacheradmin\templates\teacheradmin\views\home.html:79
+msgid "Yes"
+msgstr "Sí"
+
+#: .\spa\templates\views\tags.html:9
+msgid "Preloaded"
+msgstr "Precargado"
+
+#: .\spa\templates\views\tags.html:16
+msgid "Uploaded"
+msgstr "Cargado"
+
+#: .\spa\templates\views\tags.html:25
+msgid "No tags created"
+msgstr "No hay etiquetas creadas"
+
+#: .\spa\templates\views\upload.html:20 .\spa\templates\views\upload.html:21
+#: .\spa\templates\views\upload.html:29 .\spa\templates\views\upload.html:30
+#: .\spa\templates\views\uploadIE9.html:19
+#: .\spa\templates\views\uploadIE9.html:20
+msgid "Title"
+msgstr "Título"
+
+#: .\spa\templates\views\upload.html:32 .\spa\templates\views\uploadIE9.html:23
+#: .\spa\templates\views\usb.html:33
+msgid "{$ FIELD_VAL.contentItemMax $}"
+msgstr "{$ FIELD_VAL.contentItemMax $}"
+
+#: .\spa\templates\views\upload.html:33 .\spa\templates\views\uploadIE9.html:24
+#: .\spa\templates\views\usb.html:34
+#, python-format
+msgid "The maximum length of title is %(maxchars)s."
+msgstr "La longitud máxima del título es %(maxchars)s."
+
+#: .\spa\templates\views\upload.html:42 .\spa\templates\views\upload.html:43
+#: .\spa\templates\views\uploadIE9.html:27
+#: .\spa\templates\views\uploadIE9.html:28 .\spa\templates\views\usb.html:40
+#: .\spa\templates\views\usb.html.py:42
+msgid "Description"
+msgstr "Descripción"
+
+#: .\spa\templates\views\upload.html:55
+msgid "Save"
+msgstr "Guardar"
+
+#: .\spa\templates\views\upload.html:58 .\spa\templates\views\usb.html:59
+msgid "Common metadata applied to all items (excludes IMS packages)."
+msgstr ""
+"Metadatos comunes aplicados a todos los elementos (sin incluir los paquetes "
+"de IMS)."
+
+#: .\spa\templates\views\usb.html:18
+msgid "Import multiple files into My Uploaded Content library"
+msgstr "Importar múltiples archivos en la biblioteca Mi contenido cargado"
+
+#: .\spa\templates\views\usb.html:31
+msgid " title"
+msgstr "título"
+
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:4
+#: .\updater\templates\updater\partials\noauth.html:4
+msgid "You must log in to view this page"
+msgstr "Debe iniciar sesión para visualizar esta página"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:5
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:8
+msgid "Old Password"
+msgstr "Contraseña anterior"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:15
+msgid "New Password"
+msgstr "Contraseña nueva"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:25
+msgid "Confirm Password"
+msgstr "Confirma la contraseña"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:15
+msgid "Allow internet access via this device?"
+msgstr "¿Permite el acceso a Internet a través de este dispositivo?"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:29
+msgid "Teacher Password"
+msgstr "Contraseña del maestro"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:30
+#: .\teacheradmin\templates\teacheradmin\views\home.html:45
+msgid "Change"
+msgstr "Cambiar"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:33
+msgid "Teacher Account"
+msgstr "Cuenta del maestro"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:35
+msgid "Reset account to factory default"
+msgstr "Restablecer la configuración predeterminada de fábrica en la cuenta"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:41
+msgid "Device Wireless Name (SSID):"
+msgstr "Nombre del dispositivo inalámbrico (SSID):"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:51
+msgid "Services"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:57
+msgid "Enable remote management"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:72
+msgid "Enable Intel&reg; Education Study"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:123
+msgid "Categories will only be deleted if they don't contain content"
+msgstr "Las categorías solo se borrarán si no tienen contenido"
+
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:40
+msgid "USB/SD Preload Import"
+msgstr "Importar USB/SD precargado"
+
+#: .\updater\templates\updater\views\home.html:11
+msgid "Current version"
+msgstr "Versión actual"
+
+#: .\updater\templates\updater\views\home.html:12
+#, fuzzy, python-format
+msgid ""
+"The update file will be uploaded, the device will reboot, and the update "
+"will be applied. All connections to the device will be terminated. Do not "
+"disrupt the update process and make sure the device is plugged into an "
+"electrical outlet or has at least 80%% battery remaining."
+msgstr ""
+"El archivo actualizado se cargará, el dispositivo se reiniciará y la "
+"actualización se aplicará. Se finalizarán todas las conexiones con el "
+"dispositivo. No interrumpa el proceso de actualización y asegúrese de que el "
+"dispositivo esté conectado a un tomacorriente o que el nivel de la batería "
+"restante esté en al menos 80 %."
+
+#: .\updater\templates\updater\views\home.html:13
+msgid "Select an update file."
+msgstr "Seleccione un archivo de actualización."
+
+#: .\updater\templates\updater\views\home.html:39
+msgid "You are not authorized to view this page."
+msgstr "No tiene autorización para ver esta página."
+
+#~ msgid "Teacher Login"
+#~ msgstr "Inicio de sesión del maestro"
+
+#~ msgid "Copyright &copy; 2014. All rights reserved."
+#~ msgstr "Copyright &copy; 2014. Todos los derechos reservados."
+
+#~ msgid "Application Update"
+#~ msgstr "Actualización de la aplicación"

@@ -1,0 +1,197 @@
+{% extends 'browse/base.html' %}
+{% load staticfiles %}
+{% load browse_extras %}
+{% block title %}{{block.super}}: Lessons{% endblock %}
+
+{% block body %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+
+{% url 'lessons' as the_url %}
+
+<div class="clearfix lessonBar">
+    <ul class="breadCrumbs">
+    {% breadcrumbs as bc_list %}
+    {% for crumb_text, crumb_url in bc_list %}
+        <li>
+        {% if not forloop.last and crumb_url != '' %}
+            <a href="{{ crumb_url }}">{{ crumb_text }}</a>
+        {% else %}
+            {{ crumb_text }}
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h1 class="left">Lessons</h1><!-- column title -->
+    {% if user.is_authenticated and request.session.viewType == "teacher" %}
+        <ul class="right batchActions">
+            <li><a name="lessonDeleteBatch" style='opacity:0.3' class="batchDelete">Delete</a></li>
+            <li><a href="" class="create_lesson mainButton">Create A New Lesson</a></li>
+        </ul>
+    {% endif %}
+</div>
+
+    <div class="row grid-l5 grid-m3 grid-s2 featuredLessons clearfix">
+
+    {% for teacheritem in page.object_list %}
+        {% with lesson=teacheritem.object|default:teacheritem %}
+        {% if lesson %}
+        <div class="featuredLessonItems" id='{{ lesson.id }}'>
+            <a href="{% url 'group-detail' lesson.id %}" class="lessonIcon"></a>
+            <div class="ellipsis"><div><a href="{% url 'group-detail' lesson.id %}" class="lessonName">{{ lesson.title|title }}</a></div></div>
+            {% if user.is_authenticated and request.session.viewType == "teacher" %}
+                <ul class="listingIcons dropdown dropdownVertical">
+                    <li><a class="batchSelect"><input type="checkbox" itemid='{{ lesson.id }}' id='batch{{ lesson.id }}' name="lesson" value="Select" class="css-checkbox"><label for="batch{{ lesson.id }}" class="css-label radGroup1">Label</label></a></li>
+                    <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                    <!-- More Options Dropdown -->
+                    <ul class="optionsDrop">
+                        <li><a name='lessonDelete' class="delete" id='{{ lesson.id }}'>Delete This Lesson</a></li>
+                        <li><a name='lessonEdit' class="edit" id='{{ lesson.id }}'>Edit Lesson Name</a></li>
+                        <li><a name='lessonAddContent' class="edit" href="/library/?&lesson={{ lesson.id }}" id='{{ lesson.id }}'>Add Library Content</a></li>
+                    </ul>
+                    </li><!-- end More Options Dropdown -->
+                    <li><a name='lessonFeature' class="feature {% if lesson.featured %} on {% endif %}" id="{{ lesson.id }}" rel="tooltip" title="{% if lesson.featured %}Unf{% else %}F{% endif %}eature this lesson on the home page"></a></li>
+                </ul>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% endwith %}
+    {% endfor %}
+    </div><!-- /end featuredLessons -->
+    {% load ec_paginator %}
+    {% ec_paginator %}
+
+
+<div class="noresults" {% if page.object_list %} style="display:none;"{% endif %}>
+    <span>
+    {% if request.GET.q %}
+        <p>No lessons match your search</p>
+    {% else %}
+        <p>No lessons found</p>
+        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+            <p>You have not created any lessons yet</p>
+            <p><a href="" class="create_lesson">Create a new lesson</a></p>
+        {% else %}
+            <p>Please check back again later</p>
+        {% endif %}
+    {% endif %}
+    </span>    
+</div>
+
+</section><!-- end mainContent row -->
+
+<div id="lesson_template" style="display:none;">
+    <div class="featuredLessonItems" id='__unset__' style="display:none;">
+        <a href="{% url 'group-detail' 0 %}" class="lessonIcon"></a>
+        <div class="ellipsis"><div><a href="{% url 'group-detail' 0 %}" class="lessonName">__unset__</a></div></div>
+        {% if user.is_authenticated and request.session.viewType == "teacher" %}
+            <ul class="listingIcons dropdown dropdownVertical">
+                <li><input type="checkbox" itemid='__unset__' id='batch__unset__' name="lesson" value="Select" class="css-checkbox"><label for="batch__unset__" class="css-label radGroup1">Label</label></li>
+                <li class="moreOptions"><a class="moreOptionsMenu"></a>
+                <!-- More Options Dropdown -->
+                <ul class="optionsDrop dropdown">
+                    <li><a name='lessonDelete' class="delete" id='__unset__'>Delete This Lesson</a></li>
+                    <li><a name='lessonEdit' class="edit" id='__unset__'>Edit Lesson Name</a></li>
+                    <li><a name='lessonAddContent' class="edit" href="/library/?&lesson=">Add Library Content</a></li>
+                </ul>
+                </li><!-- end More Options Dropdown -->
+                <li><a name='lessonFeature' fade='true' class="feature" id="__unset__" rel="tooltip" title="Feature this content item on the home page"></a></li>
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block more_js %}
+<script>
+
+$(document).ready(function() {
+    // Open modal based on get
+
+    $( "div[name=lesson-create-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        buttons: [
+            {
+                text: "Create lesson", 
+                click: function(event){
+                    // Close modal window
+                    $(this).dialog( "close" );
+
+                    // Create the lesson
+                    var selector = $(event.target);
+                    var item_id = selector.attr('id');
+                    var formdiv = $(this);
+                    var name = formdiv.find( "form > input#name" ).val();
+                    var additional_data = { group_name: name };
+
+                    itemAJAXRequest(item_id, '{% url "groups-create" %}', additional_data, function(response) {
+
+                        if (response['result'] === false){
+                            messageToUser('Lesson creation failed');
+                        } else {
+                            messageToUser('Lesson created');
+                            formdiv.find( "form > input#name" ).val('');
+                            var lesson_id = response['id'];
+                            
+                            var markup = $($('#lesson_template').html());
+                            //Apply variables to template
+                            markup.attr('id', lesson_id);
+                            markup.find('a').first().attr('href', markup.find('a').first().attr('href').replace('0', lesson_id));
+                            markup.find('div.ellipsis > div > a').first().attr('href', markup.find('div.ellipsis > div > a').first().attr('href').replace('0', lesson_id));
+                            markup.find('a[class=lessonName]').html(name);
+                            markup.find('input[type=checkbox]').attr({'itemid':lesson_id, 'id':'batch'+lesson_id});
+                            markup.find('label').attr('for', 'batch'+lesson_id);
+                            markup.find('ul[class=optionsDrop] li a').attr('id', lesson_id);
+                            markup.find('a[name=lessonDelete]').attr('id', lesson_id);
+                            markup.find('a[name=lessonEdit]').attr('id', lesson_id);
+                            markup.find('a[name=lessonAddContent]').attr('href', markup.find('a[name=lessonAddContent]').attr('href') + lesson_id);
+                            markup.find('a[name=lessonFeature]').attr('id', lesson_id);
+
+                            //Bind events
+                            markup.find(":checkbox[name='lesson']").bind('change', changeLessonCheckbox);
+                            markup.find("a[name=lessonFeature]").bind('click', clickLessonFeature);
+                            markup.find("a[name=lessonDelete]").click(function(event) {
+                                clickDeleteLesson(event);
+                            });
+                            markup.find( "a[name=lessonEdit]" ).click(function(event) {
+                                return clickEditLesson(event);
+                            });
+                            
+                            Dropdown.applyTo(markup.find('.moreOptions')[0]);
+
+                            if ($('.noresults').is(':visible')){
+                                $('.noresults').remove();
+                            }
+                            if($('.featuredLessons').children('div').length > 9){
+                                $('.featuredLessons').children('div').filter(":last").remove();
+                            }
+                            $('.featuredLessons').prepend(markup);
+                            markup.show();
+                        }
+                    });
+                },
+            }],
+    });
+
+    $('.create_lesson').on('click', function(e){
+        e.preventDefault();
+        $( "div[name=lesson-create-dialog]" ).dialog( "open" );
+    });
+
+});
+</script>
+
+
+
+{% endblock more_js %}

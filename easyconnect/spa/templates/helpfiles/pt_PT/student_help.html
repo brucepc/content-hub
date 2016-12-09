@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guia de ajuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>Página inicial</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">O que é o conteúdo em destaque?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Lições</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">O que são as lições?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Biblioteca</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">O que é a Biblioteca?</a></li>
+				<li><a href="#library2">Não vejo a minha biblioteca</a></li>
+				<li><a href="#library3">Aceder ao conteúdo</a></li>
+				<li><a href="#library4">Como utilizar as categorias como filtros</a></li>
+				<li><a href="#library5">O que é a cloud de etiquetas e como é que a utilizo?</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>Como utilizar o organizador de lições Content Hub</h1>
+
+			<h2>Página inicial</h2>
+			<div class="howto" id="home1">
+				<h3>O que é o conteúdo em destaque?</h3>
+				<p>Os itens em destaque dão visibilidade a conteúdo de lições e da biblioteca que é importante para si quando acede à página inicial do Responsável por planear a lição. Dessa forma, pode encontrar rapidamente o que é importante para si nesse dia.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Lições</h2>
+			<div class="howto" id="lessons1">
+				<h3>O que são as lições?</h3>
+				<p>As lições são compilações de conteúdo pedagógico que é reunido para a aprendizagem de um determinado tópico ou lição.</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Biblioteca</h2>
+
+			<div class="howto" id="library1">
+				<h3>O que é a Biblioteca?</h3>
+				<p>A página Biblioteca mostra o conteúdo que foi carregado pelo professor ou que foi pré-carregado para o dispositivo.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>Não vejo a minha biblioteca</h3>
+				<p>Os professores podem ocultar a biblioteca aos estudantes. Se tem de aceder à biblioteca e não consegue vê-la, peça ao professor para a ativar.</p>
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>Aceder ao conteúdo</h3>
+				<p>Para aceder a itens de conteúdo, clique no título. Dependendo do tipo de ficheiro e da configuração do seu browser, o ficheiro será aberto num novo separador ou transferido.</p>
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>Como aplicar filtros</h3>
+				<p>Os filtros da biblioteca são um conjunto de critérios que podem ser aplicados todos juntos ou individualmente para filtrar o conjunto de resultados.</p>
+				<p>Pode utilizar a caixa de pesquisa para criar um filtro baseado em texto.</p>
+				<p>Pode filtrar por Categoria. </p>
+				<p>Pode filtrar por Etiqueta.</p>
+				<p>Depois de adicionados, os critérios aplicados podem ser removidos.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Voltar ao topo</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>O que é a cloud de etiquetas e como é que a utilizo?</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />A cloud de etiquetas mostra as etiquetas utilizadas com maior frequência no conteúdo da biblioteca. Quanto maior for a frequência de utilização de uma etiqueta, maior será a etiqueta na cloud. A cloud de etiquetas é uma maneira fácil de localizar conteúdo pelas etiquetas aplicadas e de ver que tipo de etiquetas é mais comum no conteúdo.</p>
+				<a href="#" class="scrollup">Voltar ao topo</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

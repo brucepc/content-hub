@@ -1,0 +1,100 @@
+{% load i18n %}
+<section class="row mainContent" ng-controller="HomeCtrl">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea settingsContent clearfix" ng-if="user.is_authenticated">           
+
+            <div class="row">
+                <div class="clearfix">
+                    <h1 class="left">{% trans "Device Settings" %}</h1>
+                </div><!-- /.clearfix -->
+
+                <table class="settingsTable">
+                    <tr>
+                        <td>
+                            <span class="fa fa-globe"></span><strong> {% trans "Allow internet access via this device?" %}</strong>
+                        </td>
+                        <td>
+                            <label class="switch-light switch-candy" onclick="">
+                                <input type="checkbox" name="accessInternet" ng-checked="internet" ng-click="toggleInternet()" id="accessInternet">
+                                <span>
+                                    <span>{% trans "No" %}</span>
+                                    <span>{% trans "Yes" %}</span>
+                                </span>
+                                <a class="brandBtnColor"></a>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr ng-if="!user.is_superuser">
+                        <td><span class="fa fa-key"></span><strong> {% trans "Teacher Password" %}</strong></td>
+                        <td><a href="#changepassword" class="iconLink">({% trans "Change" %})</a></td>
+                    </tr>
+                    <tr ng-if="user.is_superuser">
+                        <td><span class="fa fa-key"></span><strong> {% trans "Teacher Account" %}</strong></td>
+                        <td>
+                            <input type="submit" ng-click="resetTeacherAccount()" ng-disabled="resettingAccount" value="{% trans "Reset account to factory default" %}" class="brandBtnColor brandBtnHoverColor" ng-click="save(content, uploadForm)" ng-disabled="uploadForm.$invalid || uploadForm.$pristine || actual_files.length === 0" disabled="disabled">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="fa fa-wifi"></span> <span><strong>{% trans "Device Wireless Name (SSID):" %}</strong></span>
+                        </td>
+                        <td>
+                            <span editable-text="SSID" e-form="editForm" e-class="inline-edit-form margin-top-10" e-required e-maxlength="{$ FIELD_VAL.ssidMax $}" onbeforesave="confirmSSIDChange()" onaftersave="updateSSID(SSID, editForm)" ng-bind="SSID"></span>
+                            <a ng-click="editForm.$show()" ng-hide="editForm.$visible" class="iconLink">({% trans "Change" %})</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="fa fa-database"></span> <span><strong>{% trans "Last Database Backup" %}</strong></span>
+                        </td>
+                        <td><span>{$ lastBackup $}</span> <a ng-click="restoreDatabase()" class="iconLink">({% trans "Restore" %})</a></td>
+                    </tr>
+                </table>
+                <br />
+                 <div class="clearfix" ng-show="showServices">
+                    <h2 class="left">{% trans "Services" %}</h2>
+                </div>
+                <br />
+                <table class="settingsTable" ng-show="showServices">
+                     <tr>
+                        <td>
+                            <span class="fa fa-globe"></span><strong> {% trans "Enable remote management" %}<br />www.capremote.com</strong>
+                        </td>
+                        <td>
+                            <label class="switch-light switch-candy" onclick="">
+                                <input type="checkbox" name="remoteManagement" ng-checked="remoteManagement" ng-click="toggleRemoteManagement()" id="remoteManagement">
+                                <span>
+                                    <span>{% trans "No" %}</span>
+                                    <span>{% trans "Yes" %}</span>
+                                </span>
+                                <a class="brandBtnColor"></a>
+                            </label>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>
+                            <span class="fa fa-globe"></span><strong> {% trans "Enable Intel&reg; Education Study" %}</strong>
+                        </td>
+                        <td>
+                            <label class="switch-light switch-candy" onclick="">
+                                <input type="checkbox" name="study" ng-checked="study" ng-click="toggleStudy()" id="study">
+                                <span>
+                                    <span>{% trans "No" %}</span>
+                                    <span>{% trans "Yes" %}</span>
+                                </span>
+                                <a class="brandBtnColor"></a>
+                            </label>
+                        </td>
+                    </tr>-->
+                </table>
+            </div>
+        </section>
+
+        <div class="centerText" ng-if="user.is_authenticated === false">
+            <ng-include src="'/angularpartials/teacheradmin/noauth.html'"></ng-include>
+        </div>
+
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

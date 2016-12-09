@@ -1,0 +1,53 @@
+{% load i18n %}
+<!-- TEACHER CREATE LESSON -->
+<div ng-if="user.isTeacher() && lesson !== null" class="createArea">
+    <div id="createToggle">
+        <h2 class="lessonTitle"><span class="fa fa-book"></span>{$ lesson.title $}</h2>
+    </div>
+    <div class="createDrawer" ng-if="lesson !== null" style="display: block;">
+        <div name="dropArea" class="dragDropArea" ng-drop="true" ui-on-Drop="addToLesson($data)">
+            <ul class="createList" >
+                <li ng-repeat="item in lesson_contents" ng-bind="item.title"></li>
+                <li class="placeholder" ng-hide="lesson_contents && lesson_contents.length > 0">{% trans "Drag content to the lesson to add it directly." %}</li>
+            </ul>
+        </div>
+        <!-- end dragDropArea div -->
+        <a ng-if="lesson !== null" ng-href="#lessons/{$ lesson.id $}" class="actionLink">{% trans "Manage this lesson" %}</a>
+    </div>
+    <!-- end createDrawer -->
+</div>
+<!-- end createArea -->
+
+<!-- BROWSE -->
+<div class="browseArea">
+    <div id="browseToggle" class="only-s only-xs only-m">
+        <h1>{% trans "Filter by Category" %}</h1>
+        <span></span>
+    </div>
+    <div class="only-l">
+        <h1>{% trans "Filter by Category" %}</h1>
+        <span></span>
+    </div>
+    <div class="browseDrawer">
+        <div categoryhierarchy initselected="selected_category_id" onselect="categoryFilter" ondeselect="clearFilter" filtering="true" id="cat_hierarchy_sidebar">{% trans "Please Wait..." %}</div>
+
+        <div tagcloud tags="tags" onclick="tagFilter"></div>
+    </div>
+    <!-- end browseDrawer -->
+</div>
+<!-- end browseArea -->
+
+    <hr />
+        <div ng-if="user.isTeacher()" class="row normalFontSize libraryOnOff">
+            <span class="onOffName" style="display:block;">                                  
+                {% trans "Allow student access to library?" %}
+            </span>
+            <label class="switch-light switch-candy" onclick="" style="width:75px; margin-right:5px;">
+                <input type="checkbox" name="accessLibrary" ng-checked="libhidden == false" ng-click="toggleLibrary()" id="accessLibrary"/>
+                <span>                     
+                    <span>{% trans "No" %}</span>
+                    <span>{% trans "Yes" %}</span>
+                </span>
+                <a class="brandBtnColor"></a>
+            </label>  
+        </div>

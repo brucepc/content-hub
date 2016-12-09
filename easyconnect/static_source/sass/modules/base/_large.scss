@@ -1,0 +1,19 @@
+.only-xs,
+.only-s,
+.only-m{
+  display: none !important;
+}
+.only-l{
+  display: block !important;
+}
+
+.center{
+  width: $largeBreakpoint - $padding;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.full-width{
+  margin-left: (-$padding * 2);
+  right: -$padding;
+}

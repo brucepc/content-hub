@@ -1,0 +1,37 @@
+﻿{% load i18n %}
+{% load staticfiles %}
+{% load browse_extras %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+
+    <link href="{% static 'js/jstree/themes/default/style.min.css' %}" rel="stylesheet" >
+    <link href="{% static 'stylesheets/style.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header>
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+	        <a href="#" class="headerLogoLink" style="background-image:none !important;"><img src="{% static 'images/brand-edu-logo.png' %}" alt="Content Access Point"></a>
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="helpArea errorArea clearfix">	
+	<div class="errorNumber">
+		404
+	</div>
+	<a class="errorHomeLink" href="/"><span class="fa fa-home"></span>Home</a>
+</section><!-- end uploadArea -->
+
+
+</body>
+</html>

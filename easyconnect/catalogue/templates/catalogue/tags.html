@@ -1,0 +1,117 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+
+<div name='tag-edit-dialog' id="editTag" style="display:none" title="Edit tag title">
+    <form>
+        <input type="text" name="name" autocomplete="off" id="name">
+    </form>
+</div>
+
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+	        <h1>Manage Tags</h1>
+            <p class="manageTags">
+            {% for tag in tags %}
+                <span itemid='{{ tag.pk }}' class="tagName"><span name='text'>{{ tag.text }}</span> <span name='uses'>({{ tag.uses }})</span> <a name='tagEdit' class="tagEdit">edit</a> <a name='tagDelete' class="tagDelete">delete</a></span>
+            {% empty %}
+                No tags yet
+            {% endfor %}
+            </p>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->
+    <!--<a href="{% url 'manage-index' %}"> back </a>-->
+
+{% endblock body %}
+
+{% block more_js %}
+
+<script>
+$(document).ready(function() {
+// Deleting single tag
+    $("a[name=tagDelete]").click(function(event) {
+
+        // Attempt delete
+        var selector = $(event.target);
+        var additional_data = {};
+        var item_id = selector.parents('span').attr('itemid');
+
+        itemAJAXRequest(item_id, '{% url "tags-delete" %}', additional_data, function(response) {
+
+            if (response['result'] === true){
+                $('span[itemid='+item_id+']').fadeOut('slow');
+                messageToUser('Tag deleted');
+            } else {
+                messageToUser('Tag delete failed: Cannot delete preloaded tags');
+            }
+        });
+    });
+
+// Tag edit modal
+    $( "div[name=tag-edit-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        open: function(event, ui){
+            var n = $( "div[name=tag-edit-dialog]" ).data('tagName');
+            $( "div[name=tag-edit-dialog]" ).find('input').val(n.html());
+        },
+        close: function(event, ui){
+            var n = $( "div[name=tag-edit-dialog]" ).data('tagName');
+            var val = $( "div[name=tag-edit-dialog]" ).find('input').val();
+            //n.html(val);
+        }
+    });
+
+    $( "a[name=tagEdit]" ).click(function(event) {
+
+        $( "div[name=tag-edit-dialog]" ).dialog('option', 'buttons', {
+            "Rename tag": function(){
+                // Close modal window
+                $(this).dialog( "close" );
+
+                // Create the tag
+                var selector = $(event.target);
+                var item_id = selector.parents('span').attr('itemid');
+                var formdiv = $(this);
+                var name = formdiv.find( "form > input#name" ).val();
+                var additional_data = { new_text: name };
+
+                itemAJAXRequest(item_id, '{% url "tags-edit" %}', additional_data, function(response) {
+
+                    if (response['result'] === false){
+                        messageToUser('Tag rename failed: Cannot rename preloaded tags');
+                    } else {
+                        messageToUser('Tag renamed');
+                        $('span[itemid='+ item_id +'] > span[name=text]').text(name);
+                        formdiv.find( "form > input#name" ).val('');
+                    }
+                });
+
+                return false;
+            },
+        });
+
+        var tagName = $(this).siblings('[name="text"]');
+        $( "div[name=tag-edit-dialog]" ).data('tagName', tagName);
+        $( "div[name=tag-edit-dialog]" ).dialog( "open" );
+
+        return false;
+    });
+
+});
+</script>
+
+{% endblock more_js %}

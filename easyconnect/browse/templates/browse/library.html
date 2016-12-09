@@ -1,0 +1,80 @@
+{% extends 'browse/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}: Library{% endblock %}
+
+{% block body %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+{% url 'library' as the_url %}
+
+{% include 'browse/search_listings_sidebar.html' %}
+{% include 'browse/search_listings_library.html' %}
+</section><!-- end mainContent row -->
+{% endblock %}
+
+{% block more_js %}
+<script>
+
+$(document).ready(function() {
+
+// Lesson create modal
+    $( "div[name=lesson-create-dialog]" ).dialog({
+        autoOpen: false,
+        resizable: false,
+        draggable: false,
+        closeOnEscape: true,
+        width: 'auto',
+        maxWidth: 500,
+        height: 'auto',
+        fluid: true,
+        modal: true,
+        buttons: [
+            {
+                text: "Create lesson", 
+                click: function(event){
+                    // Close modal window
+                    $(this).dialog( "close" );
+
+                    // Create the lesson
+                    var selector = $(event.target);
+                    var item_id = selector.attr('id');
+                    var formdiv = $(this);
+                    var name = formdiv.find( "form > input#name" ).val();
+                    var additional_data = { group_name: name };
+
+                    itemAJAXRequest(item_id, '{% url "groups-create" %}', additional_data, function(response) {
+
+                        if (response['result'] === false){
+                            messageToUser('Lesson creation failed');
+                        } else {
+                            messageToUser('Lesson created');
+                            formdiv.find( "form > input#name" ).val('');
+
+                            var lesson_id = response['id'];
+
+                            // In case the AJAX update of the lesson drop down is too slow...
+                            $('div[name=lesson-choice-dialog] > form > select').append('<option value="'+ lesson_id +'">' + name + '</option>');
+
+                            updateLessonList($('div[name=lesson-choice-dialog] > form > select'));
+
+                            expandLessonDrawer(name, lesson_id);
+                        }
+                    });
+                },
+            }],
+    });
+
+    $( "div#createToggle" ).click(function(event) {
+        $( "div[name=lesson-create-dialog]" ).dialog( "open" );
+     });
+
+    // Open modal based on get
+    {% if 'createlesson' in request.GET and user.is_authenticated and request.session.viewType == "teacher" %}
+        $( "div[name=lesson-create-dialog]" ).dialog( "open" );
+    {% endif %}
+
+});
+
+</script>
+{% endblock more_js %}

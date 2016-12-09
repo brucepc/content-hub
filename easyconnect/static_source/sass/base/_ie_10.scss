@@ -1,0 +1,15 @@
+// styles for IE 10
+.ie10 {
+form select,
+form > select,
+select,
+#chooseFile select,
+.dropdown > select,
+.category > select,
+.dropMenu select {
+	background-image: none !important;
+	background-color: #fff;
+	padding: 5px;
+	height: auto;
+	}
+}

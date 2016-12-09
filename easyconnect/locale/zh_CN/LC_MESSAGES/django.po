@@ -1,0 +1,850 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-24 11:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\contentimport\models.py:240 .\spa\templates\base.html:71
+msgid "Lesson Planner"
+msgstr "课程计划人"
+
+#: .\contentimport\models.py:241 .\spa\templates\base.html:105
+#: .\teacheradmin\templates\teacheradmin\index.html:58
+#: .\teacheradmin\templates\teacheradmin\views\home.html:9
+msgid "Device Settings"
+msgstr "设备设置"
+
+#: .\contentimport\models.py:242 .\spa\templates\base.html:106
+#: .\updater\templates\updater\index.html:58
+#: .\updater\templates\updater\views\home.html:9
+msgid "Software Update"
+msgstr "软件更新"
+
+#: .\contentimport\models.py:243 .\hub\templates\hub\views\home.html:6
+#: .\spa\templates\views\settings.html:21
+msgid "Add Tile"
+msgstr "添加磁贴"
+
+#: .\hub\templates\hub\index.html:94 .\spa\templates\base.html:134
+#: .\spa\templates\views\login.html:27
+#: .\teacheradmin\templates\teacheradmin\index.html:82
+#: .\updater\templates\updater\index.html:83
+msgid "Login"
+msgstr "登录"
+
+#: .\hub\templates\hub\index.html:95 .\spa\templates\base.html:125
+#: .\teacheradmin\templates\teacheradmin\index.html:83
+#: .\updater\templates\updater\index.html:84
+msgid "Logout"
+msgstr "注销"
+
+#: .\hub\templates\hub\index.html:107
+msgid "Terms of Use"
+msgstr "使用条款"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "Battery"
+msgstr "电池"
+
+#: .\hub\templates\hub\index.html:108 .\spa\templates\base.html:177
+#: .\teacheradmin\templates\teacheradmin\index.html:96
+#: .\updater\templates\updater\index.html:97
+msgid "version"
+msgstr "版本"
+
+#: .\hub\templates\hub\partials\tile.html:15
+#: .\hub\templates\hub\views\home.html:101
+msgid "Edit Tile"
+msgstr "编辑磁贴"
+
+#: .\hub\templates\hub\partials\tile.html:21
+msgid "Delete Tile"
+msgstr "删除磁贴"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Show to All Users"
+msgstr "对所有用户展示"
+
+#: .\hub\templates\hub\partials\tile.html:27
+msgid "Hide from All Users"
+msgstr "对所有用户隐藏"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Show to Students"
+msgstr "对学生展示"
+
+#: .\hub\templates\hub\partials\tile.html:33
+msgid "Hide from Students"
+msgstr "对学生隐藏"
+
+#: .\hub\templates\hub\partials\tile.html:39
+msgid "Tile is locked"
+msgstr "磁贴已锁定"
+
+#: .\hub\templates\hub\views\home.html:7
+msgid "Import a site or enter a URL."
+msgstr "导入站点或输入 URL。"
+
+#: .\hub\templates\hub\views\home.html:10
+msgid "Import Site"
+msgstr "导入站点"
+
+#: .\hub\templates\hub\views\home.html:12
+#: .\spa\templates\views\categories.html:6
+#: .\spa\templates\views\preload-usb.html:31
+#: .\spa\templates\views\sidebar.html:32 .\spa\templates\views\tags.html:6
+#: .\spa\templates\views\upload.html:53 .\spa\templates\views\uploadIE9.html:38
+#: .\spa\templates\views\usb.html:20 .\spa\templates\views\usb.html.py:53
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:43
+msgid "Please Wait..."
+msgstr "请稍候..."
+
+#: .\hub\templates\hub\views\home.html:13
+#: .\spa\templates\views\preload-usb.html:65 .\spa\templates\views\usb.html:55
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:62
+msgid "Import"
+msgstr "导入"
+
+#: .\hub\templates\hub\views\home.html:14
+#: .\spa\templates\views\preload-usb.html:32 .\spa\templates\views\usb.html:21
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:44
+msgid "Reload"
+msgstr "重新加载"
+
+#: .\hub\templates\hub\views\home.html:19
+#: .\hub\templates\hub\views\home.html:110
+msgid "URL"
+msgstr "URL"
+
+#: .\hub\templates\hub\views\home.html:21
+#: .\hub\templates\hub\views\home.html:29
+#: .\hub\templates\hub\views\home.html:41
+#: .\hub\templates\hub\views\home.html:106
+#: .\hub\templates\hub\views\home.html:112
+#: .\spa\templates\views\lessons.html:34 .\spa\templates\views\login.html:32
+#: .\spa\templates\views\login.html:40 .\spa\templates\views\upload.html:31
+#: .\spa\templates\views\uploadIE9.html:22 .\spa\templates\views\usb.html:32
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:11
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:18
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:28
+msgid "This field is required."
+msgstr "此字段必填。"
+
+#: .\hub\templates\hub\views\home.html:23
+#: .\hub\templates\hub\views\home.html:113
+msgid "Preview"
+msgstr "预览"
+
+#: .\hub\templates\hub\views\home.html:27
+#: .\hub\templates\hub\views\home.html:104
+msgid "Tile Name"
+msgstr "磁贴名称"
+
+#: .\hub\templates\hub\views\home.html:30
+#: .\hub\templates\hub\views\home.html:107
+msgid "Duplicate"
+msgstr "重复"
+
+#: .\hub\templates\hub\views\home.html:34
+#: .\hub\templates\hub\views\home.html:116
+msgid "Icon"
+msgstr "图标"
+
+#: .\hub\templates\hub\views\home.html:49
+#: .\hub\templates\hub\views\home.html:130
+msgid "Hidden from Students"
+msgstr "对学生隐藏"
+
+#: .\hub\templates\hub\views\home.html:55
+#: .\hub\templates\hub\views\home.html:72
+#: .\hub\templates\hub\views\home.html:136
+#: .\hub\templates\hub\views\home.html:153
+#: .\spa\templates\views\settings.html:14
+msgid "Off"
+msgstr "关闭"
+
+#: .\hub\templates\hub\views\home.html:56
+#: .\hub\templates\hub\views\home.html:73
+#: .\hub\templates\hub\views\home.html:137
+#: .\hub\templates\hub\views\home.html:154
+#: .\spa\templates\views\settings.html:15
+msgid "On"
+msgstr "打开"
+
+#: .\hub\templates\hub\views\home.html:66
+#: .\hub\templates\hub\views\home.html:147
+msgid "Hidden from All Users"
+msgstr "对所有用户隐藏"
+
+#: .\hub\templates\hub\views\home.html:82 .\spa\templates\views\lessons.html:38
+msgid "Create"
+msgstr "创建"
+
+#: .\hub\templates\hub\views\home.html:92
+#: .\hub\templates\hub\views\home.html:166
+#: .\spa\templates\views\lessons.html:39
+#: .\spa\templates\views\preload-upload.html:64
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:37
+msgid "Cancel"
+msgstr "取消"
+
+#: .\hub\templates\hub\views\home.html:163
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:38
+#: .\updater\templates\updater\views\home.html:31
+msgid "Update"
+msgstr "更新"
+
+#: .\rest\views.py:647
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:34
+msgid "Passwords do not match."
+msgstr "密码不匹配。"
+
+#: .\rest\views.py:656
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:21
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:31
+msgid "Invalid password."
+msgstr "密码无效。"
+
+#: .\rest\views.py:1301
+msgid "There was a problem uploading the file."
+msgstr "上载文件时遇到问题。"
+
+#: .\rest\views.py:1309
+msgid "There was a problem with the file."
+msgstr "文件发生问题。"
+
+#: .\rest\views.py:1325 .\rest\views.py:1344
+msgid ""
+"Invalid update file.\n"
+"Please try again."
+msgstr ""
+"更新文件无效。\n"
+"请重试。"
+
+#: .\rest\views.py:1329 .\rest\views.py:1331
+msgid ""
+"Update version must be greater than the current version.\n"
+"Please try again."
+msgstr ""
+"更新版本必须高于当前版本。\n"
+"请重试。"
+
+#: .\spa\templates\base.html:100
+msgid "Manage"
+msgstr "管理"
+
+#: .\spa\templates\base.html:102 .\spa\templates\views\tags.html:8
+#: .\spa\templates\views\upload.html:45 .\spa\templates\views\upload.html:46
+#: .\spa\templates\views\uploadIE9.html:30
+#: .\spa\templates\views\uploadIE9.html:31 .\spa\templates\views\usb.html:45
+#: .\spa\templates\views\usb.html.py:46
+msgid "Tags"
+msgstr "标记"
+
+#: .\spa\templates\base.html:103 .\spa\templates\views\categories.html:8
+#: .\spa\templates\views\home.html:194
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:116
+msgid "Categories"
+msgstr "类别"
+
+#: .\spa\templates\base.html:104 .\spa\templates\views\upload.html:10
+#: .\spa\templates\views\uploadIE9.html:9 .\spa\templates\views\usb.html:17
+msgid "USB/SD Import"
+msgstr "USB/SD 导入"
+
+#: .\spa\templates\base.html:113
+msgid "Admin Mode"
+msgstr "管理模式"
+
+#: .\spa\templates\base.html:116
+msgid "Teacher View"
+msgstr "教师视图"
+
+#: .\spa\templates\base.html:119
+msgid "Teacher Mode"
+msgstr "教师模式"
+
+#: .\spa\templates\base.html:120
+msgid "Student View"
+msgstr "学生视图"
+
+#: .\spa\templates\base.html:123 .\spa\templates\base.html.py:124
+#: .\spa\templates\base.html:133
+msgid "Help"
+msgstr "帮助"
+
+#: .\spa\templates\base.html:145 .\spa\templates\views\lesson_detail.html:10
+#: .\spa\templates\views\lessons.html:8
+#: .\updater\templates\updater\views\home.html:40
+msgid "Home"
+msgstr "主页"
+
+#: .\spa\templates\base.html:146 .\spa\templates\views\lesson_detail.html:13
+#: .\spa\templates\views\lessons.html:11 .\spa\templates\views\lessons.html:14
+#: .\spa\templates\views\lessons.html:20
+msgid "Lessons"
+msgstr "课程"
+
+#: .\spa\templates\base.html:147
+msgid "Library"
+msgstr "库"
+
+#: .\spa\templates\base.html:153
+msgid "Search Lessons"
+msgstr "搜索课程"
+
+#: .\spa\templates\base.html:153
+msgid "Search Library"
+msgstr "搜索库"
+
+#: .\spa\templates\base.html:176
+#: .\teacheradmin\templates\teacheradmin\index.html:95
+#: .\updater\templates\updater\index.html:96
+msgid "Terms of use"
+msgstr "使用条款"
+
+#: .\spa\templates\partials\categoryselect.html:6
+#: .\spa\templates\views\upload.html:51 .\spa\templates\views\uploadIE9.html:36
+#: .\spa\templates\views\usb.html:51
+msgid "Category"
+msgstr "类别"
+
+#: .\spa\templates\partials\categoryselect.html:12
+#: .\spa\templates\partials\categoryselect.html:18
+msgid "Subcategory"
+msgstr "子类别"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Remove from Featured Content"
+msgstr "从特色内容删除"
+
+#: .\spa\templates\partials\contentitems.html:9
+msgid "Add to Featured Content"
+msgstr "添加到特色内容"
+
+#: .\spa\templates\partials\contentitems.html:10
+#: .\spa\templates\views\upload.html:9
+msgid "Edit Content Information"
+msgstr "编辑内容信息"
+
+#: .\spa\templates\partials\contentitems.html:11
+msgid "Show/Hide from Students"
+msgstr "对学生显示/隐藏"
+
+#. Translators: Date this item was added on
+#: .\spa\templates\partials\contentitems.html:24
+msgid "Added:"
+msgstr "已添加："
+
+#. Translators: Date this item was updated on
+#: .\spa\templates\partials\contentitems.html:26
+msgid "Updated:"
+msgstr "已更新："
+
+#: .\spa\templates\partials\contentitems.html:27
+msgid "File Size:"
+msgstr "文件大小："
+
+#. Translators: List of tags associated with this item
+#: .\spa\templates\partials\contentitems.html:29
+msgid "Tags:"
+msgstr "标记："
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Remove from Featured Lessons"
+msgstr "从特色课程删除"
+
+#: .\spa\templates\partials\lessons.html:7
+msgid "Add to Featured Lessons"
+msgstr "添加到特色课程"
+
+#: .\spa\templates\partials\lessons.html:8
+msgid "Edit Lesson Title"
+msgstr "编辑课程标题"
+
+#: .\spa\templates\partials\lessons.html:9
+#: .\spa\templates\views\lesson_detail.html:36
+msgid "Add Content"
+msgstr "添加内容"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons created"
+msgstr "未创建课程"
+
+#: .\spa\templates\partials\lessons.html:17
+msgid "No lessons featured"
+msgstr "未设置特色课程"
+
+#: .\spa\templates\partials\lessons.html:18
+msgid "Featured lessons will appear here"
+msgstr "特色课程将显示于此"
+
+#: .\spa\templates\partials\lessons.html:19
+msgid "Create a new lesson"
+msgstr "创建新课程"
+
+#: .\spa\templates\partials\lessons.html:20
+msgid "Please check your <a href=\"#lessons\">lesson listings</a>"
+msgstr "请检查您的<a href=\"#lessons\">课程列表</a>"
+
+#: .\spa\templates\partials\lessons.html:24
+msgid "Your search returned no results, please try another search."
+msgstr "您的搜索未返回结果，请尝试另一个搜索。"
+
+#: .\spa\templates\partials\sort.html:3
+msgid "Sort by:"
+msgstr "排序标准："
+
+#. Translators: sort filter - clicking will sort the list by title
+#: .\spa\templates\partials\sort.html:5
+msgid "title"
+msgstr "标题"
+
+#. Translators: sort filter - clicking will sort the list by date added/created
+#: .\spa\templates\partials\sort.html:7
+msgid "date"
+msgstr "日期"
+
+#. Translators: Tagcloud showing tags that occur more frequently as larger
+#: .\spa\templates\partials\tagcloud.html:5
+msgid "Filter by Tag"
+msgstr "按标记筛选"
+
+#: .\spa\templates\views\categories.html:9
+msgid "Add New Primary Category"
+msgstr "新增主类别"
+
+#: .\spa\templates\views\categories.html:17
+msgid "No categories created"
+msgstr "未创建类别"
+
+#: .\spa\templates\views\help.html:24
+#: .\spa\templates\views\student_help.html:24
+msgid "Help Guide"
+msgstr "帮助指南"
+
+#: .\spa\templates\views\home.html:103
+msgid "Featured Lessons"
+msgstr "特色课程"
+
+#: .\spa\templates\views\home.html:105
+msgid "View all lessons"
+msgstr "查看所有课程"
+
+#: .\spa\templates\views\home.html:111
+msgid "Featured Content"
+msgstr "特色内容"
+
+#: .\spa\templates\views\home.html:113
+msgid "View all content"
+msgstr "查看所有内容"
+
+#: .\spa\templates\views\home.html:122
+#: .\spa\templates\views\lesson_detail.html:35
+msgid "No content featured"
+msgstr "未设置特色内容"
+
+#: .\spa\templates\views\home.html:123
+msgid "Featured content will appear here"
+msgstr "特色内容将显示于此"
+
+#: .\spa\templates\views\home.html:124
+msgid "My Library"
+msgstr "我的库"
+
+#: .\spa\templates\views\home.html:125
+msgid "Please check your <a href=\"#library\">library</a>"
+msgstr "请检查您的<a href=\"#library\">库</a>"
+
+#: .\spa\templates\views\home.html:139
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:64
+msgid "Manage Content"
+msgstr "管理内容"
+
+#. Translators: tab heading with a count of associated items 'pre loaded content (%count%)'
+#: .\spa\templates\views\home.html:147 .\spa\templates\views\library.html:22
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:72
+msgid "Preloaded Content"
+msgstr "预加载的内容"
+
+#: .\spa\templates\views\home.html:150 .\spa\templates\views\home.html:180
+#: .\spa\templates\views\home.html:197 .\spa\templates\views\lessons.html:22
+#: .\spa\templates\views\library.html:39
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:76
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:104
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:119
+msgid "Delete"
+msgstr "删除"
+
+#: .\spa\templates\views\home.html:151
+#: .\spa\templates\views\preload-usb.html:28
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:77
+msgid "USB/SD Import Package"
+msgstr "USB/SD 导入包"
+
+#: .\spa\templates\views\home.html:152
+#: .\spa\templates\views\preload-upload.html:31
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:78
+msgid "Upload Package"
+msgstr "上载包"
+
+#: .\spa\templates\views\home.html:177
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:101
+msgid "Teacher Content"
+msgstr "教师内容"
+
+#: .\spa\templates\views\home.html:184
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:108
+msgid "Teacher uploaded content and lessons will be deleted."
+msgstr "已上载的教师内容和课程将删除。"
+
+#: .\spa\templates\views\home.html:201
+msgid "Categories will only be deleted if they don't contain any content."
+msgstr "只删除不包含任何内容的类别。"
+
+#: .\spa\templates\views\lesson_detail.html:22
+msgid "Delete this Lesson"
+msgstr "删除此课程"
+
+#: .\spa\templates\views\lesson_detail.html:25
+msgid "Remove from Lesson"
+msgstr "从课程删除"
+
+#. Translators: Search label beside a user editable search box; 'search for the following'
+#: .\spa\templates\views\lessons.html:17
+msgid "Search:"
+msgstr "搜索："
+
+#: .\spa\templates\views\lessons.html:23
+msgid "Create a new Lesson"
+msgstr "创建新课程"
+
+#: .\spa\templates\views\lessons.html:32
+msgid "Lesson Name:"
+msgstr "课程名称："
+
+#: .\spa\templates\views\library.html:10
+msgid "Applied Filters"
+msgstr "应用的筛选器"
+
+#: .\spa\templates\views\library.html:16
+msgid "Clear All Filters"
+msgstr "清除所有筛选器"
+
+#. Translators: tab heading with a count of associated items 'my uploaded content (%count%)'
+#: .\spa\templates\views\library.html:24
+msgid "My Uploaded Content"
+msgstr "我上传的内容"
+
+#: .\spa\templates\views\library.html:28 .\spa\templates\views\library.html:31
+#: .\spa\templates\views\library.html:32
+msgid "Add to Lesson"
+msgstr "添加到课程"
+
+#: .\spa\templates\views\library.html:40 .\spa\templates\views\upload.html:9
+#: .\spa\templates\views\uploadIE9.html:8
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:31
+msgid "Upload Content"
+msgstr "上传内容"
+
+#: .\spa\templates\views\library.html:47
+msgid "{$ preloaded_items.range_start $}"
+msgstr "{$ preloaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:48
+msgid "{$ preloaded_items.range_end $}"
+msgstr "{$ preloaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:49
+msgid "{$ preloaded_items.count $}"
+msgstr "{$ preloaded_items.count $}"
+
+#: .\spa\templates\views\library.html:50 .\spa\templates\views\library.html:61
+#, python-format
+msgid "Showing %(range_start)s - %(range_end)s of %(result_total)s results"
+msgstr ""
+"正在显示第 %(range_start)s - %(range_end)s 个结果（共 %(result_total)s 个）"
+
+#: .\spa\templates\views\library.html:52 .\spa\templates\views\library.html:63
+msgid "Showing 0 results"
+msgstr "正在显示第 0 个结果"
+
+#: .\spa\templates\views\library.html:58
+msgid "{$ uploaded_items.range_start $}"
+msgstr "{$ uploaded_items.range_start $}"
+
+#: .\spa\templates\views\library.html:59
+msgid "{$ uploaded_items.range_end $}"
+msgstr "{$ uploaded_items.range_end $}"
+
+#: .\spa\templates\views\library.html:60
+msgid "{$ uploaded_items.count $}"
+msgstr "{$ uploaded_items.count $}"
+
+#: .\spa\templates\views\login.html:24
+msgid "You are logged in as"
+msgstr "您的登录身份"
+
+#: .\spa\templates\views\login.html:24
+msgid "Log Out?"
+msgstr "注销？"
+
+#: .\spa\templates\views\login.html:29
+msgid "Username"
+msgstr "用户名"
+
+#: .\spa\templates\views\login.html:37
+msgid "Password"
+msgstr "密码"
+
+#: .\spa\templates\views\login.html:43
+msgid "Invalid username or password."
+msgstr "用户名或密码无效。"
+
+#: .\spa\templates\views\login.html:46
+msgid "I am a student"
+msgstr "我是学生"
+
+#: .\spa\templates\views\login.html:48
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:6
+#: .\updater\templates\updater\partials\noauth.html:6
+msgid "Log In"
+msgstr "登录"
+
+#: .\spa\templates\views\preload-upload.html:48
+#: .\spa\templates\views\preload-usb.html:44
+msgid "A package with this name already exists, select to overwrite"
+msgstr "已存在具有此名称的包，请选择覆盖"
+
+#: .\spa\templates\views\preload-upload.html:60
+#: .\spa\templates\views\preload-usb.html:57
+msgid "Remove"
+msgstr "删除"
+
+#: .\spa\templates\views\preload-upload.html:69
+#: .\spa\templates\views\preload-usb.html:64
+msgid "Back"
+msgstr "返回"
+
+#: .\spa\templates\views\preload-upload.html:70
+#: .\spa\templates\views\upload.html:55 .\spa\templates\views\uploadIE9.html:40
+#: .\teacheradmin\templates\teacheradmin\views\upload.html:53
+msgid "Upload"
+msgstr "上传"
+
+#: .\spa\templates\views\preload-usb.html:29
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:41
+msgid "Import zip packages into Preloaded Content library"
+msgstr "将 zip 压缩包导入预加载内容库"
+
+#: .\spa\templates\views\preload-usb.html:33 .\spa\templates\views\usb.html:22
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:45
+msgid "Add Metadata"
+msgstr "添加元数据"
+
+#: .\spa\templates\views\settings.html:6
+msgid "Settings"
+msgstr "设置"
+
+#: .\spa\templates\views\settings.html:8
+msgid "Import from USB"
+msgstr "从 USB/SD 导入"
+
+#: .\spa\templates\views\settings.html:20
+msgid "Enable student access to the content library"
+msgstr "允许学生访问内容库"
+
+#: .\spa\templates\views\sidebar.html:11
+msgid "Drag content to the lesson to add it directly."
+msgstr "将内容拖至课程以直接添加。"
+
+#: .\spa\templates\views\sidebar.html:15
+msgid "Manage this lesson"
+msgstr "管理此课程"
+
+#: .\spa\templates\views\sidebar.html:24 .\spa\templates\views\sidebar.html:28
+msgid "Filter by Category"
+msgstr "按类别筛选"
+
+#: .\spa\templates\views\sidebar.html:43
+msgid "Allow student access to library?"
+msgstr "允许学生访问库？"
+
+#: .\spa\templates\views\sidebar.html:48
+#: .\teacheradmin\templates\teacheradmin\views\home.html:21
+#: .\teacheradmin\templates\teacheradmin\views\home.html:63
+#: .\teacheradmin\templates\teacheradmin\views\home.html:78
+msgid "No"
+msgstr "否"
+
+#: .\spa\templates\views\sidebar.html:49
+#: .\teacheradmin\templates\teacheradmin\views\home.html:22
+#: .\teacheradmin\templates\teacheradmin\views\home.html:64
+#: .\teacheradmin\templates\teacheradmin\views\home.html:79
+msgid "Yes"
+msgstr "是"
+
+#: .\spa\templates\views\tags.html:9
+msgid "Preloaded"
+msgstr "已预加载"
+
+#: .\spa\templates\views\tags.html:16
+msgid "Uploaded"
+msgstr "已上传"
+
+#: .\spa\templates\views\tags.html:25
+msgid "No tags created"
+msgstr "未创建标记"
+
+#: .\spa\templates\views\upload.html:20 .\spa\templates\views\upload.html:21
+#: .\spa\templates\views\upload.html:29 .\spa\templates\views\upload.html:30
+#: .\spa\templates\views\uploadIE9.html:19
+#: .\spa\templates\views\uploadIE9.html:20
+msgid "Title"
+msgstr "标题"
+
+#: .\spa\templates\views\upload.html:32 .\spa\templates\views\uploadIE9.html:23
+#: .\spa\templates\views\usb.html:33
+msgid "{$ FIELD_VAL.contentItemMax $}"
+msgstr "{$ FIELD_VAL.contentItemMax $}"
+
+#: .\spa\templates\views\upload.html:33 .\spa\templates\views\uploadIE9.html:24
+#: .\spa\templates\views\usb.html:34
+#, python-format
+msgid "The maximum length of title is %(maxchars)s."
+msgstr "标题最大长度为 %(maxchars)s。"
+
+#: .\spa\templates\views\upload.html:42 .\spa\templates\views\upload.html:43
+#: .\spa\templates\views\uploadIE9.html:27
+#: .\spa\templates\views\uploadIE9.html:28 .\spa\templates\views\usb.html:40
+#: .\spa\templates\views\usb.html.py:42
+msgid "Description"
+msgstr "说明"
+
+#: .\spa\templates\views\upload.html:55
+msgid "Save"
+msgstr "保存"
+
+#: .\spa\templates\views\upload.html:58 .\spa\templates\views\usb.html:59
+msgid "Common metadata applied to all items (excludes IMS packages)."
+msgstr "公共元数据适用于所有项目（不包括 IMS 内容包）。"
+
+#: .\spa\templates\views\usb.html:18
+msgid "Import multiple files into My Uploaded Content library"
+msgstr "将多个文件导入我上传的内容库"
+
+#: .\spa\templates\views\usb.html:31
+msgid " title"
+msgstr "标题"
+
+#: .\teacheradmin\templates\teacheradmin\partials\noauth.html:4
+#: .\updater\templates\updater\partials\noauth.html:4
+msgid "You must log in to view this page"
+msgstr "您必须先登录方能浏览本页面"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:5
+msgid "Change Password"
+msgstr "更改密码"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:8
+msgid "Old Password"
+msgstr "旧密码"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:15
+msgid "New Password"
+msgstr "新密码"
+
+#: .\teacheradmin\templates\teacheradmin\views\changepass.html:25
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:15
+msgid "Allow internet access via this device?"
+msgstr "是否允许通过此设备接入互联网？"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:29
+msgid "Teacher Password"
+msgstr "教师密码"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:30
+#: .\teacheradmin\templates\teacheradmin\views\home.html:45
+msgid "Change"
+msgstr "更改"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:33
+msgid "Teacher Account"
+msgstr "教师帐户"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:35
+msgid "Reset account to factory default"
+msgstr "将帐户重置为出厂默认设置"
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:41
+msgid "Device Wireless Name (SSID):"
+msgstr "设备无线网络名称 (SSID)："
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:51
+msgid "Services"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:57
+msgid "Enable remote management"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\home.html:72
+msgid "Enable Intel&reg; Education Study"
+msgstr ""
+
+#: .\teacheradmin\templates\teacheradmin\views\preloadedcontent.html:123
+msgid "Categories will only be deleted if they don't contain content"
+msgstr "只删除不包含任何内容的类别"
+
+#: .\teacheradmin\templates\teacheradmin\views\usb.html:40
+msgid "USB/SD Preload Import"
+msgstr "USB/SD 预加载导入"
+
+#: .\updater\templates\updater\views\home.html:11
+msgid "Current version"
+msgstr "当前版本"
+
+#: .\updater\templates\updater\views\home.html:12
+#, fuzzy, python-format
+msgid ""
+"The update file will be uploaded, the device will reboot, and the update "
+"will be applied. All connections to the device will be terminated. Do not "
+"disrupt the update process and make sure the device is plugged into an "
+"electrical outlet or has at least 80%% battery remaining."
+msgstr ""
+"更新文件将上载，设备将重启，更新将应用。设备的所有连接都将终止。不要中断更新"
+"过程，确保设备与电源插座连接或电池至少剩余 80%% 电量。"
+
+#: .\updater\templates\updater\views\home.html:13
+msgid "Select an update file."
+msgstr "选择一个更新文件。"
+
+#: .\updater\templates\updater\views\home.html:39
+msgid "You are not authorized to view this page."
+msgstr "您没有查看此页面的权限。"
+
+#~ msgid "Teacher Login"
+#~ msgstr "教师登录"
+
+#~ msgid "Copyright &copy; 2014. All rights reserved."
+#~ msgstr "版权所有 &copy; 2014。保留所有权利。"
+
+#~ msgid "Application Update"
+#~ msgstr "应用程序更新"

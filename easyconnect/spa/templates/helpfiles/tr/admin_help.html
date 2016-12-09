@@ -1,0 +1,209 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="rtl"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>İçerik Merkezi</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Yardım Kılavuzu</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>İçerik Yönetimi</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">Genel bakış</a></li>
+			<li><a href="#home2">Önceden yüklenen içerik ekleme</a></li>
+			<li><a href="#home3">Önceden yüklenen içeriği silme</a></li>
+			<li><a href="#home4">Öğretmen içeriğini silme</a></li>
+			<li><a href="#home5">Kategorileri silme</a></li>
+			<li><a href="#home6">Öğretmen modu</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">
+
+		<h1>İçerik Merkezi Ders Planlayıcı nasıl kullanılır?</h1>
+
+		<h2>İçerik Yönetimi</h2>
+		<div class="howto" id="home1">
+			<h3>Genel bakış</h3>
+
+			<p>Yönetici, Ders Planlayıcı&apos;ya (Lesson Planner) giriş yaptığında varsayılan olarak İçeriği Yönet (Manage Content) ekranı gösterilir.</p>
+			<img src="/static/images/help-guide/admin-help-guide-1.png" alt="Content Hub" class="imgBorder" />
+
+			<p>Yönetici aşağıdakileri yapabilir:</p>
+			<ul>
+				<li>Önceden yüklenen içerik paketlerini ekleme/silme</li>
+				<li>Öğretmen içeriğini silme</li>
+				<li>Kategorileri silme</li>
+			</ul>
+			<h4>Önceden yüklenen içerik (Preloaded content) nedir?</h4>
+			<p>Önceden yüklenen içerik öğretmen ve öğrenciler kullanmadan önce Ders Planlayıcı&apos;ya yüklenen eğitim amaçlı içeriktir. Bu içerik, cihazı kullanılacağı okula veya eğitim kurumuna göndermeden önce örneğin cihazın üreticisi veya Eğitim Bakanlığı tarafından yüklenebilir. Önceden yüklenen içeriği sadece Yönetici yükleyebilir/aktarabilir/silebilir.</p>
+			<h4>Öğretmen içeriği (Teacher content) nedir?</h4>
+			<ol>
+				<li>Öğretmenin, Ders Planlayıcı&apos;daki kütüphaneye eklediği içeriktir. İçerik, Excel, Word, HTML, PDF, E-Pub, video, resim gibi herhangi bir dosya formatında olabilir.</li>
+				<li>Öğretmenin hazırladığı derslerdir.</li>
+			</ol>
+			<h4>Kategoriler (Categories) nedir?</h4>
+			<p>Kategoriler öğretmenlerin/yöneticilerin kütüphanedeki içeriği gruplandırmasını sağlar. İçerik kategorileri:</p>
+			<ol>
+				<li>Önceden yüklenen içerik paketine atanabilir ve Yönetici önceden yüklenen içeriği Ders Planlayıcı&apos;ya yüklediğinde/aktardığında oluşturulabilir.</li>
+				<li>Öğretmen, öğretmen içeriğini Ders Planlayıcı&apos;ya yüklediğinde/aktardığında atanabilir.</li>
+				<li> Öğretmen tarafından Kategori Yönet (Manage Category) ekranında veya Yönetici tarafından Ders Planlayıcı&apos;nın Kategori Yönet (Manage Category) ekranını öğretmen modunda görüntülerken yapılandırılabilir.</li>
+			</ol>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>Önceden yüklenen içerik ekleme</h3>
+			<p>Ders Planlayıcı&apos;ya önceden yüklenen içerik eklemenin iki yolu vardır:</p>
+			<ol>
+				<li>&quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümünde &quot;Paketi Yükle&quot; (Upload Package) bağlantısına tıklayıp içeriği tarayıcıdan yükleme</li>
+				<li>&quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümünde &quot;Paketi USB ile Aktar&quot; (USB/SD Import Package) bağlantısına tıklayıp içeriği USB ile aktarma</li>
+			</ol>
+			<p>2 GB&apos;den büyük dosyalar için USB ile Aktar seçeneği kullanılmalıdır. Büyük dosya boyutları tarayıcı/sunucu tarafından kısıtlanmış olabilir. </p>
+			<h4>Paket yükleme (Upload package)</h4>
+			<p>Önceden yüklenen içerik paketini tarayıcıdan yüklemek için:</p>
+			<ol>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümüne gidin. </li>
+				<li>&quot;Paketi Yükle&quot; (Upload Package) bağlantısına tıklayın.<br>
+				<img src="/static/images/help-guide/admin-help-guide-2.png" alt="Content Hub" class="imgBorder" />
+				</li>
+				<li>Paketi Yükle (Upload Package) ekranında &quot;Dosya Seç&quot; (Choose Files) düğmesine tıklayıp yüklemek istediğiniz önceden yüklenen içerik paketlerini seçin. Cihazda aynı adlı bir önceden yüklenen içerik paketi varsa var olan paketin üstüne yazma seçeneği sunulur. Yönetici paketin üstüne yazmayı tercih etmezse bu içerik paketi cihaza yüklenmez veya Ders Planlayıcı&apos;ya aktarılmaz.</li>
+				<li>Önceden yüklenen içerik paketi başarıyla eklendiğinde bir mesaj görüntülenir.</li>
+			</ol>
+			<h4>USB ile paket aktarma (USB/SD Import package)</h4>
+			<p>Önceden yüklenen içerik paketini USB ile aktarmak için:</p>
+			<ol>
+				<li>İçerik Erişim Noktası&apos;na (Content Access Point) USB cihazını bağlayın.</li>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümüne gidin. </li>
+				<li>&quot;Paketi USB ile Aktar&quot; (USB/SD Import Package) bağlantısını seçin.<br>
+				    <img src="/static/images/help-guide/admin-help-guide-3.png" alt="Content Hub" class="imgBorder" />
+			    </li>
+				<li>Paketi USB ile Aktar (USB/SD Import Package) ekranında yüklemek istediğiniz önceden yüklenen içerik paketlerini seçin. Cihazda aynı adlı bir önceden yüklenen içerik paketi varsa var olan paketin üstüne yazma seçeneği sunulur. Yönetici paketin üstüne yazmayı tercih etmezse bu içerik paketi cihaza yüklenmez veya Ders Planlayıcı&apos;ya aktarılmaz.</li>
+				<li>Önceden yüklenen içerik paketi başarıyla eklendiğinde bir mesaj görüntülenir.</li>
+			</ol>
+
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>Önceden yüklenen içeriği silme</h3>
+			<p>Yönetici önceden yüklenen içerik paketlerini tamamen veya tek tek silebilir.</p>
+			<img src="/static/images/help-guide/admin-help-guide-5.png" alt="Content Hub" class="imgBorder" />
+			<p>Bütün önceden yüklenen içerik paketlerini silmek için:</p>
+			<ol>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümüne gidin. </li>
+				<li>&quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) kutusunu işaretleyin. Önceden yüklenen içerik yoksa kutu işaretlenebilir durumda olmaz.</li>
+				<li>Sil (Delete) bağlantısına tıklayın.</li>
+				<li>Cihazdaki <strong><u>bütün</u></strong> önceden yüklenen içerik Ders Planlayıcı&apos;dan ve cihazdan silinir.</li>
+			</ol>
+			<p>Önceden yüklenen içerik paketlerini tek tek silmek için:</p>
+			<ol>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Önceden Yüklenen İçerik&quot; (Preloaded Content) bölümüne gidin. Cihazdaki önceden yüklenen içerik paketleri listelenir.</li>
+				<li>Silmek istediğiniz önceden yüklenen içerik paketinin yanındaki kutuyu işaretleyin.</li>
+				<li>Sil (Delete) bağlantısına tıklayın.</li>
+				<li>Seçilen önceden yüklenen içerik paketi Ders Planlayıcı&apos;dan ve cihazdan silinir.</li>
+			</ol>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+		<div class="howto" id="home4">
+
+			<h3>Öğretmen içeriğini silme</h3>
+			<p>Öğretmen içeriğini silmek için:</p>
+			<ol>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Öğretmen İçeriği&quot; (Teacher Content) bölümüne gidin.</li>
+				<li>&quot;Öğretmen İçeriği&quot; (Teacher Content) kutusunu işaretleyin. Öğretmen içeriği yoksa bu kutu işaretlenebilir durumda olmaz.</li>
+				<li>Sil (Delete) bağlantısına tıklayın.</li>
+				<li><strong><u>Bütün</u></strong> öğretmen içeriği, yani öğretmenin yüklediği tüm kütüphane içeriği ve dersler Ders Planlayıcı&apos;dan ve cihazdan silinir.</li>
+			</ol>
+			<p>Yönetici modunda öğretmen içeriğini tek tek silmek mümkün değildir. Ama Yönetici, Öğretmen modundayken içeriği tek tek silebilir.</p>
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons1 -->
+
+
+
+
+
+		<div class="howto" id="home5">
+
+			<h3>Kategorileri silme</h3>
+			<p>Kategorileri silmek için:</p>
+			<ol>
+				<li>İçeriği Yönet (Manage Content) ekranında &quot;Kategoriler&quot; (Categories) bölümüne gidin.</li>
+				<li>&quot;Kategoriler&quot; (Categories) kutusunu işaretleyin. Boş kategori, yani bir içerikle ilişkilendirilmemiş kategori yoksa bu kutu işaretlenebilir durumda olmaz.</li>
+				<li>Sil (Delete) bağlantısına tıklayın.</li>
+			</ol>
+			<p>Yalnızca içinde herhangi bir içerik bulunmayan kategoriler silinebilir; kategoriyle ilişkilendirilmiş bir içerik varsa o kategori İçeriği Yönet (Manage Content) ekranından silinemez.</p>
+			<p>Yönetici modunda kategorileri tek tek silmek mümkün değildir. Ama Yönetici, Öğretmen modundayken kategorileri tek tek silebilir.</p>
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons2 -->
+
+
+
+
+		<div class="howto" id="home6">
+
+			<h3>Öğretmen modu</h3>
+			<p>Yönetici, Öğretmen modundayken öğretmenin bütün yaptıklarını yapabilir.</p>
+			<p>Ders Planlayıcı&apos;yı Öğretmen modunda kullanmak için İçeriği Yönet (Manage Content) ekranında &quot;Öğretmen modu&quot; (Teacher Mode) seçeneğine tıklayın.</p>
+			<p>Yönetici, Öğretmen modundayken &quot;Yönetici modu&quot; (Administrator Mode) seçeneğine tıklayarak İçeriği Yönet (Manage Content) ekranına dönebilir.</p>
+
+			<a href="#" class="scrollup">Başa Dön</a>
+		</div><!-- end howto lessons3 -->
+
+
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

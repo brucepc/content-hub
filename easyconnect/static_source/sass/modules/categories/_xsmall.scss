@@ -1,0 +1,131 @@
+
+  /* Manage Categories */
+  .boxBorder{
+    border:1px solid #e3e3e3;
+    border-bottom:none;
+  }
+  .categoryTable{
+    margin:0;
+    .categoryRow{
+      display:block;
+      line-height:1.3;
+      border-bottom:1px solid #e3e3e3;
+      font-size:0.875rem;
+      .catName{
+        display:inline-block;
+        max-width:60%;
+      }
+      ul{
+        float:right;
+        li{
+          float:left;
+          a{
+            cursor:pointer;
+            padding:0 7px;
+            margin:0 0 0 1px;
+            display:block;
+            font-size:1rem;
+            text-decoration:none;
+            color:$brandLighterGray;
+            &:hover{
+              color:$brandLightGray;
+            }
+            &:active, &:focus{
+              color:$brandGray;
+            }
+            &.categoryDelete:hover{
+              color:$brandRed;
+            }
+            &.categoryDelete:active, .categoryDelete:focus{
+              color:#ca060e;
+            }
+          }
+        }
+      }
+      }
+    .category1{
+      font-weight:bold;
+      padding:10px;
+      background:#e6e6e6;
+    } 
+    .category2{
+      padding:10px 10px 10px 20px;
+      background:#f1f1f1;
+    }
+    .category3{
+      padding:10px 10px 10px 40px;
+      background:#f8f8f8;
+    } 
+  }
+
+  html[dir=rtl] .category2 {
+    padding:10px 20px 10px 10px;
+  }
+  html[dir=rtl] .category3 {
+    padding:10px 40px 10px 10px;
+  }
+
+  .categoryTable {
+  .form-buttons{
+    float:right;
+    width:15%;
+  }
+  span.editable-text {
+    width:85%;
+    position:relative;
+  }
+  .editable-error {
+    font-size:0.75rem;
+    color:$brandRed;
+    font-weight:normal;
+  }
+   .editable-wrap {
+      margin:0 auto;
+      input[type="text"]{
+        padding:4px;
+        max-width:99%!important;
+        width:99%!important;
+        font-size:0.75rem;
+        font-weight:normal;
+      }
+      .editable-buttons {
+        float:right;
+        width:100%;
+        button {
+          margin:0 0 0 6%;
+          height:24px;
+          width:44%;
+          padding:0;
+          font-size:0.75rem;
+          float:left;
+          &[type="button"] {
+            display: block;
+            background-color: #ebebeb;
+            color: $brandGray;
+            border-radius: 1px;
+            border: 1px solid #b3afaf;
+            text-decoration:none;
+            -webkit-box-shadow: 0px 1px 1px #d7d7d7;
+            -moz-box-shadow: 0px 1px 1px #d7d7d7;
+            box-shadow: 0px 1px 1px #d7d7d7;
+          &:hover, &:active{
+            background:#fff;
+          &:active, &:focus{
+            -webkit-box-shadow:inset 0 1px 6px 0 rgba(0,0,0,.2);
+            box-shadow:inset 0 1px 6px 0 rgba(0,0,0,.2);
+          }
+          }
+          }
+        }
+      }
+  }
+}
+
+
+html[dir=rtl] .categoryTable .categoryRow ul, html[dir=rtl]  .form-buttons, html[dir=rtl] .categoryTable .editable-wrap .editable-buttons{
+  float:left;
+}
+
+html[dir=rtl] .categoryTable .categoryRow ul li, html[dir=rtl] .categoryTable .editable-wrap .editable-buttons button{
+  float:right;
+}

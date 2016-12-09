@@ -1,0 +1,28 @@
+{% load i18n %}
+<section class="row mainContent" ng-init="init({page_size:5000}, true)" ng-cloak>
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <div cg-busy="{ promise:tagsPromise, message:'{% trans "Please Wait..." %}'}"></div>
+            
+	        <h1>{% trans "Tags" %}</h1>
+                <h2 ng-if="preloadedTags.length > 0">{% trans "Preloaded" %}</h2>
+            <p ng-if="preloadedTags.length > 0" class="manageTags">
+                <span ng-repeat="tag in preloadedTags" itemid='{$ tag.id $}' class="tagName">
+                    <span name='text' editable-text="tag.text" e-form="tagForm" e-required e-maxlength="25" onbeforesave="validate(tag, $data, tagForm)" onaftersave="update(tag, tagForm)" ng-bind="tag.text"></span> 
+                    <a href="#/library?t={$ tag.id $}" ng-hide="tagForm.$visible">({$ tag.uses $})</a> 
+                </span>
+            </p>
+                <h2 ng-if="uploadedTags.length > 0">{% trans "Uploaded" %}</h2>
+                <p ng-if="uploadedTags.length > 0" class="manageTags">
+                <span ng-repeat="tag in uploadedTags" itemid='{$ tag.id $}' class="tagName">
+                    <span name='text' editable-text="tag.text" e-form="tagForm" e-required e-maxlength="25" onbeforesave="validate(tag, $data, tagForm)" onaftersave="update(tag, tagForm)" ng-bind="tag.text"></span> 
+                    <a href="#/library?t={$ tag.id $}" ng-hide="tagForm.$visible">({$ tag.uses $})</a> 
+                    <a ng-if="!tag.locked" name='tagEdit' class="tagEdit" ng-click="tagForm.$show()" ng-hide="tagForm.$visible"><span class="fa fa-pencil"></span> </a> 
+                    <a ng-if="!tag.locked" name='tagDelete' class="tagDelete" ng-click="remove(tag.id)" ng-hide="tagForm.$visible"><span class="fa fa-trash-o"></span></a>
+                </span>
+            </p>
+            <p ng-if="(preloadedTags.length + uploadedTags.length) === 0" class="manageTags">{% trans "No tags created" %}</p>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

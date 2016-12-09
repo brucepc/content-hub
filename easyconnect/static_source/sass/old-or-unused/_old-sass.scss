@@ -1,0 +1,331 @@
+/* Old Search */
+
+// .searchTop {
+//   height: 33px;
+//   float: none;
+//   position: relative;
+//   top: 10px;
+//   left: 20px;
+//   margin: 0;
+//   padding: 0;
+//   > li {
+//     #search input[type="search"] {
+//     background: #fff url(../images/magnify-icon.png) no-repeat 13px 7px;
+//     color: $intelGray;
+//     padding: 6px 0 6px 36px;
+//     overflow: hidden;
+//     @include font-size(1.4);
+//     font-size: 0.875rem; // 14px
+//     border: 1px solid #fff;
+//     -webkit-border-radius: 20px;
+//     -moz-border-radius: 20px;
+//     border-radius: 20px;
+//     &:focus, &:active {
+//       border: 1px solid #00aeef;
+//       background-color: #fff;
+//     }
+//     }
+//   }
+// }
+
+
+/* Old a.upload (upload file button in breadcrumb area) */
+/* this was nested in .breadcrumbArea { div.breadcrumb {  goes in here }} */
+//   a.upload {
+//     padding: 0;
+//   height: 18px;
+//   width: 127px;
+//   background: transparent url('../images/upload-content.png') no-repeat;
+//   border: 0;
+//   float: right;
+// }
+
+
+/* Old notification box close button */
+/* was nested in #notificationBox */
+// span.closeBox {
+//   display: block;
+//   position: absolute;
+//   top: 11px;
+//   right: 11px;
+//   height: 16px;
+//   width: 16px;
+//   background: transparent url('../images/icon-sprite.png') no-repeat  -645px -1100px;
+// }
+
+/* ------------------------
+  Old NOTIFICATION in large size
+------------------------- */
+
+//   <!--  html NOTIFICATIONS -->
+//   <div class="noticeWrapper">
+//   <div id="notificationBox">
+//   <h3>two new notifications</h3>
+//   <ul class="dropdownNotice">
+//   <li>14 new content item imported in the latest sync. <a href="#">View updates</a></li>
+//   <li>New category added on the 27/04/14</li>
+//   <li><a href="#">View archived notifications</a></li>
+//   </ul></div>
+//   <!-- end notificationBox -->
+//   <div id="flag"><span id="notification"><div>12</div></span></div>
+//   </div>
+//   <!-- end noticeWrapper -->
+//  <!-- end  html NOTIFICATIONS -->
+// #flag {
+//   top: 13px;
+//   left: 225px;
+// }
+// #notificationBox {
+//   top: 40px;
+//   left: 100px;
+//   width: 260px;
+//   &:before {
+//       content: "";
+//       position: absolute;
+//       top: -7px;
+//       left: 120px;
+//       width: 0px;
+//       height: 0px;
+//       border-style: solid;
+//       border-width: 0 7px 7px 7px;
+//       border-color: transparent transparent #f0cd00 transparent;
+// }
+//   }
+
+/* OLD ADMIN LINKS  */
+/* Nav small admin links */
+// ul.adminLinks {
+// 	display: inline-block !important;
+//   float: left;
+//   margin-left: 0;
+//   margin-top: 50px;
+//   @include font-size(1.4);
+//   font-size: 0.875rem; // 14px
+//   li {
+//     display: inline-block;
+//     position:relative;
+//     border-right: 2px solid $intelDividerBlue;
+//     & ul.manageList li {
+//       border: 0;  // get rid of blue divider on nested drop-down
+//     }
+//     &:last-child {
+//       border: 0;
+//     }
+//     &.manage > a {
+//       padding-right: 25px;
+//       background: transparent url('../images/white-down-arrow.png') no-repeat 67px 6px;
+//     }
+//     .manageList > a {
+//     background-image: none;  // take the dropdown arrow off the nested list
+//   }
+// }
+// li a {
+//   display: inline-block;
+//   margin: 0;
+//   padding: 0 8px 0 8px;
+//   background-color: transparent;
+//   color: #fff;
+//   &:hover, &:focus {
+//    background-color: transparent;
+//  }
+// }
+// .manage ul {
+//   position: absolute;
+//   -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
+//   box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
+//   width: 10em;
+//   left: -999em;
+//   border-radius:3px;
+//   background:#fff;
+//   li {
+//      width: 100%;
+//      margin: 0;
+//      padding: 0;
+//   }
+//   li a {
+//     padding:8px 15px!important;
+//     display: block!important;
+//     width: 100%;
+//     height: 100%;
+//     border:none!important;
+//     &:hover, &:focus {
+//       background-color: $intelMidBlue;
+//       color: #fff !important;
+//     }
+//     &:active {
+//     background-color: $intelLightBlue;
+//     color: #fff;
+//     }
+//   }
+// }
+// .manage:hover ul {
+//   left: auto;
+//   margin:0;
+//   padding:0;
+// }
+//   .manageList {
+//     position: absolute;
+//     width: 10em;
+//     left: -999em;
+//     display: block;
+//     background:#fff;
+//     @include font-size(1.2);
+//     font-size: 0.75rem; // 12px
+//     background-color: #fff;
+//     border: 1px solid #0071c5;
+//     color: $intelLightGray;
+//     -webkit-border-radius:3px;
+//     -moz-border-radius:3px;
+//     border-radius:3px;
+//     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+//     -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+//     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+//       & li a {
+//       display: block;
+//       line-height: 0.75rem;
+//       margin: 0;
+//       padding: 0;
+//       width: 100%;
+//       color: $intelLightGray !important;
+//       text-decoration: none;
+//       &:hover, &:focus {
+//         color: $intelLightGray !important;
+//       }
+//     } // end &.manageList li a
+//   } // end .manageList
+//   }//end ul.adminLinks
+/* OLD Nav small admin links */
+// ul.navLinks {
+//   float: none;
+//   display: block;
+//   padding: 0;
+//   margin: 0;
+//   @include font-size(1.4);
+//   font-size: 0.875rem; // 14px
+//     > li a {
+//     display: block;
+//     margin: 0;
+//     width: 100%;
+//     color: #fff;
+//     padding: 10px 0 10px 20px;  // 10px top and bottom, 20px left indent
+//     background-color: $intelDarkBlue;
+//     border: 0;
+//     &:hover, &:focus {
+//       background-color:$intelMidBlue;
+//       color: #fff;
+//     }
+//   }
+// .manage ul {
+//   //accordian to close these should go here
+// }
+
+// }
+
+/*---------------- OLD NAV TABS -------------------*/
+
+// ul.navTabs {
+//   background-color: transparent;
+//   width: 350px;
+//   padding: 0;
+//   float: left;
+//   margin: 42px 0 0 100px;
+//   li {
+//    width: auto;
+//    display: inline-block;
+//    margin: 0 3px 0 0;
+//    a {
+//     -webkit-border-radius: 4px 4px 0px 0px;
+//     -moz-border-radius: 4px 4px 0px 0px;
+//     border-radius: 4px 4px 0px 0px;
+//     background-color: $intelDarkBlue;
+//   }
+//   &.tabActive a {
+//     background-color: $intelLightestGray;
+//     color:$intelDarkBlue;
+//     &:hover, &:focus {
+//       background-color: $intelLightestGray;
+//       color:$intelDarkBlue;
+//     }
+//   }
+// }
+//    li a {
+//     width: auto;
+//     padding: 8px 18px 8px 35px;
+//     color: #fff;
+/* change the rollover color of tabs */
+    // &:hover, &:focus {
+    //   background-color:$intelLightestGray;
+    //   color: $intelDarkBlue;
+    // }
+/* tab icons and rollover tab icons color change */
+ //    &.navHome {
+  // background: $intelDarkBlue url("../images/home-icon.png") no-repeat 16px 10px;
+ //      &:hover, &:focus {
+  //background: $intelLightestGray url("../images/home-icon-active.png") no-repeat 16px 10px;
+ //      }
+ //    }
+ //    &.navLessons {
+ //      background: $intelDarkBlue url("../images/lessons-icon.png") no-repeat 16px 10px;
+ //      &:hover, &:focus {
+  // background: $intelLightestGray url("../images/lessons-icon-active.png") no-repeat 16px 10px;
+ //      }
+ //    }
+ //    &.navLibrary {
+ //      border: 0;
+ //      padding-bottom: 8px;
+ //      background: $intelDarkBlue url("../images/library-icon.png") no-repeat 16px 10px;
+ //      &:hover, &:focus {
+ //         background: $intelLightestGray url("../images/library-icon-active.png") no-repeat 16px 10px;
+ //        }
+ //      }
+ //      }
+/* keep the active tab icon blue & also on rollover */
+  //   li.tabActive a {
+  //     &.navLibrary {
+    // background: $intelLightestGray url("../images/library-icon-active.png") no-repeat 16px 10px;
+  //     &:hover, &:focus {
+  //        background: $intelLightestGray url("../images/library-icon-active.png") no-repeat 16px 10px;
+  //       }
+  //     }
+  //     &.navHome {
+  //       background: $intelLightestGray url("../images/home-icon-active.png") no-repeat 16px 10px;
+  //     &:hover, &:focus {
+  //        background: $intelLightestGray url("../images/home-icon-active.png") no-repeat 16px 10px;
+  //       }
+  //     }
+  //     &.navLessons {
+  //      background: $intelLightestGray url("../images/lessons-icon-active.png") no-repeat 16px 10px;
+  //     &:hover, &:focus {
+  //        background: $intelLightestGray url("../images/lessons-icon-active.png") no-repeat 16px 10px;
+  //       }
+  //     }
+  //   }
+  //   }
+
+
+  /* Header medium size */
+  /* This is the die shape on the right jumping to the left in smaller screens */
+// .die-shape {
+//   height: 100%;
+//   width: 100%;
+//   background: url('../images/Intel-die-shape.png');
+//   background-repeat: no-repeat;
+//   background-position: top right;
+//   position: relative;
+//   z-index: 8;
+// }
+
+/* LOGO medium and large size version logo */
+
+
+/************* JUNE 4 ******************/
+/************* MELISSA ****************/
+// #mainLogo {
+//   margin: 0 0 0 20px;
+//   background: transparent url('../images/intel-mixed-logo.png');
+//   background-repeat: no-repeat;
+//   background-position: 0px 6px;
+//   height: 100%;
+//   position: relative;
+//   z-index: 5;
+// }

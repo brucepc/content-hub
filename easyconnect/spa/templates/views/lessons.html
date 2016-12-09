@@ -1,0 +1,44 @@
+{% load i18n %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent lessonsPage">
+
+<div class="clearfix titleBar">
+    <ul class="breadCrumbs">
+        <li>
+            <a href="#">{% trans "Home" %}</a>
+        </li>
+        <li ng-if="!breadcrumbs.search">
+            {% trans "Lessons" %}
+        </li>
+        <li ng-if="breadcrumbs.search">
+            <a href="#lessons">{% trans "Lessons" %}</a>
+        </li>
+        {# Translators: Search label beside a user editable search box; 'search for the following' #}
+        <li ng-if="breadcrumbs.search" ng-bind-template="{% trans "Search:" %} {$ breadcrumbs.search $}">
+        </li>
+    </ul>
+    <h1 class="left">{% trans "Lessons" %}</h1><!-- column title -->
+        <ul ng-if="user.isTeacher()" class="right singleLine">
+            <li><a name="lessonDeleteBatch"  ng-disabled="!checkedLessons || checkedLessons.length === 0" ng-class="{'disabled' : !checkedLessons || checkedLessons.length === 0}" ng-click="batchDelete()" class="batchDelete batchBtn"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+            <li><a ng-click="toggleForm(true)" class="batchBtn batchCreate"><span class="fa fa-edit brandBtnColor3"></span>{% trans "Create a new Lesson" %}</a></li>
+            <li><div sort="sortby" datekey="updated" class="right margin-bottom-10"></div></li>
+        </ul>
+        
+</div>
+
+<form method="post" ng-if="showForm" class="clearfix createLessonForm" name="addLessonForm" novalidate>
+                <ul>
+                    <li>
+                        <label for="id_name">{% trans "Lesson Name:" %}</label> 
+                        <input id="id_name" maxlength="{$ FIELD_VAL.lessonMax $}" name="title" type="text" required ng-model="newLesson" focus-me="showForm"/>
+                            <p class="errorlist" ng-if="addLessonForm.title.$error.required && addLessonForm.title.$dirty" >{% trans "This field is required." %}</p>
+                            <p class="errorlist" ng-if="addLessonForm.title.$error.custom && addLessonForm.title.$dirty" ng-bind="customError"></p>                           
+                   </li>
+                    <li>
+                        <input type="submit" value="{% trans "Create" %}" class="brandBtnColor" ng-disabled="addLessonForm.title.$error.required || addLessonForm.$pristine" ng-click="addLesson(newLesson, addLessonForm)"/>
+                        <input type="button" value="{% trans "Cancel" %}" ng-click="toggleForm(false)"/>
+                    </li>
+                </ul>               
+            </form>
+<section lessons ng-init="init()"></section>
+</section>

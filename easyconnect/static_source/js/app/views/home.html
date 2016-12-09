@@ -1,0 +1,33 @@
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+<div class="col-l12">
+<div class="clearfix titleBar homeTitle">
+    <h1 class="left">Featured Lessons</h1><!-- column title -->
+    <ul class="right singleLine">
+        <li><a href="#lessons" class="mainButton">View all lessons</a></li>
+    </ul>
+</div><!-- /end top bar -->
+<section lessons class="featuredLessons" ng-controller="LessonCtrl" ng-cloak ng-init="init({featured: 'True'})">
+</section> 
+<div class="clearfix titleBar">
+    <h1 class="left">Featured Content</h1><!-- column title -->
+    <ul class="right singleLine">
+        <li><a href="#library" class="mainButton">View all content</a></li>
+    </ul>
+</div><!-- /end top bar -->
+<!--- FEATURED CONTENT -->
+    <section ng-controller="ContentItemCtrl" ng-cloak ng-init="init({featured: 'True'}, false)">
+    <section contentitems="contentitems.results" class="featuredItems" user="user" is-teacher="isTeacher" checked-items="checkedItems"></section>
+    <div pager model="contentitems" page="page"></div>
+    <div class='nocontentMessage' ng-if="contentitems.count === 0">
+        <span>
+        <p>No content yet</p>
+            <p ng-show="isTeacher()">Use your library to have content display here</p>
+            <p ng-show="isTeacher()"><a href="#library">My Library</a></p>
+            <p ng-hide="isTeacher()">Please check your <a href="#library">library</a></p>
+        </span>
+    </div>
+    </section>
+
+</div>
+</section><!-- end mainContent row -->

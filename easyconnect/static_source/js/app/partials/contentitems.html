@@ -1,0 +1,30 @@
+    <div class="grid-l1 grid-m1 grid-s1 grid-xs1 libraryGrid clearfix" ng-if="contentitems.length > 0">
+                <!-- individual listing -->
+                <div class="libraryItem" ng-class="{ 'checkedItem' : checkedItem.indexOf(item) > -1 }" ng-if="item.hidden === false || user.type === 'teacher'" ng-repeat="item in contentitems" ui-draggable="true" drag="item">
+                    <div class="libraryItemContent">
+                    <div class="mediaIcon {$ item.content_file | get_extension $}"></div>
+                    <div class="libraryInfo">
+                        <ul class="libraryIcons" ng-if="user.is_authenticated && isTeacher()">
+                            <li><a name='itemFeature' ng-click="featuretoggle(item)" ng-disabled="working" ng-class="{'on' : item.featured}" class="feature" id="{$ item.id $}" rel="tooltip" title="Feature/Unfeature this content item on the home page"><span class="intelicon-favorite-rating-solid"></span></a></li>
+                            <li ng-if="item.uploaded"><a name='itemEdit' ng-href="#library/{$ item.id $}"><span class="intelicon-edit"></span></a></li>
+                            <li><a name="itemHide" ng-click="hidetoggle(item)" class="hideItem tooltip" rel="tooltip" title="{$ item.hiddend ? 'Show' : 'Hide' $} from Students"><i ng-class="{'fa fa-eye-slash' : item.hidden, 'fa fa-eye' : !item.hidden}"></i></a></li>
+                            <li><input ng-if="user.is_authenticated && isTeacher()" ng-hide="$location.path() == '/'" type="checkbox" name="selectedcontent[]" ng-checked="checkedItems.indexOf(item) > -1" ng-click="checkedtoggle(item)" value="{$ item.id $}" class="libraryCheckbox"></li>
+                        </ul>
+                        <ul class="listingIcons dropdown dropdownVertical" ng-hide="isTeacher()">
+                            <li><a href="{$ item.content_file $}" target="_blank" class="downloadIcon tooltip" rel="tooltip" title="Download this content item"></a></li>
+                        </ul>                    
+                        <a href="{$ item.content_file $}" target="_blank" name='itemDetail' id='{$ item.id $}' class="libraryTite" ng-bind="item.title"></a>
+                        <div ng-class="{'libraryDescription' : expanded.indexOf(item.id) === -1, 'libraryDescriptionVisible' :  expanded.indexOf(item.id) > -1}">
+                            <i ng-class="{'fa-chevron-circle-down' : expanded.indexOf(item.id) === -1, 'fa-chevron-circle-up' :  expanded.indexOf(item.id) > -1}" class="fa " ng-click="expandtoggle(item)"></i>
+                            {$ item.description $} 
+                            <p>
+                                <span class="descriptionKeyword"> Added: </span><time>{$ item.date_added | date:"dd/MM/yyyy hh:mm" $} </time> 
+                                <span class="descriptionKeyword"> Updated: </span><time>{$ item.updated | date:"dd/MM/yyyy hh:mm" $} </time> 
+                                <span class="descriptionKeyword"> File Size: </span> {$ item.file_size | filesizeformat $}  
+                                <span ng-if="item.tags.length" class="descriptionKeyword">Tags: </span><span ng-repeat="tag in item.tags" ng-bind-template="{$ tag.text $}, "></span>
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- end Info -->
+            </div><!-- end contentListing -->
+    </div><!--end Content column -->

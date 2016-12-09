@@ -1,0 +1,87 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+{% load browse_extras %}
+
+{% block body %}
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+
+<!--UPLOAD AREA -->
+    <div class="single col-l12">
+
+    <section class="uploadArea clearfix">
+                <h1>Upload Content</h1>
+                <form id="chooseFile" action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="uploadFileInfo">
+                            <!--<button type="" value="">Choose File</button>-->
+                            <!-- <span>PM monthly Resource allocation...</span> -->
+                            {{ form.content_file }}
+                            {{ form.content_file.errors }}
+                            <div class="mediaIcon"></div>
+                        </div>
+                        <!-- <div class="fileTitle">PM monthly Resource allocation sheet 16.04.2014.xlsx</div> -->
+                        {{ form.title }}
+                        {{ form.title.errors }}
+
+                        {{ form.description }}
+                        {{ form.description.errors }}
+
+                    <h3>Add Tags</h3>
+                    <input name="tags" type="hidden" id="tagit"/>
+
+                    <h3>Assign Categories</h3>
+ 
+                    <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                        <select level='0' disabled="disabled">
+                            <option selected="selected" value=0>Category</option>
+                        </select>
+                    </div>
+                    <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                        <select level='1' disabled="disabled">
+                            <option selected="selected" value=0>Subcategory</option>
+                        </select>
+                    </div>
+                    <div class="dropMenu catdrop"> <!--Browse by Sub Category dropdown select -->
+                        <select level='2' disabled="disabled">
+                            <option selected="selected" value=0>Subcategory</option>
+                        </select>
+                    </div>
+
+                    {{ form.non_field_errors }}
+
+                <input name="c" type="hidden" value=0 />
+
+                <input type="hidden" name="next" value="{% firstof request.GET.next '/library/uploaded/' %}" />
+                <!--<button class="upload" type="submit">Upload</button> -->
+                <input type="submit" value="Upload" class="margin-top-20" />
+            </form>
+    </section><!-- end uploadArea -->
+
+    <div name='allcat' style='display:none'>
+        <select level='0'>
+        {% for category in categories|dictsort:"name" %}
+            <option value="{{ category.pk }}">{{ category.name | capfirst }}</option>
+        {% endfor %}
+        </select>
+    {% for category in categories|dictsort:"name" %}
+        <select parentid='{{ category.pk }}' level='1'>
+        {% for sub in category.children|dictsort:"name" %}
+            <option value="{{ sub.pk }}">{{ sub.name | capfirst }}</option>
+        {% endfor %}
+        </select>
+        {% for sub in category.children|dictsort:"name" %}
+            <select parentid='{{ sub.pk }}' level='2'>
+            {% for subsub in sub.children|dictsort:"name" %}
+                <option value="{{ subsub.pk }}">{{ subsub.name | capfirst }}</option>
+            {% endfor %}
+            </select>
+        {% endfor %}
+    {% endfor %}
+    
+    </div>
+
+</div><!-- end single column -->
+</section><!-- end mainContent row -->
+
+{% endblock body%}

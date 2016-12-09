@@ -1,0 +1,86 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <h1>Manage Tags</h1>
+            <form method="post" action="{% url 'delete-tag' %}">
+                {% csrf_token %}
+                {{ del_tag_form }}
+                <input type="submit" value="Delete" />
+            </form>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->
+<!--<a href="{% url 'manage-index' %}"> back </a>-->
+
+    <div id="rightContent" class="nine columns">
+        <div>
+            <a href="{% url 'manage-table' %}">**Manage Table**</a><br />
+            <a href="{% url 'manage-categories' %}">Manage Categories</a><br />
+            <a href="{% url 'manage-groups' %}">Manage Groups</a><br />
+            <a href="{% url 'manage-tags' %}">Manage Tags</a><br/>
+            <a href="{% url 'manage-featureds' %}">Manage Featureds</a><br/>
+            <a href="{% url 'manage-hiddens' %}">Manage Hiddens</a><br/>
+            <a href="{% url 'manage-groups-items' %}">Manage Groups Items</a>
+        </div>
+        {% if group_list %}
+            <div>
+                <h2>Groups</h3>
+                {% for group in group_list %}
+                    <h3> {{ group.title }}</h3>
+                    <ol>
+                        {% for item in group.members %}
+                            <li> {{ item.title }}</li>
+                        {% endfor %}
+                    </ol>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post" action="{% url 'manage-index' %}">
+            <h3>Catalogue</h3>
+            {% csrf_token %}
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for checkbox in add_item_to_group_form.members %}
+                    <tr>
+                        <td>{{ checkbox.tag }} {{ checkbox.choice_label }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {{ add_item_to_group_form.title }}
+            <input type="submit" value="Add items to group" />
+        </form>
+        <form method="post", action='{% url "manage-notification" %}'>
+        {% csrf_token %}
+            <label for='id_notify'>Show Notifications?</label>
+            {% if noti_form == 'True' %}
+                <input checked="checked" type='checkbox' name="notify" id='id_notify'>
+            {% else %}
+                <input type='checkbox' name="notify" id='id_notify'>
+            {% endif %}
+            <input type='submit' value="Submit">
+        </form>
+
+        {% if noti %}
+        <h3>Notifications:</h3>
+            <ul>
+            {% for n in noti  %}
+                <li>{{n}}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock body %}

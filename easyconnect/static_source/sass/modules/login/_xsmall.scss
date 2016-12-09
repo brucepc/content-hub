@@ -1,0 +1,165 @@
+#loginPage {
+  color:#fff;
+  font-size:0.875rem;
+  min-height:100%;
+  a{
+    color:#666666;
+	margin: auto!important;
+  }
+
+  .manageArea {
+    max-width:350px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .mainLogin {
+    margin: -45px auto 0;
+    text-align: center;
+    .loginLogo {
+      width: 190px;
+      height: 50px;
+      margin: 0 auto 20px auto;
+	  text-align: center;
+    }
+    div{
+      margin:0 0 20px;
+      position:relative;
+    }
+	p.center-message, p.center-message a{
+		color:white;
+	}
+    form {
+      text-align: left;
+      h1 {
+      @include font-size(2.0);
+      font-size: 1.25rem; // 20px
+      margin:0 0 15px 0;
+      }
+      input{
+        margin:0 0 5px 0;
+      }
+      margin: 0 auto 30px;
+      padding: 20px;
+      max-width: 350px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      // @extend %darkShadow;
+      @include darkShadow;
+    a {
+      @include font-size(1.2); // 12px
+      font-size: 0.75rem; // 12px
+      font-family: $primaryFont;
+      color: $actionLinksBlue;
+      text-decoration: underline;
+      display: inline-block;
+      float: left;
+      padding: 5px 0 0 0;
+      &:hover, &:focus, &:active{
+        color:$brandDarkBlue;
+      }
+    }
+    button.login {
+      float: right;
+    }
+    }
+  }
+}  
+#loginPage form input.login{
+  float:right;
+}
+#loginPage {
+  .loginLogo {
+    width: 75px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 75px 50px;
+    margin: 0 auto 20px auto;
+  }
+  .loginLogoText{
+    width: 115px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 115px 50px;
+    margin: 0 auto 20px auto;
+  }
+}
+
+.pushLogoUp{
+  position:absolute;
+  top:25px;
+  left:50%;
+  margin-left:-97px!important;
+}
+
+html[dir=rtl] #loginPage{
+  form{
+    text-align: right;
+    input, h1{
+      text-align:right;
+    }
+    button.login{
+    float:left;
+    }
+    a{
+      float:right;
+    }
+  }
+}
+
+#loginPage .hubWarning{
+    margin: 30px auto 0;
+    padding: 20px;
+    max-width: 350px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align:center;
+    // @extend %darkShadow;
+    h1{
+      color:$brandRed;
+      font-weight:normal;
+      font-size:0.875rem;
+      margin-bottom:10px;
+    }
+    a{
+      color:$brandMidBlue;
+      &:hover, &:focus, &:active{
+        color:$brandDarkBlue;
+      }
+    }
+}
+
+#loginPage .row .iconLink{
+  text-decoration:none;
+  &:hover, &:focus, &:active{
+    text-decoration:underline;
+  }
+  span{
+    margin-right:5px;
+  }
+}
+
+      .errorlist{
+        color: $brandRed;
+        display:block;
+        line-height:1;
+        margin:6px 0 0;
+      }
+
+
+.hubWrapper form input[type="password"], .hubWrapper form input[type="text"], .changePassword form input[type="password"], .changePassword form input[type="text"]{
+  margin:0 0 5px;
+}
+
+.hubWrapper form div, .changePassword form div{
+  margin:0 0 20px;
+}
+
+.loginStudent{
+  margin-top:5px;
+}
+
+.loginLogo .headerLogoLink, .loginLogo .brandLogoSide3{
+  top:0;
+}

@@ -1,0 +1,147 @@
+//cross browser gradient
+@mixin gradient($start, $end){
+  background-color: $end;
+  @include background-image(linear-gradient($start, $end));
+  filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#{$start}", endColorStr="#{$end}");
+}
+
+//hardware accelerated transitions
+@mixin transformHW($prop: ""){
+  @include transform(#{$prop} translate3d(0,0,0));
+}
+
+ //skew
+@mixin skew($prop){
+  @include transformHW(skew($prop));
+}
+
+//scale
+@mixin scale($prop){
+  @include transformHW(scale($prop));
+}
+
+//rotate
+@mixin rotate($prop){
+  @include transformHW(rotate($prop));
+}
+
+//grid mixins
+$one_col: (100% - ($gutter * ($cols - 1))) / $cols;
+@mixin cols($num) {
+  width: ($one_col * $num) + ($gutter * ($num - 1));
+}
+@mixin sub_cols($num_child, $num_parent) {
+  $parent_size: ($one_col * $num_parent) + ($gutter * ($num_parent - 1));
+  $child_size: ($one_col * $num_child) + ($gutter * ($num_child - 1));
+  margin-left: ($gutter / $parent_size) * 100%;
+  width: ($child_size / $parent_size) * 100%;
+}
+
+//grid list mixins
+$one_cell: (100% / $cols) * 2;
+@mixin cells($num) {
+  width: 100% / $num - .001;
+  padding: 0 10px 15px;
+}
+
+// Font-size REM fix for IE8
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin rem($property, $values) {
+  // Create a couple of empty lists as output buffers.
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      // px value given - calculate rem value from font-size
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      // % value given - don't add px or rem
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      // auto - don't add px or rem
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  // output the converted rules
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+
+
+//  Drop Shadow Mixins  //
+
+// drop shadows //
+@mixin mediumShadow {
+-webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.08);
+box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.08);
+}
+@mixin lightShadow {
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.10);
+-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.10);
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.10);
+}
+@mixin darkShadow {
+  -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+@mixin buttonShadow {
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@mixin buttonShadowEffect{
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.09), inset 0 2px 2px 0 rgba(255,255,255,.6);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.09), inset 0 2px 2px 0 rgba(255,255,255,.6);
+}
+
+
+// Vertically Align Anything // 
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Set up cross browser word breaking
+
+@mixin wordBreaking {
+ -ms-word-wrap: break-all;
+     word-wrap: break-all;
+
+     /* Non standard for webkit */
+     word-wrap: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}

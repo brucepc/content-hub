@@ -1,0 +1,33 @@
+<div class="loginStripe"></div>
+<!--- HEADER SECTION -->
+    <header>
+        <section class="row headerContent">
+        </section><!-- end row headerContent -->
+        <div class="headingSpacing">
+        </div>
+    </header>
+
+<section class="row">
+    <div class="col-l12 mainLogin" ng-switch="user.is_authenticated">
+        <img src="/static/images/intel-login-logos.png" alt="Intel Education Content Hub" class="loginLogo" />
+            <p ng-switch-when="true" class="center-message">You are logged in as {$ user.username $}. <a href="#logout?next={$ $location.path() $}">Logout?</a></p>
+            <form ng-switch-when="false" id="login" name="loginForm" method="post" class="clearfix" novalidate>
+                <h1>Teacher Log In</h1>
+                <div>
+                    <label for="username">Username</label>
+                    <input ng-maxlength="254" name="username" required ng-model="username" type="text"/>
+                    <ul ng-if="loginForm.username.$error.required && loginForm.name.$dirty" class="errorlist"><li>This field is required.</li></ul>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input name="password" required ng-model="password" type="password"/>
+                    <ul ng-if="loginForm.password.$error.required && loginForm.name.$dirty" class="errorlist"><li>This field is required.</li></ul>
+                </div>                
+
+                <a href="#">I am a student</a>
+
+                <button class="login" type="submit" ng-click="login(username, password, loginForm)" ng-disabled="loginForm.$invalid || loginform.$pristine">Log In</button>
+            </form>
+    </div><!-- end mainLogin 12 columns -->
+</section><!-- end mainLogin row -->

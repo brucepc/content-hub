@@ -1,0 +1,179 @@
+{% load i18n %}
+
+<!--- TILE SECTION -->
+<section class="row mainContent" ng-controller="TileCtrl">
+    <form method="post" ng-show="showForm" class="manageArea usbUpload clearfix" name="addTileForm" novalidate enctype="multipart/form-data" >
+        <h1 class="margin-tb-20">{% trans "Add Tile" %}</h1>
+        <div class="importSiteTitle">{% trans "Import a site or enter a URL." %}</div>
+        <ul class="create_tile_list">
+            <li id="usb_container_tile" class="importSite">
+                <label for="id_import" ng-click="showUsb = !showUsb" class="importSiteLabel"><i class="fa" ng-class="showUsb ? 'fa-chevron-down' : 'fa-chevron-right'"></i>{% trans "Import Site" %}</label> 
+                <div ng-show="showUsb" ng-animate>
+                    <div preloadusbtree selectsingle="true" id="tile_usb_browser" ng-show="!working">{% trans "Please Wait..." %}</div>
+                    <input type="submit" value="{% trans "Import" %}" class="brandBtnColor" ng-click="submitUSB()" ng-disabled="!tree_valid"/>
+                    <input type="button" value="{% trans "Reload" %}" ng-click="reload_page()" class="brandBtnColor" ng-disabled="reload_disabled">
+                </div>
+            </li>
+
+            <li>
+                <label for="id_url">{% trans "URL" %}</label> 
+                <input id="id_url" maxlength="{$ FIELD_VAL.tileURLMax $}" name="url" type="text" required ng-required="true" ng-model="newTile.url_string" />
+                <p class="errorlist" ng-if="addTileForm.url_string.$error.required && (addTileForm.url_string.$dirty || formSubmitted)" >{% trans "This field is required." %}</p>
+                <p class="errorlist" ng-show="addTileForm.url_string.$error.custom" ng-bind="customError"></p>
+                <a class="btn btn-default" ng-href="{$ newTile.url_string $}" ng-disabled="newTile.url_string === ''" target="_blank">{% trans "Preview" %}</a>
+            </li>
+
+            <li>
+                <label for="id_title">{% trans "Tile Name" %}</label> 
+                <input id="id_title" maxlength="{$ FIELD_VAL.tilenameMax $}" name="title" type="text" required ng-required="true" ng-blur="isDuplicateTitle({id : 0}, newTile.title, addTileForm)" ng-model="newTile.title" />
+                 <p class="errorlist" ng-if="addTileForm.title.$error.required && (addTileForm.title.$dirty || formSubmitted)">{% trans "This field is required." %}</p>
+                 <p class="errorlist" ng-show="addTileForm.title.$error.custom && newTile.title !== ''">{% trans "Duplicate" %}</p>
+            </li>
+
+            <li>
+                <label for="id_icon">{% trans "Icon" %}</label> 
+                <span class="tilePreview">
+                    <span class="tileImg">
+                        <img ng-src="{$ tmpImage $}" ng-show="tmpImage">
+                    </span>
+                </span>
+                <input id="id_icon" type="file" ng-file-select="onIconSelect($files)" ng-click="clearFileSelection($event)">
+                <p class="errorlist" ng-show="icon_file.length === 0 && formSubmitted">{% trans "This field is required." %}</p>
+                <p class="errorlist" ng-bind="iconMaxSizeError"></p>                
+                <p class="errorlist" ng-bind="iconTypeError"></p>                
+            </li>
+            <table class="addTable">
+                <tr>
+                    <li>
+                        <td>
+                            <label>{% trans "Hidden from Students" %}</label>
+                        </td>
+                        <td>
+                            <label class="switch-light switch-candy" onclick="">
+                            <input type="checkbox" ng-model="newTile.teacher_tile">
+                            <span>                     
+                                <span>{% trans "Off" %}</span>
+                                <span>{% trans "On" %}</span>
+                            </span>
+                            <a class="brandBtnColor"></a>
+                            </label>
+                        </td>
+                    </li>
+                </tr> 
+                <tr>
+                    <li>
+                        <td>
+                            <label>{% trans "Hidden from All Users" %}</label>
+                        </td>
+                        <td>
+                            <label class="switch-light switch-candy" onclick="">
+                              <input type="checkbox" ng-model="newTile.hidden">
+                             <span>                     
+                                <span>{% trans "Off" %}</span>
+                                <span>{% trans "On" %}</span>
+                              </span>
+                              <a class="brandBtnColor"></a>
+                            </label> 
+                        </td>
+                    </li>
+                </tr>
+            </table>
+            <li>
+                <input type="submit" value="{% trans "Create" %}" class="brandBtnColor"  ng-click="addTile(newTile, addTileForm)"
+                    ng-disabled="
+                        addTileForm.title.$error.custom ||
+                        newTile.title == '' ||
+                        addTileForm.url_string == '' ||
+                        addTileForm.title.$error.required ||
+                        addTileForm.url.$error.required ||                        
+                        addTileForm.url.$error.custom ||
+                        icon_file.length === 0 
+                    "/>
+                <input type="button" value="{% trans "Cancel" %}" ng-click="toggleForm(false, true)" class="" />
+            </li>
+        </ul>               
+    </form>
+
+
+    <form method="post" ng-show="showEdit" class="clearfix" name="editTileForm" novalidate>
+        <input id="id_edit_id" name="edit_id" type="hidden" required ng-model="editTile.id"/>
+        <input id="id_edit_display_order" name="edit_display_order" type="hidden" required ng-model="editTile.display_order"/>
+        <h1>{% trans "Edit Tile" %}</h1>
+        <ul class="create_tile_list">
+            <li>
+                <label for="id_edit_title"><strong>{% trans "Tile Name" %}</strong></label> 
+                <input id="id_edit_title" maxlength="{$ FIELD_VAL.tilenameMax $}" name="title" type="text" required focus-on="showEdit" ng-blur="isDuplicateTitle(editTile, editTile.title, editTileForm)" ng-model="editTile.title"/>
+                    <p class="errorlist" ng-if="editTileForm.title.$error.required && editTileForm.title.$dirty">{% trans "This field is required." %}</p>
+                    <p class="errorlist" ng-if="editTileForm.title.$error.custom && editTile.Title !== ''" >{% trans "Duplicate" %}</p>
+            </li>
+            <li>
+                <label for="id_edit_url"><strong>{% trans "URL" %}</strong></label> 
+                <input id="id_edit_url" maxlength="{$ FIELD_VAL.tileURLMax $}" name="edit_url" type="text" required ng-model="editTile.url_string"/>
+                <p class="errorlist" ng-if="editTileForm.edit_url.$error.required && editTileForm.edit_url.$dirty">{% trans "This field is required." %}</p>
+                <a class="btn btn-default" ng-href="{$ editTile.url_string $}" ng-disabled="editTile.url_string === ''" target="_blank">{% trans "Preview" %}</a>
+            </li>
+            <li>
+                <label for="id_edit_icon"><strong>{% trans "Icon" %}</strong></label> 
+                <span class="tilePreview">
+                    <span class="tileImg">
+                        <img ng-src="{$ tmpImage $}" ng-show="tmpImage">
+                    </span>
+               </span>
+                <input id="id_icon" type="file" ng-file-select="onIconSelect($files)" ng-click="clearFileSelection($event)" />                
+                <p class="errorlist" ng-bind="iconMaxSizeError"></p>                
+                <p class="errorlist" ng-bind="iconTypeError"></p>                 
+            </li>
+            <table class="addTable">
+                <tr>
+                    <li>
+                        <td>
+                            <label><strong>{% trans "Hidden from Students" %}</strong></label>
+                        </td>
+                        <td> 
+                            <label class="switch-light switch-candy" onclick="">
+                              <input type="checkbox" ng-model="editTile.teacher_tile">
+                             <span>                     
+                                <span>{% trans "Off" %}</span>
+                                <span>{% trans "On" %}</span>
+                              </span>
+                              <a class="brandBtnColor"></a>
+                            </label>
+                        </td>
+                    </li>
+                </tr>
+                <tr>
+                    <li>
+                        <td>
+                            <label><strong>{% trans "Hidden from All Users" %}</strong></label>
+                        </td>
+                        <td> 
+                            <label class="switch-light switch-candy" onclick="">
+                              <input type="checkbox" ng-model="editTile.hidden">
+                             <span>                     
+                                <span>{% trans "Off" %}</span>
+                                <span>{% trans "On" %}</span>
+                              </span>
+                              <a class="brandBtnColor"></a>
+                            </label> 
+                        </td>
+                    </li>
+                </tr>
+            </table>
+            <li class="addSubmit">
+                <input type="submit" value="{% trans "Update" %}" class="brandBtnColor"  ng-click="updateTile(editTile, editTileForm)"
+                    ng-disabled="checkEState()"
+                />
+                <input type="button" value="{% trans "Cancel" %}" ng-click="toggleEdit({})"/>
+            </li>
+        </ul>               
+    </form>
+
+    <div class="sort_container single col-l12" ng-if="!(showEdit || showForm)">
+        <section class="tileArea clearfix">
+            <div class="hubTiles clearfix grid-l3 grid-m3 grid-s3 grid-xs2" id="sortable">
+                <div ng-include src="'angularpartials/hub/tile.html'" ng-repeat="tile in tiles track by tile.id" ng-if="(!tile.teacher_tile && !tile.hidden) || (user.isTeacher() && !tile.hidden) || user.isAdmin()" 
+                    class="sortable_tile {$ tile.read_only ? 'sort_disabled' : '' $}" id="{$ tile.id $}"></div>
+            </div>
+        </section>
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

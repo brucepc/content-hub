@@ -1,0 +1,32 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}Management{% endblock %}
+
+{% block body %}
+<div id="management-container">
+    <div id="management-form-container">
+        <h3>hidden Items</h3>
+        <ul>
+        {% for i in hiddenItems %}
+        	<li> {{i.title}} <a href="{% url 'unhide' i.id %}">unhide</a> </li> 
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="management-form-container">
+        <h3>unhidden Items</h3>
+        {% if unhiddenItems %}
+        <form method="post" action="{% url 'manage-hiddens' %}">
+        	{% csrf_token %}
+	        {% for i in unhiddenItems %}
+	        	<input type="checkbox" name="item" value="{{i.id}}" /> {{i.title}}<br />
+	        {% endfor %}
+	        <input type="submit" value="Hide" />
+        </form>
+        {% else %}
+        	All items are hidden
+        {% endif %}
+    </div>
+    <a href="{% url 'manage-index' %}"> back </a>
+</div>
+{% endblock body %}

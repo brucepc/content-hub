@@ -1,0 +1,47 @@
+/* line 9, ../sass/base/_ie_8.scss */
+.ie8 form select,
+.ie8 form > select,
+.ie8 select,
+.ie8 #chooseFile select,
+.ie8 .dropdown > select,
+.ie8 .category > select,
+.ie8 .dropMenu select, .ie form select,
+.ie form > select,
+.ie select,
+.ie #chooseFile select,
+.ie .dropdown > select,
+.ie .category > select,
+.ie .dropMenu select {
+  background-image: none !important;
+  background-color: #fff;
+  padding: 5px;
+  height: auto;
+}
+
+/* line 9, ../sass/base/_ie_9.scss */
+.ie9 form select,
+.ie9 form > select,
+.ie9 select,
+.ie9 #chooseFile select,
+.ie9 .dropdown > select,
+.ie9 .category > select,
+.ie9 .dropMenu select {
+  background-image: none !important;
+  background-color: #fff;
+  padding: 5px;
+  height: auto;
+}
+
+/* line 9, ../sass/base/_ie_10.scss */
+.ie10 form select,
+.ie10 form > select,
+.ie10 select,
+.ie10 #chooseFile select,
+.ie10 .dropdown > select,
+.ie10 .category > select,
+.ie10 .dropMenu select {
+  background-image: none !important;
+  background-color: #fff;
+  padding: 5px;
+  height: auto;
+}

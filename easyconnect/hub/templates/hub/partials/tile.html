@@ -1,0 +1,46 @@
+{% load i18n %}
+
+
+<div class="tileHolder" ng-class="user.isAdmin() ? 'admin-tile-height' : ''">
+    <a href="{$ tile.formatted_url_string || tile.url_string $}" target="{$ tile.url_target $}">
+        <span class="tileImg">
+            <img src="{$ tile.read_only ? 'static/images/' + tile.icon : tile.icon $}">
+        </span>
+    </a>
+    <a href="{$ tile.formatted_url_string || tile.url_string $}" target="{$ tile.url_target $}">
+        <span class="tileTitle">{$ tile.title $}</span>
+    </a>
+    <div ng-if="user.isAdmin()" ng-class="tile.read_only ? 'lockedList' : 'editList'">
+        <div ng-if="!tile.read_only" class="">
+            <a ng-click="toggleEdit(tile)" title="{% trans 'Edit Tile' %}">
+                <span class="fa fa-pencil"></span>
+            </a>
+        </div>      
+
+        <div ng-if="!tile.read_only" class="">
+            <a ng-click="deleteTile(tile)" title="{% trans 'Delete Tile' %}">
+                <span class="fa fa-trash-o"></span>
+            </a>
+        </div>
+
+        <div ng-if="!tile.read_only" class="">
+            <a ng-click="hidetoggle(tile, 'teacher')" class="hideItem tooltip" rel="tooltip" title='{$ tile.hidden? "{% trans "Show to All Users"%}" : "{% trans "Hide from All Users"%}" $}'>
+                <span class="fa fa-eye-slash" ng-class="{'brandBtnColor' : tile.hidden }"></span>
+            </a>
+        </div>
+
+         <div ng-if="!tile.read_only" class="">
+                <a ng-click="hidetoggle(tile, 'student')" class="hideItem tooltip" rel="tooltip" title='{$ tile.teacher_tile? "{% trans "Show to Students"%}" : "{% trans "Hide from Students"%}" $}'>
+                    <span class="fa fa-graduation-cap" ng-class="{'brandBtnColor' : tile.teacher_tile }"></span>
+                </a>
+          </div>
+
+        <div ng-if="tile.read_only" class="lockIcon">
+            <span name="tileReadOnly" class="tooltip" rel="tooltip" title="{% trans "Tile is locked"%}">
+                <i class="fa fa-lock brandBtnColor noHover"></i>
+            </span>
+         </div>
+
+
+    </div>
+</div>

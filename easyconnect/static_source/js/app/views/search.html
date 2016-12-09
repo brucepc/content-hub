@@ -1,0 +1,25 @@
+<!--- MAIN CONTENT SECTION -->
+<section class="row mainContent">
+<div cg-busy="searchPromise"></div>
+<div class="col-l12">
+<div class="clearfix lessonBar">
+    <h1 class="left">Lessons</h1><!-- column title -->
+    <ul class="right batchActions">
+        <li ng-if="isTeacher()"><a name="lessonDeleteBatch" style='opacity:0.3' class="batchDelete">Delete</a></li>
+        <li><a href="#lessons" class="mainButton">View all lessons</a></li>
+    </ul>
+</div><!-- /end top bar -->
+<section lessons ng-controller="LessonCtrl" ng-cloak>
+</section> 
+<div class="clearfix lessonBar">
+    <h1 class="left">Content</h1><!-- column title -->
+    <ul class="right batchActions">
+        <li ng-if="isTeacher()"><a name='itemAddToLessonBatch' style='opacity:0.3' class="batchAdd">Add To Lesson</a></li>
+        <li><a href="#library" class="mainButton">View all content</a></li>
+    </ul>
+</div><!-- /end top bar -->
+<!--- CONTENT ITEMS-->
+    <section contentitems="items" user="user" is-teacher="isTeacher"></section>
+    <p ng-if="items.count === 0">Your search returned no results, please try another search. </p>
+</div>
+</section><!-- end mainContent row -->

@@ -1,0 +1,25 @@
+{% load i18n %}
+<section class="row mainContent" ng-init="init('tree')">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+            <div cg-busy="{ promise:categoriesPromise, message:'{% trans "Please Wait..." %}'}"></div>
+            <div class="clearfix settingsBar">
+                <h1 class="left">{% trans "Categories" %}</h1>
+                <input type="button" class="mainButton right brandBtnColor" ng-click="addCategory(null)" class="brandBtnColor" value="{% trans "Add New Primary Category" %}" />
+            </div>
+            <p>
+                <div ng-repeat="category in categories.results | orderBy : 'name'" class="categoryTable">
+                    <div categorytree current="category" parent="" level="1" save="save" remove="remove" add-category="addCategory" cancel="cancel" validate="validate"></div>
+                </div>
+            </p>
+            <p ng-if="categories.count === 0">
+                {% trans "No categories created" %}
+            </p>
+
+        </section>
+        <!-- end uploadArea -->
+    </div>
+    <!-- end single column -->
+</section>
+<!-- end mainContent row -->

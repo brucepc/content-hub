@@ -1,0 +1,463 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="RTL"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets/branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">دليل المساعدة</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">
+		
+<div class="col-m3 sideMenu">
+
+		<h2>الصفحة الرئيسية</h2>
+		<ul class="tocNested">
+			<li><a href="#home1">دروس مميزة وشرح محتوى المكتبة</a></li>
+			<li><a href="#home2">كم عدد العناصر التي يمكنني تمييزها على الصفحة الرئيسية؟</a></li>
+			<li><a href="#home3">إزالة الدروس المميزة ومحتوى المكتبة من الصفحة الرئيسية</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>الدروس</h2>
+		<ul class="tocNested">
+			<li><a href="#lessons1">ما هي الدروس؟</a></li>
+			<li><a href="#lessons2">كيفية إنشاء درس</a></li>
+			<li><a href="#lessons3">كيفية إضافة محتوى إلى درس</a></li>
+			<li><a href="#lessons4">كيفية تحرير اسم درس</a></li>
+			<li><a href="#lessons5">كيفية حذف محتوى في درس</a></li>
+			<li><a href="#lessons6">كيفية تمييز درس</a></li>
+			<li><a href="#lessons7">كيفية حذف درس</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>المكتبة</h2>
+		<ul class="tocNested">
+			<li><a href="#library1">ما هي المكتبة؟</a></li>
+			<li><a href="#library2">ما الفرق بين المحتوى المحمل مسبقًا والمحتوى المحمل؟</a></li>
+			<li><a href="#library3">كيفية إدارة عناصر المحتوى</a>
+				<ul class="tocNested2">
+					<li><a href="#library3">تمييز المحتوى</a></li>
+					<li><a href="#library4">تحرير تفاصيل المحتوى المحمل</a></li>
+					<li><a href="#library5">حذف المحتوى المحمل</a></li>
+					<li><a href="#library6">إضافة محتوى إلى درس</a></li>
+					<li><a href="#library7">إخفاء وعرض المحتوى للطلاب</a></li>
+					<li><a href="#library8">الوصول إلى المحتوى</a></li>
+				</ul><!-- end tocNested2 -->
+			</li>
+			<li><a href="#library9">تحميل المحتوى الخاص بي</a></li>
+			<li><a href="#library10">كيفية استخدام الفئات كمرشحات</a></li>
+			<li><a href="#library11">ما هي سحابة الكلمات الدلالية وكيف يمكنني استخدامها؟</a></li>
+		</ul><!-- end tocNested -->
+
+		<h2>إعدادات المعلم</h2>
+		<ul class="tocNested">
+			<li><a href="#settings1">كيفية إدارة الفئات</a></li>			
+			<li><a href="#settings2">كيفية إدارة الكلمات الدلالية</a></li>
+			<li><a href="#settings3">استيراد USB</a></li>
+		</ul><!-- end tocNested -->
+
+</div><!-- end side Menu -->
+
+<div class="listingsArea col-m9">		
+
+
+		<h1>كيفية استخدام مخطط دروس Content Hub</h1>
+
+		<h2>الصفحة الرئيسية</h2>
+		<div class="howto" id="home1">
+			<h3>دروس مميزة وشرح محتوى المكتبة</h3>
+
+
+			<p>تعطي العناصر المميزة الأولوية للدرس ومحتوى المكتبة، وهو أمر مهم لتسليط الضوء على هذه العناصر بالنسبة لك أو للطلاب بمجرد الانتقال إلى الصفحة الرئيسية لمخطط الدرس. وهذا يمنح المستخدمين طريقة سريعة للعثور على ما هو مهم بالنسبة لهم في ذلك اليوم. ومن خلال تمييز ما هو مهم بالنسبة للطلاب في ذلك الأسبوع أو اليوم، سيتم تقليل الحاجة إلى استعراض الدروس أو صفحات المكتبة والبدء مباشرة في التعلم.</p>
+			<img src="/static/images/help-guide/home-view.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home2">
+			<h3>كم عدد العناصر التي يمكنني تمييزها على الصفحة الرئيسية؟</h3>
+			<p>يمكنك تمييز عدد غير محدود من العناصر على الصفحة الرئيسية ولكن سيتم عرض 10 عناصر فقط في وقت واحد. ويمكن للمستخدم التنقل خلال الصفحات المختلفة إذا تم تمييز أكثر من 10 عناصر.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="home3">
+			<h3>إزالة الدروس المميزة ومحتوى المكتبة من الصفحة الرئيسية</h3>
+			<p>يمكنك استخدام رمز النجمة الصفراء داخل مربع الدرس أو عنصر المحتوى لإزالتهما من القسم المميز على الصفحة الرئيسية لديك. وبمجرد النقر فوق الرمز ستزيل العناصر نفسها تلقائيًا من الصفحة.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons1 -->
+
+		<h2>الدروس</h2>
+		<div class="howto" id="lessons1">
+			<h3>ما هي الدروس؟</h3>
+			<p>الدروس هي مجموعات من المحتويات التعليمية التي تقوم بإنشائها لطلابك من المحتويات الموجودة في المكتبة. وتعتبر صفحة الدروس هي المكان الذي يمكنك فيه عرض الدروس التي قمت بإنشائها وإدارتها. وفي هذه الصفحة يمكنك أيضًا إنشاء درس جديد، وتمييز الدروس، وحذف درس واحد أو عدة دروس، وتعديل أسماء الدروس.</p>
+			<p>يمكنك تمييز الدروس بحيث تظهر على الصفحة الرئيسية الخاصة بشاشة عرض المعلم والطالب. هذا يسمح لك بإعطاء أولوية للدروس التي يتم تدريسها حاليًا.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons1 -->
+
+		<div class="howto" id="lessons2">
+			<h3>كيفية إنشاء درس</h3>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>انقر فوق الزر <strong>إنشاء درس جديد</strong> أعلى يمين منطقة المحتوى</li>
+				<li>أدخل اسما في الحقل النصي <strong>اسم الدرس</strong>، ثم انقر فوق <strong>إنشاء</strong>. إذا كنت لا ترغب في استكمال إنشاء الدرس، يمكنك النقر فوق الزر <strong>إلغاء</strong>.</li>
+			</ol>
+			<p>بعد ذلك سترى نافذة منبثقة تشير إلى أن الدرس قد تم إنشاؤه بنجاح.</p>
+			<img src="/static/images/help-guide/what-are-lessons1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+<p>يمكن فرز الدروس حسب <strong>التاريخ </strong>أو <strong>الاسم</strong>.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons2 -->
+
+		<div class="howto" id="lessons3">
+			<h3>كيفية إضافة محتوى إلى درس</h3>
+			<p>بمجرد إنشاء أحد الدروس، يمكنك إضافة المحتوى من المكتبة إليه. </p>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>اعثر على الدرس من القائمة التي تريد إضافة المحتوى إليه</li>
+<p></p>
+<img src="/static/images/help-guide/how-to-create-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+
+<p></p>
+
+
+				<li>انقر فوق رمز الزائد تحت اسم الدرس. سينقل ذلك إلى صفحة المكتبة</li>
+<li> وهنا يمكنك سحب وإسقاط المحتوى من القائمة إلى الدرس في العمود الأيسر.</li>
+			</ol>
+<p></p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson1.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+			<p>لإضافة عدة عناصر من المكتبة إلى أحد الدروس مرة واحدة، حدد مربع الاختيار لكل عنصر مكتبة خاص بالدرس، ثم انقر فوق الزر <strong>إضافة إلى الدرس</strong>.</p>
+<p>بمجرد النقر فوق هذا الزر، سيتغير إلى قائمة منسدلة يمكنك تحديد الدرس من خلالها. وبمجرد تحديد الدرس، انقر فوق زر علامة الصح. وإذا أردت الإلغاء في أية نقطة، فانقر فوق الزر <strong>X</strong>.</p>
+
+<img src="/static/images/help-guide/How-to-add-content-to-a-lesson2.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons3 -->
+
+		<div class="howto" id="lessons4">
+			<h3>كيفية تحرير اسم درس</h3>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>اعثر على الدرس الذي تريد تحريره من القائمة</li>
+				<li>انقر فوق الرمز الذي على شكل قلم رصاص، وسيظهر حقل نصي. يمكنك تحرير اسم الدرس من هنا. لحفظ تغييراتك، انقر فوق رمز علامة الصح. لإلغاء التحرير في أي وقت، ببساطة انقر فوق الزر <strong>X</strong>.</li>
+			</ol>
+			<p>يمكنك أيضًا تحرير اسم درس من صفحة تفاصيل الدرس من خلال رمز القلم الرصاص الذي بجوار عنوان الدرس.</p> 
+			<img src="/static/images/help-guide/edit-lesson-name.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons4 -->
+
+		<div class="howto" id="lessons5">
+			<h3>كيفية حذف عناصر المحتوى من درس</h3>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>اعثر على الدرس الذي تريد إزالة المحتوى منه من القائمة</li>
+				<li>انقر فوق رمز الدرس أو اسمه للانتقال إلى صفحة تفاصيل الدرس</li>
+				<li>استخدم مربع الاختيار على يمين عناصر المحتوى لتحديد العناصر التي تريد إزالتها</li>
+				<li>انقر فوق الزر <strong>حذف من الدرس</strong> أعلى يمين منطقة المحتوى</li>
+			</ol>
+			<img src="/static/images/help-guide/delete-cotent-in-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons5 -->
+
+		<div class="howto" id="lessons6">
+			<h3>كيفية تمييز درس</h3>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>اعثر على الدرس الذي تريد تمييزه من القائمة</li>
+				<li>انقر فوق رمز النجمة أسفل اسم الدرس. تشير النجوم الصفراء إلى أن الدرس مميز، بينما تعني النجوم الرمادية إلى أن الدرس ليس مميزًا في الوقت الحالي.</li>
+			</ol>
+			<p>بمجرد تمييز الدرس، سيتم عرضه على الصفحة الرئيسية الخاصة بشاشة عرض المعلم والطالب.<p>
+			<img src="/static/images/help-guide/feature-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons6 -->
+
+		<div class="howto" id="lessons7">
+			<h3>كيفية حذف درس</h3>
+			<ol>
+				<li>انتقل إلى صفحة <strong>الدروس</strong></li>
+				<li>استخدم مربع الاختيار الموجود أسفل اسم الدرس لتحديد الدرس الذي تريد حذفه</li>
+				<li>انقر فوق الزر <strong>حذف</strong> بالقرب من أعلى يمين منطقة المحتوى</li>
+			</ol>
+			<p>يمكنك أيضًا حذف أحد الدروس من صفحة تفاصيل الدرس عبر الزر <strong>حذف هذا الدرس</strong> بالقرب من أعلى يمين منطقة المحتوى.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto lessons7 -->
+
+		<h2>المكتبة</h2>
+
+		<div class="howto" id="library1">
+			<h3>ما هي المكتبة؟</h3>
+			<p>تعرض صفحة المكتبة المحتوى الذي قمت بتحميله وأي محتوى آخر تم تحميله مسبقًا. وفي هذه الصفحة يمكنك:</p>
+			<ul>
+				<li>استعراض العناصر حسب الفئات والكلمات الدلالية</li>
+				<li>تحرير المعلومات المتعلقة بالمحتوى المحمل</li>
+				<li>إضافة محتوى إلى الدروس</li>
+				<li>حذف المحتوى المحمل</li>
+				<li>تحميل المحتوى</li>
+				<li>تمييز المحتوى</li>
+				<li>إخفاء/عرض المحتوى للطلاب</li>
+			</ul>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library1 -->
+
+		<div class="howto" id="library2">
+			<h3>ما الفرق بين المحتوى المحمل مسبقًا والمحتوى المحمل؟</h3>
+			<p>يمكن لهذا التطبيق تضمين محتوى تعليمي محمل مسبقًا، بمعنى محتوى تعليمي محمل قبل بدء استخدامه بواسطة المعلم أو الطلاب. ويمكن تحميل هذا المحتوى بواسطة، على سبيل المثال، الشركة المصنعة للأجهزة أو وزارة التعليم قبل أن يتم شحنها إلى المدرسة أو المؤسسة التعليمية التي يجري استخدامها فيها. مع العلم أنه لا يمكن حذف المحتوى المحمل مسبقًا أو تحريره.</p>
+			<p>إن المحتوى المحمل هو المحتوى الذي قمت - بصفتك المعلم - بتحميله من ملفات موجودة على جهاز الكمبيوتر الخاص بك. ويمكن أن تكون هذه الملفات أي نوع من &ndash; مستندات Excel ومستندات Word وملفات HTML وPDF وE-Pub والفيديو والصور، وما إلى ذلك. مع العلم أن المحتوى المحمل يمكن حذفه وتحريره.</p>
+			<img src="/static/images/help-guide/preloaded-uploaded-tabs.png" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library2 -->
+
+		<div class="howto" id="library3">
+			<h3>كيفية إدارة عناصر المحتوى</h3>
+			<h4>تمييز المحتوى</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>استخدم رمز النجمة على يمين عنصر المكتبة الذي تريد تمييزه. وتعني الرموز الصفراء أن المحتوى مميز، بينما تعني الرموز الرمادية أن المحتوى غير مميز.</li>
+			</ol>
+			<p>سيظهر هذا المحتوى في <strong>الصفحة الرئيسية</strong> ضمن <strong>المحتوى المميز</strong>.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library3 -->
+
+		<div class="howto" id="library4">
+			<h4>تحرير تفاصيل المحتوى المحمل</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>انقر فوق علامة تبويب <strong>المحتوى المحمل</strong></li>
+				<li>انقر فوق رمز القلم الرصاص الموجود بجانب عنصر المحتوى الذي تريد تحريره</li>
+			</ol>
+			<p>سيتم توجيهك إلى نموذج مزود بحقول لتحرير العنوان والوصف والكلمات الدلالية والفئات ذات الصلة بهذا الجزء من المحتوى. بمجرد انتهاء التحرير، انقر فوق <strong>حفظ</strong></p>
+			<img src="/static/images/help-guide/edit-content.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>			
+		</div><!-- end howto library4 -->
+
+		<div class="howto" id="library5">
+			<h4>حذف المحتوى المحمل</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>انقر فوق علامة تبويب <strong>المحتوى المحمل</strong></li>
+				<li>استخدم مربع الاختيار الموجود على يمين عنصر المكتبة لتحديد العنصر/العناصر المطلوب حذفها</li>
+				<li>انقر فوق الزر <strong>حذف</strong> الموجود على يمين علامة تبويب <strong>المحتوى المحمل الخاص بي</strong></li>
+			</ol>
+			<p>لا يمكنك حذف المحتوى المحمل مسبقًا، يمكن حذف المحتوى المحمل فقط.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library5 -->
+
+		<div class="howto" id="library6">
+			<h4>إضافة محتوى إلى درس</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>استخدم مربع الاختيار الموجود على يمين عنصر المكتبة لتحديد العنصر/العناصر المطلوب إضافتها إلى الدرس</li>
+				<li>استخدم القائمة المنسدلة <strong>إضافة إلى الدرس</strong> الموجودة على يمين علامة التبويب <strong>المحتوى المحمل الخاص بي</strong> لتحديد الدرس المطلوب إضافته. بمجرد إتمام ذلك، انقر فوق زر علامة الصح الموجود بجانبه</li>
+<p></p>
+<img src="/static/images/help-guide/add-content-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+<p></p>
+
+<li>بمجرد ظهور الدرس في مربع الدروس الموجود على اليسار، يمكنك سحب المحتوى وإسقاطه من المكتبة مباشرةً إلى الدرس.</li>
+</ol><p>
+لإضافة <strong>عناصر مكتبة متعددة</strong> إلى أحد الدروس في وقت واحد، حدد مربع الاختيار لكل عنصر، ثم انقر فوق الزر <strong>إضافة إلى الدرس</strong>.</p>
+<p>
+بمجرد النقر فوق هذا الزر، سيتغير إلى قائمة منسدلة يمكنك تحديد الدرس من خلالها. وبمجرد تحديد الدرس، انقر فوق زر علامة الصح. وإذا أردت الإلغاء في أية نقطة، فانقر فوق الزر <strong>X</strong>.</p>
+<p>يمكن تصفية عناصر المكتبة باستخدام قائمة العرض الشجري للفئة</p>
+<p>هناك حد لثلاثة مستويات في الفئات. يمكن العثور على أي عنصر محتوى غير مصنف في الفئة &quot;غير مصنف&quot;.</p> 
+
+<img src="/static/images/help-guide/adding-library-items-to-a-lesson.PNG" alt="Content Hub" class="imgBorder" />
+			
+			<p>يمكنك إضافة المحتوى المحمل مسبقًا والمحتوى المحمل إلى الدروس.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>إخفاء عناصر المحتوى الفردي وعرضها</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>استخدم رمز العين لإخفاء المحتوى عن الطلاب. عند إزالة العين، يكون المحتوى مخفيًا عن الطلاب</li>
+			</ol>
+			<p>سيؤدي إخفاء المحتوى عن الطلاب إلى إخفاؤه أيضًا من شاشة عرض المكتبة الخاصة بهم، ومن أي درس موجود به.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library6 -->
+
+		<div class="howto" id="library7">
+			<h4>إخفاء المكتبة وعرضها للطلاب</h4>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong>. في أسفل الركن الأيسر، سترى الخيار &quot;هل تسمح للطلاب بالوصول إلى المكتبة؟&quot;</li>
+				<li>حدد <strong>نعم</strong> أو <strong>لا</strong></li>
+			</ol>
+			<img src="/static/images/help-guide/hide-and-show-library.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library7 -->
+
+		<div class="howto" id="library8">
+
+			<h4>الوصول إلى المحتوى</h4>
+			<p>يمكنك الوصول إلى عناصر المحتوى بالنقر فوق العنوان. وفقًا لنوع الملف وإعدادات تهيئة المتصفح الخاص بك، سيتم فتح الملف في علامة تبويب جديدة أو سيقوم المتصفح بمعالجة تنزيل الملف.</p>
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library8 -->
+
+		<div class="howto" id="library9">
+			<h3>تحميل المحتوى الخاص بي</h3>
+			<p>يمكنك تحميل أغلب أنواع الملفات &ndash; jpg و pdf وe-pub وملفات Word وملفات Excel وملفات فيديو وملفات صوتية وملفات html، وغير ذلك المزيد.</p>
+			<ol>
+				<li>انتقل إلى صفحة <strong>المكتبة</strong></li>
+				<li>انقر فوق الزر <strong>تحميل المحتوى</strong></li>
+<li> حدد الملف وانتقل إلى الملف/الملفات الموجودة على جهاز الكمبيوتر.
+				<li>يمكن تحميل عدة ملفات في وقت واحد من جهاز الكمبيوتر </li>
+<p>
+<img src="/static/images/help-guide\uploading-my-own-content-after-point-4.PNG" alt="Content Hub" class="imgBorder" /></p>
+				<li>سيتم إدخال عنوان الملف/الملفات في حقل العنوان تلقائيًا. وهذا هو الحقل الإجباري فقط.</li>
+<li>يتم أيضًا إضافة الوصف والفئة والكلمات الدلالية هنا.</li>
+<li>أدخل وصفًا في حقل الوصف.</li>
+<li>أدخل الكلمات الدلالية ذات الصلة في حقل &quot;الكلمات الدلالية&quot;. لإدخال أكثر من كلمة دلالية، انقر فقط فوق Enter بعد كل كلمة.</li>
+<li>يمكن تحديد فئة واحدة فقط.</li>
+<li>سيتم تطبيق بيانات التعريف هذه على كافة الملفات التي تم تحميلها في هذه النقطة (باستثناء مجموعات IMS).</li>
+<p></p>
+<p><img src="/static/images/help-guide/uploading-my-own-content-after-point-10.PNG" alt="Content Hub" class="imgBorder" /></p>
+<p></p>
+
+				<li>بمجرد إنهاء إدخال المعلومات، انقر فوق <strong>تحميل</strong></li>
+<li>ستظهر الملفات غير المصنفة في الفئة غير المصنفة.</li>
+			</ol>
+			<img src="/static/images/help-guide/uploading-my-own-content-after-point-12.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto contentMan1 -->
+
+
+		<div class="howto" id="library10">
+			<h3>كيفية استخدام المرشحات</h3>
+<p>مرشحات المكتبة هي مجموعة من المعايير التي يمكن تطبيقها معًا أو بشكل فردي لتصفية مجموعة البحث.</p>
+<p>يمكنك استخدام مربع البحث للحصول على تصفية حسب النص.</p>
+<p>يمكنك التصفية حسب الفئة. </p>
+<p>يمكنك التصفية حسب الكلمة الدلالية.</p>
+<p>يمكنك إزالة المعيار المستخدم بمجرد إضافته.</p>
+<img src="/static/images/help-guide/library-search.png" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto library12 -->
+
+		<div class="howto" id="library11">
+			<h4>ما هي سحابة الكلمات الدلالية وكيف يمكنني استخدامها؟</h4>
+			<p>تعرض سحابة الكلمات الدلالية قائمة من الكلمات الدلالية التي تم تخصيصها لعناصر المحتوى. الكلمات الدلالية هي كلمات وصفية يتم استخدامها لتسهيل عملية البحث عن المحتوى. ستتيح الكلمات الدلالية مثل، &quot;العلوم&quot; و&quot;تمرينات المعمل&quot; و&quot;المبتدئين&quot; و&quot;pdf&quot; المستخدمة في عناصر المحتوى لهذه العناصر الظهور في عمليات البحث عن أي من هذه العناصر.</p>
+			<p>كلما زاد تكرار الكلمة الدلالية في المحتوى، ستظهر الكلمة الدلالية بشكل أكبر في سحابة الكلمات الدلالية. تعد سحابة الكلمات الدلالية طريقة سهلة لاستعراض المحتوى من خلال الكلمات الدلالية، وطريقة سهلة أيضًا لعرض أنواع الكلمات الدلالية الأكثر استخدامًا في المحتوى الخاص بك.</p>
+			<img src="/static/images/help-guide/what-are-tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>			
+		</div><!-- end howto library13 -->
+
+<h2>إعدادات المعلم</h2>
+		<div class="howto" id="settings1">
+			<h3>كيفية إدارة الفئات</h3>
+			<p>انقر فوق الزر <strong>إدارة</strong> الموجود أعلى يمين الصفحة. اختر <strong>الفئات</strong> من القائمة المنسدلة.</p>
+			<h4>إضافة فئة أساسية جديدة</h4>
+			<ol>
+				<li>انقر فوق الزر <strong>إضافة فئة رئيسية جديدة</strong></li>
+				<li>اكتب اسمًا لهذه الفئة</li>
+				<li>انقر فوق زر علامة الصح لحفظ الفئة الجديدة</li>
+			</ol>
+			<h4>إضافة فئة من المستوى الثاني أو الثالث</h4>
+			<ol>
+				<li>انقر فوق الرمز <strong>+</strong> الموجود بجانب الفئة التي ترغب في أن تكون فئة رئيسية للفئة الفرعية الجديدة الخاصة بك</li>
+				<li>اكتب اسمًا لهذه الفئة</li>
+				<li>انقر فوق زر علامة الصح لحفظ الفئة الجديدة</li>
+			</ol>
+			<h4>تحرير اسم فئة</h4>
+			<ol>
+				<li>انقر فوق رمز القلم الرصاص الموجود بجانب اسم الفئة المطلوب تحريرها</li>
+				<li>اكتب اسمًا جديدًا لهذه الفئة</li>
+				<li>انقر فوق زر علامة الصح لحفظ الفئة الجديدة</li>
+			</ol>
+			<h4>حذف فئة</h4>
+			<ol>
+				<li>انقر فوق رمز السلة الموجود بجانب اسم الفئة المطلوب حذفها</li>
+				<li>قم بتأكيد رغبتك في حذف الفئة في النافذة المنبثقة</li>
+			</ol>
+			<p><strong>الرجاء ملاحظة:</strong> لا يمكنك حذف فئة إذا تم تخصيص محتوى لها أو كانت تحتوي على فئة تابعة.</p>
+			<img src="/static/images/help-guide/categories-page.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto settings1 -->
+
+	<div class="howto" id="settings2">
+			<h3>كيفية إدارة الكلمات الدلالية</h3>
+			<p>انقر فوق الزر <strong>إدارة</strong> الموجود أعلى يمين الصفحة. اختر <strong>الكلمات الدلالية</strong> من القائمة المنسدلة.</p>
+			<h4>تحرير كلمة دلالية</h4>
+			<ol>
+				<li>انقر فوق رمز القلم الرصاص الموجود بجانب اسم الكلمة الدلالية المطلوب تحريرها (لا يمكن حذف الكلمات الدلالية الخاصة بالمحتوى الذي تم تحميله مسبقًا)</li>
+				<li>اكتب اسمًا جديدًا لهذه الكلمة الدلالية</li>
+				<li>انقر فوق زر علامة الصح لحفظ الكلمة الدلالية الجديدة</li>
+			</ol>
+			<h4>حذف كلمة دلالية</h4>
+			<ol>
+				<li>انقر فوق رمز السلة الموجود بجانب اسم الكلمة الدلالية المطلوب حذفها</li>
+				<li>قم بتأكيد رغبتك في حذف الكلمة الدلالية في النافذة المنبثقة</li>
+			</ol>
+			<p><strong>الرجاء ملاحظة:</strong> لا يمكنك تعديل كلمات دلالية مرتبطة بمحتوى تم تحميله مسبقًا.</p
+			<img src="/static/images/help-guide/tags.PNG" alt="Content Hub" class="imgBorder" />
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto settings2-->
+
+	<div class="howto" id="settings3">
+			<h3>استيراد USB</h3>
+			<p>انقر فوق الزر <strong>إدارة</strong> الموجود أعلى يمين الصفحة. اختر <strong>الإعدادات</strong> من القائمة المنبثقة، ثم اختر <strong>استيراد USB</strong>.</p>
+			<h4>استيراد ملفات من USB</h4>
+			<ol>
+				<li>استخدم الأسهم الموجودة على الجانب الأيسر لفتح مجلدات عديدة على جهاز USB</li>
+				<li>انقر فوق مربع التحديد الموجود على يسار اسم الملف لتحديد الملف المراد استيراده</li>
+<li>حدد مجلد المستوى المتقدم إذا كنت ترغب في استيراد كافة الملفات الموجودة ضمن هذا المجلد. (سيتم تحديد الملفات الموجودة فقط في المجلد الجذر، ولن تتم إضافة المجلدات الفرعية والملفات الموجودة بها)
+				<li>انقر فوق الزر <strong>استيراد</strong> لبدء استيراد الملفات إلى <strong>المكتبة</strong></li>
+			</ol>
+			<h4>ملاحظات</h4>
+			<ul>
+				<li>يمكن استيراد ملفات عديدة في مكتبة <strong>المحتوى المحمل الخاص بي</strong></li>
+				<li>سيكون عنوان كل ملف مبنيًا على اسم الملف، وستتم إعادة تسميته باسم ملف تزايدي إذا كان اسم الملف موجودًا بالفعل.</li>
+<li><strong>الرجاء ملاحظة:</strong> يتم أيضًا إضافة الوصف والفئة والكلمات الدلالية هنا. سيتم تطبيق بيانات التعريف هذه على كافة الملفات التي تم تحميلها في هذه النقطة (باستثناء مجموعات IMS).</li> 
+				
+
+<li>يمكن تحديث بيانات التعريف الموجودة في الملفات الفردية من خلال ميزة &quot;تحرير معلومات المحتوى&quot; الموجودة في المكتبة.</li>				
+				<li>لا يمكن استيراد المجلدات.</li>
+				<li>بمجرد إنهاء إدخال المعلومات، انقر فوق <strong>استيراد</strong></li>
+			</ul>
+			<img src="/static/images/help-guide/usb-	import1.PNG" alt="Content Hub" class="imgBorder" />
+
+			<a href="#" class="scrollup">العودة لأعلى الصفحة</a>
+		</div><!-- end howto settings2-->
+
+
+
+
+</div><!-- / end main content area -->
+
+	<script src="/static/js/jquery-1.11.1.min.js"></script>
+	<script>
+	$(document).ready(function () {
+		$('.scrollup').click(function () {
+			$("html, body").animate({
+				scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+			return false;
+		});
+	});
+	</script>
+
+</section><!-- end mainContent row -->
+
+</body>
+</html>

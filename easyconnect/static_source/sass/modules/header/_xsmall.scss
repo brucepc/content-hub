@@ -1,0 +1,622 @@
+header {
+  width: 100%;
+  padding: 0;
+  /* background: url('../images/header-bg-die-b.png') no-repeat top right; */
+  ul {
+  display: inline;
+ }
+}
+.headerGrid {
+  position:relative;
+  height:100%;
+  z-index:5;
+}
+.row.headerContent {
+  height: 75px;
+  padding:0 20px;
+  position:relative;
+  .col-l12{
+    position:relative;
+    height:100%;
+  }
+}
+.headerLogoLink {
+	margin: 15px 0 0;
+	float: left;
+	z-index:50;
+	position:relative;
+	img{
+		max-height: 50px;
+		max-width: 75px;
+		float:left;
+	}
+}
+.headerLogoText{
+	margin: 15px 0 0;
+	float: left;
+	z-index:50;
+	position:relative;
+	img{
+		max-height: 50px;
+		max-width: 115px;
+	}
+}
+
+html[dir=rtl] {
+  .headerLogoLink, .headerLogoText{
+    float:right;
+  }
+}
+
+
+
+.navLinksCH{
+    display: inline-block !important;
+    position: relative;
+    margin: 30px 0 0 0;
+    li{
+      float: left;
+      a{
+        padding: 0 10px;
+        color:#fff;
+        text-decoration:none;
+        &:hover, &:focus, &:active{
+          text-decoration:underline;
+        }
+        i, span{
+          margin: 0 5px 0 0;
+        }
+		span{
+			display:inline-block;
+		}
+      }
+    }
+  }
+
+  html[dir=rtl] .navLinksCH li a i{
+    margin:0 0 0 5px;
+  }
+
+#navToggle {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  bottom: 15px;
+  right: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover, &:focus, &:active {
+    background-color: rgba(0, 0, 0, .7);
+  }
+  span, span:before, span:after {
+  cursor: pointer;
+  // border-radius: 1px;
+  height: 2px;
+  width: 19px;
+  background: white;
+  position: absolute;
+  top: 16px;
+  left: 8px;
+  display: block;
+  content: '';
+}
+span:before {
+  top: -6px;
+  left: 0px;
+}
+span:after {
+  top: 6px;
+  left: 0px;
+}
+ span, span:before, span:after {
+  -webkit-transition: all 250ms ease-in-out;
+  -moz-transition: all 250ms ease-in-out;
+  -o-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+&.active span {
+  background-color: transparent;
+  -webkit-transform-origin: 0% 0%;
+}
+&.active span:before, &.active span:after {
+  top: 0;
+}
+&.active span:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+&.active span:after {
+  transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+}
+
+html[dir=rtl] #navToggle, html[dir=rtl] .navLinks {
+  right:auto;
+  left:0;
+}
+
+/* container for nav lists */
+#navContainer {
+  width: 230px;
+  position: absolute;
+  right: 0;
+  top: 75px;
+  background-color: $brandDarkBlue;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  z-index:20;
+}
+.navTabs {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: $primaryFont;
+  @include font-size(1.6);
+  font-size: 1rem; // 16px
+  li {
+    width: 100%;
+    color: #fff;
+  }
+   li a {
+    display: block;
+    color: #fff;
+    width: 100% !important;
+    padding: 10px 20px;
+    // background-image: url('../images/tab-nav-icons.png');
+    background-repeat: no-repeat;
+    text-decoration: none;
+    span, i {
+      color:$headerLinkBlue;
+      margin:0 5px 0 0;
+    }
+    &:hover, &:focus, &:active {
+      background-color:$brandMidBlue;
+      text-decoration:none;
+    }
+  }
+ }
+
+@media only screen and (max-width: 470px) {
+   .navTabs {
+    //display: block;
+   }
+}
+
+/* Nav small admin links */
+.navLinks {
+  float: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+    > li a {
+    display: block;
+    cursor:pointer;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    padding: 10px 0 10px 20px;  // 10px top and bottom, 20px left indent
+    border: 0;
+    text-decoration: none;
+    span, i {
+      margin:0 5px 0 0;
+    }
+    &:hover, &:focus, &:active {
+      background-color: rgba(0, 0, 0, .5);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+.manage ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+}
+
+
+html[dir=rtl] .studentLinks {
+  float:left;
+  li{
+    float:right;
+    border-right: 1px solid #00aeef;
+    border-left: none;
+    &:last-child a{
+      padding-left:0;
+    }
+    a{
+      margin:0;
+      padding:0 10px;
+
+    }
+  }
+}
+
+// STUDENT header links
+html[dir=rtl] .studentLinks li a span{
+		margin-right:0px;
+		margin-left:5px;
+	}
+
+.studentLinks {
+  color: #fff;
+  @include font-size(1.2);
+  font-size: 0.75rem; // 12px
+  float: right;
+  padding: 0;
+  margin: 30px 0 0 ;
+  li{
+    float:left;
+    border-left: 1px solid #00aeef;
+    &:first-child{
+      border-left:none;
+    }
+  }
+  li a {
+    display: block;
+    margin: 0 0 0 10px;
+    width: 100% !important;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px 0 0; 
+    border: 0;
+    line-height:1.7;
+    span{
+      @include font-size(1.4);
+      font-size: 1rem; // 16px
+      margin-right:5px;
+      vertical-align: middle;
+      position:relative; 
+      top:-1px;
+	  display:inline-block;
+    }
+    i{
+      color:$headerLinkBlue;
+      @include font-size(1.4);
+      font-size: 0.875rem; // 14px
+      margin-right:5px;
+      vertical-align: middle;
+      position:relative; 
+      top:-1px;
+    }
+    &:visited {
+      color: #fff !important;
+    }
+    &:hover, &:active, &:focus {
+      text-decoration:underline;
+    }
+  }
+  .studentViewLink a{
+    background:none;
+  }
+} 
+
+  @media only screen and (max-width: $smallBreakpoint) {
+    .studentLinks {
+      float:none;
+      width:100%;
+      margin:0;
+      li {
+        width:100%;
+        display:block;
+        border:none;
+        a{
+          display:block;
+          padding:10px 0 10px 20px;
+          margin:0;
+          &:hover, &:active, &:focus{
+            background:$brandMidBlue;
+            color:#fff!important;
+          }
+        }
+      }
+    }    
+  }
+
+
+.navBar {
+  width: 100%;
+  background-color: $brandLightestGray;
+  // @include mediumShadow;
+  // @extend %mediumShadow;
+  border-bottom: 1px solid #d9d9d9;
+  padding:  10px 0;
+}
+// grey box area within grid
+.row{
+  padding:0 20px;
+  position:relative;
+}
+
+
+/*** tabs in grey bar ***/
+/*** tabs in grey bar ***/
+.tabsNavBelow {
+  display: inline-block;
+  background-color: transparent;
+  /*width: 350px;*/
+  padding: 0;
+  position: absolute;
+  left: 20px;
+  margin: 0;
+  top: -2px;
+  height:39px;
+  li {
+   width: auto;
+   display: inline-block;
+   margin: 0;
+    @include font-size(1.4);
+  font-size: 0.875rem; // 14px
+   span{
+    font-size:16px;
+    padding:0 4px 0 0 ;
+   } 
+   a {
+    border:1px solid #d9d9d9;
+    padding:0 10px;
+    height:39px;
+    display:block;
+    line-height:39px;
+    text-decoration: none;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: $brandLightestGray;
+     &:hover{
+      background-color:#d9d9d9;
+      border:1px solid #c3c3c3;
+      border-bottom:none;
+    }
+    &:active, &:focus{
+      -webkit-box-shadow:inset 0 2px 4px 0 rgba(0,0,0,.06);
+      box-shadow:inset 0 2px 4px 0 rgba(0,0,0,.06);
+    }
+  }
+  /*& .navHomeBelow {
+    background: transparent url("../images/icon-sprite.png") no-repeat  -485px -941px;
+  }
+  & .navLessonsBelow {
+    background: transparent url("../images/icon-sprite.png") no-repeat  -630px -940px;
+  }
+  & .navLibraryBelow {
+    background: transparent url("../images/icon-sprite.png") no-repeat  -630px -1040px;
+  }*/
+  &.navSearchBelow a{
+    color:$brandGray;
+    span{
+      color:$brandRed;
+      margin-left:5px;
+    }
+  }
+  &.tabActiveBelow a {
+    background-color: #fff;
+    border-right: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    border-bottom:1px solid #fff;
+    &:hover, &:active, &:focus {
+      background-color: #fff;
+    }
+  }
+}
+}
+
+
+html[dir=rtl] .tabsNavBelow{
+  left:auto;
+  right:20px;
+  li a span{
+    float:right;
+    padding:10px 0 0 4px;
+
+  }
+}
+
+/* Search box */
+
+.searchTop {
+  height: 26px;
+  width: 163px;
+  float: right;
+  padding: 0;
+  margin: 0 0 0 0 !important;
+  position: relative;
+  > li {
+    #search input[type="search"] {
+    padding: 5px 0 6px 34px;
+    height: 26px !important;
+    @include font-size(1.2);
+    font-size: 0.75rem; // 12px
+    -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 3px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 3px rgba(0, 0, 0, .15);
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 3px rgba(0, 0, 0, .15);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    }
+    button{
+      position:absolute;
+      top:1px;
+      right:1px;
+      width:30px;
+      height:24px;      
+      padding:0!important;
+      background-color:transparent;
+      /*background-image: url(../images/icon-sprite.png);
+      background-repeat:no-repeat;
+      background-position:-42px -995px;*/
+      -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+      -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+      span{
+        color:$brandLightGray;
+        font-size:0.875rem;
+      }
+      &:hover, &:active, &:focus{
+        background-color:$brandLightestGray;
+      }
+    }
+  }
+}
+
+html[dir=rtl] .searchTop > li form input[type='text']{
+  padding: 5px 10px 6px 34px!important;
+}
+
+html[dir=rtl] button{
+  right:auto;
+  left:1px;
+}
+
+html[dir=rtl] .searchTop{
+  float:left;
+}
+
+
+@media only screen and (max-width: 525px) {
+    .tabsNavBelow{
+      li a{
+        font-size:0.75rem;
+        padding:0 8px;
+      }
+    }    
+}
+
+@media only screen and (max-width: 470px) {
+    .tabsNavBelow{
+      li a span{
+        display:none;
+      }
+    }   
+}
+
+@media only screen and (max-width: 420px) {
+    .searchTop {
+      width: 110px;
+    }
+}
+
+@media only screen and (max-width: $smallBreakpoint - 1) {
+    .navLinks.brandBgColor {
+		-webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,.3);
+		box-shadow: 0 6px 10px 0 rgba(0,0,0,.3);
+    }
+}
+
+
+
+
+
+#search {
+  position: relative; 
+  font-size:0.75rem;
+}
+  #search .ac-results {
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    border-radius: 3px;
+    color: #53565a;
+    -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    font-size: 0.75rem;
+    z-index: 5000;
+    span{
+      padding:8px 10px;
+      display:block;
+      line-height:1.3;
+    }  
+  }
+    #search .ac-results a {
+      color: #53565a;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      padding: 8px 10px;
+      display: block;
+      lihe-height: 1.3; }
+      #search .ac-results a:hover, #search .ac-results a a:focus {
+        color: #fff;
+        background: #00aeef; }
+
+
+  .ac-results .result-wrapper:first-child a{
+    border-radius:3px 3px 0 0;
+    color:red;
+  }
+  .ac-results .result-wrapper:last-child a{
+    border-radius:0 0 3px 3px;
+    color:blue;
+  }  
+
+
+
+.searchTop > li form {
+   input[type="search"], input[type="text"] {
+    -webkit-appearance:none;
+    display: block;
+    width: 100%;
+    // line-height: 14px;
+    padding: 5px 33px 5px 10px !important;
+    // margin-bottom: 20px;
+    // @include font-size(1.4);
+    // font-size: 0.875rem; // 14px
+    // font-family: $primaryFont;
+    color: $brandLightGray;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid $formBorder;
+    @include lightShadow;
+     -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0px 1px 1px rgba(255, 255, 255, .4), inset 1px 1px 5px rgba(0, 0, 0, .1);
+    &:hover, &:focus{
+      border: 1px solid $brandLightGray;
+      color:$brandGray;
+    }
+  }
+}
+
+
+@media only screen and (max-width: $smallBreakpoint) {
+  
+  .manage {
+    display: block!important;
+    &:hover{
+
+    }
+    > a{
+      display:none!important;
+    }
+    ul{
+      display:block;
+      position:relative;
+    }
+  }
+
+  ul.manageList.moreOptionsMenu:hover{
+    display:block;
+  }
+
+}

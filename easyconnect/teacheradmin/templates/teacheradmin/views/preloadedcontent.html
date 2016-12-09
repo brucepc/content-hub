@@ -1,0 +1,133 @@
+{% load i18n %}
+
+
+<style>
+.manageArea{
+    margin: 0px !important;
+    max-width: 700px;
+}
+ul.checklist > li {
+    margin-left:15px;
+}
+.selectAllCheckbox{
+    margin-left:0px;
+}
+
+
+.admin-sectionHeader {
+    overflow: hidden;
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.admin-sectionHeader > label > span {
+    font-size: 1.1rem;
+    margin: 0 0 25px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    color: #8E8E8E;
+}
+.admin-batchActions {
+    float:right;
+}
+.admin-batchActions > li {
+    float:right;
+    margin-left:10px;
+}
+.admin-checklist > li{
+    margin-left: 25px !important;
+}
+.sectionspacing{
+    margin-bottom: 40px;
+}
+.admin-feedback-text{
+    margin-left:28px;
+}
+.admin-package-details{
+    float:right;
+}
+.detail-spacer{
+    margin-left:25px;
+    float:right;
+}
+.rightcol1{
+min-width:150px;
+}
+
+</style>
+
+<section class="row mainContent" ng-controller="HomeCtrl">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea settingsContent clearfix" ng-if="user.is_authenticated && user.is_superuser"> 
+            <h1>{% trans "Manage Content" %}</h1>
+
+
+            <!--
+                PRELOADED CONTENT
+            -->
+            <div class="admin-sectionHeader">
+                <label>
+                    <input checklist-model="selectAll" checklist-value="selectall" ng-checked="allSelected()" type="checkbox" class="+"/><span>{% trans "Preloaded Content" %}</span>
+                </label>
+
+                <ul class="admin-batchActions">
+                    <li><a ng-disabled="selectedpackages.length === 0" ng-click="batchDelete()" ng-class="{'disabled' : selectedpackages.length === 0 }" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                    <li><a href="#usb" class="batchUpload"><span class="fa fa-upload"></span>{% trans "USB/SD Import Package" %}</a></li>                    
+                    <li><a href="#upload" class="batchUpload"><span class="fa fa-upload"></span>{% trans "Upload Package" %}</a></li>
+                </ul>
+            </div>
+            <ul class="admin-checklist checklist sectionspacing">
+                <li ng-repeat="package in packages">
+                     <label>
+                        <input type="checkbox" class="brandBtnColor" checklist-model="selectedpackages" checklist-value="package.id" ng-checked="selectAll.length > 0"/>
+                        {$ package.package_file | get_filename $}
+                    </label>
+
+                    <div class="admin-package-details">
+                        <div class="detail-spacer descriptionKeyword"><time>{$ package.date_added | date:"dd/MM/yyyy H:mm" $} </time> </div>
+                        <div class="rightcol1 detail-spacer descriptionKeyword">{$ package.filesize | filesizeformat $} </div>
+                    </div>
+
+                </li>
+            </ul>
+
+            <!--
+                TEACHER CONTENT
+            -->
+            <div class="admin-sectionHeader">
+                <label>
+                    <input checklist-model="selectedTeacherContent" ng-checked="ischecked_teacher()" checklist-value="teachercontent" type="checkbox" class="+"/><span>{% trans "Teacher Content" %}</span>
+                </label>
+                <ul class="admin-batchActions">
+                    <li><a ng-disabled="ischecked_teacher()" ng-click="deleteTeacherContent()" ng-class="{'disabled' : !ischecked_teacher() }" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                </ul>
+            </div>
+            <div class="admin-feedback-text sectionspacing">
+                {% trans "Teacher uploaded content and lessons will be deleted." %}
+            </div>
+
+            <!--
+                CATEGORIES
+            -->
+            <div class="admin-sectionHeader">
+                <label>
+                    <input checklist-model="selectedCategories" ng-checked="ischecked_categories()" checklist-value="categories" type="checkbox" class="+"/><span>{% trans "Categories" %}</span>
+                </label>
+                <ul class="admin-batchActions">
+                    <li><a ng-disabled="ischecked_categories()" ng-click="deleteUnusedCategories()" ng-class="{'disabled' : !ischecked_categories()}" class="batchDelete"><span class="fa fa-trash-o"></span>{% trans "Delete" %}</a></li>
+                </ul>
+            </div>
+            <div class="admin-feedback-text sectionspacing">
+                {% trans "Categories will only be deleted if they don't contain content" %}
+            </div>
+
+
+        </section>
+        <div class="centerText" ng-if="user.is_authenticated === false && !user.is_superuser">
+            <ng-include src="'/angularpartials/teacheradmin/noauth.html'"></ng-include>
+        </div>
+
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->

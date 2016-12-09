@@ -1,0 +1,35 @@
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+@import "base/boilerplate";
+@import "base/icons";
+// @import "base/animations";
+// @import "plugins/font-awesome/font-awesome";
+@import "base/sprite";
+
+@import "responsive/xsmall"; // 479px and down
+
+@media only screen and (min-width: $smallBreakpoint) {
+    @import "responsive/small";  // 480px - 767px
+}
+
+@media only screen and (min-width: $mediumBreakpoint) {
+    @import "responsive/medium"; // 768px - 1023px
+
+}
+
+@media only screen and (min-width: $largeBreakpoint) {
+    @import "responsive/large";  // 960px and up
+}
+
+@media print {
+    @import "base/print";
+}
+
+
+//ie8 have madium as default as its most usable for it
+// .lt-ie9 {
+//     @import "responsive/small";
+//     @import "responsive/medium";
+// }
+

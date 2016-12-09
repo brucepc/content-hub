@@ -1,0 +1,183 @@
+ul.unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Lists */
+ul,
+ol,
+dl {
+     @include font-size(1.6);
+   font-size: 0.75rem; // 12px
+    margin: 0;
+    padding: 0;
+    list-style-position: outside;
+    list-style-type: none;
+    font-family: inherit;
+}
+
+
+
+ul.no-bullet {
+    margin-left: 0;
+}
+
+ul.no-bullet li ul,
+ul.no-bullet li ol {
+    // margin-left: 1.25rem;
+   margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+/* Unordered Lists */
+ul li ul,
+ul li ol {
+    // margin-left: 1.25rem;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 0;
+    // font-size: 1rem;
+    /* Override nested font-size change */
+}
+
+ul.square li ul, ul.circle li ul, ul.disc li ul {
+    list-style: inherit;
+}
+
+ul.square {
+    list-style-type: square;
+    margin-left: 1.1rem;
+}
+
+ul.circle {
+    list-style-type: circle;
+    margin-left: 1.1rem;
+}
+
+ul.disc {
+    list-style-type: disc;
+    margin-left: 1.1rem;
+}
+
+ul.no-bullet {
+    list-style: none;
+}
+ul.singleLine{
+  li{
+    float:left;
+  } 
+}
+html[dir=rtl] ul.singleLine{
+  li{
+    float:right;
+  }
+}
+
+/* Ordered Lists */
+ol {
+    margin-left: 1.4rem;
+    list-style: decimal;
+}
+
+ol li ul,
+ol li ol {
+    margin-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+/* Definition Lists */
+dl dt {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+dl dd {
+    margin-bottom: 0.75rem;
+}
+
+
+// Dropdown list styling
+
+.dropdown,
+.dropdown ul,
+.dropdown li{
+  margin  : 0;
+  padding : 0;
+}
+
+.dropdown ul{
+  display  : none;
+  position : absolute;
+  top      : 100%;
+  left     : 0;
+  z-index  : 1;
+}
+
+.dropdown ul ul {
+  top   : 0;
+  left  : 100%;
+  right : auto;
+}
+
+.dropdown li{
+  position        : relative;
+  display         : block;
+  list-style-type : none;
+}
+
+.dropdown > li{
+  display : inline-block;
+}
+
+.dropdown a,
+.dropdown span{
+  /*display         : block;*/
+  text-decoration : none;
+  white-space     : pre;
+}
+
+.dropdown li:hover > ul{
+  display : block;
+}
+
+.dropdownVertical{
+  display : inline-block;
+}
+
+.dropdownVertical > li{
+  display : block;
+}
+
+.dropdownVertical ul{
+  top  : 0;
+  left : 100%;
+}
+
+.dropdownJavaScript li:hover > ul{
+  display : none;
+}
+
+.dropdownJavaScript li.dropdownOpen > ul{
+  display : block;
+}
+
+/* set the background colour */
+.dropdown,
+.dropdown ul{
+  //background : #fff;
+}
+
+/* pad items, set their text colour, and fade their background colour */
+.dropdown a,
+.dropdown span{
+  // padding    : 3px;
+  color      : white;
+  // transition : background 0.2s;
+}

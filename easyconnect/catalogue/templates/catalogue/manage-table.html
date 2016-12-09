@@ -1,0 +1,387 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+{% block style %}
+	<link rel="stylesheet" type="text/css" href='{% static "stylesheets/jquery-ui-1.10.4.custom.css" %}'>
+{% endblock style %}
+
+{% block body %}
+<div id="management-container">
+	{% if objects %}
+	{% for i in objects %}
+	<label class="item" for="{{i.id}}" >
+		<div vs="{{i.id}}" style="border: 1px solid black">
+			<input class="cb" type="checkbox" id="{{i.id}}" >{{i.title}}
+			{% if i.hidden %}	
+				<button href="#" style="float:right" onclick="itemHidden({{i.id}})">Unhide</button>
+			{% else %}
+				<button href="#" style="float:right" onclick="itemHidden({{i.id}})">Hide</button>
+			{% endif %}
+			{% if i.featured %}
+				<button href="#" style="float:right" onclick="itemFeature({{i.id}})">Unfeature</button>
+			{% else %}
+				<button style="float:right" onclick="itemFeature({{i.id}})">Feature</button>
+			{% endif %}
+
+            <button class="edit" id="{{i.id}}" onclick="getItem({{i.id}})" style="float:right" >Edit</button>
+			<button class="delete" id="{{i.id}}" title="{{i.item.title}}" style="float:right" >Delete</button>
+			
+		</div>
+	</label>
+	{% endfor %}
+	<div id="delete-dialog" title="Are you sure?">Are you sure you want to delete </div>
+	<div id="multidelete-dialog" title="Are you sure?">Are you sure you want to delete all selected items?
+	</div>
+    <div id="update-dialog" title="Update item information">
+        <form id="update-form" method="post" action=".">
+        </form>
+    </div>
+	<button onclick="multiFeature()">Feature/Unfeature</button>
+	<button onclick="multiHide()">Hide/UnHide</button>
+	<button class="multidelete" onclick="multiDelete()">Delete</button>
+    <br/>
+    <h3>Group Items</h3>
+    <select id="groups">
+        <option class="group-item" >------</option>
+        {% for group in groups %}
+        <option class="group-item" value="{{group.id}}">{{group.title}}</option>
+        {% endfor %}
+    </select>
+    <button onclick="multiGroup()">Add</button>
+    <button onclick="deleteMultiGroup()">Delete</button>
+	{% else %}
+	 <h3>There is no items to manage</h3>
+	{% endif %}
+	
+</div>
+{% endblock body %}
+{% block script %}
+<script src='{% static "js/jquery-ui-1.10.4.custom.min.js" %}'></script>
+<script>
+
+    var itemId = 0;
+	$(function(){
+        var group_selected = $('#groups').val();
+        // alert(group_selected);
+        $('#groups').change(function(e){
+            var group_id = $(this).val();
+            e.preventDefault()
+            $.ajax({
+                type: "POST",
+                url: '{% url "get-group-items" %}',
+                dataType: 'json',
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    group_id: group_id,
+                },
+                success: function(item_list){
+                    var itemsArray = item_list.items;
+                    var listArray = []
+                    $(".item").each(function (){
+                        var i = $(this).children('div');
+                        var item = i.attr("vs");
+                        i.css('background-color','white')
+                        itemsArray.forEach(function(entry){
+                                if (item == entry) {
+                                    i.css('background-color', 'lightblue');
+                                }
+                        });
+                    });
+                },
+            })
+            
+        });
+        $('#update-form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: '{% url "update-item" %}',
+                dataType: 'json',
+                // async: true,
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    title: $('#id_title').val(),
+                    description: $('#id_description').val(),
+                    categories: $('#id_categories').val(),
+                    tags: $('#id_tags').val(),
+                    id: itemId,
+                },
+                success: function(data){
+                    $( '#update-dialog' ).dialog( "close" );
+                }
+            });
+        });
+		$("#multidelete-dialog").dialog({
+            modal: true,
+            autoOpen: false
+        });
+        $("#update-dialog").dialog({
+            modal: true,
+            autoOpen: false
+        });
+        $("#delete-dialog").dialog({
+            modal: true,
+            autoOpen: false
+        });
+        // $("button.edit").click(function(e) {
+        //     var a = this; 
+        //     $('#update-dialog').dialog({
+        //         autoOpen: false,
+        //         modal:true,
+        //       }); 
+        //     getItem()
+        //     e.preventDefault();
+        //     $("#update-dialog").dialog("open");
+        //     return false;
+        // });
+        $("button.delete").click(function(e) {
+        	var a = this; 
+        	$( "#delete-dialog" ).append( a.title +"?" );
+            $('#delete-dialog').dialog({
+            	autoOpen: false,
+            	modal:true,
+				buttons: {
+				  "Yes": function() {
+					 itemDelete(a.id);
+				  }
+				}
+			  }); 
+            getItem();
+            e.preventDefault();
+            $("#delete-dialog").dialog("open");
+            return false;
+        });
+
+        $("button.multidelete").click(function(e) {
+            $('#multidelete-dialog').dialog({
+            	autoOpen: false,
+            	modal:true,
+				buttons: {
+				  "Yes": function() {
+					  multiDelete();
+				  }
+				}
+			  }); 
+            e.preventDefault();
+            $("#multidelete-dialog").dialog("open");
+            return false;
+        });
+    });
+
+	function itemHidden(item_id){
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-hidden" %}',
+            dataType: 'json',
+            async: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id: item_id
+            },
+            success: function(data){
+                console.log(data)
+                alert("OK");
+            }
+        });
+    }
+    function getItem(item_id){
+        $('#update-dialog').dialog({
+            autoOpen: false,
+            modal:true,
+        }); 
+
+        $.ajax({
+            type: "POST",
+            url: '{% url "get-item" %}',
+            dataType: 'json',
+            async: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id : item_id,
+            },
+            success: function(data){
+                $('#update-form').empty();
+                var form = '<div class="fieldWrapper">';
+                form += '<label for="id_title">Title: </label>';
+                    form += data.form.title;
+                    form += '</div>';
+                    form += '<div class="fieldWrapper">';
+                    form += '<label for="id_description">Description: </label>';
+                    form += data.form.description;
+                    form += '</div>';
+                    form += '<div class="fieldWrapper">';
+                    form += '<label for="id_categories">Categories: </label>';
+                    form += data.form.categories;
+                    form += '</div>';
+                    form += '<div class="fieldWrapper">';
+                    form += '<label for="id_tags">Tags: </label>';
+                    form += data.form.tags;
+                    form += '</div>';
+                    form += '<button onclick="updateItem()">Update</button>'
+                    itemId = data.form.id;
+                $('#update-form').append(form);
+                $("#update-dialog").dialog("open");
+                return false;
+            }
+        });
+    }
+    // $("#update-form").submit(function (e) {
+    //         e.preventDefault();
+    // }
+    function updateItem(){
+        
+    }
+    function multiHide(){
+    	var checkedIds = $('input:checkbox:checked').map(function() {
+		    return this.id;
+		}).get();
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-multihide" %}',
+            dataType: 'json',
+            async: true,
+            traditional: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                ids: checkedIds,
+            },
+            success: function(data){
+                console.log("data")
+                alert("OK");
+            }
+        });
+    }
+    function itemFeature(item_id){
+        myText = $(this).text
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-feature" %}',
+            dataType: 'json',
+            async: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id: item_id
+            },
+            success: function(data){
+                console.log(data)
+                alert(myText);
+            }
+        });
+    }
+    function multiFeature(){
+    	var checkedIds = $('input:checkbox:checked').map(function() {
+		    return this.id;
+		}).get();
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-multifeature" %}',
+            dataType: 'json',
+            async: true,
+            traditional: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                ids: checkedIds,
+            },
+            success: function(data){
+                console.log("data")
+                alert("OK");
+            }
+        });
+    }
+    function itemDelete(item_id){
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-delete" %}',
+            dataType: 'json',
+            async: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id: item_id
+            },
+            success: function(data){
+                console.log(data)
+                alert("OK");
+            }
+        });
+    }
+    function multiDelete(){
+    	var checkedIds = $('input:checkbox:checked').map(function() {
+		    return this.id;
+		}).get();
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-multidelete" %}',
+            dataType: 'json',
+            async: true,
+            traditional: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                ids: checkedIds,
+            },
+            success: function(data){
+                console.log("data")
+                alert("OK");
+            }
+        });
+    }
+    function multiGroup(){
+        var checkedIds = $('input:checkbox:checked').map(function() {
+            return this.id;
+        }).get();
+        var group_id = $('#groups').val();
+        console.log(group_id);
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-multigroup" %}',
+            dataType: 'json',
+            async: true,
+            traditional: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                ids: checkedIds,
+                group: group_id,
+            },
+            success: function(data){
+                console.log("data")
+                alert("OK");
+            }
+        });
+    }
+    function deleteMultiGroup(){
+        var checkedIds = $('input:checkbox:checked').map(function() {
+            return this.id;
+        }).get();
+        var group_id = $('#groups').val();
+        $.ajax({
+            type: "POST",
+            url: '{% url "manage-delete-multigroup" %}',
+            dataType: 'json',
+            async: true,
+            traditional: true,
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                ids: checkedIds,
+                group: group_id,
+            },
+            success: function(data){
+                console.log("data")
+                alert("OK");
+            }
+        });
+    }
+    //this is an example on how to abort an ajax request. still need to make a ui to make it work ... commented for now
+    /*var xhr = $.ajax({
+    type: "POST",
+    url: "URL",
+    data: {
+        'param1': data1,
+        'param2': data2,
+    },
+    success: function(msg){
+       alert( "Data Saved: " + msg );
+    }
+    });
+
+    //kill the request
+    xhr.abort()*/
+</script>
+{% endblock script %}

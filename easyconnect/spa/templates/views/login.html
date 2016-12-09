@@ -1,0 +1,52 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="loginStripe"></div>
+<!--- HEADER SECTION -->
+    <header class="mainLoginPage">
+        <section class="row headerContent">
+        </section><!-- end row headerContent -->
+        <div class="headingSpacing">
+        </div>
+    </header>
+
+<section class="row">
+    <div class="col-l12 mainLogin" ng-switch="user.is_authenticated">
+        <div class="loginLogo" ng-if="$location.absUrl().indexOf('/lessonplanner/') > -1">
+            <a href="#" class="headerLogoLink brandLogo chLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="#" class="headerLogoText brandLogoSide3 chLogo">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+        </div>
+            {# Translators: you are logged in as (%username) #}
+            <p ng-switch-when="true" class="center-message" style="text-align:center;">
+                {% trans "You are logged in as" %} {$ user.username $}. <a href="#logout?next={$ $location.path() $}">{% trans "Log Out?" %}</a>
+            </p>
+            <form ng-switch-when="false" id="loginForm" name="loginForm" method="post" class="clearfix" novalidate>
+                <h1>{% trans "Login" %}</h1>
+                <div>
+                    <label for="username">{% trans "Username" %}</label>
+                    <input ng-maxlength="254" name="username" required ng-model="username" type="text" focus-me="true"/>
+                    <p ng-if="loginForm.username.$error.required && (loginForm.username.$dirty || loginForm.username.$submitted)" class="errorlist">
+                        {% trans "This field is required." %}
+                    </p>
+                </div>
+
+                <div>
+                    <label for="password">{% trans "Password" %}</label>
+                    <input name="password" required ng-model="password" type="password"/>
+                    <p ng-if="loginForm.password.$error.required && (loginForm.password.$dirty || loginForm.password.$submitted)" class="errorlist">
+                        {% trans "This field is required." %}
+                    </p>
+                    <p ng-if="loginForm.$error.loginfailed && loginForm.$dirty" class="errorlist">
+                        {% trans "Invalid username or password." %} 
+                    </p>
+                </div>                
+                <a ng-if="!($location.absUrl().indexOf('/devicesettings/') > -1) && !($location.absUrl().indexOf('/update/') > -1)" href="#" class="left loginStudent">{% trans "I am a student" %}</a>
+
+                <button class="login right brandBtnColor brandBtnHoverColor" type="submit" ng-click="login(username, password, loginForm)">{% trans "Log In" %}</button>
+                
+            </form>
+    </div><!-- end mainLogin 12 columns -->
+</section><!-- end mainLogin row -->

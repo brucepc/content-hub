@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+<title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">帮助指南</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>主页</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">什么是设置的内容？</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>课程</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">什么是课程？</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>库</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">什么是库？</a></li>
+				<li><a href="#library2">看不到我的库</a></li>
+				<li><a href="#library3">访问内容</a></li>
+				<li><a href="#library4">如何将类别用作筛选器</a></li>
+				<li><a href="#library5">什么是标记云及如何使用？</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>如何使用 Content Hub 课程计划工具</h1>
+
+			<h2>主页</h2>
+			<div class="howto" id="home1">
+				<h3>什么是设置的内容？</h3>
+				<p>登录“课程计划工具”主页后，设置的项目突出要展示给您自己的重要课程和库内容。这样，您就可以快速查找当天的重要内容。</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>课程</h2>
+			<div class="howto" id="lessons1">
+				<h3>什么是课程？</h3>
+				<p>课程是组合在一起以学习特定主题或课程的教育内容集合。</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>库</h2>
+
+			<div class="howto" id="library1">
+				<h3>什么是库？</h3>
+				<p>“库”页面显示教师上传的内容或预加载到设备的内容。</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>看不到我的库</h3>
+				<p>教师可以对学生隐藏库。如果您需要访问库但却看不到，可请求教师启用库。</p>
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>访问内容</h3>
+				<p>您可以单击标题访问内容项。根据文件类型和浏览器配置，要么会在新标签中打开文件，要么浏览器会下载文件。</p>
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>如何应用筛选器</h3>
+				<p>库筛选器包含一组筛选条件，可一起或单独应用以筛选结果。</p>
+				<p>可以对基于文本的筛选器使用搜索框。</p>
+				<p>可以按类别筛选。 </p>
+				<p>可以按标记筛选。</p>
+				<p>添加后，也可以删除应用的标准。</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">返回页首</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>什么是标记云及如何使用？</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />标记云显示库内容中最常用的标记。越频繁地将某个标记应用于内容，该标记在标记云中就显示得越大。标记云是一种简单的方法，可按应用到内容的标记来浏览内容及查看内容中最常见的标记类型。</p>
+				<a href="#" class="scrollup">返回页首</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>

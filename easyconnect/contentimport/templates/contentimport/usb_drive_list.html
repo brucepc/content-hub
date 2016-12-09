@@ -1,0 +1,23 @@
+{% extends "browse/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{block.super}}: USB{% endblock %}
+
+{% block body %}
+
+<section class="row mainContent">
+    <!--MANAGE AREA -->
+    <div class="single col-l12">
+        <section class="manageArea clearfix">
+		    <ul>
+		    {% for drive in object_list %}
+		        <li><a href="{% url 'usb-file' drive.id %}">{{ drive.name }}</a></li>
+		    {% empty %}
+		        <li>No drives yet.</li>
+		    {% endfor %}
+		    </ul>
+        </section><!-- end uploadArea -->
+    </div><!-- end single column -->
+</section><!-- end mainContent row -->
+
+{% endblock %}

@@ -1,0 +1,131 @@
+﻿{% load i18n %}{% load staticfiles %}
+<!DOCTYPE html>
+<html {% if rtl %}dir="LTR"{% endif %}>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <link rel="stylesheet" href="/static/js/jstree/themes/default/style.min.css">
+    <link href="/static/stylesheets\style.css" rel="stylesheet" type="text/css">
+    <link href="/static/stylesheets\branding.css" rel="stylesheet" type="text/css">
+
+    <title>Content Hub</title>
+
+</head>
+<body>
+
+<header class="brandBgColor">
+    <section class="row headerContent">
+        <div class="col-l12 headerGrid">
+            <a href="/#" class="headerLogoLink brandLogo">
+                <img src="{% static 'images/custom_brand_images/brand-edu-logo.png' %}"/>
+            </a>
+            <a href="/#" class="headerLogoText brandLogoSide3">
+                <img src="{% static 'images/custom_brand_images/lesson-planner-text.png' %}"/>
+            </a>
+	        <ul class="navLinks">
+	            <li class="helpHeadertext">Guía de ayuda</li>
+	        </ul><!-- end navLinks -->
+        </div><!-- end 12 columns -->
+    </section><!-- end row headerContent -->
+</header>	
+
+<section class="row mainContent libraryContent helpArea">		
+	<div class="col-m3 sideMenu">
+
+			<h2>Inicio</h2>
+			<ul class="tocNested">
+				<li><a href="#home1">¿Qué es el contenido destacado?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Lecciones</h2>
+			<ul class="tocNested">
+				<li><a href="#lessons1">¿Qué son las lecciones?</a></li>
+			</ul><!-- end tocNested -->
+
+			<h2>Biblioteca</h2>
+			<ul class="tocNested">
+				<li><a href="#library1">¿Qué es la Biblioteca?</a></li>
+				<li><a href="#library2">No puedo ver mi biblioteca</a></li>
+				<li><a href="#library3">Acceder al contenido</a></li>
+				<li><a href="#library4">Cómo usar categorías como filtros</a></li>
+				<li><a href="#library5">¿Qué es la nube de etiquetas y cómo se usa?</a></li>
+			</ul><!-- end tocNested -->
+
+	</div><!-- end side Menu -->
+
+	<div class="listingsArea col-m9">		
+
+			<h1>Cómo usar el planificador de lecciones Content Hub</h1>
+
+			<h2>Inicio</h2>
+			<div class="howto" id="home1">
+				<h3>¿Qué es el contenido destacado?</h3>
+				<p>Los elementos destacados muestran el contenido de la lección y de la biblioteca que es importante presentarle cuando se encuentre en la página de inicio del Planificador de lecciones. Esto le permite encontrar fácilmente los temas importantes del día.</p>
+				<img src="/static/images/help-guide/student-home.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Lecciones</h2>
+			<div class="howto" id="lessons1">
+				<h3>¿Qué son las lecciones?</h3>
+				<p>Las lecciones son conjuntos de contenido educativo para aprender acerca de un tema o lección específica.</p>
+				<img src="/static/images/help-guide/student-lesson.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto lessons1 -->
+
+			<h2>Biblioteca</h2>
+
+			<div class="howto" id="library1">
+				<h3>¿Qué es la Biblioteca?</h3>
+				<p>La página Biblioteca muestra el contenido que su profesor cargó o que está precargado en el dispositivo.</p>				
+				<img src="/static/images/help-guide/student-library.png" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library2">
+				<h3>No puedo ver mi biblioteca</h3>
+				<p>Los profesores pueden ocultar la biblioteca para su alumnos. Si necesita acceder a la biblioteca y no puede verla, pídale a su profesor que la habilite.</p>
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto library1 -->
+
+			<div class="howto" id="library3">
+				<h3>Acceder al contenido</h3>
+				<p>Podrá acceder a los elementos de contenido haciendo clic en el título. De acuerdo al tipo de archivo y a la configuración de su explorador, el archivo se abrirá en una pestaña nueva o su explorador intentará descargar el archivo.</p>
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto library8 -->
+
+			<div class="howto" id="library4">
+				<h3>Cómo colocar filtros</h3>
+				<p>Los filtros de la biblioteca son un conjunto de criterios que se pueden colocar de forma conjunta o individual para filtrar el grupo de resultados.</p>
+				<p>Puede usar el cuadro de búsqueda para un filtro de texto.</p>
+				<p>Puede filtrar por Categoría. </p>
+				<p>Puede filtrar por Etiqueta.</p>
+				<p>Cuando agregue el filtro, podrá quitar los criterios aplicados.</p>
+				<img src="/static/images/help-guide/student-library-search.PNG" alt="Content Hub" class="imgBorder" />
+				<a href="#" class="scrollup">Volver al principio</a>
+			</div><!-- end howto library12 -->
+
+			<div class="howto" id="library5">
+				<h3>¿Qué es la nube de etiquetas y cómo se usa?</h3>
+				<p><img src="/static/images/help-guide/tag-cloud.png" alt="Content Hub" class="imgBorder spaceImgRight right imgSmall" />La nube de etiquetas muestra las etiquetas más usadas dentro del contenido de la biblioteca. Cuánto más frecuentemente se aplique una etiqueta a un contenido, más grande será la etiqueta que se muestra en la nube de etiquetas. La nube de etiquetas es una manera fácil de examinar el contenido por las etiquetas que se le colocaron y de ver el tipo de etiquetas más comunes en su contenido.</p>
+				<a href="#" class="scrollup">Volver al principio</a>			
+			</div><!-- end howto library13 -->
+
+	</div><!-- / end main content area -->
+</section><!-- end mainContent row -->
+
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	$('.scrollup').click(function () {
+		$("html, body").animate({
+			scrollTop: 20 }, 500);  // 20 refers to pixels from top of screen - change to reflect size of header if you want to leap to top of TOC instead of top of page
+		return false;
+	});
+});
+</script>
+
+</body>
+</html>
