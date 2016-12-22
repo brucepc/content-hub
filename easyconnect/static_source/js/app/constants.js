@@ -30,6 +30,6 @@
         'warning': 'warning',
         'error': 'error'
     }).constant('VERSION', {
-        'current': '1.8.18'
+        'current': '2.0.0'
     });
 }());
