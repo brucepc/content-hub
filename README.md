@@ -99,4 +99,12 @@ add corresponding configration in lighttpd.conf as below:
  
 	cd /srv/easyconnect   
 	python manage.py collectstatic   
-	python manage.py runfcgi method=prefork   
+	python manage.py runfcgi method=prefork  
+    
+    
+## Using docker
+   
+```
+docker build -t content-hub .
+docker run --name=content-hub -p 80:80 content-hub
+```
