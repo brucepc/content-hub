@@ -94,8 +94,9 @@ add corresponding configration in lighttpd.conf as below:
 
 ## LAUNCH CONTENT HUB
 
-1.  Collect the static source and launch Content Hub with the following commands:
-
-	cd /srv/easyconnect
-	python manage.py collectstatic
-	python manage.py runfcgi method=prefork
+1.  Collect the static source and launch Content Hub with the following commands:       
+  
+ 
+	cd /srv/easyconnect   
+	python manage.py collectstatic   
+	python manage.py runfcgi method=prefork   
